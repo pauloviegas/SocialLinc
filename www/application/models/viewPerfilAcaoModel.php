@@ -1,0 +1,88 @@
+<?php
+
+class viewPerfilAcaoModel extends AbstractModel
+{
+
+    /**
+     * @var String $_table Nome da tabela no banco na qual este Model atua.
+     */
+    protected $_table = 'sitelinc_view_perfil_acao';
+
+    /**
+     * Carrega todos os métodos contidos na classe pai.
+     * @param NULL
+     * @author Paulo Viegas <pauloviegas93@gmail.com>
+     * @return NULL
+     */
+    public function __construct()
+    {
+
+        parent::__construct();
+        $this->load->model('acaoModel');
+    }
+
+    /**
+     * Gera todas as ações que o perfil de usuário tem acesso.
+     * @param $id_perfil Correspode ao id do perfil desse usuário.
+     * @author Paulo Viegas <pauloviegas93@gmail.com>
+     * @return Array Todas as permissões que o perfil do usuário tem e mais as ações que não precisam de permissão.
+     */
+    public function gerarPermissoes($idUser)
+    {
+        $npPermissoes = $this->acaoModel->recuperaPorParametro(NULL, Array('permissao' => 0));
+        foreach ($npPermissoes as $npPermissao)
+        {
+            $novoObjeto = new stdClass();
+            $novoObjeto->acao = $npPermissao->modulo . '/' . $npPermissao->controller . '/' . $npPermissao->action;
+            $novoObjeto->alias_controller = $npPermissao->alias_controller;
+            $novoObjeto->alias_action = $npPermissao->alias_action;
+            $novoObjeto->permissao = $npPermissao->permissao;
+            $permissoes[] = $novoObjeto;
+        }
+        $permissoesUsuario = $this->recuperaPorParametro(NULL, Array('id_usuario' => $idUser));
+        foreach ($permissoesUsuario as $permissaoUsuario)
+        {
+            $novoObjeto = new stdClass();
+            $novoObjeto->acao = $permissaoUsuario->acao;
+            $novoObjeto->alias_controller = $permissaoUsuario->controller;
+            $novoObjeto->alias_action = $permissaoUsuario->action;
+            $novoObjeto->permissao = $permissaoUsuario->permissao;
+            $novoObjeto->id_instituicao = $permissaoUsuario->id_instituicao;
+            $permissoes[] = $novoObjeto;
+        }
+        return $permissoes;
+    }
+
+    /**
+     * Verifica se o usuário tem permissão para realizar uma ação passada por parâmetro ou (caso esta seja NULL) a que se encontra disposta na URL. 
+     * @param String $acao Corresponde a um endereço de ação ou de página.
+     * @author Paulo Viegas <pauloviegas93@gmail.com>
+     * @return Boolean Valor lógico, TRUE se o usuário tiver permissão para realizar tal ação e FALSE se o usuário não tiver permissão para realizar tal ação.
+     */
+    public function verificaPermissao($acao = NULL, $grupo = NULL)
+    {
+        $idGrupo = ($grupo != NULL) ? $grupo : $this->uri->segment(4);
+        $novaAcao = ($acao != NULL) ? $acao : $this->recuperaUrl();
+        $permissoes = $this->session->userdata('permissoes');
+        //$permitido = 0;
+        foreach ($permissoes as $permissao)
+        {
+            if ($permissao->acao == $novaAcao)
+            {
+                if ($permissao->permissao == 0)
+                {
+                    return TRUE;
+                }
+                else
+                {
+                    if ($permissao->id_instituicao == $idGrupo || $permissao->id_instituicao == 1)
+                    {
+                        return TRUE;
+                    }
+                }
+            }
+        }
+        return FALSE;
+    }
+
+}
