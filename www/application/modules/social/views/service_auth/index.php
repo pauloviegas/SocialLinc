@@ -248,14 +248,14 @@
                                     <label class="form-label">Formação: *</label>
                                     <div class="controls">
                                         <div class="input-with-icon right">
-                                            <select name="id_titulo" style="width:100%">
-                                                <?php if (count($titulos) > 0) : ?>
+                                            <select name="id_formacao" style="width:100%">
+                                                <?php if (count($formacoes) > 0) : ?>
                                                     <option value="0">Selecione</option>
-                                                    <?php foreach ($titulos as $titulo) : ?>
-                                                        <option value="<?= $titulo->id ?>"><?= $titulo->titulo ?></option>
+                                                    <?php foreach ($formacoes as $formacao) : ?>
+                                                        <option value="<?= $formacao->id ?>"><?= $formacao->formacao ?></option>
                                                     <?php endforeach; ?>
                                                 <?php else : ?>
-                                                    <option value="0">Não Existe Nenhum Título Disponível</option>
+                                                    <option value="0">Não Existe Nenhuma Formação Disponível</option>
                                                 <?php endif; ?>
                                             </select>
                                         </div>

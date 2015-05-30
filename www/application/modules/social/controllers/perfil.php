@@ -19,7 +19,7 @@ class perfil extends SocialController
     public function index()
     {
         //Recuperação de Dados
-        $this->data['perfis'] = $this->perfilModel->recuperaPorParametro(NULL, Array('excluido' => 0), "perfil", "asc");
+        $this->data['perfis'] = $this->perfilModel->recuperaPorParametro(NULL, Array('excluido' => 0), Array('perfil' => 'asc'));
 
         //Permissões
         $this->data['permissaoCriar'] = $this->viewPerfilAcaoModel->verificaPermissao('social/perfil/criar');

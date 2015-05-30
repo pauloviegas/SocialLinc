@@ -69,7 +69,7 @@ class projeto extends SocialController
         $idProj = $this->uri->segment(4);
         $this->data['projeto'] = $this->viewProjetoModel->recuperaPorParametro($idProj);
         $this->data['anexos'] = $this->anexoModel->recuperaPorParametro(NULL, Array('id_grupo' => $idProj));
-        $this->data['usuariosProj'] = $this->viewUsuarioGrupoVinculoModel->recuperaPorParametro(NULL, Array('id_tipo_grupo' => 2, 'id_grupo' => $idProj));
+        $this->data['usuariosProj'] = $this->viewUsuarioGrupoVinculoModel->recuperaPorParametro(NULL, Array('id_tipo_grupo' => 2, 'id_grupo' => $idProj), Array('ativo' => 'desc', 'nome_usuario' => 'asc'));
         $this->data['usuarios'] = $this->usuarioModel->recuperaUsuariosQueNaoPertecemAoProj($idProj);
         $this->data['perfis'] = $this->perfilModel->recuperaPorParametro(NULL, Array('excluido' => 0));
         $this->data['linhasPesquisaProjeto'] = $this->viewPesquisaLinhaGrupoVinculoModel->recuperaPorParametro(NULL, Array('id_grupo' => $idProj));
@@ -83,8 +83,8 @@ class projeto extends SocialController
         $this->data['permissaoExcluirAnexo'] = $this->viewPerfilAcaoModel->verificaPermissao('social/projeto/excluiranexo');
         $this->data['permissaoVincularUsuario'] = $this->viewPerfilAcaoModel->verificaPermissao('social/projeto/vincularusuario');
         $this->data['permissaoDesvincularUsuario'] = $this->viewPerfilAcaoModel->verificaPermissao('social/projeto/desvincularusuario');
-        $this->data['permissaoDesvincularLinhaPesquisa'] = $this->viewPerfilAcaoModel->verificaPermissao('social/projeto/desvincularLinhaPesquisaProjeto');
         $this->data['permissaoVincularLinhaPesquisa'] = $this->viewPerfilAcaoModel->verificaPermissao('social/projeto/vincularLinhaPesquisaProjeto');
+        $this->data['permissaoDesvincularLinhaPesquisa'] = $this->viewPerfilAcaoModel->verificaPermissao('social/projeto/desvincularLinhaPesquisaProjeto');
 
         //Avisos
         $this->data['sucesso'] = ($this->session->flashdata('sucesso')) ? $this->session->flashdata('sucesso') : FALSE;

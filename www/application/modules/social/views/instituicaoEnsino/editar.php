@@ -1,5 +1,22 @@
 <?= $topo ?>
 <?= $menulateral ?>
+
+<div class="cascalho">
+    <ul class="breadcrumb">
+        <li>   
+            <a href="<?= base_url('/social/home/index') ?>">Feed</a>
+        </li>
+        <i class="icon-angle-right"></i>  	
+        <li>   
+            <a href="<?= base_url('/social/instituicaoEnsino/index') ?>">Instituições de Ensino</a>
+        </li>
+        <i class="icon-angle-right"></i>  					 
+        <li>
+            <a href="#" class="active">Editar</a>
+        </li>                    
+    </ul>
+</div>
+
 <?php if ($sucesso) : ?>
     <div class="alert alert-success">
         <button class="close" data-dismiss="alert"></button>
@@ -32,7 +49,7 @@
                 <h4>Editar informações - <?= $instituicao[0]->nome ?></h4>
             </div>
             <div class="grid-body ">
-                <form id="form" method="post" enctype="multipart/form-data">
+                <form id="form" action="/social/instituicaoEnsino/alterar" method="post" enctype="multipart/form-data">
                     <div class="row">
                         <div class="form-group col-md-12">
                             * Campos Obrigatórios
@@ -44,7 +61,7 @@
                             <div class="controls">
                                 <div class="input-with-icon right">                                       
                                     <i class=""></i>
-                                    <input name="nome" type="text" value="<?= ($instituicao[0]->nome) ? $instituicao[0]->nome : '' ?>" class="form-control">                                 
+                                    <input class="form-control" type="text" name="nome" value="<?= ($instituicao[0]->nome) ? $instituicao[0]->nome : '' ?>">                                 
                                 </div>
                             </div>
                         </div>
@@ -53,7 +70,7 @@
                             <div class="controls">
                                 <div class="input-with-icon right">                                       
                                     <i class=""></i>
-                                    <input name="sigla" value="<?= ($instituicao[0]->sigla) ? $instituicao[0]->sigla : '' ?>" type="text" class="form-control">                                 
+                                    <input class="form-control" type="text" name="sigla" value="<?= ($instituicao[0]->sigla) ? $instituicao[0]->sigla : '' ?>">                                 
                                 </div>
                             </div>
                         </div>
@@ -64,67 +81,58 @@
                             <div class="controls">
                                 <div class="input-with-icon right">                                       
                                     <i class=""></i>
-                                    <textarea name="resumo" style="width: 100%; height: 150px;"><?= ($instituicao[0]->resumo) ? $instituicao[0]->resumo : '' ?></textarea>
+                                    <textarea name="resumo" placeholder="Digite aqui a descrição da instituição de ensino..."><?= ($instituicao[0]->resumo) ? $instituicao[0]->resumo : '' ?></textarea>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-7">
                             <label class="form-label">E-mail para Contato:</label>
                             <div class="controls">
                                 <div class="input-with-icon right">                                       
                                     <i class=""></i>
-                                    <input name="email" value="<?= ($instituicao[0]->email) ? $instituicao[0]->email : '' ?>" type="text" class="form-control">                                 
+                                    <input class="form-control" type="text" name="email" value="<?= ($instituicao[0]->email) ? $instituicao[0]->email : '' ?>" placeholder="exemplo@exemplo...">                                 
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-5">
                             <label class="form-label">Telefone para Contato:</label>
                             <div class="controls">
                                 <div class="input-with-icon right">
                                     <i class=""></i>
-                                    <input name="telefone" value="<?= ($instituicao[0]->telefone) ? $instituicao[0]->telefone : '' ?>" type="text" class="form-control">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label class="form-label">Link do Site:</label>
-                            <div class="controls">
-                                <div class="input-with-icon right">                                       
-                                    <i class=""></i>
-                                    <input name="url" value="<?= ($instituicao[0]->url) ? $instituicao[0]->url : '' ?>" type="text" class="form-control">                                 
+                                    <input class="form-control" type="text" name="telefone" value="<?= ($instituicao[0]->telefone) ? $instituicao[0]->telefone : '' ?>" placeholder="(__) _____-____">
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-md-12">
-                            <label class="form-label">Selecione a logo da Instituição de Ensino: <small style="font-size: 10px;">Tamanho Ideal - 180 x 100</small></label>
+                            <label class="form-label">
+                                Selecione a logo da Instituição de Ensino:
+                                <small>
+                                    Tamanho Ideal - 180 x 150
+                                    (Extensões Suportadas: gif - jpg - png)
+                                </small>
+                            </label>
                             <div class="controls">
                                 <div class="input-with-icon right">
-                                    <div class="form-control" >
-                                        <input id="imagem" class="col-md-12" type="file" name="logo" id="foto" style="opacity: 0; position: relative;" />
-                                        <label id="nomeimagem" class="form-label" style="font-size: 15px; position: absolute; margin-top: -35px;"></label>
+                                    <div class="form-control divImagem">
+                                        <input id="imagem" class="col-md-12 inputImagem" type="file" name="logo" />
+                                        <label id="nomeimagem" class="form-label labelImagem"></label>
                                     </div>
                                 </div>
-                                <?php if ($instituicao[0]->logo != '/assets/img/grupo/sem_imagem.jpg') : ?>
-                                    <div id="logo" style="width: 100px; padding-top: 10px;">
-                                        <a id="excluirFoto" href="#"><i class="icon-custom-cross" style="opacity: 0.5; float: right; margin-top: 4px;"></i></a>
-                                        <img src="<?= $instituicao[0]->logo ?>" width="100">
-                                    </div>
-                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <label class="form-label">Redes Sociais:</label>
+                        <label class="form-label tituloFormularios">Redes Sociais:</label>
                         <div class="form-group col-md-2">
                             <label class="form-label">Link do Facebook:</label>
                             <div class="controls">
                                 <div class="input-with-icon right">                                       
                                     <i class=""></i>
-                                    <input name="facebook" value="<?= $instituicao[0]->facebook ? $instituicao[0]->facebook : '' ?>" type="text" class="form-control">                                 
+                                    <input class="form-control" type="text" name="facebook" value="<?= $instituicao[0]->facebook ? $instituicao[0]->facebook : '' ?>" placeholder="http://...">                                 
                                 </div>
                             </div>
                         </div>
@@ -133,7 +141,7 @@
                             <div class="controls">
                                 <div class="input-with-icon right">                                       
                                     <i class=""></i>
-                                    <input name="googleplus" value="<?= $instituicao[0]->googleplus ? $instituicao[0]->googleplus : '' ?>" type="text" class="form-control">                                 
+                                    <input class="form-control" type="text" name="googleplus" value="<?= $instituicao[0]->googleplus ? $instituicao[0]->googleplus : '' ?>" placeholder="http://...">                                 
                                 </div>
                             </div>
                         </div>
@@ -142,7 +150,7 @@
                             <div class="controls">
                                 <div class="input-with-icon right">                                       
                                     <i class=""></i>
-                                    <input name="instagram" value="<?= $instituicao[0]->instagram ? $instituicao[0]->instagram : '' ?>" type="text" class="form-control">                                 
+                                    <input class="form-control" type="text" name="instagram" value="<?= $instituicao[0]->instagram ? $instituicao[0]->instagram : '' ?>" placeholder="http://...">                                 
                                 </div>
                             </div>
                         </div>
@@ -151,7 +159,7 @@
                             <div class="controls">
                                 <div class="input-with-icon right">                                       
                                     <i class=""></i>
-                                    <input name="twitter" value="<?= $instituicao[0]->twitter ? $instituicao[0]->twitter : '' ?>" type="text" class="form-control">                                 
+                                    <input class="form-control" type="text" name="twitter" value="<?= $instituicao[0]->twitter ? $instituicao[0]->twitter : '' ?>" placeholder="http://...">                                 
                                 </div>
                             </div>
                         </div>
@@ -160,7 +168,16 @@
                             <div class="controls">
                                 <div class="input-with-icon right">                                       
                                     <i class=""></i>
-                                    <input name="likedin" value="<?= $instituicao[0]->likedin ? $instituicao[0]->likedin : '' ?>" type="text" class="form-control">                                 
+                                    <input class="form-control" type="text" name="likedin" value="<?= $instituicao[0]->likedin ? $instituicao[0]->likedin : '' ?>" placeholder="http://...">                                 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label class="form-label">Link do Site:</label>
+                            <div class="controls">
+                                <div class="input-with-icon right">                                       
+                                    <i class=""></i>
+                                    <input class="form-control" type="text" name="url" value="<?= ($instituicao[0]->url) ? $instituicao[0]->url : '' ?>" placeholder="http://...">                                 
                                 </div>
                             </div>
                         </div>
@@ -185,7 +202,6 @@
 
 <script type="text/javascript">
     $("#btnsalvar").click(function () {
-        $("#form").attr('action', '/social/instituicaoEnsino/alterar');
         $("#form").submit();
     });
     $("#excluirFoto").click(function () {

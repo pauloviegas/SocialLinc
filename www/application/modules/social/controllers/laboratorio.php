@@ -56,7 +56,7 @@ class laboratorio extends SocialController
         //Recuperação de Dados
         $idLab = $this->uri->segment(4);
         $this->data['laboratorio'] = $this->grupoModel->recuperaPorParametro($idLab);
-        $this->data['usuariosLab'] = $this->viewUsuarioGrupoVinculoModel->recuperaPorParametro(NULL, Array('id_tipo_grupo' => 3, 'id_grupo' => $idLab));
+        $this->data['usuariosLab'] = $this->viewUsuarioGrupoVinculoModel->recuperaPorParametro(NULL, Array('id_tipo_grupo' => 3, 'id_grupo' => $idLab), Array('ativo' => 'desc', 'nome_usuario' => 'asc'));
         $this->data['usuarios'] = $this->usuarioModel->recuperaUsuariosQueNaoPertecemAoLab($idLab);
         $this->data['perfis'] = $this->perfilModel->recuperaPorParametro(NULL, Array('excluido' => 0));
         $this->data['anexos'] = $this->anexoModel->recuperaPorParametro(NULL, Array('id_grupo' => $idLab));
@@ -68,13 +68,13 @@ class laboratorio extends SocialController
         //Permissões
         $this->data['permissaoEditar'] = $this->viewPerfilAcaoModel->verificaPermissao('social/laboratorio/editar');
         $this->data['permissaoExcluir'] = $this->viewPerfilAcaoModel->verificaPermissao('social/laboratorio/excluir');
-        $this->data['permissaoAdicionarAnexo'] = $this->viewPerfilAcaoModel->verificaPermissao('social/laboratorio/adicionaranexo');
         $this->data['permissaoVisualizarAnexo'] = $this->viewPerfilAcaoModel->verificaPermissao('social/laboratorio/visualizaranexo');
+        $this->data['permissaoAdicionarAnexo'] = $this->viewPerfilAcaoModel->verificaPermissao('social/laboratorio/adicionaranexo');
         $this->data['permissaoExcluirAnexo'] = $this->viewPerfilAcaoModel->verificaPermissao('social/laboratorio/excluiranexo');
         $this->data['permissaoVincularUsuario'] = $this->viewPerfilAcaoModel->verificaPermissao('social/laboratorio/vincularUsuario');
         $this->data['permissaoDesvincularUsuario'] = $this->viewPerfilAcaoModel->verificaPermissao('social/laboratorio/desvincularUsuario');
-        $this->data['permissaoDesvincularLinhaPesquisa'] = $this->viewPerfilAcaoModel->verificaPermissao('social/laboratorio/desvincularLinhaPesquisaLaboratorio');
         $this->data['permissaoVincularLinhaPesquisa'] = $this->viewPerfilAcaoModel->verificaPermissao('social/laboratorio/vincularLinhaPesquisaLaboratorio');
+        $this->data['permissaoDesvincularLinhaPesquisa'] = $this->viewPerfilAcaoModel->verificaPermissao('social/laboratorio/desvincularLinhaPesquisaLaboratorio');
 
         //Avisos
         $this->data['sucesso'] = ($this->session->flashdata('sucesso')) ? $this->session->flashdata('sucesso') : FALSE;

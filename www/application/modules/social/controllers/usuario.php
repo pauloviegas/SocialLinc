@@ -26,8 +26,8 @@ class usuario extends SocialController
     public function index()
     {
         //Recuperação de Dados
-        $this->data['usuariosAtivos'] = $this->viewUsuarioModel->recuperaPorParametro(NULL, Array('excluido' => 0, 'aprovado' => 1), 'nome', 'asc');
-        $this->data['usuariosInativos'] = $this->viewUsuarioModel->recuperaPorParametro(NULL, Array('excluido' => 1, 'aprovado' => 1), 'nome', 'asc');
+        $this->data['usuariosAtivos'] = $this->viewUsuarioModel->recuperaPorParametro(NULL, Array('excluido' => 0, 'aprovado' => 1), Array('nome' => 'asc'));
+        $this->data['usuariosInativos'] = $this->viewUsuarioModel->recuperaPorParametro(NULL, Array('excluido' => 1, 'aprovado' => 1), Array('nome' => 'asc'));
 
         //Permissões
         $this->data['permissaoEditarUsuario'] = $this->viewPerfilAcaoModel->verificaPermissao('social/usuario/editar');
@@ -492,6 +492,41 @@ class usuario extends SocialController
         }
     }
 
+    public function ativarInativarVinculo()
+    {
+        $vinculo = $this->_request;
+        $alteracao = new stdClass();
+        $alteracao->id = $vinculo['idVinculo'];
+        if($vinculo['ativo'])
+        {
+            $alteracao->ativo = 0;
+            $vinculo['ativo'] = 'inativado';
+        }
+        else
+        {
+            $alteracao->ativo = 1;
+            $vinculo['ativo'] = 'ativado';
+        }
+        if ($this->usuarioVinculoModel->alterar($alteracao))
+        {
+            $this->session->set_flashdata(
+                    'sucesso', 'O vinculo do usuário: "' . $vinculo['nomeUsuario'] 
+                    . '" com o ' . $vinculo['controller'] . ': "'
+                    . $vinculo['nomeGrupo'] . '" foi ' . $vinculo['ativo']
+                    . ' com sucesso!');
+            redirect('social/' . $vinculo['controller'] . '/descricao/' . $vinculo['idGrupo']);
+        }
+        else
+        {
+            $this->session->set_flashdata(
+                    'erro', 'Ops... Ocorreu um eror e o vinculo do usuário "'
+                    . $vinculo['nomeUsuario'] . '" com o '
+                    . $vinculo['controller'] . ': "' . $vinculo['nomeGrupo']
+                    . '" não foi inativado com sucesso!');
+            redirect('social/' . $vinculo['controller'] . '/descricao/' . $vinculo['idGrupo']);
+        }
+    }
+
     public function verificaVinculoCoordOuResp()
     {
         $dados = $this->_request;
@@ -500,18 +535,18 @@ class usuario extends SocialController
         {
             case 8:
                 $resposta['desvincular'] = 0;
-                $resposta['msg'] = 'Você não pode desvincular este usuário,'
-                        . ' pois ele é o Coordenador do Projeto, para isso'
-                        . ' vá em editar, e altere, primeiramente o Coordenador'
-                        . ' do projeto.';
+                $resposta['msg'] = 'Você não pode realizar esta ação, pois este'
+                        . ' usuário é o Coordenador do Projeto, para isso vá em'
+                        . ' editar, e altere, primeiramente o Coordenador  do'
+                        . ' projeto.';
                 break;
 
             case 9:
                 $resposta['desvincular'] = 0;
-                $resposta['msg'] = 'Você não pode desvincular este usuário,'
-                        . ' pois ele é o Responsável do Projeto, para isso'
-                        . ' vá em editar, e altere, primeiramente o Responsável'
-                        . ' do projeto.';
+                $resposta['msg'] = 'Você não pode realizar esta ação, pois este'
+                        . ' usuário é o Responsável do Projeto, para isso vá em'
+                        . ' editar, e altere, primeiramente o Responsável do'
+                        . ' projeto.';
                 break;
 
             default:

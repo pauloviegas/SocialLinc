@@ -69,7 +69,7 @@
             <div class="grid-body ">
                 <div class="row" style="margin-bottom: 20px;">
                     <div id="divLogo" class="form-group col-md-12" style="text-align: center;">
-                        <?php if ($projeto[0]->logo != '/assets/img/grupo/projeto.jpg') : ?>
+                        <?php if ($projeto[0]->logo != '/assets/img/grupo/projeto.jpg' && $permissaoEditar) : ?>
                             <div id="excluirLogo" class="excluirLogo">
                                 <a href="#" data-toggle="modal" data-target="#modalExcluirFoto">
                                     <i class="icon-custom-cross botaoExcluirImagem"></i>
@@ -269,6 +269,12 @@
                             <div class="thumbnail divVinculo">
                                 <?php if ($permissaoDesvincularUsuario) : ?>
                                     <div class="botaoExcluirVinculo">
+                                        <a class="botaoAtivarInativarVinculo" href="#" data-toggle="modal" data-target="#modalAtivarInativarVinculo">
+                                            <input type="hidden" class="idVinculo" value="<?= $usuarioProj->id ?>">
+                                            <input type="hidden" class="ativo" value="<?= $usuarioProj->ativo ?>">
+                                            <input type="hidden" class="nomeUsuario" value="<?= $usuarioProj->nome_usuario ?>">
+                                            &nbsp;&nbsp;<i class="<?= ($usuarioProj->ativo == 1) ? 'icon-eye-close' : 'icon-eye-open' ?>"></i>
+                                        </a>
                                         <a class="desvincularUsuario" href="#" data-toggle="modal" data-target="#modalDesvincularUsuario">
                                             <input class="nome" type="hidden" value="<?= $usuarioProj->nome_usuario ?>">
                                             <input class="id" type="hidden" value="<?= $usuarioProj->id ?>">
@@ -535,6 +541,31 @@
     </div>
 </div>
 
+<div class="modal fade" id="modalAtivarInativarVinculo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 id="ativarInativarVinculoTitulo" class="modal-title"></h4>
+            </div>
+            <div id="ativarInativarVinculoContent" class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <form id="formAtivarInativarVinculo" action="/social/usuario/ativarInativarVinculo" method="post">
+                    <input id="idVinculo" type="hidden" name="idVinculo">
+                    <input id="ativo" type="hidden" name="ativo">
+                    <input id="nomeUsuario" type="hidden" name="nomeUsuario">
+                    <input type="hidden" name="idGrupo" value="<?= $projeto[0]->id ?>">
+                    <input type="hidden" name="nomeGrupo" value="<?= $projeto[0]->nome ?>">
+                    <input type="hidden" name="controller" value="projeto">
+                </form>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                <button id="btnAtivarInativarVinculo" type="button" class="btn btn-primary"></button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="modal fade" id="modalVincularLinhaPesquisa" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -684,6 +715,51 @@
     //Executa a função de vincular
     $("#btnVincularUsuario").click(function () {
         $("#formUsuario").submit();
+    });
+    $(".botaoAtivarInativarVinculo").click(function () {
+        var ativo = $(this).find(".ativo").attr('value');
+        var usuario = $(this).find(".nomeUsuario").attr('value');
+        var idVinculo = $(this).find(".idVinculo").attr('value')
+        $("#ativo").attr('value', ativo);
+        $("#nomeUsuario").attr('value', usuario);
+        $("#idVinculo").attr('value', idVinculo);
+        $.ajax({
+            url: '/social/usuario/verificaVinculoCoordOuResp',
+            dataType: 'json',
+            data: {
+                'idProj': <?= $projeto[0]->id ?>,
+                'idVinculo': idVinculo
+            },
+            success: function (resposta) {
+                if (resposta.desvincular)
+                {
+                    $("#btnAtivarInativarVinculo").css('display', '');
+                    if (ativo == 1)
+                    {
+                        $("#ativarInativarVinculoTitulo").html("Inativar Usuário");
+                        $("#ativarInativarVinculoContent").html("Você tem certeza que deseja "
+                                + " transformar o usuário " + usuario + " em um Alumni?");
+                        $("#btnAtivarInativarVinculo").html("Inativar");
+                    }
+                    else
+                    {
+                        $("#ativarInativarVinculoTitulo").html("Ativar Usuário");
+                        $("#ativarInativarVinculoContent").html("Você tem certeza que deseja "
+                                + " reativar o usuario " + usuario + "?");
+                        $("#btnAtivarInativarVinculo").html("Ativar");
+                    }
+                }
+                else
+                {
+                    $("#ativarInativarVinculoTitulo").html("Inativar Usuário");
+                    $("#btnAtivarInativarVinculo").css('display', 'none');
+                    $("#ativarInativarVinculoContent").html(resposta.msg);
+                }
+            }
+        });
+    });
+    $("#btnAtivarInativarVinculo").click(function () {
+        $("#formAtivarInativarVinculo").submit();
     });
     //Popula o modal para desvincular
     $(".desvincularUsuario").click(function () {

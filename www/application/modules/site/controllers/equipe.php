@@ -18,7 +18,7 @@ class equipe extends SiteController
     public function index()
     {
         //Recuperação de Dados
-        $this->data['usuarios'] = $this->viewUsuarioGrupoVinculoModel->recuperaPorParametro(NULL, Array('id_grupo' => 7), 'nome_usuario', 'asc');
+        $this->data['usuarios'] = $this->viewUsuarioGrupoVinculoModel->recuperaPorParametro(NULL, Array('id_grupo' => 7), Array('nome_usuario' => 'asc'));
         
         //Avisos
         $this->data['sucesso'] = ($this->session->flashdata('sucesso')) ? $this->session->flashdata('sucesso') : FALSE;

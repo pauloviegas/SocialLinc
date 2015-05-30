@@ -20,7 +20,7 @@ class instituicaoEnsino extends SocialController
     public function index()
     {
         //Recuperação de Dados
-        $this->data['instituicoes'] = $this->grupoModel->recuperaPorParametro(NULL, Array('id_tipo' => 1, 'excluido' => 0));
+        $this->data['instituicoes'] = $this->grupoModel->recuperaPorParametro(NULL, Array('id_tipo' => 1, 'excluido' => 0), Array('nome' => 'asc'));
 
         //Permissões
         $this->data['permissaoCriar'] = $this->viewPerfilAcaoModel->verificaPermissao('social/instituicaoEnsino/criar');

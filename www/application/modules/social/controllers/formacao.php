@@ -19,7 +19,7 @@ class formacao extends SocialController
     public function index()
     {
         //Recuperação de Dados
-        $this->data['formacoes'] = $this->formacaoModel->recuperaPorParametro(NULL, Array('excluido' => 0));
+        $this->data['formacoes'] = $this->formacaoModel->recuperaPorParametro(NULL, Array('excluido' => 0), Array('formacao' => 'asc'));
 
         //Permissões
         $this->data['permissaoCriar'] = $this->viewPerfilAcaoModel->verificaPermissao('social/formacao/criar');

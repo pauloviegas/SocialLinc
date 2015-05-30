@@ -21,7 +21,7 @@ class sistema extends SocialController
     public function index()
     {
         //Recuperação de Dados
-        $this->data['usuariosVinculados'] = $this->viewUsuarioGrupoVinculoModel->recuperaPorParametro(NULL, Array('id_grupo' => 1));
+        $this->data['usuariosVinculados'] = $this->viewUsuarioGrupoVinculoModel->recuperaPorParametro(NULL, Array('id_grupo' => 1), Array('nome_usuario' => 'asc'));
         $this->data['usuarios'] = $this->usuarioModel->recuperaUsuariosQueNaoPertecemAoLab(1, 5);
         $this->data['perfis'] = $this->perfilModel->recuperaTodos("perfil", "asc");
 

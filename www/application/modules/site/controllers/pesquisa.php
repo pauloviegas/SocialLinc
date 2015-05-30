@@ -35,7 +35,7 @@ class pesquisa extends SiteController
     public function projetos()
     {
         //Recuperação de Dados
-        $this->data['projetos'] = $this->viewProjetoModel->recuperaPorParametro(NULL, Array('id_laboratorio' => 7, 'publico' => 1));
+        $this->data['projetos'] = $this->viewProjetoModel->recuperaPorParametro(NULL, Array('id_laboratorio' => 7, 'publico' => 1), Array('nome' => 'asc'));
         
         //Avisos
         $this->data['sucesso'] = ($this->session->flashdata('sucesso')) ? $this->session->flashdata('sucesso') : FALSE;
@@ -52,7 +52,7 @@ class pesquisa extends SiteController
         //Recuperação de Dados
         $idProjeto = $this->uri->segment(4);
         $this->data['projeto'] = $this->viewProjetoModel->recuperaPorParametro($idProjeto);
-        $this->data['usuarios'] = $this->viewUsuarioGrupoVinculoModel->recuperaPorParametro(NULL, Array('id_grupo' => $idProjeto), 'nome_usuario', 'asc');
+        $this->data['usuarios'] = $this->viewUsuarioGrupoVinculoModel->recuperaPorParametro(NULL, Array('id_grupo' => $idProjeto), Array('nome_usuario' => 'asc'));
         
         //Avisos
         $this->data['sucesso'] = ($this->session->flashdata('sucesso')) ? $this->session->flashdata('sucesso') : FALSE;

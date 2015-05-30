@@ -1,5 +1,22 @@
 <?= $topo ?>
 <?= $menulateral ?>
+
+<div class="cascalho">
+    <ul class="breadcrumb">
+        <li>
+            <a href="<?= base_url('/social/home/index') ?>">Feed</a>
+        </li>
+        <i class="icon-angle-right"></i>
+        <li>
+            <a href="<?= base_url('/social/perfil/index') ?>">Perfis e Permissões</a>
+        </li>
+        <i class="icon-angle-right"></i>
+        <li>
+            <a href="#" class="active">Permissões</a>
+        </li>
+    </ul>
+</div>
+
 <?php if ($sucesso) : ?>
     <div class="alert alert-success">
         <button class="close" data-dismiss="alert"></button>

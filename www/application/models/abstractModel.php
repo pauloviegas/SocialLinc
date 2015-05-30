@@ -182,13 +182,19 @@ class AbstractModel extends CI_Model
      * @author Paulo Viegas <pauloviegas93@gmail.com>
      * @return Array Todas as linhas afetadas pelo(s) parâmetro(s) de busca;
      */
-    public function recuperaPorParametro($id = NULL, Array $parametrosBusca = NULL, $parametro = NULL, $ordem = NULL)
+    public function recuperaPorParametro($id = NULL, Array $parametrosBusca = NULL, Array $ordens = NULL)
     {
         if ($id)
         {
             $parametrosBusca = Array('id' => $id);
         }
-        ($ordem && $parametro) ? $this->db->order_by($parametro, $ordem) : '';
+        if (count($ordens) > 0)
+        {
+            foreach ($ordens as $coluna => $ordenacao)
+            {
+                $this->db->order_by($coluna, $ordenacao);
+            }
+        }
         $query = $this->db->get_where($this->_table, $parametrosBusca);
         return $query->result();
     }

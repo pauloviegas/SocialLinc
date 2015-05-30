@@ -1,5 +1,18 @@
 <?= $topo ?>
 <?= $menulateral ?>
+
+<div class="cascalho">
+    <ul class="breadcrumb">
+        <li>   
+            <a href="<?= base_url('/social/home/index') ?>">Feed</a>
+        </li>
+        <i class="icon-angle-right"></i>  					 
+        <li>
+            <a href="#" class="active">Instituições de Ensino</a>
+        </li>                    
+    </ul>
+</div>
+
 <?php if ($sucesso) : ?>
     <div class="alert alert-success">
         <button class="close" data-dismiss="alert"></button>
@@ -26,7 +39,7 @@
 <?php endif; ?>
 
 <?php if ($permissaoCriar) : ?>
-    <div class="row">
+    <div class="row botaoCriar">
         <div class="col-md-6">
             <div id="example2_length" class="dataTables_length">
                 <button id="cadastrar" type="button" class="btn btn-primary btn-cons">
@@ -37,7 +50,7 @@
     </div>
 <?php endif; ?>
 
-<div class="row-fluid" style="margin-top: 30px;">
+<div class="row-fluid">
     <div class="span12">
         <div class="grid simple ">
             <div class="grid-title">
@@ -63,14 +76,14 @@
                                     <?php foreach ($instituicoes as $instituicao) : ?>
                                         <tr class="gradeX odd">
                                             <td>
-                                                <img style="border-radius: 100px; float: left;" alt="" src="<?= $instituicao->logo ?>" width="32" height="32">
-                                                <label style="margin-left: 40px; margin-top: 5px;"><?= $instituicao->nome ?></label>
+                                                <img class="imagemRedonda" src="<?= $instituicao->logo ?>">
+                                                <label class="nomeImagemRedonda"><?= $instituicao->nome ?></label>
                                             </td>
                                             <td><?= $instituicao->url ?></td>
                                             <td><?= ($instituicao->email) ? $instituicao->email : '-' ?></td>
                                             <td><?= ($instituicao->telefone) ? $instituicao->telefone : '-' ?></td>
                                             <?php if ($permissaoEditar || $permissaoExcluir) : ?>
-                                                <td style="text-align: center;">
+                                                <td>
                                                     <?php if ($permissaoEditar) : ?>
                                                         <button id="<?= $instituicao->id ?>" type="button" class="btn btn-default btn-xs btn-mini editar">
                                                             <i class="icon-pencil"></i>&nbsp;Editar
@@ -102,12 +115,12 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Excluir Instituição</h4>
+                <h4 class="modal-title">Excluir Instituição de Ensino</h4>
             </div>
             <div id="modalInstituicaoContent" class="modal-body">
             </div>
             <div class="modal-footer">
-                <form id="formExcluirInstituicao">
+                <form id="formExcluirInstituicao" action="/social/instituicaoEnsino/excluir" method="post">
                     <input id="modalIdInstituicao" type="hidden" name="idInstituicao" value="">
                     <input id="modalNomeInstituicao" type="hidden" name="nomeInstituicao" value="">
                 </form>
@@ -138,7 +151,6 @@
     $("#btnExcluirInstituicao").click(function () {
         $("#modalIdInstituicao").attr('value', idInstituicao);
         $("#modalNomeInstituicao").attr('value', instituicao);
-        $("#formExcluirInstituicao").attr('action', '/social/instituicaoEnsino/excluir');
         $("#formExcluirInstituicao").submit();
     });
 </script>
