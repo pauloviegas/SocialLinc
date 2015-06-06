@@ -1,6 +1,6 @@
 <?php
 
-class viewUsuarioGrupoVinculoModel extends AbstractModel
+class viewUsuarioGrupoVinculoModel extends abstractModel
 {
     
     protected $_table = 'sitelinc_view_usuario_grupo_vinculo';

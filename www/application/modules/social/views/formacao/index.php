@@ -112,7 +112,7 @@
             <div id="modalFormacaoContent" class="modal-body">
             </div>
             <div class="modal-footer">
-                <form id="formExcluir" action="/social/formacao/excluir" method="post">
+                <form id="formExcluir" action="<?= base_url('/social/formacao/excluir') ?>" method="post">
                     <input id="modalId" type="hidden" name="idFormacao" value="">
                     <input id="modalNome" type="hidden" name="formacao" value="">
                 </form>

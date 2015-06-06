@@ -49,7 +49,7 @@
                 <h4>Editar informações - <?= $formacao[0]->formacao ?></h4>
             </div>
             <div class="grid-body ">
-                <form id="form" action="/social/formacao/alterar" method="post">
+                <form id="form" action="<?= base_url('/social/formacao/alterar') ?>" method="post">
                     <div class="row">
                         <div class="form-group col-md-4">
                             <label class="form-label">Formação Acadêmica: *</label>

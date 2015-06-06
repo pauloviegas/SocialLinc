@@ -1,6 +1,6 @@
 <?php
 
-class postModel extends AbstractModel
+class postModel extends abstractModel
 {
 
     protected $_table = 'sitelinc_gen_post';

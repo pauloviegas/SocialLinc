@@ -87,8 +87,8 @@
                     <address>
                         <p>
                             <i class="icon-map-marker"></i> R. Augusto Corrêa, 1 - Guamá, Belém - PA, 66075-110<br/>
-                            <i class="icon-add"></i> +55 91 3201-7870<br/>
-                            <i class="icon-envelope"></i> <a href="mailto:#">linc.ufpa@gmail.com</a>
+                            <i class="icon-add"></i> +55 (91) 3201-7870<br/>
+                            <i class="icon-envelope"></i> <a href="mailto:#">linc@ufpa.br</a>
                         </p>
                     </address>
                 </section>

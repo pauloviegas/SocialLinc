@@ -1,6 +1,6 @@
 <?php
 
-class viewUsuarioModel extends AbstractModel
+class viewUsuarioModel extends abstractModel
 {
     
     protected $_table = 'sitelinc_view_usuario';

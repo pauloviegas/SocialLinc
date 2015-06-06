@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <title>LINC - Laboratório de Inteligência Computacional</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="./public/css/styles.css" rel="stylesheet">	
+    <link href="./public/css/bootstrap.css" rel="stylesheet">
+    <link href="./public/css/bootstrap-responsive.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="./public/img/favicon.ico">
+	
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+  </head>
+
+  <body>
+
+   
+   <!-- LOGO -->
+	<header class="containers">
+            <a href="pesquisa_1.phtml" id="logo"><img src="./public/img/linc.png" alt="Estamos Chegando!!!" width="200" /></a>
+	</header>
+	
+	
+	<!-- TIMER -->
+        
+	<div class="timer-area">
+		
+		<h1>Em breve estaremos aqui com muitas novidades!</h1>
+		<!--
+		<ul id="countdown">
+			<li>
+				<span class="dias">00</span>
+				<p class="timeRefDays">days</p>
+			</li>
+			<li>
+				<span class="horas">00</span>
+				<p class="timeRefHours">hours</p>
+			</li>
+			<li>
+				<span class="minutos">00</span>
+				<p class="timeRefMinutes">minutes</p>
+			</li>
+			<li>
+				<span class="segundos">00</span>
+				<p class="timeRefSeconds">seconds</p>
+			</li>
+		</ul>
+		-->
+	</div> <!-- end timer-area -->
+	
+	
+	
+	<!-- SIGNUP -->
+	<div class="containers">
+	
+		<h2><a href="#" class="tips" rel="tooltip" title="Utilize o campo de Email abaixo">Cadastre-se</a> e nós iremos notificá-lo sobre as novidades do laboratório.<br />
+As pessoas cadastradas terão acesso à conteúdos exclusivos</h2>
+
+		<div class="form-wrapper">
+		
+			<form action="" method="post">
+			
+				<div class="input-append">
+                <input class="span3" id="appendedInputButton" placeholder="Digite seu email aqui.." size="16" type="text"><button class="btn btn-primary" type="button">Registrar</button>
+              </div>
+			
+			</form>
+			
+		</div> <!-- end form-wrapper -->
+
+		<footer id="disclaimer">
+		
+			<p><span>*</span> Nós não vamos usar seu e-mail para spam, apenas para notificá-lo dos nossas novidades.</p>
+		
+		</footer>
+	
+	</div> <!-- end container -->
+	
+	
+	
+	<!-- FOOTER -->
+	<footer id="main-footer">
+	
+		<!--<p><a href="#" class="tips" rel="tooltip" title="Siga-nos =) ">Siga-nos no Twitter</a> ou curta nosso <a href="#" class="tips" rel="tooltip" >Facebook</a>.</p>
+		--><p>&copy; Copyright 2012 LINC - Laboratório de Inteligência Computacional.</p>
+	
+	</footer>
+   
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+	
+    <script src="./public/js/jquery.js"></script>
+	<script src="./public/js/countdown.js"></script>
+    <script src="./public/js/bootstrap-transition.js"></script>
+    <script src="./public/js/bootstrap-alert.js"></script>
+    <script src="./public/js/bootstrap-modal.js"></script>
+    <script src="./public/js/bootstrap-dropdown.js"></script>
+    <script src="./public/js/bootstrap-scrollspy.js"></script>
+    <script src="./public/js/bootstrap-tab.js"></script>
+    <script src="./public/js/bootstrap-tooltip.js"></script>
+    <script src="./public/js/bootstrap-popover.js"></script>
+    <script src="./public/js/bootstrap-button.js"></script>
+    <script src="./public/js/bootstrap-collapse.js"></script>
+    <script src="./public/js/bootstrap-carousel.js"></script>
+    <script src="./public/js/bootstrap-typeahead.js"></script>
+<script>
+	
+		$(document).ready(function(){
+			$("#countdown").countdown({
+				date: "14 December 2012 12:00:00",
+				format: "on"
+			},
+			
+			function() {
+				// callback function
+			});
+			
+			 $("a[rel=tooltip]").tooltip();
+		});
+
+  
+
+	</script>
+  </body>
+</html>

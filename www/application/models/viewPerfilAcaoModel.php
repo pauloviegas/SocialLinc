@@ -1,6 +1,6 @@
 <?php
 
-class viewPerfilAcaoModel extends AbstractModel
+class viewPerfilAcaoModel extends abstractModel
 {
 
     /**

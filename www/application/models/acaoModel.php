@@ -1,6 +1,6 @@
 <?php
 
-class acaoModel extends AbstractModel
+class acaoModel extends abstractModel
 {
 
     /**

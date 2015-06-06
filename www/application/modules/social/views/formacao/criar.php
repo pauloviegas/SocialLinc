@@ -49,7 +49,7 @@
                 <h4>Adicionar Formação Acadêmica</h4>
             </div>
             <div class="grid-body ">
-                <form id="form" action="/social/formacao/inserir" method="post">
+                <form id="form" action="<?= base_url('/social/formacao/inserir') ?>" method="post">
                     <div class="row">
                         <div class="form-group col-md-4">
                             <label class="form-label">Formação Acadêmica: *</label>

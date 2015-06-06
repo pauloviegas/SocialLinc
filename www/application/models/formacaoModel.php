@@ -1,6 +1,6 @@
 <?php
 
-class formacaoModel extends AbstractModel
+class formacaoModel extends abstractModel
 {
 
     protected $_table = 'sitelinc_usu_formacao';

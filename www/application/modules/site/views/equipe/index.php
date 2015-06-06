@@ -25,7 +25,7 @@
                             <div class="span3" align="center" style="margin-top: 20px;">
                                 <img src="<?= base_url($usuario->foto_usuario) ?>" style="width: 180px; height: 216px;" />
                                 <h3 class="member-name" style="height: 80px;"><?= $usuario->nome_usuario ?></h3>
-                                <p class="member-possition"><?= $usuario->formacao_usuario ?></p>
+                                <p class="member-possition"><?= $usuario->tipo_vinculo ?></p>
                                 <?php if ($usuario->lattes_usuario) : ?>
                                     <p class="member-social" style="text-align: center;">
                                         <a target="_blank" href="<?= base_url($usuario->lattes_usuario) ?>">

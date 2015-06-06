@@ -1,6 +1,6 @@
 <?php
 
-class AuthModel extends AbstractModel
+class AuthModel extends abstractModel
 {
 
     /**

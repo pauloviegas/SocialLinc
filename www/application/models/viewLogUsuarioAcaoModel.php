@@ -1,6 +1,6 @@
 <?php
 
-class viewLogUsuarioAcaoModel extends AbstractModel
+class viewLogUsuarioAcaoModel extends abstractModel
 {
 
     /**

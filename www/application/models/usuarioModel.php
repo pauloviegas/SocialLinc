@@ -1,6 +1,6 @@
 <?php
 
-class usuarioModel extends AbstractModel
+class usuarioModel extends abstractModel
 {
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-class grupoTipoVinculoModel extends AbstractModel
+class grupoTipoVinculoModel extends abstractModel
 {
 
     protected $_table = 'sitelinc_gru_tipo_vinculo';

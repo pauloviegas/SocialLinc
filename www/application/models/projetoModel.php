@@ -1,6 +1,6 @@
 <?php
 
-class projetoModel extends AbstractModel
+class projetoModel extends abstractModel
 {
 
     protected $_table = 'sitelinc_pro_projeto';

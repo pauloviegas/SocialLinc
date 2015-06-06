@@ -7,12 +7,16 @@
     <div class="container">
         <div class="row">
             <div class="span4">
-                <p><img src="/assets/img/logo_linc.png" width="100" alt=""></p>
                 <address>
                     <p>Universidade Federal do Pará - Campus profissional</p>
                     <p> +55 (91) 3201-7870</p>
-                    <p><a href="mailto:#">linc.ufpa@gmail.com</a></p>
+                    <p><a href="mailto:#">linc@ufpa.br</a></p>
                 </address>
+<!--                <p style="margin-top: 40px;">
+                    <a href="<?= base_url('/social') ?>">
+                        <img src="/assets/img/logo_social.png" width="150" alt="">
+                    </a>
+                </p>-->
             </div>
             <div class="span8">
                 <div class="row">

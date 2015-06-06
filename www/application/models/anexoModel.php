@@ -1,6 +1,6 @@
 <?php
 
-class anexoModel extends AbstractModel
+class anexoModel extends abstractModel
 {
 
     protected $_table = 'sitelinc_gen_anexo';

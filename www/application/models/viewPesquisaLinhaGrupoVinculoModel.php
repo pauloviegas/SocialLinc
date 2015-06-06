@@ -1,6 +1,6 @@
 <?php
 
-class viewPesquisaLinhaGrupoVinculoModel extends AbstractModel
+class viewPesquisaLinhaGrupoVinculoModel extends abstractModel
 {
     
     protected $_table = 'sitelinc_view_linha_grupo_vinculo';

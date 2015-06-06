@@ -48,10 +48,12 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'linc.ufpa.br';
-$db['default']['username'] = 'linc';
-$db['default']['password'] = 'kjqqrM1buYnxg9f';
-$db['default']['database'] = 'guarana_linc';
+//bd01.linc.ufpa.br
+//linc.ufpa.br
+//$db['default']['hostname'] = 'www2.lprad.ufpa.br';
+//$db['default']['username'] = 'pauloviegas';
+//$db['default']['password'] = 'swZnVpxPDFPYQ3z6';
+//$db['default']['database'] = 'pauloviegas';
 
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';

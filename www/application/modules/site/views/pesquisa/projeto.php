@@ -44,23 +44,43 @@
             <div class="span4" style="margin-top: 20px;"><label>Previsao de termino: <?= ($projeto[0]->termino) ? date('d/m/Y', strtotime($projeto[0]->termino)) : '-' ?></label></div>
             <div class="span12" style="margin-top: 20px;"><label>Fundação de Apoio: <?= ($projeto[0]->nome_financiador) ? $projeto[0]->nome_financiador : '-' ?> (<?= ($projeto[0]->sigla_financiador) ? $projeto[0]->sigla_financiador : '-' ?>)</label></div>
         </div>
-        <h3 style="margin-top: 30px;">Desenvolvedores:</h3>
-        <div class="row">
+        
+        
+        <h3 style="margin-top: 30px;">Membros:</h3>
+        <div class="row" style="margin-top: -30px;">
             <?php foreach ($usuarios as $usuario) : ?>
-                <div class="span3" align="center" style="margin-top: 20px;">
-                    <img src="<?= base_url($usuario->foto_usuario) ?>" style="width: 180px; height: 216px;" />
-                    <h3 class="member-name" style="height: 80px;"><?= $usuario->nome_usuario ?></h3>
-                    <p class="member-possition"><?= $usuario->formacao_usuario ?></p>
-                    <?php if ($usuario->lattes_usuario) : ?>
-                        <p class="member-social" style="text-align: center;">
-                            <a target="_blank" href="<?= base_url($usuario->lattes_usuario) ?>">
-                                <img style=" height: 18px; width: 24px" src="/assets/img/icon/logolattes.gif">
-                            </a>
-                        </p>
-                    <?php endif; ?>
-                </div>
+                <?php if ($usuario->ativo == 1) : ?>
+                    <div class="span3" style="text-align: center; min-width: 330px;">
+                        <h3 class="member-name"><?= $usuario->nome_usuario ?></h3>
+                        <p class="member-possition" style="margin-top: -35px;"><?= $usuario->tipo_vinculo ?></p>
+                    </div>
+                <?php else: ?>
+                    <?php $alumni++; ?>
+                <?php endif; ?>
             <?php endforeach; ?>
         </div>
+        <?php if ($alumni > 0) : ?>
+            <h3 style="margin-top: 10px;">Alumni:</h3>
+            <div class="row" style="margin-top: -30px;">
+                <?php foreach ($usuarios as $usuario) : ?>
+                    <?php if ($usuario->ativo == 0) : ?>
+                        <div class="span3" style="text-align: center; min-width: 330px;">
+                            <h3 class="member-name"><?= $usuario->nome_usuario ?></h3>
+                            <p class="member-possition" style="margin-top: -35px;"><?= $usuario->tipo_vinculo ?></p>
+                        </div>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
+    </div>
+
+    <h3 style="margin-top: 30px;">Linhas de Pesquisa:</h3>
+    <div class="row" style="margin-top: -30px;">
+        <?php foreach ($linhas as $linha) : ?>
+            <div class="span3" style="text-align: center; min-width: 330px;">
+                <h3 class="member-name"><?= $linha->linha ?></h3>
+            </div>
+        <?php endforeach; ?>
     </div>
 </section>
 <?= $rodape ?>

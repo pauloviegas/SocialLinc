@@ -1,0 +1,240 @@
+<link href="./public/css/bs-preview.css" type="text/css" rel="stylesheet"/>
+<!--page header / breadcrumbs-->
+<section class="breadcrumbs">
+    <div class="container">
+        <div class="page-header">
+            <div class="row">
+                <div class="span8">
+                    <h1>Mídia <small>/ Códigos, Apps, Apresentações</small></h1>
+                    <div><a href="#" controller="index" action="inicio" onclick="Layout.go($(this))" >Home</a> &nbsp;&rsaquo;&nbsp; Media</div>
+                </div>
+                <div class="span4 hidden-phone">
+                    <section class="search clearfix">
+                        <form id="search" class="input-append">
+                            <input class="span4" id="appendedInputButton" size="16" type="text" placeholder="Buscar por informações de Galeria" />
+                            <input class="btn search-bt" type="submit" name="submit" value="" />
+                        </form>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="container">
+
+    <div class="container">
+        <!--        <h3>/Escolha a opção que deseja visualizar</h3>
+                <div class="row highlights">
+                    <div class="span3">
+                        <div class="hl-circle">
+                            <a class="hl-icon1" href="services.html">service</a>
+                        </div>
+        
+                        <div class="highlights-content clearfix">
+                            <h5>CÓDIGOS</h5>
+        
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetuer
+                                adipiscing elit, sed diam nonummy nibh euismod.
+                            </p>
+        
+                            <a class="btn-small btn-hl" href="services.html">
+                                <span>Read more</span>
+                            </a> button small end 
+                        </div>
+                    </div>
+                    <div class="span3 ">
+                        <div class="hl-circle">
+                            <a class="hl-icon2" href="services.html">service</a>
+                        </div>
+        
+                        <div class="highlights-content clearfix">
+                            <h5>APPS</h5>
+        
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetuer
+                                adipiscing elit, sed diam nonummy nibh euismod.
+                            </p>
+        
+                            <a class="btn-small btn-hl" href="services.html">
+                                <span>Read more</span>
+                            </a> button small end 
+                        </div>
+                    </div>
+                    <div class="span3">
+                        <div class="hl-circle">
+                            <a class="hl-icon3" href="services.html">service</a>
+                        </div>
+        
+                        <div class="highlights-content clearfix">
+                            <h5>FOTOS</h5>
+        
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetuer
+                                adipiscing elit, sed diam nonummy nibh euismod.
+                            </p>
+        
+                            <a class="btn-small btn-hl" href="services.html">
+                                <span>Read more</span>
+                            </a> button small end 
+                        </div>
+                    </div>
+                    <div class="span3 highlights">
+                        <div class="hl-circle">
+                            <a class="hl-icon4" href="services.html">service</a>
+                        </div>
+        
+                        <div class="highlights-content clearfix">
+                            <h5>VÍDEOS</h5>
+        
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetuer
+                                adipiscing elit, sed diam nonummy nibh euismod.
+                            </p>
+        
+                            <a class="btn-small btn-hl" href="services.html">
+                                <span>Read more</span>
+                            </a> button small end 
+                        </div>
+                    </div>
+                </div>-->
+        <!-- Docs nav
+        ================================================== -->
+        <div class="row">
+            <div class="span3 bs-docs-sidebar">
+                <ul class="nav nav-list bs-docs-sidenav">
+                    <li><a href="#apps"><i class="icon-chevron-right"></i> Códigos / Apps</a></li>
+                  <!--  <li><a href="#galeria"><i class="icon-chevron-right"></i> Galeria</a></li>
+                    <li><a href="#videos"><i class="icon-chevron-right"></i> Vídeos</a></li> -->
+                    <li><a href="#misc"><i class="icon-chevron-right"></i> Apresentações/MISC.</a></li>
+                </ul>
+            </div>
+            <div class="span9">
+                <!-- Dropdowns
+                ================================================== -->
+                <section id="apps">
+                    <div class="page-header">
+                        <h1>Códigos / Apps</h1>
+                    </div>
+                    <br/>
+                    <p>Nesta seção, encontram-se nossos trabalhos em desenvolvimento de software e algoritmos avulsos para mineração de dados, além de links para repositórios open-source com soluções em aprendizagem de máquina em várias plataformas de desenvolvimento.</p>
+                    <h2>{{App name}}</h2>
+                    <div class="bs-docs-example">
+                        {{app_images}}
+                    </div>
+                    <pre class="prettyprint linenums">
+                        {{app_description}}
+                    </pre>
+                </section>
+                <!-- Button Groups
+                ================================================== -->
+              <!--  <section id="galeria">
+                    <div class="page-header">
+                        <h1>Galeria</h1>
+                    </div>
+                    <br/>
+                    <p>Registros fotográficos de nossos encintros, reuniões, confraternizações e outros momentos importantes que desejamos compartilhar com todos.</p>
+                    <div class="row">
+                        <div class="span12 our-works"><h4>{{galeria_nome}}</h4></div>
+                        <div class="span9">
+                            <div id="our-projects" class="carousel bttop">
+                                <div class="carousel-wrapper">
+                                    <ul class="portfolio">
+                                        <li>
+                                            <article>
+                                                <div class="inner-image">
+                                                    <a href="./public/example/view.jpg" data-rel="prettyPhoto">
+                                                        <img src="./public/example/latest1.jpg" alt=""/>
+                                                        <span class="frame-overlay"></span>
+                                                    </a>
+                                                </div>
+                                                <div class="sliding">
+                                                    <div class="inner-text">
+                                                        <p>{{descricao}}</p>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </section> -->
+
+                <!-- Split button dropdowns
+                ================================================== -->
+             <!--   <section id="videos">
+                    <div class="page-header">
+                        <h1>Vídeos</h1>
+                    </div>
+                        <br/>
+                    <p>Nossos vídeos incluem campanhas institucionais, vídeo-aulas, tutoriais e externos que são de interesse por compartilharem nossas linhas de pesquisa.</p>
+                    <div class="row">
+                        <div class="span12 our-works"><h4>{{galeria_video_nome}}</h4></div>
+                        <div class="span9">
+                            <div id="framevideos" class="carousel bttop">
+                                <div class="carousel-wrapper">
+                                    <ul class="portfolio">
+                                        <li>
+                                            <article>
+                                                <div class="inner-image">
+                                                    <a href="./public/example/view.jpg" data-rel="prettyPhoto">
+                                                        <img src="./public/example/latest1.jpg" alt=""/>
+                                                        <span class="frame-overlay"></span>
+                                                    </a>
+                                                </div>
+                                                <div class="sliding">
+                                                    <div class="inner-text">
+                                                        <p>{{descricao}}</p>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section> -->
+                <section id="misc">
+                    <div class="page-header">
+                         <h1>Apresentações/MISC.</h1>
+                    </div>
+                    <br/>
+                    <p>Nesta seção, encontram-se as mais recentes publicações em Congresso e Revistas de toda a Equipe do LINC.</p>
+                    <h4><a href="./public/images/Presentation_LINC_2014.pdf" target='_blank'>Laboratory of Computational Intelligence and Operational Research - LINC/UFPA</a></h4>
+                   <!-- <div class="bs-docs-example">
+                        {{Publicações}}
+                    </div> -->
+     
+                </section>
+
+
+            </div>
+        </div>
+
+    </div>
+</section>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#framevideos').elastislide({
+            imageW : 270,
+            border : 0,
+            minItems : 1,
+            margin : 30
+        });
+        $('#our-projects').elastislide({
+            imageW : 270,
+            border : 0,
+            minItems : 1,
+            margin : 30
+        });
+    });
+    
+</script>

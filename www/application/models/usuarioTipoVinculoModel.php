@@ -1,6 +1,6 @@
 <?php
 
-class usuarioTipoVinculoModel extends AbstractModel
+class usuarioTipoVinculoModel extends abstractModel
 {
 
     protected $_table = 'sitelinc_usu_tipo_vinculo';

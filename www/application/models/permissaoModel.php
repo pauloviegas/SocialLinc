@@ -1,6 +1,6 @@
 <?php
 
-class permissaoModel extends AbstractModel
+class permissaoModel extends abstractModel
 {
 
     protected $_table = 'sitelinc_usu_permissao';

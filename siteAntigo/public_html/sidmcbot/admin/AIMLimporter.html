@@ -1,0 +1,14 @@
+<html>
+	<body>
+		<h2>Upload de arquivo XMind para conversão em AIML</h2>
+		<form enctype="multipart/form-data" action="AIMLimporter.php" method="post">
+			<input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+				Arquivo: <input name="userfile" type="file" />
+			<input type="submit" value="Send File" />
+		</form>
+		<p>
+			<ul>Lembre-se de que é necessário que o diagrama esteja no formato adequado:</ul>
+			<img width="1200" height="600" src="/master/admin/images/diagrama.svg" alt="" />
+		</p>
+	</body>
+</html>

@@ -1,6 +1,6 @@
 <?php
 
-class logModel extends AbstractModel
+class logModel extends abstractModel
 {
 
     /**

@@ -260,63 +260,6 @@
     <div class="col-md-12">
         <div class="grid simple transparent">
             <div class="grid-title">
-                <h4>Usuários Vinculados ao <span class="semi-bold"><?= $projeto[0]->sigla ?></span></h4>
-            </div>
-            <div class="grid-body">
-                <?php if (count($usuariosProj) > 0) : ?>
-                    <?php foreach ($usuariosProj as $usuarioProj) : ?>
-                        <div class="col-sm-10 col-md-3">
-                            <div class="thumbnail divVinculo">
-                                <?php if ($permissaoDesvincularUsuario) : ?>
-                                    <div class="botaoExcluirVinculo">
-                                        <a class="botaoAtivarInativarVinculo" href="#" data-toggle="modal" data-target="#modalAtivarInativarVinculo">
-                                            <input type="hidden" class="idVinculo" value="<?= $usuarioProj->id ?>">
-                                            <input type="hidden" class="ativo" value="<?= $usuarioProj->ativo ?>">
-                                            <input type="hidden" class="nomeUsuario" value="<?= $usuarioProj->nome_usuario ?>">
-                                            &nbsp;&nbsp;<i class="<?= ($usuarioProj->ativo == 1) ? 'icon-eye-close' : 'icon-eye-open' ?>"></i>
-                                        </a>
-                                        <a class="desvincularUsuario" href="#" data-toggle="modal" data-target="#modalDesvincularUsuario">
-                                            <input class="nome" type="hidden" value="<?= $usuarioProj->nome_usuario ?>">
-                                            <input class="id" type="hidden" value="<?= $usuarioProj->id ?>">
-                                            &nbsp;&nbsp;<i class="icon-custom-cross"></i>
-                                        </a>
-                                    </div>
-                                <?php endif; ?>
-                                <div class="fotoVinculo">
-                                    <!-- Imagem de 180x150 -->
-                                    <img src="<?= $usuarioProj->foto_usuario ?>">
-                                </div>
-                                <div class="caption nomeVinculo">
-                                    <h3><?= $usuarioProj->nome_usuario ?></h3>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-                <?php endif; ?>
-                <?php if ($permissaoVincularUsuario) : ?>
-                    <?php if (count($usuarios) > 0) : ?>
-                        <div id="vincularUsuario" class="col-sm-10 col-md-3" data-toggle="modal" data-target="#modalusuario">
-                            <div class="thumbnail vincular" id="vincularUsuarioContent">
-                                <div class="fotoAddVinculo">
-                                    <!-- Imagem de 180x150 -->
-                                    <img src="/assets/img/usuarios/default_user.jpg">
-                                </div>
-                                <div class="caption nomeAddVinculo">
-                                    <h3><i class="icon-plus"></i>&nbsp;&nbsp;Novo Usuário</h3>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endif; ?>
-                <?php endif; ?>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="row vinculos">
-    <div class="col-md-12">
-        <div class="grid simple transparent">
-            <div class="grid-title">
                 <h4>Linhas de Pesquisa do <span class="semi-bold"><?= $projeto[0]->sigla ?></span></h4>
             </div>
             <div class="grid-body">
@@ -359,6 +302,122 @@
         </div>
     </div>
 </div>
+
+<div class="row vinculos">
+    <div class="col-md-12">
+        <div class="grid simple transparent">
+            <div class="grid-title">
+                <h4>Membros do <span class="semi-bold"><?= $projeto[0]->sigla ?></span></h4>
+            </div>
+            <div class="grid-body">
+                <?php if (count($usuariosProj) > 0) : ?>
+                    <?php foreach ($usuariosProj as $usuarioProj) : ?>
+                        <?php if ($usuarioProj->ativo == 1) : ?>
+                            <div class="col-sm-10 col-md-3">
+                                <div class="thumbnail divVinculo">
+                                    <?php if ($permissaoDesvincularUsuario || $permissaoAtivarInativarVinculo) : ?>
+                                        <div class="botaoExcluirVinculo">
+                                            <?php if ($permissaoAtivarInativarVinculo) : ?>
+                                                <a class="botaoAtivarInativarVinculo" href="#" data-toggle="modal" data-target="#modalAtivarInativarVinculo">
+                                                    <input type="hidden" class="idVinculo" value="<?= $usuarioProj->id ?>">
+                                                    <input type="hidden" class="ativo" value="<?= $usuarioProj->ativo ?>">
+                                                    <input type="hidden" class="nomeUsuario" value="<?= $usuarioProj->nome_usuario ?>">
+                                                    &nbsp;&nbsp;<i class="icon-eye-open"></i>
+                                                </a>
+                                            <?php endif; ?>
+                                            <?php if ($permissaoDesvincularUsuario) : ?>
+                                                <a class="desvincularUsuario" href="#" data-toggle="modal" data-target="#modalDesvincularUsuario">
+                                                    <input class="nome" type="hidden" value="<?= $usuarioProj->nome_usuario ?>">
+                                                    <input class="id" type="hidden" value="<?= $usuarioProj->id ?>">
+                                                    &nbsp;&nbsp;<i class="icon-custom-cross"></i>
+                                                </a>
+                                            <?php endif; ?>
+                                        </div>
+                                    <?php endif; ?>
+                                    <div class="fotoVinculo">
+                                        <!-- Imagem de 180x150 -->
+                                        <img src="<?= $usuarioProj->foto_usuario ?>">
+                                    </div>
+                                    <div class="caption nomeVinculo">
+                                        <h3><?= $usuarioProj->nome_usuario ?></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php else : ?>
+                            <?php $alumni++; ?>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+                <?php if ($permissaoVincularUsuario) : ?>
+                    <?php if (count($usuarios) > 0) : ?>
+                        <div id="vincularUsuario" class="col-sm-10 col-md-3" data-toggle="modal" data-target="#modalusuario">
+                            <div class="thumbnail vincular" id="vincularUsuarioContent">
+                                <div class="fotoAddVinculo">
+                                    <!-- Imagem de 180x150 -->
+                                    <img src="/assets/img/usuarios/default_user.jpg">
+                                </div>
+                                <div class="caption nomeAddVinculo">
+                                    <h3><i class="icon-plus"></i>&nbsp;&nbsp;Novo Usuário</h3>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php if ($alumni > 0) : ?>
+    <div class="row vinculos">
+        <div class="col-md-12">
+            <div class="grid simple transparent">
+                <div class="grid-title">
+                    <h4>Alumni do <span class="semi-bold"><?= $projeto[0]->sigla ?></span></h4>
+                </div>
+                <div class="grid-body">
+                    <?php foreach ($usuariosProj as $usuarioProj) : ?>
+                        <?php if ($usuarioProj->ativo == 0) : ?>
+                            <div class="col-sm-10 col-md-3">
+                                <div class="thumbnail divVinculo">
+                                    <?php if ($permissaoDesvincularUsuario || $permissaoAtivarInativarVinculo) : ?>
+                                        <div class="botaoExcluirVinculo">
+                                            <?php if ($permissaoAtivarInativarVinculo) : ?>
+                                                <a class="botaoAtivarInativarVinculo" href="#" data-toggle="modal" data-target="#modalAtivarInativarVinculo">
+                                                    <input type="hidden" class="idVinculo" value="<?= $usuarioProj->id ?>">
+                                                    <input type="hidden" class="ativo" value="<?= $usuarioProj->ativo ?>">
+                                                    <input type="hidden" class="nomeUsuario" value="<?= $usuarioProj->nome_usuario ?>">
+                                                    &nbsp;&nbsp;<i class="icon-eye-close"></i>
+                                                </a>
+                                            <?php endif; ?>
+                                            <?php if ($permissaoDesvincularUsuario) : ?>
+                                                <a class="desvincularUsuario" href="#" data-toggle="modal" data-target="#modalDesvincularUsuario">
+                                                    <input class="nome" type="hidden" value="<?= $usuarioProj->nome_usuario ?>">
+                                                    <input class="id" type="hidden" value="<?= $usuarioProj->id ?>">
+                                                    &nbsp;&nbsp;<i class="icon-custom-cross"></i>
+                                                </a>
+                                            <?php endif; ?>
+                                        </div>
+                                    <?php endif; ?>
+                                    <div class="fotoVinculo">
+                                        <!-- Imagem de 180x150 -->
+                                        <img src="<?= $usuarioProj->foto_usuario ?>">
+                                    </div>
+                                    <div class="caption nomeVinculo">
+                                        <h3><?= $usuarioProj->nome_usuario ?></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php else : ?>
+                            <?php $alumni++; ?>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
+
 
 
 

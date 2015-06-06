@@ -1,6 +1,6 @@
 <?php
 
-class tarefaModel extends AbstractModel
+class tarefaModel extends abstractModel
 {
 
     protected $_table = "sitelinc_pro_tarefa";

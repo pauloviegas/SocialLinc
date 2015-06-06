@@ -1,0 +1,1 @@
+select concat(cidade.nome,', ',upper(estados.sigla)) AS `Cidades` from cidade join estados where cidade.estado_id=estados.id order by cidade.nome;

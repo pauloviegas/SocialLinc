@@ -47,7 +47,7 @@ h1, h2, h3, h4, h5, h6, #footer .heading {
 /* Link Colors */
 /*-----------------------------------------------------------------------------------*/
 a {color: #293674; text-decoration: none;}
-a:hover {color: #F7941D; text-decoration: none;}
+a:hover {text-decoration: none;}
 
 /*-----------------------------------------------------------------------------------*/
 /*	2.	Header, Navigation & Menus

@@ -63,6 +63,8 @@ class laboratorio extends SocialController
         $this->data['idLab'] = $idLab;
         $this->data['linhasPesquisaLaboratorio'] = $this->viewPesquisaLinhaGrupoVinculoModel->recuperaPorParametro(NULL, Array('id_grupo' => $idLab));
         $this->data['linhasPesquisa'] = $this->pesquisaLinhaModel->recuperaLinhasPesquisaQueNaoPertecemAoGrupo($idLab);
+        $this->data['linhasPesquisa'] = $this->pesquisaLinhaModel->recuperaLinhasPesquisaQueNaoPertecemAoGrupo($idLab);
+        $this->data['alumni'] = 0;
 
 
         //Permissões
@@ -75,6 +77,7 @@ class laboratorio extends SocialController
         $this->data['permissaoDesvincularUsuario'] = $this->viewPerfilAcaoModel->verificaPermissao('social/laboratorio/desvincularUsuario');
         $this->data['permissaoVincularLinhaPesquisa'] = $this->viewPerfilAcaoModel->verificaPermissao('social/laboratorio/vincularLinhaPesquisaLaboratorio');
         $this->data['permissaoDesvincularLinhaPesquisa'] = $this->viewPerfilAcaoModel->verificaPermissao('social/laboratorio/desvincularLinhaPesquisaLaboratorio');
+        $this->data['permissaoAtivarInativarVinculo'] = $this->viewPerfilAcaoModel->verificaPermissao('social/usuario/ativarInativarVinculo');
 
         //Avisos
         $this->data['sucesso'] = ($this->session->flashdata('sucesso')) ? $this->session->flashdata('sucesso') : FALSE;

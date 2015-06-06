@@ -1,6 +1,6 @@
 <?php
 
-class viewPesquisaLinhaUsuarioVinculoModel extends AbstractModel
+class viewPesquisaLinhaUsuarioVinculoModel extends abstractModel
 {
     
     protected $_table = 'sitelinc_view_linha_usuario_vinculo';

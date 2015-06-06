@@ -44,9 +44,9 @@
                     </div>
                     <div class="span7 social-container" >
                         <p class="phone hidden-phone">
-                            linc.ufpa@gmail.com
+                            linc@ufpa.br
                         </p>
-                        <p class="phone hidden-phone"> +55 91 3201-7870</p>
+                        <p class="phone hidden-phone"> +55 (91) 3201-7870</p>
                         <div class="top-social">
                             <a data-original-title="Facebook" target="_blank" rel="tooltip" data-placement="top" class="facebook" href="http://www.facebook.com/linc.ufpa"></a>
                         </div>
@@ -62,12 +62,12 @@
                                     </a>
                                 </li>
                                 <li id="menuPesquisa" class="<?= ($controller == 'pesquisa') ? 'current' : '' ?>">
-                                    <a href="#"><span class="name">Pesquisa</span></a>
-                                    <ul id="subMenuPerquisa" style="display: none;">
+                                    <a href="<?= base_url('/site/pesquisa/pesquisa') ?>"><span class="name">Pesquisa</span></a>
+<!--                                    <ul id="subMenuPerquisa" style="display: none;">
                                         <li><a href="<?= base_url('/site/pesquisa/linhas') ?>">Linhas de Pesquisa</a></li>
                                         <li><a href="<?= base_url('/site/pesquisa/projetos') ?>">Projetos</a></li>
                                         <li><a href="<?= base_url('/site/pesquisa/publicacoes') ?>">Publicações</a></li>
-                                    </ul>
+                                    </ul>-->
                                 </li>
                                 <!--                                <li id="menuMidia">
                                                                     <a href="#"><span class="name">Mídia</span></a>
@@ -79,9 +79,9 @@
                                 <li class="<?= ($controller == 'noticia') ? 'current' : '' ?>">
                                     <a href="<?= base_url('/site/noticia/index') ?>"><span class="name">Notícias</span></a>
                                 </li>
-                                <li class="<?= ($controller == 'equipe') ? 'current' : '' ?>">
+<!--                                <li class="<?= ($controller == 'equipe') ? 'current' : '' ?>">
                                     <a href="<?= base_url('/site/equipe/index') ?>"><span class="name" >Equipe</span></a>
-                                </li>
+                                </li>-->
                                 <li class="<?= ($controller == 'contato') ? 'current' : '' ?>">
                                     <a href="<?= base_url('/site/contato/index') ?>"><span class="name">Contato</span></a>
                                 </li>

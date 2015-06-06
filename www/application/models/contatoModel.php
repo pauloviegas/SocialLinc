@@ -1,6 +1,6 @@
 <?php
 
-class contatoModel extends AbstractModel
+class contatoModel extends abstractModel
 {
 
     /**

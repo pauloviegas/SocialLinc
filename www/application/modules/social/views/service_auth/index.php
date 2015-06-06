@@ -114,8 +114,8 @@
         <div class="container" style="margin-top: 20px;">
 
             <div class="row">
-                <div class="col-md-1" style="margin-left: 37%;">
-                    <img src="/assets/img/logo_linc.png" class="logo" width="240"/>
+                <div class="col-md-1" style="margin-left: 25%;">
+                    <img src="/assets/img/logo_social.png" class="logo" width="440"/>
                 </div>
             </div>
 

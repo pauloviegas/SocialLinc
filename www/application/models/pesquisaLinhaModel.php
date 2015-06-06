@@ -1,6 +1,6 @@
 <?php
 
-class pesquisaLinhaModel extends AbstractModel
+class pesquisaLinhaModel extends abstractModel
 {
 
     /**

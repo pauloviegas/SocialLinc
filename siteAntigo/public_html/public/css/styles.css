@@ -1,0 +1,206 @@
+/**********************************************************************************
+
+	Project Name: 
+	Project Description: 
+	File Name:
+	Author: Adi Purdila & Chandra Noor Rachman
+	Version: 1.0.0
+	
+**********************************************************************************/
+
+/* ---------- LAYOUT ---------- */
+body{
+overflow:scroll;
+}
+
+h1,h2{
+font:inherit !important;
+font-family:georgia,serif !important;
+margin-bottom:1em !important;
+}
+
+h1{
+font-size:2.7em !important;
+line-height:3em !important;
+}
+
+h2{
+font-size:1.4em !important;
+line-height:1.8em !important;
+}
+
+.containers{
+text-align:center;
+}
+
+#logo img {
+  margin: 1em 0;
+}
+.timer-area {
+  background: transparent url('../img/bg1.png') left top;
+  text-align: center;
+  padding-top: 3em;
+  padding-bottom: 2em;
+  margin-bottom: 3em;
+  background-color:#010101;
+  
+  animation-name: bounce-background;
+  animation-timing-function: linear;
+  animation-duration: 75s;
+  animation-iteration-count: infinite;
+  
+  -webkit-animation-name: bounce-background;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-duration: 75s;
+  -webkit-animation-iteration-count: infinite;
+  
+  -moz-animation-name: bounce-background;
+  -moz-animation-timing-function: linear;
+  -moz-animation-duration: 75s;
+  -moz-animation-iteration-count: infinite;
+  
+  -o-animation-name: bounce-background;
+  -o-animation-timing-function: linear;
+  -o-animation-duration: 75s;
+  -o-animation-iteration-count: infinite;
+  
+
+  
+
+  
+}
+
+@-webkit-keyframes bounce-background {
+    from {
+        background-position: left;
+    }
+    to {
+        background-position: right;
+    }
+}
+
+@-o-keyframes bounce-background {
+    from {
+        background-position: left;
+    }
+    to {
+        background-position: right;
+    }
+}
+
+@-moz-keyframes bounce-background {
+    from {
+        background-position: left;
+    }
+    to {
+        background-position: right;
+    }
+}
+
+@keyframes bounce-background {
+    from {
+        background-position: left;
+    }
+    to {
+        background-position: right;
+    }
+}
+
+a.tips,a.tips:hover{
+text-decoration:none;
+padding-bottom:3px;
+border-bottom:1px dotted #08c;
+}
+
+
+.timer-area h1 {
+  color: white;
+  line-height:3em;
+}
+/* ---------- SIGNUP ---------- */
+.form-wrapper {
+  padding: 1.3em;
+  width: 30em;
+  margin:auto;
+  margin-bottom:-25px;
+  overflow: hidden;
+  -webkit-border-radius: 13px;
+  border-radius: 10px;
+}
+.form-wrapper input{
+height:32px !important;
+font-size:15px !important;
+}
+
+.form-wrapper button{
+height:42px !important;
+}
+
+
+/* ---------- FOOTER ---------- */
+footer#disclaimer p {
+  font-size: .875em;
+  color: #909091;
+  font-style: italic;
+}
+footer#disclaimer p span {
+  font-size: 1.2em;
+  color: #2a9ccc;
+}
+footer#main-footer {
+  background-color: #fcfbfb;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fcfbfb), to(#ffffff));
+  background-image: -webkit-linear-gradient(top, #fcfbfb, #ffffff);
+  background-image: -moz-linear-gradient(top, #fcfbfb, #ffffff);
+  background-image: -o-linear-gradient(top, #fcfbfb, #ffffff);
+  background-image: linear-gradient(to bottom, #fcfbfb, #ffffff);
+  border-top: 1px solid #dcdee0;
+  -webkit-box-shadow: inset 0 2px 5px #e6dede;
+  box-shadow: inset 0 2px 5px #e6dede;
+  text-align: center;
+  padding: 2em 0;
+  margin-top: 4em;
+}
+footer#main-footer p {
+  font-size: .875em;
+  margin-bottom: 1em;
+}
+/* ---------- TIMER ---------- */
+ul#countdown{
+margin:0 0;
+}
+
+ul#countdown li {
+  display: inline-block;
+  background: transparent url('../img/timer.png') no-repeat left top;
+  width: 104px;
+  margin-bottom: 4em;
+  text-align: center;
+}
+ul#countdown li span {
+
+  font-size: 4.3em;
+  font-weight: bold;
+  color: #1f2225;
+  height: 108px;
+  text-shadow:2px 2px white;
+  line-height: 108px;
+  position: relative;
+}
+ul#countdown li span::before {
+  content: '';
+  width: 100%;
+  height: 1px;
+  border-top: 1px solid white;
+  position: absolute;
+  top: 35px;
+}
+ul#countdown li p.timeRefDays,
+ul#countdown li p.timeRefHours,
+ul#countdown li p.timeRefMinutes,
+ul#countdown li p.timeRefSeconds {
+  margin-top: 1em;
+  color: #909091;
+  text-transform: uppercase;
+  font-size: .875em;
+}

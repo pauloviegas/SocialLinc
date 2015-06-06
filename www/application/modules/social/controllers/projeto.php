@@ -74,6 +74,7 @@ class projeto extends SocialController
         $this->data['perfis'] = $this->perfilModel->recuperaPorParametro(NULL, Array('excluido' => 0));
         $this->data['linhasPesquisaProjeto'] = $this->viewPesquisaLinhaGrupoVinculoModel->recuperaPorParametro(NULL, Array('id_grupo' => $idProj));
         $this->data['linhasPesquisa'] = $this->pesquisaLinhaModel->recuperaLinhasPesquisaQueNaoPertecemAoGrupo($idProj);
+        $this->data['alumni'] = 0;
 
         //Permissões
         $this->data['permissaoEditar'] = $this->viewPerfilAcaoModel->verificaPermissao('social/projeto/editar');
@@ -85,6 +86,7 @@ class projeto extends SocialController
         $this->data['permissaoDesvincularUsuario'] = $this->viewPerfilAcaoModel->verificaPermissao('social/projeto/desvincularusuario');
         $this->data['permissaoVincularLinhaPesquisa'] = $this->viewPerfilAcaoModel->verificaPermissao('social/projeto/vincularLinhaPesquisaProjeto');
         $this->data['permissaoDesvincularLinhaPesquisa'] = $this->viewPerfilAcaoModel->verificaPermissao('social/projeto/desvincularLinhaPesquisaProjeto');
+        $this->data['permissaoAtivarInativarVinculo'] = $this->viewPerfilAcaoModel->verificaPermissao('social/usuario/ativarInativarVinculo');
 
         //Avisos
         $this->data['sucesso'] = ($this->session->flashdata('sucesso')) ? $this->session->flashdata('sucesso') : FALSE;

@@ -1,6 +1,6 @@
 <?php
 
-class viewProjetoModel extends AbstractModel
+class viewProjetoModel extends abstractModel
 {
     
     protected $_table = 'sitelinc_view_projeto';

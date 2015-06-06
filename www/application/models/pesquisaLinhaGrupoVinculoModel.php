@@ -1,6 +1,6 @@
 <?php
 
-class pesquisaLinhaGrupoVinculoModel extends AbstractModel
+class pesquisaLinhaGrupoVinculoModel extends abstractModel
 {
 
     /**

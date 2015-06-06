@@ -1,6 +1,6 @@
 <?php
 
-class AbstractModel extends CI_Model
+class abstractmodel extends CI_Model
 {
 
     /**

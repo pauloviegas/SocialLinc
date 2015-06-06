@@ -1,6 +1,6 @@
 <?php
 
-class perfilModel extends AbstractModel
+class perfilModel extends abstractModel
 {
 
     protected $_table = 'sitelinc_usu_perfil';
