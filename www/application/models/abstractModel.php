@@ -1,8 +1,7 @@
 <?php
 
-class abstractmodel extends CI_Model
+class abstractModel extends CI_Model
 {
-
     /**
      * @var String $_table variável abstrata que será sobrescrita nas classes filhas, representando a tabela na qual a model vai atuar.
      */
