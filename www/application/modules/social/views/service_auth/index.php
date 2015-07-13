@@ -10,21 +10,21 @@
         <meta content="" name="author" />
 
         <!-- INICIO FAVICO LINC -->
-        <link href="/assets/img/icon_logo_linc.ico" rel="shortcut icon">
+        <link href="<?= $url_base . 'assets/img/icon_logo_linc.ico' ?>" rel="shortcut icon">
         <!-- FIM FAVICO LINC -->
 
         <!-- INICIO DOS PLUGIN'S CSS -->
-        <link href="/assets/plugins/pace/pace-theme-flash.css" rel="stylesheet" type="text/css" media="screen"/>
-        <link href="/assets/plugins/boostrapv3/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <link href="/assets/plugins/boostrapv3/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
-        <link href="/assets/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+        <link href="<?= $url_base . 'assets/plugins/pace/pace-theme-flash.css' ?>" rel="stylesheet" type="text/css" media="screen"/>
+        <link href="<?= $url_base . 'assets/plugins/boostrapv3/css/bootstrap.min.css' ?>" rel="stylesheet" type="text/css"/>
+        <link href="<?= $url_base . 'assets/plugins/boostrapv3/css/bootstrap-theme.min.css' ?>" rel="stylesheet" type="text/css"/>
+        <link href="<?= $url_base . 'assets/plugins/font-awesome/css/font-awesome.css' ?>" rel="stylesheet" type="text/css"/>
         <!-- FIM DOS PLUGIN'S CSS -->
 
         <!-- INICIO DOS CSS'S -->
-        <link href="/assets/css/animate.min.css" rel="stylesheet" type="text/css"/>
-        <link href="/assets/css/style.css" rel="stylesheet" type="text/css"/>
-        <link href="/assets/css/responsive.css" rel="stylesheet" type="text/css"/>
-        <link href="/assets/css/custom-icon-set.css" rel="stylesheet" type="text/css"/>
+        <link href="<?= $url_base . 'assets/css/animate.min.css' ?>" rel="stylesheet" type="text/css"/>
+        <link href="<?= $url_base . 'assets/css/style.css' ?>" rel="stylesheet" type="text/css"/>
+        <link href="<?= $url_base . 'assets/css/responsive.css' ?>" rel="stylesheet" type="text/css"/>
+        <link href="<?= $url_base . 'assets/css/custom-icon-set.css' ?>" rel="stylesheet" type="text/css"/>
         <!-- FIM DOS CSS'S -->
     </head>
     <!-- FIM DA HEAD -->
@@ -115,7 +115,7 @@
 
             <div class="row">
                 <div class="col-md-1" style="margin-left: 25%;">
-                    <img src="/assets/img/logo_social.png" class="logo" width="440"/>
+                    <img src="<?= $url_base . 'assets/img/logo_social.png' ?>" class="logo" width="440"/>
                 </div>
             </div>
 
@@ -154,29 +154,28 @@
                     <p><strong>Faz parte do LINC? Entre em nossa rede social!</strong></p>
                     <p>
                         Se você faz parte do LINC ou de um dos laboratórios 
-                        parceiros ou gostaria de saber novidades sobre nossos
-                        projetos, faça seu cadastro agora e comece a participar
-                        de nossas atividades.<br><br>
-                        Divulgue suas contribuições científicas através do nosso
-                        site e rede social.
+                        parceiros e gostaria de saber novidades sobre nossos 
+                        projetos, faça seu cadastro agora e comece a acompanhar 
+                        as nossas atividades.
                     </p>
                     <p>
-                        Se você ainda não faz parte da nossa rede social?
-                        <a href="#" data-toggle="modal" data-target="#modalCadastrarUsuario">Cadastre-se Já!</a>
+                        O objetivo do Social LINC é proporcionar um ambiente 
+                        amigável para compartilhamento das atividades 
+                        científicas do Laboratório
                     </p>
                 </div>
                 <!-- FIM DA COLUNA DA DIREITA -->
                 <!-- INICIO DA COLUNA DA ESQUERDA -->
                 <div class="col-md-6">
                     <br>
-                    <form class="login-form" method="post">
+                    <form id="formlogin" class="login-form" method="post">
                         <div class="row">
                             <div class="form-group col-md-10">
                                 <label class="form-label">E-mail</label>
                                 <div class="controls">
                                     <div class="input-with-icon right">                                       
                                         <i class=""></i>
-                                        <input type="text" name="email" id="txtusername" class="form-control">                                 
+                                        <input id="txtusername" class="form-control" type="email" name="email" required />                                 
                                     </div>
                                 </div>
                             </div>
@@ -188,7 +187,7 @@
                                 <div class="controls">
                                     <div class="input-with-icon right">                                       
                                         <i class=""></i>
-                                        <input type="password" name="senha" id="txtpassword" class="form-control">
+                                        <input id="txtpassword" class="form-control" type="password" name="senha" required />
                                     </div>
                                 </div>
                             </div>
@@ -218,9 +217,6 @@
                     </div>
                     <div id="modalCadastrarUsuarioContent" class="modal-body">
                         <div class="row">
-                            <div class="form-group col-md-12">
-                                <label class="form-label">Campos Obrigatórios *</label>
-                            </div>
                         </div>
                         <form id="formCadastrarUsuario" method="post">
                             <div class="row">
@@ -229,7 +225,7 @@
                                     <div class="controls">
                                         <div class="input-with-icon right">                                       
                                             <i class=""></i>
-                                            <input class="form-control" type="text" name="nome">                                 
+                                            <input id="nome" class="form-control" type="text" name="nome">                                 
                                         </div>
                                     </div>
                                 </div>
@@ -238,17 +234,17 @@
                                     <div class="controls">
                                         <div class="input-with-icon right">                                       
                                             <i class=""></i>
-                                            <input class="form-control" type="text" name="email">                                 
+                                            <input id="email" class="form-control" type="text" name="email">                                 
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-6">
-                                    <label class="form-label">Formação: *</label>
+                                    <label class="form-label">Formação Acadêmica: *</label>
                                     <div class="controls">
                                         <div class="input-with-icon right">
-                                            <select name="id_formacao" style="width:100%">
+                                            <select id="formacao" name="id_formacao" style="width:100%">
                                                 <?php if (count($formacoes) > 0) : ?>
                                                     <option value="0">Selecione</option>
                                                     <?php foreach ($formacoes as $formacao) : ?>
@@ -265,7 +261,7 @@
                                     <label class="form-label">Instituição: *</label>
                                     <div class="controls">
                                         <div class="input-with-icon right">
-                                            <select name="id_instituicao" style="width:100%">
+                                            <select id="instituicao" name="id_instituicao" style="width:100%">
                                                 <?php if (count($instituicoes) > 0) : ?>
                                                     <option value="0">Selecione</option>
                                                     <?php foreach ($instituicoes as $instituicao) : ?>
@@ -285,7 +281,7 @@
                                     <div class="controls">
                                         <div class="input-with-icon right">                                       
                                             <i class=""></i>
-                                            <input class="form-control" type="password" name="senha">                                 
+                                            <input id="senha" class="form-control" type="password" name="senha">                                 
                                         </div>
                                     </div>
                                 </div>
@@ -294,14 +290,14 @@
                                     <div class="controls">
                                         <div class="input-with-icon right">                                       
                                             <i class=""></i>
-                                            <input class="form-control" type="password" name="repetirSenha">                                 
+                                            <input id="repetirsenha" class="form-control" type="password" name="repetirSenha">                                 
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-12">
-                                    <label class="form-label">Selecione a foto: <small style="font-size: 10px;">Tamanho Ideal - 180 x 100</small></label>
+                                    <label class="form-label">Selecione uma foto: <small style="font-size: 10px;">Tamanho Ideal - 180 x 100</small></label>
                                     <div class="controls">
                                         <div class="input-with-icon right">
                                             <div class="form-control" >
@@ -314,7 +310,7 @@
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-12">
-                                    <label class="form-label">Lattes:</label>
+                                    <label class="form-label">Currículo Lattes:</label>
                                     <div class="controls">
                                         <div class="input-with-icon right">                                       
                                             <i class=""></i>
@@ -329,27 +325,52 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                        <div class="form-group col-md-12">
+                            <label class="form-label">Campos Obrigatórios *</label>
+                        </div>
                         <button id="btnSalvarUsuario" type="button" class="btn btn-success" hidden>Salvar</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- INICIO DOS FRAMEWORKS DE JAVASCRIPT -->
-        <script src="/assets/plugins/jquery-1.8.3.min.js" type="text/javascript"></script>
-        <script src="/assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="/assets/plugins/pace/pace.min.js" type="text/javascript"></script>
+        <script src="<?= $url_base . 'assets/plugins/jquery-1.8.3.min.js' ?>" type="text/javascript"></script>
+        <script src="<?= $url_base . 'assets/plugins/bootstrap/js/bootstrap.min.js' ?>" type="text/javascript"></script>
+        <script src="<?= $url_base . 'assets/plugins/pace/pace.min.js' ?>" type="text/javascript"></script>
+        <script src="<?= $url_base . 'assets/plugins/jquery-validation-1.13.1/dist/jquery.validate.min.js' ?>" type="text/javascript"></script>
+        <script src="<?= $url_base . 'assets/plugins/jquery-validation-1.13.1/dist/localization/messages_pt_BR.min.js' ?>" type="text/javascript"></script>
         <!-- FIM DOS FRAMEWORKS DE JAVASCRIPT -->
 
         <script>
+            $("#formlogin").validate({
+                rules: {
+                    txtusername: {
+                        required: true,
+                        email: true
+                    },
+                    txtpassword: "required"
+                }
+            });
+            $("#formCadastrarUsuario").validate({
+                rules: {
+                    nome: "required",
+                    senha: "required",
+                    repetirsenha: "required",
+                    email: {
+                        required: true,
+                        email: true
+                    }
+                }
+            });
             //Submete o formulário de login
             $("#login-form").click(function () {
-                $(".login-form").attr('action', '/social/serviceauth/logar');
+                $(".login-form").attr('action', '<?= base_url('social/serviceauth/logar') ?>');
                 $(".login-form").submit();
             });
             $("#btnSalvarUsuario").click(function () {
-                $("#formCadastrarUsuario").attr('action', '/social/usuario/inserir');
+                $("#formCadastrarUsuario").attr('action', '<?= base_url('social/usuario/inserir') ?>');
                 $("#formCadastrarUsuario").submit();
             });
             //Trata o nome da imagem para inserir no campo de envio da mesma

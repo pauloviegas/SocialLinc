@@ -4,11 +4,11 @@
 <div class="cascalho">
     <ul class="breadcrumb">
         <li>
-            <a href="<?= base_url('/social/home/index') ?>">Feed</a>
+            <a href="<?= base_url('social/home/index') ?>">Feed</a>
         </li>
         <i class="icon-angle-right"></i>
         <li>
-            <a href="<?= base_url('/social/laboratorio/index') ?>">Laboratórios</a>
+            <a href="<?= base_url('social/laboratorio/index') ?>">Laboratórios</a>
         </li>
         <i class="icon-angle-right"></i>						 
         <li>
@@ -65,7 +65,7 @@
                 <div class="col-sm-6 col-md-3">
                     <div class="thumbnail">
                         <div class="divImgLogoGrupo">
-                            <img class="<?= ($proj->logo != '/assets/img/grupo/projeto.jpg') ? 'imgLogoGrupo' : 'imgLogoGrupoDefault' ?>" src="<?= $proj->logo ?>">
+                            <img class="<?= ($proj->logo != '/assets/img/grupo/projeto.jpg') ? 'imgLogoGrupo' : 'imgLogoGrupoDefault' ?>" src="<?= $url_base . $proj->logo ?>">
                         </div>
                         <div class="caption">
                             <h3><span class="semi-bold"><?= $proj->sigla ?></span></h3>
@@ -101,9 +101,9 @@
                                 <?= (strlen($proj->resumo) > 100) ? substr($proj->resumo, 0, 100) . '...' : substr($proj->resumo, 0, 100) ?>
                             </p>
                             <p>
-                                <a href="<?= base_url('/social/projeto/descricao/' . $proj->id) ?>" class="btn btn-primary" role="button">Mais...</a>
+                                <a href="<?= base_url('social/projeto/descricao/' . $proj->id) ?>" class="btn btn-primary" role="button">Mais...</a>
                                 <?php if ($definicao == 'meusprojs') : ?>
-                                    <a href="<?= base_url('/social/tarefa/index/' . $proj->id) ?>" class="btn btn-success" role="button">Tarefas</a>
+                                    <a href="<?= base_url('social/tarefa/index/' . $proj->id) ?>" class="btn btn-success" role="button">Tarefas</a>
                                 </p>
                             <?php endif; ?>
                         </div>
@@ -129,6 +129,6 @@
 
 <script type="text/javascript">
     $("#cadastrar").click(function () {
-        $(window.document.location).attr('href', '/social/projeto/criar/<?= $laboratorio[0]->id ?>');
+        $(window.document.location).attr('href', '<?= $url_base . 'social/projeto/criar/' . $laboratorio[0]->id ?>');
     });
 </script>

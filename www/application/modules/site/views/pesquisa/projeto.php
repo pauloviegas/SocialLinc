@@ -7,8 +7,8 @@
                 <div class="span8">
                     <h1>Projeto <small></small></h1>
                     <div>
-                        <a href="<?= base_url('/site/home/index') ?>">Home</a>
-                        <a href="<?= base_url('/site/pesquisa/projetos') ?>">&nbsp;&rsaquo;&nbsp;Projetos</a> 
+                        <a href="<?= base_url('site/home/index') ?>">Home</a>
+                        <a href="<?= base_url('site/pesquisa/projetos') ?>">&nbsp;&rsaquo;&nbsp;Projetos</a> 
                         &nbsp;&rsaquo;&nbsp; Projeto
                     </div>
                 </div>
@@ -20,7 +20,7 @@
     <div class="container" style="margin-top: -20px">
         <h2><?= $projeto[0]->sigla ?> - <?= $projeto[0]->nome ?></h2>
         <div style="text-align: center; margin-bottom: 30px;">
-            <img src="<?= $projeto[0]->logo ?>" style="height: 200px;">
+            <img src="<?= $url_base . $projeto[0]->logo ?>" style="height: 200px;">
         </div>
         <p><?= $projeto[0]->resumo ?></p>
         <h3 style="margin-top: 30px;">Social e Contato:</h3>

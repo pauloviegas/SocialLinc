@@ -4,7 +4,7 @@
 <div class="cascalho">
     <ul class="breadcrumb">
         <li>   
-            <a href="<?= base_url('/social/home/index') ?>">Feed</a>
+            <a href="<?= base_url('social/home/index') ?>">Feed</a>
         </li>
         <i class="icon-angle-right"></i>  					 
         <li>
@@ -59,15 +59,15 @@
                     <div class="col-sm-10 col-md-3">
                         <div class="thumbnail">
                             <div class="divImgLogoGrupo">
-                                <img class="<?= ($lab->logo != '/assets/img/grupo/laboratorio.png') ? 'imgLogoGrupo' : 'imgLogoGrupoDefault' ?>" src="<?= $lab->logo ?>">
+                                <img class="<?= ($lab->logo != '/assets/img/grupo/laboratorio.png') ? 'imgLogoGrupo' : 'imgLogoGrupoDefault' ?>" src="<?= $url_base . $lab->logo ?>">
                             </div>
                             <div class="caption">
                                 <h3><?= $lab->sigla ?></h3>
                                 <p style="height: 40px;"><?= $lab->nome ?></p>
                                 <p style="height: 20px;"><b>Url:</b> <a href="<?= $lab->url ?>"><?= $lab->url ?></a></p>
                                 <p>
-                                    <a href="<?= base_url('/social/laboratorio/descricao/' . $lab->id) ?>" class="btn btn-primary" role="button">Mais...</a>
-                                    <a href="<?= ($lab->projeto) ? base_url('/social/projeto/index/' . $lab->id) : '#' ?>" class="btn btn-success" role="button">Projetos (<?= $lab->projeto ?>)</a>
+                                    <a href="<?= base_url('social/laboratorio/descricao/' . $lab->id) ?>" class="btn btn-primary" role="button">Mais...</a>
+                                    <a href="<?= ($lab->projeto) ? base_url('social/projeto/index/' . $lab->id) : '#' ?>" class="btn btn-success" role="button">Projetos (<?= $lab->projeto ?>)</a>
                                 </p>
                             </div>
                         </div>
@@ -86,6 +86,6 @@
 
 <script type="text/javascript">
     $("#cadastrar").click(function () {
-        $(window.document.location).attr('href', '/social/laboratorio/criar');
+        $(window.document.location).attr('href', '<?= base_url('social/laboratorio/criar') ?>');
     });
 </script>

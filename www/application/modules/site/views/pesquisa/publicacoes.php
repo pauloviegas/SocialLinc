@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="span8">
                     <h1>Publicações <small></small></h1>
-                    <div><a href="<?= base_url('/site/home/index') ?>">Home</a> &nbsp;&rsaquo;&nbsp; Publicações</div>
+                    <div><a href="<?= base_url('site/home/index') ?>">Home</a> &nbsp;&rsaquo;&nbsp; Publicações</div>
                 </div>
             </div>
         </div>

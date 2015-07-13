@@ -4,11 +4,11 @@
 <div class="cascalho">
     <ul class="breadcrumb">
         <li>
-            <a href="<?= base_url('/social/home/index') ?>">Feed</a>
+            <a href="<?= base_url('social/home/index') ?>">Feed</a>
         </li>
         <i class="icon-angle-right"></i>
         <li>
-            <a href="<?= base_url('/social/perfil/index') ?>">Perfis e Permissões</a>
+            <a href="<?= base_url('social/perfil/index') ?>">Perfis e Permissões</a>
         </li>
         <i class="icon-angle-right"></i>
         <li>
@@ -145,7 +145,7 @@
         var idAcao = $(this).attr('id');
         var idPerfil = $('#idPerfil').attr('value');
         $.ajax({
-            url: '/social/permissao/atualizarPermissao',
+            url: '<?= base_url('social/permissao/atualizarPermissao') ?>',
             type: 'post',
             data: {
                 'idAcao': idAcao,

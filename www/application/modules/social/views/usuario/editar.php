@@ -4,11 +4,11 @@
 <div class="cascalho">
     <ul class="breadcrumb">
         <li>   
-            <a href="<?= base_url('/social/home/index') ?>">Feed</a>
+            <a href="<?= base_url('social/home/index') ?>">Feed</a>
         </li>
         <i class="icon-angle-right"></i>  
         <li>   
-            <a href="<?= base_url('/social/usuario/index') ?>">Membros</a>
+            <a href="<?= base_url('social/usuario/index') ?>">Membros</a>
         </li>
         <i class="icon-angle-right"></i>  					 
         <li>
@@ -127,7 +127,7 @@
                                 </div>
                                 <?php if ($usuario[0]->foto != '/assets/img/usuarios/default_user.jpg') : ?>
                                     <div id="foto" class="imagemEdicao">
-                                        <img src="<?= $usuario[0]->foto ?>" width="50">
+                                        <img src="<?= $url_base . $usuario[0]->foto ?>" width="50">
                                     </div>
                                 <?php endif; ?>
                             </div>
@@ -290,12 +290,12 @@
 
 <script type="text/javascript">
     $("#btnsalvar").click(function () {
-        $("#form").attr('action', '/social/usuario/alterarPerfil');
+        $("#form").attr('action', '<?= base_url('social/usuario/alterarPerfil') ?>');
         $("#form").submit();
     });
     $("#excluirFoto").click(function () {
         $.ajax({
-            url: '/social/usuario/excluirFoto',
+            url: '<?= base_url('social/usuario/excluirFoto') ?>',
             dataType: 'json',
             data: {
                 'idUsuario': <?= $usuario[0]->id ?>
@@ -336,11 +336,11 @@
     $("#btnDesvincularLinhaPesquisa").click(function () {
         $("#modalIdLinha").attr('value', idLinhaPesquisa);
         $("#modalLinha").attr('value', linhaPesquisa);
-        $("#formDesvincularLinhaPesquisa").attr('action', '/social/usuario/desvincularLinhaPesquisaUsuario/0');
+        $("#formDesvincularLinhaPesquisa").attr('action', '<?= base_url('social/usuario/desvincularLinhaPesquisaUsuario/0') ?>');
         $("#formDesvincularLinhaPesquisa").submit();
     });
     $("#btnVincularLinhaPesquisa").click(function () {
-        $("#formVincularLinhaPesquisa").attr('action', '/social/usuario/vincularLinhaPesquisaUsuario/0');
+        $("#formVincularLinhaPesquisa").attr('action', '<?= base_url('social/usuario/vincularLinhaPesquisaUsuario/0') ?>');
         $("#formVincularLinhaPesquisa").submit();
     });
 </script>

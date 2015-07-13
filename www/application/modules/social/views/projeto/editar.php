@@ -4,19 +4,19 @@
 <div class="cascalho">
     <ul class="breadcrumb">
         <li>
-            <a href="<?= base_url('/social/home/index') ?>">Feed</a>
+            <a href="<?= base_url('social/home/index') ?>">Feed</a>
         </li>
         <i class="icon-angle-right"></i>
         <li>
-            <a href="<?= base_url('/social/laboratorio/index') ?>">Laboratórios</a>
+            <a href="<?= base_url('social/laboratorio/index') ?>">Laboratórios</a>
         </li>
         <i class="icon-angle-right"></i>
         <li>
-            <a href="<?= base_url('/social/projeto/index') . '/' . $projeto[0]->id_laboratorio ?>">Projetos do <?= $projeto[0]->sigla_laboratorio ?></a>
+            <a href="<?= base_url('social/projeto/index') . '/' . $projeto[0]->id_laboratorio ?>">Projetos do <?= $projeto[0]->sigla_laboratorio ?></a>
         </li>
         <i class="icon-angle-right"></i>
         <li>
-            <a href="<?= base_url('/social/projeto/descricao') . '/' . $projeto[0]->id ?>">Descrição do <?= $projeto[0]->sigla ?></a>
+            <a href="<?= base_url('social/projeto/descricao') . '/' . $projeto[0]->id ?>">Descrição do <?= $projeto[0]->sigla ?></a>
         </li>
         <i class="icon-angle-right"></i>
         <li>
@@ -57,7 +57,7 @@
                 <h4>Adicionar um Projeto</h4>
             </div>
             <div class="grid-body ">
-                <form id="form" action="/social/projeto/alterar" method="post" enctype="multipart/form-data">
+                <form id="form" action="<?= base_url('social/projeto/alterar') ?>" method="post" enctype="multipart/form-data">
                     <div class="row">
                         <div class="form-group col-md-12">
                             * Campos Obrigatórios
@@ -182,7 +182,7 @@
                                     </div>
                                     <?php if ($projeto[0]->logo != '/assets/img/grupo/projeto.jpg') : ?>
                                         <div id="logo" class="imagemEdicao">
-                                            <img src="<?= $projeto[0]->logo ?>" width="100">
+                                            <img src="<?= $url_base . $projeto[0]->logo ?>" width="100">
                                         </div>
                                     <?php endif; ?>
                                 </div>
@@ -314,7 +314,7 @@
 
 <script type="text/javascript">
     $("#btnSalvar").click(function () {
-        $("#form").attr('action', '/social/projeto/alterar/<?= $projeto[0]->id ?>');
+        $("#form").attr('action', '<?= $url_base . 'social/projeto/alterar/' . $projeto[0]->id ?>');
         $("#form").submit();
     });
     $("#dataInicio").datepicker({

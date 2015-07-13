@@ -4,7 +4,7 @@
         <section id="apps">
             <div class="page-header">
                 <h1>Início</h1>
-                <div><a href="<?= base_url('/site/home/index') ?>">Home</a></div> 
+                <div><a href="<?= base_url('site/home/index') ?>">Home</a></div> 
             </div>
 
             <br/>
@@ -53,11 +53,11 @@
             </section>
         </div>-->
     <div class="span3 bs-docs-sidebar" style="padding-bottom: 20px;">
-        <h3>Últimas Notícias</h3>
+        <!--<h3>Últimas Notícias</h3>
         <p>
             Não existe nenhuma notícia no momento.
         </p>
-        <!--        <ul class="nav nav-list bs-docs-sidenav" style="margin-bottom: 20px;">
+                <ul class="nav nav-list bs-docs-sidenav" style="margin-bottom: 20px;">
                     <li><a href="#">Chamada de Estágio de Iniciação Científica - PIBIC.<i class="icon-chevron-right"></i></a></li>                        
                     <li><a href="#"> Mobile Qualis.<i class="icon-chevron-right"></i></a></li>
                     <li><a href="#"> Palestra prof. Vladimiro Miranda (INESCTEC-Porto).<i class="icon-chevron-right"></i></a></li>
@@ -69,6 +69,70 @@
                         Mostrar Todos<i class="icon-chevron-right"></i>
                     </a>
                 </p>-->
+        <h3>Últimas Notícias</h3>
+        <ul class="nav nav-list bs-docs-sidenav">                        
+            <li>
+                <a href="#" controller="index" action="noticias" onclick="Layout.go($(this))" >
+                    <div style="width: 10%; float: left; text-align: center; margin-right: 10%">
+                        04<br>
+                        MAR
+                    </div>
+                    <div style="width: 80%">
+                        Universidade de Leipzig e UFPA...
+                    </div>
+                </a>
+            </li>
+            <li style="background-color: rgb(4,110,149);">
+                <a style="color: antiquewhite;" href="#" controller="index" action="noticias" onclick="Layout.go($(this))" >
+                    <div style="width: 10%; float: left; text-align: center; margin-right: 10%">
+                        19<br>
+                        JUN
+                    </div>
+                    <div style="width: 80%">
+                        Lançamento do novo site do Mobile Qualis
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#" controller="index" action="noticias" onclick="Layout.go($(this))" >
+                    <div style="width: 10%; float: left; text-align: center; margin-right: 10%">
+                        25<br>
+                        MAR
+                    </div>
+                    <div style="width: 80%">
+                        Apresentação do projeto de extensão intitulado Fábrica de Games
+                    </div>
+                </a>
+            </li> 
+            <li>
+                <a href="#" controller="index" action="noticias" onclick="Layout.go($(this))" >
+                    <div style="width: 10%; float: left; text-align: center; margin-right: 10%">
+                        19<br>
+                        MAR
+                    </div>
+                    <div style="width: 80%">
+                        Fábrica de Games: capacitação e criação...
+                    </div>
+                </a>
+            </li>                        
+            <li>
+                <a href="#" controller="index" action="noticias" onclick="Layout.go($(this))" >
+                    <div style="width: 10%; float: left; text-align: center; margin-right: 10%">
+                        04<br>
+                        MAR
+                    </div>
+                    <div style="width: 80%">
+                        Chamada de Estágio de Iniciação Científica...
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <p style="margin-top: 20px;"><a href="#" controller="index" action="noticias" class="btn btn-large btn-welcome" onclick="Layout.go($(this))">
+                Mostrar Todos</a></p>
+        <br>
+        <br>
+        <br>
     </div>
+</div>
 </div>
 <?= $rodape ?>

@@ -13,7 +13,7 @@
                     <p><a href="mailto:#">linc@ufpa.br</a></p>
                 </address>
 <!--                <p style="margin-top: 40px;">
-                    <a href="<?= base_url('/social') ?>">
+                    <a href="<?= base_url('social') ?>">
                         <img src="/assets/img/logo_social.png" width="150" alt="">
                     </a>
                 </p>-->
@@ -55,9 +55,9 @@
         </div>
     </div>
 </section>
-<script src="/assets/js/jquery.min.js" type="text/javascript"></script>
-<script src="/assets/plugins/jquery-1.8.3.min.js" type="text/javascript"></script> 
-<script src="/assets/js/jquery.elastislide.js" type="text/javascript"></script> 
+<script src="<?= $url_base . 'assets/js/jquery.min.js' ?>" type="text/javascript"></script>
+<script src="<?= $url_base . 'assets/plugins/jquery-1.8.3.min.js' ?>" type="text/javascript"></script> 
+<script src="<?= $url_base . 'assets/js/jquery.elastislide.js' ?>" type="text/javascript"></script> 
 <script type="text/javascript">
     $("#menuPesquisa").mouseover(function () {
         $("#subMenuPerquisa").css("display", "block");

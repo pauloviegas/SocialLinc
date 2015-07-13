@@ -75,7 +75,7 @@
     var acao = 0;
     $("#cadastrar").click(function () {
         var form = $("#form");
-        form.attr('action', '/social/acao/criar');
+        form.attr('action', '<?= base_url('social/acao/criar') ?>');
         form.submit();
     });
 
@@ -85,7 +85,7 @@
         var id = me.attr("id");
 
         $("#idAcao").attr('value', id);
-        form.attr('action', '/social/acao/editar');
+        form.attr('action', '<?= base_url('social/acao/editar') ?>');
         form.submit();
     });
 
@@ -106,7 +106,7 @@
 
         $("#idAcao").attr('value', id);
         $("#nomeAcao").attr('value', nome);
-        form.attr('action', '/social/acao/excluir');
+        form.attr('action', '<?= base_url('social/acao/excluir') ?>');
         form.submit();
     });
 </script>

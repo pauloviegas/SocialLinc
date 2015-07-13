@@ -4,7 +4,7 @@
 <div class="cascalho">
     <ul class="breadcrumb">
         <li>   
-            <a href="<?= base_url('/social/home/index') ?>">Feed</a>
+            <a href="<?= base_url('social/home/index') ?>">Feed</a>
         </li>
         <i class="icon-angle-right"></i>
         <li>
@@ -60,7 +60,7 @@
                                 <?php endif; ?>
                                 <div class="fotoVinculo">
                                     <!-- Imagem de 180x100 -->
-                                    <img src="<?= $usuarioVinculado->foto_usuario ?>">
+                                    <img src="<?= $url_base . $usuarioVinculado->foto_usuario ?>">
                                 </div>
                                 <div class="caption nomeVinculo">
                                     <h3><?= $usuarioVinculado->nome_usuario ?></h3>
@@ -74,7 +74,7 @@
                         <div id="vincularUsuarioContent" class="thumbnail vincular">
                             <div class="fotoAddVinculo">
                                 <!-- Imagem de 180x100 -->
-                                <img src="/assets/img/usuarios/default_user.jpg">
+                                <img src="<?= $url_base . 'assets/img/usuarios/default_user.jpg' ?>">
                             </div>
                             <div class="caption nomeAddVinculo">
                                 <h3><i class="icon-plus"></i>&nbsp;&nbsp;Novo Usuário</h3>
@@ -182,11 +182,11 @@
                 + " o usuário: " + nomeUsuario + "?");
     });
     $("#btnVincularUsuario").click(function () {
-        $("#formUsuario").attr('action', '/social/sistema/vincularUsuario');
+        $("#formUsuario").attr('action', '<?= base_url('social/sistema/vincularUsuario') ?>');
         $("#formUsuario").submit();
     });
     $("#btnDesvincularUsuario").click(function () {
-        $("#formDesvincularUsuario").attr('action', '/social/sistema/desvincularUsuario/' + idVinculo);
+        $("#formDesvincularUsuario").attr('action', '<?= base_url('social/sistema/desvincularUsuario/') ?>' + idVinculo);
         $("#formDesvincularUsuario").submit();
     });
 </script>

@@ -4,7 +4,7 @@
 <div class="cascalho">
     <ul class="breadcrumb">
         <li>   
-            <a href="<?= base_url('/social/home/index') ?>">Feed</a>
+            <a href="<?= base_url('social/home/index') ?>">Feed</a>
         </li>
         <i class="icon-angle-right"></i>
         <li>
@@ -116,7 +116,7 @@
             <div id="modalPerfilContent" class="modal-body">
             </div>
             <div class="modal-footer">
-                <form id="formExcluirPerfil" action="/social/perfil/excluir" method="post">
+                <form id="formExcluirPerfil" action="<?= base_url('social/perfil/excluir') ?>" method="post">
                     <input id="modalIdPerfil" type="hidden" name="idPerfil" value="">
                     <input id="inputModalPerfil" type="hidden" name="perfil" value="">
                 </form>
@@ -130,18 +130,18 @@
 <?= $rodape ?>
 <script>
     $("#cadastrar").click(function () {
-        $(window.document.location).attr('href', '/social/perfil/criar');
+        $(window.document.location).attr('href', '<?= base_url('social/perfil/criar') ?>');
     });
     $(".editar").click(function () {
         var form = $("#formPerfil");
         var id = $(this).attr('id');
-        form.attr('action', '/social/perfil/editar/' + id);
+        form.attr('action', '<?= base_url('social/perfil/editar/') ?>' + id);
         form.submit();
     });
     $(".permissao").click(function () {
         var form = $("#formPerfil");
         var id = $(this).attr('id');
-        form.attr('action', '/social/permissao/index/' + id);
+        form.attr('action', '<?= base_url('social/permissao/index/') ?>' + id);
         form.submit();
     });
     $(".excluir").click(function () {

@@ -14,7 +14,7 @@ $visualisarInstituicaoFinanciadora = $this->viewPerfilAcaoModel->verificaPermiss
     <div class="page-sidebar mini" id="main-menu">
         <div class="user-info-wrapper">
             <div class="profile-wrapper">
-                <img src="<?= $this->session->userdata('usuario')->foto ?>" width="69" height="69" /> </div>
+                <img src="<?= $url_base . $this->session->userdata('usuario')->foto ?>" width="69" height="69" /> </div>
             <div class="user-info">
                 <div class="greeting">Bem-Vindo</div>
                 <div class="username">
@@ -36,14 +36,14 @@ $visualisarInstituicaoFinanciadora = $this->viewPerfilAcaoModel->verificaPermiss
         <!-- INICIO DO MENU LATERAL -->
         <ul>
             <li class="start active ">
-                <a href="<?= base_url('/social/home/index') ?>">
+                <a href="<?= base_url('social/home/index') ?>">
                     <i class="icon-comments-alt"></i>
                     <span class="title">Feed de Notícias</span>
                     <span class="arrow"></span>
                 </a>
             </li>
             <li class="start active ">
-                <a href="<?= base_url('/social/laboratorio/index') ?>">
+                <a href="<?= base_url('social/laboratorio/index') ?>">
                     <i class="icon-beaker"></i>
                     <span class="title">Laboratórios</span>
                     <span class="arrow"></span>
@@ -58,16 +58,16 @@ $visualisarInstituicaoFinanciadora = $this->viewPerfilAcaoModel->verificaPermiss
                     </a>
                     <ul class="sub-menu">
                         <?php if ($visualisarUsuario) : ?>
-                            <li><a href="<?= base_url('/social/usuario/index') ?>"><i class="icon-group"></i>Membros</a></li>
+                            <li><a href="<?= base_url('social/usuario/index') ?>"><i class="icon-group"></i>Membros</a></li>
                         <?php endif; ?>
                         <?php if ($visualisarFormacao) : ?>
-                            <li><a href="<?= base_url('/social/formacao/index') ?>"><i class="icon-bookmark"></i>Formações Acadêmicas</a></li>
+                            <li><a href="<?= base_url('social/formacao/index') ?>"><i class="icon-bookmark"></i>Formações Acadêmicas</a></li>
                         <?php endif; ?>
                         <?php if ($visualisarPerfil) : ?>
-                            <li><a href="<?= base_url('/social/perfil/index') ?>"><i class="icon-globe"></i>Perfis e Permissões</a></li>
+                            <li><a href="<?= base_url('social/perfil/index') ?>"><i class="icon-globe"></i>Perfis e Permissões</a></li>
                         <?php endif; ?>
                         <?php if ($visualisarAdmSistema) : ?>
-                            <li><a href="<?= base_url('/social/sistema/index') ?>"><i class="icon-briefcase"></i>Administradores do Sistema</a></li>
+                            <li><a href="<?= base_url('social/sistema/index') ?>"><i class="icon-briefcase"></i>Administradores do Sistema</a></li>
                         <?php endif; ?>
                     </ul>
                 </li>
@@ -81,13 +81,13 @@ $visualisarInstituicaoFinanciadora = $this->viewPerfilAcaoModel->verificaPermiss
                     </a>
                     <ul class="sub-menu">
                         <?php if ($visualisarLogs) : ?>
-                            <li><a href="<?= base_url('/social/log/index') ?>"><i class="icon-legal"></i>Log</a></li>
+                            <li><a href="<?= base_url('social/log/index') ?>"><i class="icon-legal"></i>Log</a></li>
                         <?php endif; ?>
                         <?php if ($visualisarInstituicaoEnsino) : ?>
-                            <li><a href="<?= base_url('/social/instituicaoEnsino/index') ?>"><i class="icon-book"></i>Instituições de Ensino</a></li>
+                            <li><a href="<?= base_url('social/instituicaoEnsino/index') ?>"><i class="icon-book"></i>Instituições de Ensino</a></li>
                         <?php endif; ?>
                         <?php if ($visualisarInstituicaoFinanciadora) : ?>
-                            <li><a href="<?= base_url('/social/instituicaoFinanciadora/index') ?>"><i class="icon-dollar"></i>Instituições Financiadoras</a></li>
+                            <li><a href="<?= base_url('social/instituicaoFinanciadora/index') ?>"><i class="icon-dollar"></i>Instituições Financiadoras</a></li>
                         <?php endif; ?>
                         <!--<li><a href="#"><i class="icon-folder-open-alt"></i>Tipos de Grupo</a></li>-->
                     </ul>

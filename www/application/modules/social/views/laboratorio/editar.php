@@ -4,15 +4,15 @@
 <div class="cascalho">
     <ul class="breadcrumb">
         <li>
-            <a href="<?= base_url('/social/home/index') ?>">Feed</a>
+            <a href="<?= base_url('social/home/index') ?>">Feed</a>
         </li>
         <i class="icon-angle-right"></i>
         <li>
-            <a href="<?= base_url('/social/laboratorio/index') ?>">Laboratórios</a>
+            <a href="<?= base_url('social/laboratorio/index') ?>">Laboratórios</a>
         </li>
         <i class="icon-angle-right"></i>
         <li>
-            <a href="<?= base_url('/social/laboratorio/descricao/' . $laboratorio[0]->id) ?>">Descrição do <?= $laboratorio[0]->sigla ?></a>
+            <a href="<?= base_url('social/laboratorio/descricao/' . $laboratorio[0]->id) ?>">Descrição do <?= $laboratorio[0]->sigla ?></a>
         </li>
         <i class="icon-angle-right"></i>
         <li>
@@ -53,7 +53,7 @@
                 <h4>Editar informações - <?= $laboratorio[0]->nome ?></h4>
             </div>
             <div class="grid-body ">
-                <form id="form" action="/social/laboratorio/alterar" method="post" enctype="multipart/form-data">
+                <form id="form" action="<?= base_url('social/laboratorio/alterar') ?>" method="post" enctype="multipart/form-data">
                     <div class="row">
                         <div class="form-group col-md-12">
                             * Campos Obrigatórios
@@ -138,7 +138,7 @@
                                 <?php if ($laboratorio[0]->logo != '/assets/img/grupo/laboratorio.png') : ?>
                                     <div id="logo" class="imagemEdicao">
                                         <a href="#" data-toggle="modal" data-target="#modalExcluirFoto"><i class="icon-custom-cross iconeExcluir"></i></a>
-                                        <img src="<?= $laboratorio[0]->logo ?>" width="100">
+                                        <img src="<?= $url_base .  $laboratorio[0]->logo ?>" width="100">
                                     </div>
                                 <?php endif; ?>
                             </div>
@@ -249,7 +249,7 @@
     });
     $("#excluirFoto").click(function () {
         $.ajax({
-            url: '/social/laboratorio/excluirfoto',
+            url: '<?= base_url('social/laboratorio/excluirfoto') ?>',
             dataType: 'json',
             data: {
                 'idLab': <?= $laboratorio[0]->id ?>

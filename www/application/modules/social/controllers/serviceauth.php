@@ -30,7 +30,7 @@ class serviceauth extends MY_Controller
     {
         //Recupração de dados
         $this->data['formacoes'] = $this->formacaoModel->recuperaPorParametro(NULL, Array('excluido' => 0));
-        $this->data['instituicoes'] = $this->viewGrupoTipoModel->recuperaPorParametro(NULL, Array('id_tipo' => 1, 'excluido' => 0));
+        $this->data['instituicoes'] = $this->viewGrupoTipoModel->recuperaPorParametro(NULL, Array('id_tipo' => 1, 'excluido' => 0), Array('nome' => 'asc'));
 
         //Avisos
         $this->data['sucesso'] = ($this->session->flashdata('sucesso')) ? $this->session->flashdata('sucesso') : FALSE;
@@ -59,7 +59,7 @@ class serviceauth extends MY_Controller
             if ($this->authModel->logar($login['email'], $login['senha']))
             {
                 $this->session->set_flashdata('sucesso', 'Você foi logado com sucesso!!!');
-                redirect('/social/home/index');
+                redirect('social/home/index');
             }
         }
         else
@@ -92,19 +92,19 @@ class serviceauth extends MY_Controller
                 $this->session->set_flashdata('sucesso', 'Sua conta foi reativada'
                         . ' com sucesso, verifique seu E-mail para a confirmação'
                         . ' de sua nova senha e mais informações!');
-                redirect('/social/serviceauth/index');
+                redirect('social/serviceauth/index');
             }
             else
             {
                 $this->session->set_flashdata('erro', $this->email->print_debugger());
-                redirect('/social/serviceauth/index');
+                redirect('social/serviceauth/index');
             }
         }
         else
         {
             $this->session->set_flashdata('erro', 'Ops... Ocorreu um erro e'
                     . ' sua conta não foi reativada! Tente novamente.');
-            redirect('/social/serviceauth/index');
+            redirect('social/serviceauth/index');
         }
     }
 

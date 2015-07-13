@@ -52,7 +52,7 @@
                         <h3>Contate-nos ou agende uma visita</h3>
                     </div>
                 </div>
-                <form class="af-form" id="af-form" action="<?= base_url('/site/contato/enviar') ?>" method="post">
+                <form class="af-form" id="af-form" action="<?= base_url('site/contato/enviar') ?>" method="post">
                     <div class="af-outer af-required pull-left">
                         <div class="af-inner">
                             <label for="name" id="name_label">Nome:</label>
@@ -107,4 +107,4 @@
     $("#submit_btn").click(function () {
         $("#af-form").submit();
     });
-</script>>
+</script>

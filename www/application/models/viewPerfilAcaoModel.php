@@ -61,28 +61,36 @@ class viewPerfilAcaoModel extends abstractModel
      */
     public function verificaPermissao($acao = NULL, $grupo = NULL)
     {
+        $url = $this->recuperaUrl();
         $idGrupo = ($grupo != NULL) ? $grupo : $this->uri->segment(4);
         $novaAcao = ($acao != NULL) ? $acao : $this->recuperaUrl();
         $permissoes = $this->session->userdata('permissoes');
         //$permitido = 0;
-        foreach ($permissoes as $permissao)
+        if ($url != 'social/usuario/inserir')
         {
-            if ($permissao->acao == $novaAcao)
+            foreach ($permissoes as $permissao)
             {
-                if ($permissao->permissao == 0)
+                if ($permissao->acao == $novaAcao)
                 {
-                    return TRUE;
-                }
-                else
-                {
-                    if ($permissao->id_instituicao == $idGrupo || $permissao->id_instituicao == 1)
+                    if ($permissao->permissao == 0)
                     {
                         return TRUE;
                     }
+                    else
+                    {
+                        if ($permissao->id_instituicao == $idGrupo || $permissao->id_instituicao == 1)
+                        {
+                            return TRUE;
+                        }
+                    }
                 }
             }
+            return FALSE;
         }
-        return FALSE;
+        else
+        {
+            return TRUE;
+        }
     }
 
 }

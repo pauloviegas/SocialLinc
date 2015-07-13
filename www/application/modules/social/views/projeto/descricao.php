@@ -4,15 +4,15 @@
 <div class="cascalho">
     <ul class="breadcrumb">
         <li>
-            <a href="<?= base_url('/social/home/index') ?>">Feed</a>
+            <a href="<?= base_url('social/home/index') ?>">Feed</a>
         </li>
         <i class="icon-angle-right"></i>
         <li>
-            <a href="<?= base_url('/social/laboratorio/index') ?>">Laboratórios</a>
+            <a href="<?= base_url('social/laboratorio/index') ?>">Laboratórios</a>
         </li>
         <i class="icon-angle-right"></i>
         <li>   
-            <a href="<?= base_url('/social/projeto/index') . '/' . $projeto[0]->id_laboratorio ?>">Projetos do <?= $projeto[0]->sigla_laboratorio ?></a>
+            <a href="<?= base_url('social/projeto/index') . '/' . $projeto[0]->id_laboratorio ?>">Projetos do <?= $projeto[0]->sigla_laboratorio ?></a>
         </li>     
         <i class="icon-angle-right"></i>  					 
         <li>
@@ -76,7 +76,7 @@
                                 </a>
                             </div>
                         <?php endif; ?>
-                        <img id="logoAntiga" class="logoGrupo" src="<?= $projeto[0]->logo ?>">
+                        <img id="logoAntiga" class="logoGrupo" src="<?= $url_base . $projeto[0]->logo ?>">
                     </div>
                 </div>
                 <div class="row linhaInformacao">
@@ -336,7 +336,7 @@
                                     <?php endif; ?>
                                     <div class="fotoVinculo">
                                         <!-- Imagem de 180x150 -->
-                                        <img src="<?= $usuarioProj->foto_usuario ?>">
+                                        <img src="<?= $url_base . $usuarioProj->foto_usuario ?>">
                                     </div>
                                     <div class="caption nomeVinculo">
                                         <h3><?= $usuarioProj->nome_usuario ?></h3>
@@ -354,7 +354,7 @@
                             <div class="thumbnail vincular" id="vincularUsuarioContent">
                                 <div class="fotoAddVinculo">
                                     <!-- Imagem de 180x150 -->
-                                    <img src="/assets/img/usuarios/default_user.jpg">
+                                    <img src="<?= $url_base . 'assets/img/usuarios/default_user.jpg' ?>">
                                 </div>
                                 <div class="caption nomeAddVinculo">
                                     <h3><i class="icon-plus"></i>&nbsp;&nbsp;Novo Usuário</h3>
@@ -401,7 +401,7 @@
                                     <?php endif; ?>
                                     <div class="fotoVinculo">
                                         <!-- Imagem de 180x150 -->
-                                        <img src="<?= $usuarioProj->foto_usuario ?>">
+                                        <img src="<?= $url_base . $usuarioProj->foto_usuario ?>">
                                     </div>
                                     <div class="caption nomeVinculo">
                                         <h3><?= $usuarioProj->nome_usuario ?></h3>
@@ -454,7 +454,7 @@
                 <h4 class="modal-title">Adicionar um Anexo</h4>
             </div>
             <div class="modal-body">
-                <form id="formAnexo" action="/social/anexo/inserirAnexo" method="post" enctype="multipart/form-data">
+                <form id="formAnexo" action="<?= base_url('social/anexo/inserirAnexo') ?>" method="post" enctype="multipart/form-data">
                     <div class="row">
                         <div class="form-group col-md-12">
                             <label class="form-label">Nome do Anexo:</label>
@@ -529,7 +529,7 @@
                 <h4 class="modal-title">Selecione um usuário para fazer parte do <?= $projeto[0]->sigla ?></h4>
             </div>
             <div class="modal-body">
-                <form id="formUsuario" action="/social/usuario/vincularUsuario" method="post">
+                <form id="formUsuario" action="<?= base_url('social/usuario/vincularUsuario') ?>" method="post">
                     <div class="row">
                         <div class="form-group col-md-12">
                             <label class="form-label">Usuários:</label>
@@ -610,7 +610,7 @@
             <div id="ativarInativarVinculoContent" class="modal-body">
             </div>
             <div class="modal-footer">
-                <form id="formAtivarInativarVinculo" action="/social/usuario/ativarInativarVinculo" method="post">
+                <form id="formAtivarInativarVinculo" action="<?= base_url('social/usuario/ativarInativarVinculo') ?>" method="post">
                     <input id="idVinculo" type="hidden" name="idVinculo">
                     <input id="ativo" type="hidden" name="ativo">
                     <input id="nomeUsuario" type="hidden" name="nomeUsuario">
@@ -633,7 +633,7 @@
                 <h4 class="modal-title">Vincular Linha de Pesquisa</h4>
             </div>
             <div id="myModalVincularLinhaPesquisa" class="modal-body">
-                <form id="formVincularLinhaPesquisa" action="/social/projeto/vincularLinhaPesquisaProjeto" method="post">
+                <form id="formVincularLinhaPesquisa" action="<?= base_url('social/projeto/vincularLinhaPesquisaProjeto') ?>" method="post">
                     <div class="row">
                         <div class="form-group col-md-12">
                             <label class="form-label">Linhas de Pesquisa:</label>
@@ -670,7 +670,7 @@
             <div id="myModalDesvincularLinhaPesquisContent" class="modal-body">
             </div>
             <div class="modal-footer">
-                <form id="formDesvincularLinhaPesquisa" action="/social/projeto/desvincularLinhaPesquisaProjeto" method="post">
+                <form id="formDesvincularLinhaPesquisa" action="<?= base_url('social/projeto/desvincularLinhaPesquisaProjeto') ?>" method="post">
                     <input id="modalIdLinha" type="hidden" name="idVinculoLinha" value="">
                     <input id="modalLinha" type="hidden" name="linha" value="">
                     <input type="hidden" name="idGrupo" value="<?= $projeto[0]->id ?>">
@@ -688,12 +688,12 @@
     //Projeto
     //Redireciona o usuário para a página de edição
     $("#editarProj").click(function () {
-        $(window.document.location).attr('href', '/social/projeto/editar/<?= $projeto[0]->id ?>');
+        $(window.document.location).attr('href', '<?= base_url('social/projeto/editar/' . $projeto[0]->id) ?>');
     });
     //Popula o Modal de confirmação de exclusão
     $("#excluirProj").click(function () {
         $.ajax({
-            url: "/social/projeto/verificaVinculadosDoProjeto",
+            url: "<?= base_url('social/projeto/verificaVinculadosDoProjeto') ?>",
             dataType: "json",
             data: {
                 'idProj': <?= $projeto[0]->id ?>
@@ -706,12 +706,12 @@
     });
     //Executa a função de exclusão
     $("#btnexcluir").click(function () {
-        $(window.document.location).attr('href', '/social/projeto/excluir/<?= $projeto[0]->id ?>');
+        $(window.document.location).attr('href', '<?= base_url('social/projeto/excluir/'  . $projeto[0]->id ) ?>');
     });
     //Exclui a logo do projeto 
     $("#excluirFoto").click(function () {
         $.ajax({
-            url: '/social/projeto/excluirfoto',
+            url: '<?= base_url('social/projeto/excluirfoto') ?>',
             dataType: 'json',
             data: {
                 'idProj': <?= $projeto[0]->id ?>
@@ -722,7 +722,7 @@
                     $("#excluirLogo").remove();
                     $("#logoAntiga").remove();
                     $('#modalExcluirFoto').modal('hide');
-                    $("#divLogo").html("<img src='/assets/img/grupo/projeto.jpg' style='max-width: 180px; max-height: 150px;'>");
+                    $("#divLogo").html("<img src='<?= base_url('assets/img/grupo/projeto.jpg') ?>' style='max-width: 180px; max-height: 150px;'>");
                 }
             }
         });
@@ -754,7 +754,7 @@
     });
     //Executa a função de exclusão
     $("#btnExcluirAnexo").click(function () {
-        $("#formExcluirAnexo").attr('action', '/social/anexo/excluirAnexo/' + idAnexo);
+        $("#formExcluirAnexo").attr('action', '<?= base_url('social/anexo/excluirAnexo/') ?>' + idAnexo);
         $("#formExcluirAnexo").submit();
     });
 
@@ -783,7 +783,7 @@
         $("#nomeUsuario").attr('value', usuario);
         $("#idVinculo").attr('value', idVinculo);
         $.ajax({
-            url: '/social/usuario/verificaVinculoCoordOuResp',
+            url: '<?= base_url('social/usuario/verificaVinculoCoordOuResp') ?>',
             dataType: 'json',
             data: {
                 'idProj': <?= $projeto[0]->id ?>,
@@ -825,7 +825,7 @@
         var nomeUsuario = $(this).find(".nome").attr('value');
         idVinculo = $(this).find(".id").attr('value');
         $.ajax({
-            url: '/social/usuario/verificaVinculoCoordOuResp',
+            url: '<?= base_url('social/usuario/verificaVinculoCoordOuResp') ?>',
             dataType: 'json',
             data: {
                 'idProj': <?= $projeto[0]->id ?>,
@@ -848,7 +848,7 @@
     });
     //Executa a função de desvincular
     $("#btnDesvincularUsuario").click(function () {
-        $("#formDesvincularUsuario").attr('action', '/social/usuario/desvincularUsuario/' + idVinculo);
+        $("#formDesvincularUsuario").attr('action', '<?= base_url('social/usuario/desvincularUsuario/') ?>' + idVinculo);
         $("#formDesvincularUsuario").submit();
     });
 

@@ -38,7 +38,7 @@
                         <?php foreach ($tarefas as $tarefa) : ?>
                             <div class="well well-small" style="margin-bottom: 5px; height: 45px;">
                                 <?php if ($tarefa->foto_usuario) : ?>
-                                    <img style="border-radius: 100px;" alt="" src="<?= $tarefa->foto_usuario ?>" width="20" height="20"> 
+                                    <img style="border-radius: 100px;" alt="" src="<?= $url_base . $tarefa->foto_usuario ?>" width="20" height="20"> 
                                 <?php endif; ?>
                                 <?php if (strlen($tarefa->titulo) > 23) : ?>
                                     &nbsp;<?= substr($tarefa->titulo, 0, 23) . '...' ?>

@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="span8">
                     <h1>Pesquisa <small></small></h1>
-                    <div><a href="<?= base_url('/site/home/index') ?>">Home</a> &nbsp;&rsaquo;&nbsp; Pesquisa</div>
+                    <div><a href="<?= base_url('site/home/index') ?>">Home</a> &nbsp;&rsaquo;&nbsp; Pesquisa</div>
                 </div>
             </div>
         </div>
@@ -21,7 +21,7 @@
                     <?php if (count($linhas) > 0) : ?>
                         <?php foreach ($linhas as $linha) : ?>
                             <li class="span3 thumbnail bg-color-orange-dark  fg-color-white" style="height: 250px;">
-                                <a href="<?= base_url('/site/pesquisa/projetosLinha/' . $linha->id_linha) ?>">
+                                <a href="<?= base_url('site/pesquisa/projetosLinha/' . $linha->id_linha) ?>">
                                     <div style="text-align: center; margin-left: -65px; margin-top: 20px;">
                                         <i class="<?= $linha->icone ?>" style="font-size: 70pt; width: 100px;"></i>
                                     </div>
@@ -43,7 +43,7 @@
             <div class="row">
                 <div class="span8">
                     <h1>Projetos <small></small></h1>
-                    <div><a href="<?= base_url('/site/home/index') ?>">Home</a> &nbsp;&rsaquo;&nbsp; Projetos</div>
+                    <div><a href="<?= base_url('site/home/index') ?>">Home</a> &nbsp;&rsaquo;&nbsp; Projetos</div>
                 </div>
             </div>
         </div>
@@ -61,7 +61,7 @@
                                     <li>
                                         <div class="span12">
                                             <div class="hero-unit" style="min-height: 300px;">
-                                                <h4><a href="<?= base_url('/site/pesquisa/projeto') . '/' . $projeto->id ?>"><?= $projeto->sigla ?> - <?= $projeto->nome ?></a></h4>
+                                                <h4><a href="<?= base_url('site/pesquisa/projeto') . '/' . $projeto->id ?>"><?= $projeto->sigla ?> - <?= $projeto->nome ?></a></h4>
                                                 <p style="width: 100%" align="justify">
                                                     <?= $projeto->resumo ?>
                                                 </p>
@@ -84,7 +84,7 @@
             <div class="row">
                 <div class="span8">
                     <h1>Publicações <small></small></h1>
-                    <div><a href="<?= base_url('/site/home/index') ?>">Home</a> &nbsp;&rsaquo;&nbsp; Publicações</div>
+                    <div><a href="<?= base_url('site/home/index') ?>">Home</a> &nbsp;&rsaquo;&nbsp; Publicações</div>
                 </div>
             </div>
         </div>

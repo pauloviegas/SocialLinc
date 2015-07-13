@@ -4,7 +4,7 @@
 <div class="cascalho">
     <ul class="breadcrumb">
         <li>   
-            <a href="<?= base_url('/social/home/index') ?>">Feed</a>
+            <a href="<?= base_url('social/home/index') ?>">Feed</a>
         </li>
         <i class="icon-angle-right"></i>  					 
         <li>
@@ -63,7 +63,7 @@
                                 <?php foreach ($usuariosAtivos as $usuarioAtivo) : ?>
                                     <tr class="gradeX odd">
                                         <td>
-                                            <img class="imagemRedonda" src="<?= $usuarioAtivo->foto ?>">
+                                            <img class="imagemRedonda" src="<?= $url_base . $usuarioAtivo->foto ?>">
                                             <label class="nomeImagemRedonda"><?= $usuarioAtivo->nome ?></label>
                                         </td>
                                         <td><?= $usuarioAtivo->formacao ?></td>
@@ -119,7 +119,7 @@
                                         <?php foreach ($usuariosInativos as $usuarioInativo) : ?>
                                             <tr class="gradeX odd">
                                                 <td>
-                                                    <img class="imagemRedonda" src="<?= $usuarioInativo->foto ?>">
+                                                    <img class="imagemRedonda" src="<?= $url_base . $usuarioInativo->foto ?>">
                                                     <label class="nomeImagemRedonda"><?= $usuarioInativo->nome ?></label>
                                                 </td>
                                                 <td><?= $usuarioInativo->formacao ?></td>
@@ -173,7 +173,7 @@
     $(".editarAtivo").click(function () {
         var form = $("#formMembrosAtivos");
         var id = $(this).attr('id');
-        form.attr('action', '/social/usuario/editar/' + id);
+        form.attr('action', '<?= base_url('social/usuario/editar/') ?>' + id);
         form.submit();
     });
     $(".inativarAtivo").click(function () {
@@ -183,19 +183,19 @@
         $("#modalExcluirUsuarioContent").html('Você tem certeza que deseja excluir o usuário: ' + nome);
     });
     $("#excluirUsuario").click(function() {
-        formMembAtivo.attr('action', '/social/usuario/inativar/' + id);
+        formMembAtivo.attr('action', '<?= base_url('social/usuario/inativar/') ?>' + id);
         formMembAtivo.submit();
     });
     $(".editarInativo").click(function () {
         var form = $("#formMembrosInativos");
         var id = $(this).attr('id');
-        form.attr('action', '/social/usuario/editar/' + id);
+        form.attr('action', '<?= base_url('social/usuario/editar/') ?>' + id);
         form.submit();
     });
     $(".ativarInativo").click(function () {
         var form = $("#formMembrosInativos");
         var id = $(this).attr('id');
-        form.attr('action', '/social/usuario/ativar/' + id);
+        form.attr('action', '<?= base_url('social/usuario/ativar/') ?>' + id);
         form.submit();
     });
 </script>

@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="span8">
                     <h1>Projetos <small></small></h1>
-                    <div><a href="<?= base_url('/site/home/index') ?>">Home</a> &nbsp;&rsaquo;&nbsp; Projetos</div>
+                    <div><a href="<?= base_url('site/home/index') ?>">Home</a> &nbsp;&rsaquo;&nbsp; Projetos</div>
                 </div>
             </div>
         </div>
@@ -24,7 +24,7 @@
                                     <li>
                                         <div class="span12">
                                             <div class="hero-unit" style="min-height: 300px;">
-                                                <h4><a href="<?= base_url('/site/pesquisa/projeto') . '/' . $projeto->id ?>"><?= $projeto->sigla ?> - <?= $projeto->nome ?></a></h4>
+                                                <h4><a href="<?= base_url('site/pesquisa/projeto') . '/' . $projeto->id ?>"><?= $projeto->sigla ?> - <?= $projeto->nome ?></a></h4>
                                                 <p style="width: 100%" align="justify">
                                                     <?= $projeto->resumo ?>
                                                 </p>

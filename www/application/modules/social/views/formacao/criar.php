@@ -4,11 +4,11 @@
 <div class="cascalho">
     <ul class="breadcrumb">
         <li>   
-            <a href="<?= base_url('/social/home/index') ?>">Feed</a>
+            <a href="<?= base_url('social/home/index') ?>">Feed</a>
         </li>
         <i class="icon-angle-right"></i>  	
         <li>   
-            <a href="<?= base_url('/social/formacao/index') ?>">Formações Acadêmicas</a>
+            <a href="<?= base_url('social/formacao/index') ?>">Formações Acadêmicas</a>
         </li>
         <i class="icon-angle-right"></i>  					 
         <li>
@@ -49,7 +49,7 @@
                 <h4>Adicionar Formação Acadêmica</h4>
             </div>
             <div class="grid-body ">
-                <form id="form" action="<?= base_url('/social/formacao/inserir') ?>" method="post">
+                <form id="form" action="<?= base_url('social/formacao/inserir') ?>" method="post">
                     <div class="row">
                         <div class="form-group col-md-4">
                             <label class="form-label">Formação Acadêmica: *</label>

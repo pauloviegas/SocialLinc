@@ -4,11 +4,11 @@
 <div class="cascalho">
     <ul class="breadcrumb">
         <li>   
-            <a href="<?= base_url('/social/home/index') ?>">Feed</a>
+            <a href="<?= base_url('social/home/index') ?>">Feed</a>
         </li>
         <i class="icon-angle-right"></i>  	
         <li>   
-            <a href="<?= base_url('/social/instituicaoEnsino/index') ?>">Instituições de Ensino</a>
+            <a href="<?= base_url('social/instituicaoEnsino/index') ?>">Instituições de Ensino</a>
         </li>
         <i class="icon-angle-right"></i>  					 
         <li>
@@ -49,7 +49,7 @@
                 <h4>Editar informações - <?= $instituicao[0]->nome ?></h4>
             </div>
             <div class="grid-body ">
-                <form id="form" action="/social/instituicaoEnsino/alterar" method="post" enctype="multipart/form-data">
+                <form id="form" action="<?= base_url('social/instituicaoEnsino/alterar') ?>" method="post" enctype="multipart/form-data">
                     <div class="row">
                         <div class="form-group col-md-12">
                             * Campos Obrigatórios
@@ -206,7 +206,7 @@
     });
     $("#excluirFoto").click(function () {
         $.ajax({
-            url: '/social/instituicaoEnsino/excluirfoto',
+            url: '<?= base_url('social/instituicaoEnsino/excluirfoto') ?>',
             dataType: 'json',
             data: {
                 'idInstituicao': <?= $instituicao[0]->id ?>

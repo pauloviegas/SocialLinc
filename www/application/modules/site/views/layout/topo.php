@@ -5,15 +5,15 @@
 <!--[if (gte IE 9)|!(IE)]><!--><html lang="pt"> <!--<![endif]-->
     <head>
         <meta http-equiv="Content-Type" content ="text/html; charset=utf-8" />
-        <link async rel="shortcut icon" href="/assets/img/icon_linc.ico"/>
+        <link async rel="shortcut icon" href="<?= $url_base . 'assets/img/icon_linc.ico' ?>"/>
         <title><?= $alliasNomeProjeto ?></title>
 
-        <link async href="/assets/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
-        <link async href="/assets/css/sitestyle.css" type="text/css" rel="stylesheet"/>
-        <link async href="/assets/css/prettyPhoto.css" type="text/css" rel="stylesheet"/>
-        <link href="/assets/css/bs-preview.css" type="text/css" rel="stylesheet"/>
+        <link async href="<?= $url_base . 'assets/css/bootstrap.min.css' ?>" type="text/css" rel="stylesheet"/>
+        <link async href="<?= $url_base . 'assets/css/sitestyle.css' ?>" type="text/css" rel="stylesheet"/>
+        <link async href="<?= $url_base . 'assets/css/prettyPhoto.css' ?>" type="text/css" rel="stylesheet"/>
+        <link href="<?= $url_base . 'assets/css/bs-preview.css' ?>" type="text/css" rel="stylesheet"/>
 
-        <link href="/assets/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+        <link href="<?= $url_base . 'assets/plugins/font-awesome/css/font-awesome.css' ?>" rel="stylesheet" type="text/css"/>
 
         <!--[if IE 7]>
         <link rel="stylesheet" href="assets/./public/css/font-awesome-ie7.css"/>
@@ -37,8 +37,8 @@
             <div class="container">
                 <div class="row header-top">
                     <div class="span5 logo">
-                        <a class="logo-img" href="<?= base_url('/site/home/index') ?>" controller="index" title="responsive template">
-                            <img src="/assets/img/logo_linc.png" width="150" alt="Tabulate" style="margin-left: 50px;">
+                        <a class="logo-img" href="<?= base_url('site/home/index') ?>" controller="index" title="responsive template">
+                            <img src="<?= $url_base . 'assets/img/logo_linc.png' ?>" width="150" alt="Tabulate" style="margin-left: 50px;">
                         </a>
                         <p class="tagline" style="margin-top: 35px;">Laboratório de Inteligência Computacional e Pesquisa Operacional.</p>
                     </div>
@@ -57,16 +57,16 @@
                         <nav id="menu" class="clearfix">
                             <ul>
                                 <li class="<?= ($controller == 'home') ? 'current' : '' ?>">
-                                    <a href="<?= base_url('/site/home/index') ?>">
+                                    <a href="<?= base_url('site/home/index') ?>">
                                         <span class="name">Home</span>
                                     </a>
                                 </li>
                                 <li id="menuPesquisa" class="<?= ($controller == 'pesquisa') ? 'current' : '' ?>">
-                                    <a href="<?= base_url('/site/pesquisa/pesquisa') ?>"><span class="name">Pesquisa</span></a>
+                                    <a href="<?= base_url('site/pesquisa/pesquisa') ?>"><span class="name">Pesquisa</span></a>
 <!--                                    <ul id="subMenuPerquisa" style="display: none;">
-                                        <li><a href="<?= base_url('/site/pesquisa/linhas') ?>">Linhas de Pesquisa</a></li>
-                                        <li><a href="<?= base_url('/site/pesquisa/projetos') ?>">Projetos</a></li>
-                                        <li><a href="<?= base_url('/site/pesquisa/publicacoes') ?>">Publicações</a></li>
+                                        <li><a href="<?= base_url('site/pesquisa/linhas') ?>">Linhas de Pesquisa</a></li>
+                                        <li><a href="<?= base_url('site/pesquisa/projetos') ?>">Projetos</a></li>
+                                        <li><a href="<?= base_url('site/pesquisa/publicacoes') ?>">Publicações</a></li>
                                     </ul>-->
                                 </li>
                                 <!--                                <li id="menuMidia">
@@ -77,13 +77,13 @@
                                                                     </ul>
                                                                 </li>-->
                                 <li class="<?= ($controller == 'noticia') ? 'current' : '' ?>">
-                                    <a href="<?= base_url('/site/noticia/index') ?>"><span class="name">Notícias</span></a>
+                                    <a href="<?= base_url('site/noticia/index') ?>"><span class="name">Notícias</span></a>
                                 </li>
 <!--                                <li class="<?= ($controller == 'equipe') ? 'current' : '' ?>">
-                                    <a href="<?= base_url('/site/equipe/index') ?>"><span class="name" >Equipe</span></a>
+                                    <a href="<?= base_url('site/equipe/index') ?>"><span class="name" >Equipe</span></a>
                                 </li>-->
                                 <li class="<?= ($controller == 'contato') ? 'current' : '' ?>">
-                                    <a href="<?= base_url('/site/contato/index') ?>"><span class="name">Contato</span></a>
+                                    <a href="<?= base_url('site/contato/index') ?>"><span class="name">Contato</span></a>
                                 </li>
                             </ul>
                         </nav>

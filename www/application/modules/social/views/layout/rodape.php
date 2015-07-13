@@ -19,27 +19,27 @@
 <!-- FIM DO CONTEÚDO DA PÁGINA --> 
 
 <!-- INICIO DOS FRAMEWORKS DE JAVASCRIPT --> 
-<script src="/assets/plugins/jquery-1.8.3.min.js" type="text/javascript"></script> 
-<script src="/assets/plugins/jquery-ui/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script> 
-<script src="/assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script> 
-<script src="/assets/plugins/jquery-unveil/jquery.unveil.min.js" type="text/javascript"></script> 
+<script src="<?= $url_base . 'assets/plugins/jquery-1.8.3.min.js' ?>" type="text/javascript"></script> 
+<script src="<?= $url_base . 'assets/plugins/jquery-ui/jquery-ui-1.10.1.custom.min.js' ?>" type="text/javascript"></script> 
+<script src="<?= $url_base . 'assets/plugins/bootstrap/js/bootstrap.min.js' ?>" type="text/javascript"></script> 
+<script src="<?= $url_base . 'assets/plugins/jquery-unveil/jquery.unveil.min.js' ?>" type="text/javascript"></script> 
 <!-- FIM DOS FRAMEWORKS DE JAVASCRIPT --> 
 
 <!-- INICIO DOS PLUGINS DE JAVASCRIPT -->
-<script src="/assets/plugins/pace/pace.min.js" type="text/javascript"></script>  
-<script src="/assets/plugins/breakpoints.js" type="text/javascript"></script> 
-<script src="/assets/plugins/jquery-slider/jquery.sidr.min.js" type="text/javascript"></script> 	
-<script src="/assets/plugins/jquery-numberAnimate/jquery.animateNumbers.js" type="text/javascript"></script> 
-<script src="/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="<?= $url_base . 'assets/plugins/pace/pace.min.js' ?>" type="text/javascript"></script>  
+<script src="<?= $url_base . 'assets/plugins/breakpoints.js' ?>" type="text/javascript"></script> 
+<script src="<?= $url_base . 'assets/plugins/jquery-slider/jquery.sidr.min.js' ?>" type="text/javascript"></script> 	
+<script src="<?= $url_base . 'assets/plugins/jquery-numberAnimate/jquery.animateNumbers.js' ?>" type="text/javascript"></script> 
+<script src="<?= $url_base . 'assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js' ?>" type="text/javascript"></script>
 <!-- FIM DOS PLUGINS DE JAVASCRIPT --> 	
 
 <!-- INICIO DOS PLUGINS DE PAGINAS -->
-<script src="/assets/js/jquery.maskedinput.js.js" type="text/javascript"></script> 
+<script src="<?= $url_base . 'assets/js/jquery.maskedinput.js.js' ?>" type="text/javascript"></script> 
 <!-- FIM DOS PLUGINS DE PAGINAS -->
 
 <!-- INICIO DOS CORES DE TEMPLATE DO JAVASCRIPT -->
-<script src="/assets/js/core.js" type="text/javascript"></script> 
-<script src="/assets/js/demo.js" type="text/javascript"></script> 
+<script src="<?= $url_base . 'assets/js/core.js' ?>" type="text/javascript"></script> 
+<script src="<?= $url_base . 'assets/js/demo.js' ?>" type="text/javascript"></script> 
 <!-- FIM DOS CORES DE TEMPLATE DO JAVASCRIPT --> 
 
 </body>

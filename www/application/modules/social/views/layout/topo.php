@@ -11,26 +11,26 @@
     <!-- FIM DAS CONFIGURAÇÕES -->
 
     <!-- INICIO FAVICO LINC -->
-    <link href="/assets/img/icon_logo_linc.ico" rel="shortcut icon">
+    <link href="<?= $url_base . 'assets/img/icon_logo_linc.ico' ?>" rel="shortcut icon">
     <!-- FIM FAVICO LINC -->
 
     <!-- INICIO DOS FRAMEWORKS DE CSS -->
-    <link href="/assets/plugins/jquery-slider/css/jquery.sidr.light.css" rel="stylesheet" type="text/css" media="screen"/>
-    <link href="/assets/plugins/boostrapv3/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <link href="/assets/plugins/boostrapv3/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
-    <link href="/assets/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="<?= $url_base . 'assets/plugins/jquery-slider/css/jquery.sidr.light.css' ?>" rel="stylesheet" type="text/css" media="screen"/>
+    <link href="<?= $url_base . 'assets/plugins/boostrapv3/css/bootstrap.min.css' ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?= $url_base . 'assets/plugins/boostrapv3/css/bootstrap-theme.min.css' ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?= $url_base . 'assets/plugins/font-awesome/css/font-awesome.css' ?>" rel="stylesheet" type="text/css"/>
     <!-- FIM DOS FRAMEWORKS DE CSS -->
 
     <!-- INICIO DOS CSS DE PAGINAS -->
-    <link type="text/css" rel="Stylesheet" href="/assets/css/estilo_datepicker.css" />
+    <link href="<?= $url_base . 'assets/css/estilo_datepicker.css' ?>" rel="Stylesheet" type="text/css" />
     <!-- FIM DOS CSS DE PAGINAS -->
 
     <!-- INICIO DOS CSS -->
-    <link href="/assets/css/animate.min.css" rel="stylesheet" type="text/css"/>
-    <link href="/assets/css/style.css" rel="stylesheet" type="text/css"/>
-    <link href="/assets/css/responsive.css" rel="stylesheet" type="text/css"/>
-    <link href="/assets/css/custom-icon-set.css" rel="stylesheet" type="text/css"/>
-    <link href="/assets/css/estiloLinc.css" rel="stylesheet" type="text/css"/>
+    <link href="<?= $url_base . 'assets/css/animate.min.css' ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?= $url_base . 'assets/css/style.css' ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?= $url_base . 'assets/css/responsive.css' ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?= $url_base . 'assets/css/custom-icon-set.css' ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?= $url_base . 'assets/css/estiloLinc.css' ?>" rel="stylesheet" type="text/css"/>
     <!-- FIM DOS CSS -->
 </head>
 <!-- FIM DA HEAD -->
@@ -46,12 +46,12 @@
                 <ul class="nav pull-left notifcation-center" id="main-menu-toggle-wrapper" style="display:none">	
                     <li class="dropdown"> <a id="main-menu-toggle" href="#main-menu"  class="" > <div class="iconset top-menu-toggle-white"></div> </a> </li>		 
                 </ul>
-                <a href="<?= base_url('/social/home/index') ?>" style="text-align: center;">
-                    <img src="<?= base_url('/assets/img/logo_linc.png'); ?>" class="logo" width="50" height="30"/>
+                <a href="<?= base_url('social/home/index') ?>" style="text-align: center;">
+                    <img src="<?= $url_base . 'assets/img/logo_linc.png' ?>" class="logo" width="50" height="30"/>
                 </a>
                 <ul class="nav pull-right notifcation-center">	
                     <li class="dropdown" id="header_task_bar">
-                        <a href="<?= base_url('/social/home/index') ?>" class="dropdown-toggle active" data-toggle="">
+                        <a href="<?= base_url('social/home/index') ?>" class="dropdown-toggle active" data-toggle="">
                             <div class="iconset top-home"></div>
                         </a>
                     </li>
@@ -139,7 +139,7 @@
                         </div> 
                         <!--<div class="iconset top-down-arrow"></div>-->
                         <div class="profile-pic">
-                            <img alt="" src="<?= $this->session->userdata('usuario')->foto ?>" width="35" height="35" /> 
+                            <img alt="" src="<?= $url_base . $this->session->userdata('usuario')->foto ?>" width="35" height="35" /> 
                         </div>
                     </div>
                     <ul class="nav quick-section ">
@@ -149,14 +149,14 @@
                             </a>
                             <ul class="dropdown-menu  pull-right" role="menu" aria-labelledby="dropdownMenu">
                                 <li>
-                                    <a href="<?= base_url('/social/usuario/perfil') ?>"><i class="icon-user"></i>&nbsp;&nbsp;Perfil</a>
+                                    <a href="<?= base_url('social/usuario/perfil') ?>"><i class="icon-user"></i>&nbsp;&nbsp;Perfil</a>
                                 </li>
                                 <!--                                <li>
                                                                     <a href="#"><i class="icon-calendar"></i>&nbsp;&nbsp;Agenda</a>
                                                                 </li>-->
                                 <li class="divider"></li>                
                                 <li>
-                                    <a href="<?= base_url('/social/serviceauth/logout') ?>"><i class="icon-off"></i>&nbsp;&nbsp;Sair</a>
+                                    <a href="<?= base_url('social/serviceauth/logout') ?>"><i class="icon-off"></i>&nbsp;&nbsp;Sair</a>
                                 </li>
                             </ul>
                         </li>

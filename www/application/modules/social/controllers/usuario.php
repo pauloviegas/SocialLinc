@@ -92,6 +92,7 @@ class usuario extends SocialController
 
     public function inserir()
     {
+        die('aqui');
         $usuario = $this->_request;
         $this->form_validation->set_rules('nome', 'Nome do Usuário', 'required');
         $this->form_validation->set_rules('id_formacao', 'Formação', 'required|is_natural_no_zero');
@@ -134,7 +135,7 @@ class usuario extends SocialController
             else
             {
                 $this->session->set_flashdata(
-                        'erro', 'Ops... VOcorreu um erro e o usuário não foi'
+                        'erro', 'Ops... Ocorreu um erro e o usuário não foi'
                         . 'inserido com sucesso! Tente novamente.');
                 redirect('social/serviceauth/index');
             }
@@ -208,6 +209,7 @@ class usuario extends SocialController
                 $alterado['id'] = $novoUsuario['id'];
                 if ($this->usuarioModel->alterar((object) $alterado))
                 {
+                    
                     $this->session->set_flashdata(
                             'sucesso', 'O usuário' . $novoUsuario['nome'] . ' foi'
                             . ' alterado com sucesso!');

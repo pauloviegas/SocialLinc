@@ -13,6 +13,7 @@ class MY_Controller extends MX_Controller
         $this->_request = $this->input->post() ? $this->input->post() : $this->input->get();
         $this->data['nomeProjeto'] = "Social LINC";
         $this->data['alliasNomeProjeto'] = "LINC - Laboratório de Inteligencia Computacional e Pesquisa Operacional";
+        $this->data['url_base'] = '/';
     }
 
 }

@@ -50,16 +50,27 @@ $active_record = TRUE;
 
 //bd01.linc.ufpa.br
 //linc.ufpa.br
-//$db['default']['hostname'] = 'www2.lprad.ufpa.br';
-//$db['default']['username'] = 'pauloviegas';
-//$db['default']['password'] = 'swZnVpxPDFPYQ3z6';
-//$db['default']['database'] = 'pauloviegas';
+$db['lprad']['hostname'] = 'www2.lprad.ufpa.br';
+$db['lprad']['username'] = 'pauloviegas';
+$db['lprad']['password'] = 'swZnVpxPDFPYQ3z6';
+$db['lprad']['database'] = 'linc2';
+$db['lprad']['dbdriver'] = 'mysql';
+$db['lprad']['dbprefix'] = '';
+$db['lprad']['pconnect'] = TRUE;
+$db['lprad']['db_debug'] = TRUE;
+$db['lprad']['cache_on'] = FALSE;
+$db['lprad']['cachedir'] = '';
+$db['lprad']['char_set'] = 'utf8';
+$db['lprad']['dbcollat'] = 'utf8_general_ci';
+$db['lprad']['swap_pre'] = '';
+$db['lprad']['autoinit'] = TRUE;
+$db['lprad']['stricton'] = FALSE;
+
 
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
 $db['default']['password'] = '';
 $db['default']['database'] = 'linc2';
-
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

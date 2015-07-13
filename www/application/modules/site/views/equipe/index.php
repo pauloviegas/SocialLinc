@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="span8">
                     <h1>Equipe <small>/ Pesquisa e Desenvolvimento</small></h1>
-                    <div><a href="<?= base_url('/site/home/index') ?>">Home</a> &nbsp;&rsaquo;&nbsp; Equipe</div>
+                    <div><a href="<?= base_url('site/home/index') ?>">Home</a> &nbsp;&rsaquo;&nbsp; Equipe</div>
                 </div>
             </div>
         </div>
@@ -29,7 +29,7 @@
                                 <?php if ($usuario->lattes_usuario) : ?>
                                     <p class="member-social" style="text-align: center;">
                                         <a target="_blank" href="<?= base_url($usuario->lattes_usuario) ?>">
-                                            <img style=" height: 18px; width: 24px" src="/assets/img/icon/logolattes.gif">
+                                            <img style=" height: 18px; width: 24px" src="<?= $url_base . 'assets/img/icon/logolattes.gif' ?>">
                                         </a>
                                     </p>
                                 <?php endif; ?>
@@ -63,7 +63,7 @@
                                 <?php if ($usuario->lattes_usuario) : ?>
                                     <p class="member-social">
                                         <a target="_blank" href="<?= base_url($usuario->lattes_usuario) ?>">
-                                            <img style=" height: 18px; width: 24px" src="/assets/img/icon/logolattes.gif">
+                                            <img style=" height: 18px; width: 24px" src="<?= $url_base . 'assets/img/icon/logolattes.gif' ?>">
                                         </a>
                                     </p>
                                 <?php endif; ?>

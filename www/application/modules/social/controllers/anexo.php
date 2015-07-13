@@ -34,14 +34,14 @@ class anexo extends SocialController
                     {
                         $this->session->set_flashdata(
                                 'sucesso', 'O anexo foi inserido com sucesso!');
-                        redirect('social/' . $anexo['controller'] .'/descricao/' . $anexo['id_grupo']);
+                        redirect($anexo['controller'] .'/descricao/' . $anexo['id_grupo']);
                     }
                     else
                     {
                         $this->session->set_flashdata(
                                 'erro', 'Ops... Ocorreu um problema e o anexo não'
                                 . ' foi inserido com sucesso!');
-                        redirect('social/' . $anexo['controller'] .'/descricao/' . $anexo['id_grupo']);
+                        redirect($anexo['controller'] .'/descricao/' . $anexo['id_grupo']);
                     }
                 }
                 else
@@ -49,21 +49,21 @@ class anexo extends SocialController
                     $this->session->set_flashdata('erro', 'Você não selecionou um'
                             . ' arquivo ou então não enviou um arquivo de formato'
                             . ' válido. Por favor, verifique o arquivo enviado.');
-                    redirect('social/' . $anexo['controller'] .'/descricao/' . $anexo['id_grupo']);
+                    redirect($anexo['controller'] .'/descricao/' . $anexo['id_grupo']);
                 }
             }
             else
             {
                 $this->session->set_flashdata(
                         'erro', 'O tipo do arquivo enviado não é permitido.');
-                redirect('social/' . $anexo['controller'] .'/descricao/' . $anexo['id_grupo']);
+                redirect($anexo['controller'] .'/descricao/' . $anexo['id_grupo']);
             }
         }
         else
         {
             $this->session->set_flashdata(
                     'erro', validation_errors());
-            redirect('social/' . $anexo['controller'] .'/descricao/' . $anexo['id_grupo']);
+            redirect($anexo['controller'] .'/descricao/' . $anexo['id_grupo']);
         }
     }
 
@@ -79,14 +79,14 @@ class anexo extends SocialController
             {
                 $this->session->set_flashdata('sucesso', 'O anexo ' . $anexo[0]->nome
                         . ' foi excluido com sucesso.');
-                redirect('social/' . $controller['controller'] . '/descricao/' . $anexo[0]->id_grupo);
+                redirect($controller['controller'] . '/descricao/' . $anexo[0]->id_grupo);
             }
             else
             {
                 $this->session->set_flashdata('erro', 'O anexo ' . $anexo[0]->nome
                         . ' foi excluido com sucesso, porém ocorreu um problema'
                         . ' e o arquivo não foi excluido.');
-                redirect('social/' . $controller['controller'] . '/descricao/' . $anexo[0]->id_grupo);
+                redirect($controller['controller'] . '/descricao/' . $anexo[0]->id_grupo);
             }
         }
         else
@@ -94,7 +94,7 @@ class anexo extends SocialController
             $this->session->set_flashdata('erro', 'Ops... Ocorreu um erro e'
                     . ' o anexo ' . $anexo[0]->nome . ' não foi excluido com'
                     . ' sucesso! Tente novamente.');
-            redirect('social/' . $controller['controller'] . '/descricao/' . $anexo[0]->id_grupo);
+            redirect($controller['controller'] . '/descricao/' . $anexo[0]->id_grupo);
         }
     }
 

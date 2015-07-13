@@ -4,7 +4,7 @@
 <div class="cascalho">
     <ul class="breadcrumb">
         <li>   
-            <a href="<?= base_url('/social/home/index') ?>">Feed</a>
+            <a href="<?= base_url('social/home/index') ?>">Feed</a>
         </li>
         <i class="icon-angle-right"></i>  					 
         <li>
@@ -112,7 +112,7 @@
             <div id="modalFormacaoContent" class="modal-body">
             </div>
             <div class="modal-footer">
-                <form id="formExcluir" action="<?= base_url('/social/formacao/excluir') ?>" method="post">
+                <form id="formExcluir" action="<?= base_url('social/formacao/excluir') ?>" method="post">
                     <input id="modalId" type="hidden" name="idFormacao" value="">
                     <input id="modalNome" type="hidden" name="formacao" value="">
                 </form>
@@ -126,12 +126,12 @@
 <?= $rodape ?>
 <script>
     $("#cadastrar").click(function () {
-        $(window.document.location).attr('href', '/social/formacao/criar');
+        $(window.document.location).attr('href', '<?= base_url('social/formacao/criar') ?>');
     });
     $(".editar").click(function () {
         var form = $("#formFormacoes");
         var id = $(this).attr('id');
-        form.attr('action', '/social/formacao/editar/' + id);
+        form.attr('action', '<?= base_url('social/formacao/editar/') ?>' + id);
         form.submit();
     });
     $(".excluir").click(function () {

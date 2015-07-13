@@ -4,7 +4,7 @@
 <div class="cascalho">
     <ul class="breadcrumb">
         <li>   
-            <a href="<?= base_url('/social/home/index') ?>">Feed</a>
+            <a href="<?= base_url('social/home/index') ?>">Feed</a>
         </li>
         <i class="icon-angle-right"></i>  					 
         <li>
@@ -76,7 +76,7 @@
                                     <?php foreach ($instituicoes as $instituicao) : ?>
                                         <tr class="gradeX odd">
                                             <td>
-                                                <img class="imagemRedonda" src="<?= $instituicao->logo ?>">
+                                                <img class="imagemRedonda" src="<?= $url_base . $instituicao->logo ?>">
                                                 <label class="nomeImagemRedonda"><?= $instituicao->nome ?></label>
                                             </td>
                                             <td><?= $instituicao->url ?></td>
@@ -120,7 +120,7 @@
             <div id="modalInstituicaoContent" class="modal-body">
             </div>
             <div class="modal-footer">
-                <form id="formExcluirInstituicao" action="/social/instituicaoEnsino/excluir" method="post">
+                <form id="formExcluirInstituicao" action="<?= base_url('social/instituicaoEnsino/excluir') ?>" method="post">
                     <input id="modalIdInstituicao" type="hidden" name="idInstituicao" value="">
                     <input id="modalNomeInstituicao" type="hidden" name="nomeInstituicao" value="">
                 </form>
@@ -134,12 +134,12 @@
 <?= $rodape ?>
 <script>
     $("#cadastrar").click(function () {
-        $(window.document.location).attr('href', '/social/instituicaoEnsino/criar');
+        $(window.document.location).attr('href', '<?= base_url('social/instituicaoEnsino/criar') ?>');
     });
     $(".editar").click(function () {
         var form = $("#formInstituicao");
         var id = $(this).attr('id');
-        form.attr('action', '/social/instituicaoEnsino/editar/' + id);
+        form.attr('action', '<?= base_url('social/instituicaoEnsino/editar/') ?>' + id);
         form.submit();
     });
     $(".excluir").click(function () {
