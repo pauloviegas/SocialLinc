@@ -1,11 +1,11 @@
 <?php
-$visualisarUsuario = $this->viewPerfilAcaoModel->verificaPermissao('social/usuario/index');
-$visualisarFormacao = $this->viewPerfilAcaoModel->verificaPermissao('social/formacao/index');
-$visualisarPerfil = $this->viewPerfilAcaoModel->verificaPermissao('social/perfil/index');
-$visualisarAdmSistema = $this->viewPerfilAcaoModel->verificaPermissao('social/sistema/index');
-$visualisarLogs = $this->viewPerfilAcaoModel->verificaPermissao('social/log/index');
-$visualisarInstituicaoEnsino = $this->viewPerfilAcaoModel->verificaPermissao('social/instituicaoEnsino/index');
-$visualisarInstituicaoFinanciadora = $this->viewPerfilAcaoModel->verificaPermissao('social/instituicaoFinanciadora/index');
+$visualisarUsuario = $this->viewPerfilAcaoModel->verificaPermissao('social/usuario/index', 1);
+$visualisarFormacao = $this->viewPerfilAcaoModel->verificaPermissao('social/formacao/index', 1);
+$visualisarPerfil = $this->viewPerfilAcaoModel->verificaPermissao('social/perfil/index', 1);
+$visualisarAdmSistema = $this->viewPerfilAcaoModel->verificaPermissao('social/sistema/index', 1);
+$visualisarLogs = $this->viewPerfilAcaoModel->verificaPermissao('social/log/index', 1);
+$visualisarInstituicaoEnsino = $this->viewPerfilAcaoModel->verificaPermissao('social/instituicaoEnsino/index', 1);
+$visualisarInstituicaoFinanciadora = $this->viewPerfilAcaoModel->verificaPermissao('social/instituicaoFinanciadora/index', 1);
 ?>
 
 <!-- INICIO DA BARRA DE MENU LATERAL -->

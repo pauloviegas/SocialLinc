@@ -18,6 +18,7 @@ class serviceauth extends MY_Controller
         $this->load->model('viewGrupoTipoModel');
         $this->load->model('usuarioModel');
         $this->load->model('pesquisaLinhaModel');
+        $this->load->model('viewPerfilAcaoModel');
     }
 
     /**
@@ -29,6 +30,7 @@ class serviceauth extends MY_Controller
     public function index()
     {
         //Recupração de dados
+        $this->session->set_userdata('PaginasNaoPrecisaPermissao', $this->viewPerfilAcaoModel->gerarPaginasSemPermissao());
         $this->data['formacoes'] = $this->formacaoModel->recuperaPorParametro(NULL, Array('excluido' => 0));
         $this->data['instituicoes'] = $this->viewGrupoTipoModel->recuperaPorParametro(NULL, Array('id_tipo' => 1, 'excluido' => 0), Array('nome' => 'asc'));
 

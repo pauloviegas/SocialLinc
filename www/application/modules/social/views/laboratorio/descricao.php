@@ -392,7 +392,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <label class="form-label">
+                            <label class="form-label" style="margin-top: 30px;">
                                 <small>Extensões Suportadas:</small>
                                 <br>
                                 <small>
@@ -453,7 +453,7 @@
                                 <div class="input-with-icon right">
                                     <select name="id_usuario" style="width:100%">
                                         <?php if (count($usuarios) > 0) : ?>
-                                            <option value="0">Selecione</option>
+                                            <option value="">Selecione</option>
                                             <?php foreach ($usuarios as $usuario) : ?>
                                                 <option value="<?= $usuario->id ?>"><?= $usuario->nome ?></option>
                                             <?php endforeach; ?>
@@ -472,7 +472,7 @@
                                 <div class="input-with-icon right">
                                     <select name="id_perfil" style="width:100%">
                                         <?php if (count($perfis) > 0) : ?>
-                                            <option value="0">Selecione</option>
+                                            <option value="">Selecione</option>
                                             <?php foreach ($perfis as $perfl) : ?>
                                                 <option value="<?= $perfl->id ?>"><?= $perfl->perfil ?></option>
                                             <?php endforeach; ?>
@@ -556,7 +556,7 @@
                             <div class="controls">
                                 <div class="input-with-icon right">
                                     <select id="selectVinculoLinha" name="id_linha" style="width:100%">
-                                        <option value="0">Selecione</option>
+                                        <option value="">Selecione</option>
                                         <?php foreach ($linhasPesquisa as $linhaPesquisa) : ?>
                                             <option value="<?= $linhaPesquisa->id ?>"><?= $linhaPesquisa->linha ?></option>
                                         <?php endforeach; ?>
@@ -602,6 +602,23 @@
 <?= $rodape ?>
 
 <script type="text/javascript">
+    $("#formAnexo").validate({
+        rules: {
+            nome: "required",
+            anexo: "required"
+        }
+    });
+    $("#formVincularLinhaPesquisa").validate({
+        rules: {
+            id_linha: "required"
+        }
+    });
+    $("#formUsuario").validate({
+        rules: {
+            id_usuario: "required",
+            id_perfil: "required"
+        }
+    });
     //Laboratório
     //Redireciona o usuário para a página de edição
     $("#editarLab").click(function () {

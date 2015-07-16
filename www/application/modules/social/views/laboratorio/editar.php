@@ -65,7 +65,7 @@
                             <div class="controls">
                                 <div class="input-with-icon right">                                       
                                     <i class=""></i>
-                                    <input class="form-control" type="text" value="<?= ($laboratorio[0]->nome) ? $laboratorio[0]->nome : '' ?>">
+                                    <input class="form-control" type="text" name="nome" value="<?= ($laboratorio[0]->nome) ? $laboratorio[0]->nome : '' ?>">
                                 </div>
                             </div>
                         </div>
@@ -138,7 +138,7 @@
                                 <?php if ($laboratorio[0]->logo != '/assets/img/grupo/laboratorio.png') : ?>
                                     <div id="logo" class="imagemEdicao">
                                         <a href="#" data-toggle="modal" data-target="#modalExcluirFoto"><i class="icon-custom-cross iconeExcluir"></i></a>
-                                        <img src="<?= $url_base .  $laboratorio[0]->logo ?>" width="100">
+                                        <img src="<?= $url_base . $laboratorio[0]->logo ?>" width="100">
                                     </div>
                                 <?php endif; ?>
                             </div>
@@ -244,6 +244,17 @@
 <?= $rodape ?>
 
 <script type="text/javascript">
+    $("#form").validate({
+        rules: {
+            nome: "required",
+            sigla: "required",
+            email: {
+                required: true,
+                email: true
+            },
+            resumo: "required"
+        }
+    });
     $("#btnsalvar").click(function () {
         $("#form").submit();
     });

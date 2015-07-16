@@ -90,7 +90,7 @@
                             <div class="controls">
                                 <div class="input-with-icon right">
                                     <i class=""></i>
-                                    <input class="form-control" type="text" id="telefone" name="telefone" value="<?= (set_value('telefone')) ? set_value('telefone') : '' ?>" placeholder="(__) _____-____">
+                                    <input class="form-control" type="text" name="telefone" value="<?= (set_value('telefone')) ? set_value('telefone') : '' ?>" placeholder="(__) _____-____">
                                 </div>
                             </div>
                         </div>
@@ -111,7 +111,7 @@
                                 <div class="input-with-icon right">
                                     <select class="selectLinhaPesquisa" name="id_linha" style="width:100%">
                                         <?php if (count($linhasPesquisa) > 0) : ?>
-                                            <option value="0">Selecione</option>
+                                            <option value="">Selecione</option>
                                             <?php foreach ($linhasPesquisa as $linhaPesquisa) : ?>
                                                 <option value="<?= $linhaPesquisa->id ?>"><?= $linhaPesquisa->linha ?></option>
                                             <?php endforeach; ?>
@@ -251,6 +251,16 @@
 <?= $rodape ?>
 
 <script type="text/javascript">
+    $("#form").validate({
+        rules: {
+            nome: "required",
+            sigla: "required",
+            email: "required",
+            telefone: "required",
+            id_linha: "required",
+            resumo: "required"
+        }
+    });
     $("#inserir").click(function () {
         $("#form").submit();
     });

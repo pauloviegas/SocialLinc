@@ -23,6 +23,8 @@
 <script src="<?= $url_base . 'assets/plugins/jquery-ui/jquery-ui-1.10.1.custom.min.js' ?>" type="text/javascript"></script> 
 <script src="<?= $url_base . 'assets/plugins/bootstrap/js/bootstrap.min.js' ?>" type="text/javascript"></script> 
 <script src="<?= $url_base . 'assets/plugins/jquery-unveil/jquery.unveil.min.js' ?>" type="text/javascript"></script> 
+<script src="<?= $url_base . 'assets/plugins/jquery-validation-1.13.1/dist/jquery.validate.min.js' ?>" type="text/javascript"></script>
+<script src="<?= $url_base . 'assets/plugins/jquery-validation-1.13.1/dist/localization/messages_pt_BR.min.js' ?>" type="text/javascript"></script>
 <!-- FIM DOS FRAMEWORKS DE JAVASCRIPT --> 
 
 <!-- INICIO DOS PLUGINS DE JAVASCRIPT -->

@@ -45,9 +45,8 @@ class SocialController extends MY_Controller
         }
         if (!$this->viewPerfilAcaoModel->verificaPermissao())
         {
-            $this->authModel->logout();
             $this->session->set_flashdata('erro', 'Desculpe, mas você não tem permissão para acessar esta página!!!');
-            redirect('social/serviceauth/index');
+            redirect('social/home/index');
         }
 
         $this->data['nomeUsuarioLogado'] = explode(' ', $this->session->userdata('usuario')->nome);

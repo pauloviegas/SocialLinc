@@ -33,7 +33,6 @@ class AuthModel extends abstractModel
      */
     public function logar($email, $senha)
     {
-
         $usuario = $this->usuarioModel->recuperaPorParametro(NULL, Array('senha' => sha1($senha), 'email' => $email));
         if (!$usuario)
         {
@@ -45,7 +44,7 @@ class AuthModel extends abstractModel
         {
             if ($usuario[0]->excluido == 1)
             {
-//o % será usado como parametro de busca e o 40 represenata o @ na tabela ASCII.
+                //o % será usado como parametro de busca e o 40 represenata o @ na tabela ASCII.
                 $urlEmail = str_replace("@", "%40", $email);
                 $this->authModel->logout();
                 $this->session->set_flashdata('noticia', 'Seu Usuário foi apagado!'
@@ -64,9 +63,9 @@ class AuthModel extends abstractModel
             }
             if ($usuario[0]->excluido == 0 && $usuario[0]->aprovado == 1)
             {
-                $permissoes = $this->viewPerfilAcaoModel->gerarPermissoes($usuario[0]->id);
+                $permissoes = $this->viewPerfilAcaoModel->gerarPaginasComPermissao($usuario[0]->id);
                 $this->session->set_userdata('usuario', $usuario[0]);
-                $this->session->set_userdata('permissoes', $permissoes);
+                $this->session->set_userdata('usuarioPaginasPermitidas', $permissoes);
             }
             return TRUE;
         }
@@ -84,7 +83,8 @@ class AuthModel extends abstractModel
         if ($usuario)
         {
             $this->session->unset_userdata('usuario');
-            $this->session->unset_userdata('permissao');
+            $this->session->unset_userdata('usuarioPaginasPermitidas');
+            $this->session->unset_userdata('PaginasNaoPrecisaPermissao');
             return TRUE;
         }
 

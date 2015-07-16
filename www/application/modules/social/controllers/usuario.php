@@ -92,7 +92,6 @@ class usuario extends SocialController
 
     public function inserir()
     {
-        die('aqui');
         $usuario = $this->_request;
         $this->form_validation->set_rules('nome', 'Nome do Usuário', 'required');
         $this->form_validation->set_rules('id_formacao', 'Formação', 'required|is_natural_no_zero');

@@ -21,24 +21,29 @@ class viewPerfilAcaoModel extends abstractModel
         $this->load->model('acaoModel');
     }
 
+    public function gerarPaginasSemPermissao()
+    {
+        $Permissoes = $this->acaoModel->recuperaPorParametro(NULL, Array('permissao' => 0));
+        foreach ($Permissoes as $Permissao)
+        {
+            $novoObjeto = new stdClass();
+            $novoObjeto->acao = $Permissao->modulo . '/' . $Permissao->controller . '/' . $Permissao->action;
+            $novoObjeto->alias_controller = $Permissao->alias_controller;
+            $novoObjeto->alias_action = $Permissao->alias_action;
+            $novoObjeto->permissao = $Permissao->permissao;
+            $perm[] = $novoObjeto;
+        }
+        return $perm;
+    }
+
     /**
      * Gera todas as ações que o perfil de usuário tem acesso.
      * @param $id_perfil Correspode ao id do perfil desse usuário.
      * @author Paulo Viegas <pauloviegas93@gmail.com>
      * @return Array Todas as permissões que o perfil do usuário tem e mais as ações que não precisam de permissão.
      */
-    public function gerarPermissoes($idUser)
+    public function gerarPaginasComPermissao($idUser)
     {
-        $npPermissoes = $this->acaoModel->recuperaPorParametro(NULL, Array('permissao' => 0));
-        foreach ($npPermissoes as $npPermissao)
-        {
-            $novoObjeto = new stdClass();
-            $novoObjeto->acao = $npPermissao->modulo . '/' . $npPermissao->controller . '/' . $npPermissao->action;
-            $novoObjeto->alias_controller = $npPermissao->alias_controller;
-            $novoObjeto->alias_action = $npPermissao->alias_action;
-            $novoObjeto->permissao = $npPermissao->permissao;
-            $permissoes[] = $novoObjeto;
-        }
         $permissoesUsuario = $this->recuperaPorParametro(NULL, Array('id_usuario' => $idUser));
         foreach ($permissoesUsuario as $permissaoUsuario)
         {
@@ -61,36 +66,59 @@ class viewPerfilAcaoModel extends abstractModel
      */
     public function verificaPermissao($acao = NULL, $grupo = NULL)
     {
+        $PaginasNaoPrecisaPermissao = $this->session->userdata('PaginasNaoPrecisaPermissao');
+        $usuarioPaginasPermitidas = $this->session->userdata('usuarioPaginasPermitidas');
         $url = $this->recuperaUrl();
-        $idGrupo = ($grupo != NULL) ? $grupo : $this->uri->segment(4);
-        $novaAcao = ($acao != NULL) ? $acao : $this->recuperaUrl();
-        $permissoes = $this->session->userdata('permissoes');
-        //$permitido = 0;
-        if ($url != 'social/usuario/inserir')
+        $idGrupo = ($grupo != NULL) ? $grupo : ($this->uri->segment(4) == FALSE) ? 1 : $this->uri->segment(4);
+        $acaoAtual = ($acao != NULL) ? $acao : $url;
+        foreach ($PaginasNaoPrecisaPermissao as $PaginaNaoPrecisaPermissao)
         {
-            foreach ($permissoes as $permissao)
+            if ($PaginaNaoPrecisaPermissao->acao == $acaoAtual)
             {
-                if ($permissao->acao == $novaAcao)
-                {
-                    if ($permissao->permissao == 0)
-                    {
-                        return TRUE;
-                    }
-                    else
-                    {
-                        if ($permissao->id_instituicao == $idGrupo || $permissao->id_instituicao == 1)
-                        {
-                            return TRUE;
-                        }
-                    }
-                }
+                return TRUE;
             }
-            return FALSE;
         }
-        else
+        foreach ($usuarioPaginasPermitidas as $usuarioPaginaPermitida)
         {
-            return TRUE;
+            if ($usuarioPaginaPermitida->acao == $acaoAtual && ($usuarioPaginaPermitida->id_instituicao == $idGrupo || $usuarioPaginaPermitida->id_instituicao == 1))
+            {
+                return TRUE;
+            }
         }
+        return FALSE;
+
+
+
+//        $url = $this->recuperaUrl();
+//        $idGrupo = ($grupo != NULL) ? $grupo : $this->uri->segment(4);
+//        $novaAcao = ($acao != NULL) ? $acao : $this->recuperaUrl();
+//        $permissoes = $this->session->userdata('permissoes');
+//        //$permitido = 0;
+//        if ($url != 'social/usuario/inserir')
+//        {
+//            foreach ($permissoes as $permissao)
+//            {
+//                if ($permissao->acao == $novaAcao)
+//                {
+//                    if ($permissao->permissao == 0)
+//                    {
+//                        return TRUE;
+//                    }
+//                    else
+//                    {
+//                        if ($permissao->id_instituicao == $idGrupo || $permissao->id_instituicao == 1)
+//                        {
+//                            return TRUE;
+//                        }
+//                    }
+//                }
+//            }
+//            return FALSE;
+//        }
+//        else
+//        {
+//            return TRUE;
+//        }
     }
 
 }

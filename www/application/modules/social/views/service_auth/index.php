@@ -246,7 +246,7 @@
                                         <div class="input-with-icon right">
                                             <select id="formacao" name="id_formacao" style="width:100%">
                                                 <?php if (count($formacoes) > 0) : ?>
-                                                    <option value="0">Selecione</option>
+                                                    <option value="">Selecione</option>
                                                     <?php foreach ($formacoes as $formacao) : ?>
                                                         <option value="<?= $formacao->id ?>"><?= $formacao->formacao ?></option>
                                                     <?php endforeach; ?>
@@ -254,7 +254,7 @@
                                                     <option value="0">Não Existe Nenhuma Formação Disponível</option>
                                                 <?php endif; ?>
                                             </select>
-                                        </div>
+                               x         </div>
                                     </div>
                                 </div>
                                 <div class="form-group col-md-6">
@@ -263,7 +263,7 @@
                                         <div class="input-with-icon right">
                                             <select id="instituicao" name="id_instituicao" style="width:100%">
                                                 <?php if (count($instituicoes) > 0) : ?>
-                                                    <option value="0">Selecione</option>
+                                                    <option value="">Selecione</option>
                                                     <?php foreach ($instituicoes as $instituicao) : ?>
                                                         <option value="<?= $instituicao->id ?>"><?= $instituicao->nome ?></option>
                                                     <?php endforeach; ?>
@@ -290,7 +290,7 @@
                                     <div class="controls">
                                         <div class="input-with-icon right">                                       
                                             <i class=""></i>
-                                            <input id="repetirsenha" class="form-control" type="password" name="repetirSenha">                                 
+                                            <input id="repetirSenha" class="form-control" type="password" name="repetirSenha">                                 
                                         </div>
                                     </div>
                                 </div>
@@ -357,11 +357,13 @@
                 rules: {
                     nome: "required",
                     senha: "required",
-                    repetirsenha: "required",
+                    repetirSenha: "required",
                     email: {
                         required: true,
                         email: true
-                    }
+                    },
+                    id_formacao: "required",
+                    id_instituicao: "required"
                 }
             });
             //Submete o formulário de login
