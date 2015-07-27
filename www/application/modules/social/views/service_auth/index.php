@@ -254,7 +254,7 @@
                                                     <option value="0">Não Existe Nenhuma Formação Disponível</option>
                                                 <?php endif; ?>
                                             </select>
-                               x         </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="form-group col-md-6">
