@@ -372,7 +372,7 @@
                 $(".login-form").submit();
             });
             $("#btnSalvarUsuario").click(function () {
-                $("#formCadastrarUsuario").attr('action', '<?= base_url('social/usuario/inserir') ?>');
+                $("#formCadastrarUsuario").attr('action', '<?= base_url('social/serviceauth/inserir') ?>');
                 $("#formCadastrarUsuario").submit();
             });
             //Trata o nome da imagem para inserir no campo de envio da mesma

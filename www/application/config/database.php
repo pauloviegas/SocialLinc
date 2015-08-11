@@ -50,22 +50,6 @@ $active_record = TRUE;
 
 //bd01.linc.ufpa.br
 //linc.ufpa.br
-$db['lprad']['hostname'] = 'www2.lprad.ufpa.br';
-$db['lprad']['username'] = 'pauloviegas';
-$db['lprad']['password'] = 'swZnVpxPDFPYQ3z6';
-$db['lprad']['database'] = 'linc2';
-$db['lprad']['dbdriver'] = 'mysql';
-$db['lprad']['dbprefix'] = '';
-$db['lprad']['pconnect'] = TRUE;
-$db['lprad']['db_debug'] = TRUE;
-$db['lprad']['cache_on'] = FALSE;
-$db['lprad']['cachedir'] = '';
-$db['lprad']['char_set'] = 'utf8';
-$db['lprad']['dbcollat'] = 'utf8_general_ci';
-$db['lprad']['swap_pre'] = '';
-$db['lprad']['autoinit'] = TRUE;
-$db['lprad']['stricton'] = FALSE;
-
 
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
@@ -82,6 +66,39 @@ $db['default']['dbcollat'] = 'utf8_general_ci';
 $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
+
+$db['lprad']['hostname'] = 'www2.lprad.ufpa.br';
+$db['lprad']['username'] = 'pauloviegas';
+$db['lprad']['password'] = 'swZnVpxPDFPYQ3z6';
+$db['lprad']['database'] = 'linc2';
+$db['lprad']['dbdriver'] = 'mysql';
+$db['lprad']['dbprefix'] = '';
+$db['lprad']['pconnect'] = TRUE;
+$db['lprad']['db_debug'] = TRUE;
+$db['lprad']['cache_on'] = FALSE;
+$db['lprad']['cachedir'] = '';
+$db['lprad']['char_set'] = 'utf8';
+$db['lprad']['dbcollat'] = 'utf8_general_ci';
+$db['lprad']['swap_pre'] = '';
+$db['lprad']['autoinit'] = TRUE;
+$db['lprad']['stricton'] = FALSE;
+
+$db['dreamhost']['hostname'] = 'mysql.linc.ufpa.br';
+$db['dreamhost']['username'] = 'lincufpa';
+$db['dreamhost']['password'] = 'linc2014ufpa';
+$db['dreamhost']['database'] = 'lincsite';
+$db['dreamhost']['dbdriver'] = 'mysql';
+$db['dreamhost']['dbprefix'] = '';
+$db['dreamhost']['pconnect'] = TRUE;
+$db['dreamhost']['db_debug'] = TRUE;
+$db['dreamhost']['cache_on'] = FALSE;
+$db['dreamhost']['cachedir'] = '';
+$db['dreamhost']['char_set'] = 'utf8';
+$db['dreamhost']['dbcollat'] = 'utf8_general_ci';
+$db['dreamhost']['swap_pre'] = '';
+$db['dreamhost']['autoinit'] = TRUE;
+$db['dreamhost']['stricton'] = FALSE;
+
 
 
 /* End of file database.php */

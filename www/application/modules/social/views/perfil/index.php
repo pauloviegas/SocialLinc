@@ -141,7 +141,7 @@
     $(".permissao").click(function () {
         var form = $("#formPerfil");
         var id = $(this).attr('id');
-        form.attr('action', '<?= base_url('social/permissao/index/') ?>' + id);
+        form.attr('action', '<?= base_url('social/permissao/index') ?>' + '/' + id);
         form.submit();
     });
     $(".excluir").click(function () {

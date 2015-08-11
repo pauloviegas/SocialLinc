@@ -42,31 +42,9 @@ class AuthModel extends abstractModel
         }
         else
         {
-            if ($usuario[0]->excluido == 1)
-            {
-                //o % será usado como parametro de busca e o 40 represenata o @ na tabela ASCII.
-                $urlEmail = str_replace("@", "%40", $email);
-                $this->authModel->logout();
-                $this->session->set_flashdata('noticia', 'Seu Usuário foi apagado!'
-                        . ' para ativa-lo novamente entre em contato com o '
-                        . ' administtrador da rede');
-                redirect('/social/serviceauth/index');
-            }
-            if ($usuario[0]->aprovado == 0)
-            {
-                $this->authModel->logout();
-                $this->session->set_flashdata('noticia', 'Seu Usuário está em fase'
-                        . ' de aprovação, assim que aprovado você receberá em seu'
-                        . ' e-mail uma confirmação de que poderá logar em nossa'
-                        . ' rede social! Aguarde por mais notícias!');
-                redirect('/social/serviceauth/index');
-            }
-            if ($usuario[0]->excluido == 0 && $usuario[0]->aprovado == 1)
-            {
-                $permissoes = $this->viewPerfilAcaoModel->gerarPaginasComPermissao($usuario[0]->id);
-                $this->session->set_userdata('usuario', $usuario[0]);
-                $this->session->set_userdata('usuarioPaginasPermitidas', $permissoes);
-            }
+            $permissoes = $this->viewPerfilAcaoModel->gerarPaginasComPermissao($usuario[0]->id);
+            $this->session->set_userdata('usuario', $usuario[0]);
+            $this->session->set_userdata('usuarioPaginasPermitidas', $permissoes);
             return TRUE;
         }
     }

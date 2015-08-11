@@ -78,11 +78,14 @@ class viewPerfilAcaoModel extends abstractModel
                 return TRUE;
             }
         }
-        foreach ($usuarioPaginasPermitidas as $usuarioPaginaPermitida)
+        if ($usuarioPaginasPermitidas)
         {
-            if ($usuarioPaginaPermitida->acao == $acaoAtual && ($usuarioPaginaPermitida->id_instituicao == $idGrupo || $usuarioPaginaPermitida->id_instituicao == 1))
+            foreach ($usuarioPaginasPermitidas as $usuarioPaginaPermitida)
             {
-                return TRUE;
+                if ($usuarioPaginaPermitida->acao == $acaoAtual && ($usuarioPaginaPermitida->id_instituicao == $idGrupo || $usuarioPaginaPermitida->id_instituicao == 1))
+                {
+                    return TRUE;
+                }
             }
         }
         return FALSE;

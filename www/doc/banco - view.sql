@@ -1,4 +1,3 @@
--- Copiando estrutura para tabela linc2.sitelinc_ci_sessions
 CREATE TABLE IF NOT EXISTS `sitelinc_ci_sessions` (
   `session_id` varchar(40) NOT NULL DEFAULT '0',
   `ip_address` varchar(45) NOT NULL DEFAULT '0',
@@ -9,8 +8,8 @@ CREATE TABLE IF NOT EXISTS `sitelinc_ci_sessions` (
   KEY `last_activity_idx` (`last_activity`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Copiando dados para a tabela linc2.sitelinc_ci_sessions: ~368 rows (aproximadamente)
-/*!40000 ALTER TABLE `sitelinc_ci_sessions` DISABLE KEYS */;
+
+
 INSERT IGNORE INTO `sitelinc_ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
 	('0014f35f8651fabcebde90ceccb1c723', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36', 1426001683, 'a:3:{s:9:"user_data";s:0:"";s:10:"permissoes";a:18:{i:0;O:8:"stdClass":5:{s:8:"id_grupo";s:1:"1";s:6:"pagina";s:16:"admin/home/index";s:16:"alias_controller";s:4:"Home";s:12:"alias_action";s:17:"Página Principal";s:5:"ativo";s:1:"0";}i:1;O:8:"stdClass":5:{s:8:"id_grupo";s:1:"1";s:6:"pagina";s:18:"admin/pagina/index";s:16:"alias_controller";s:19:"Páginas do Sistema";s:12:"alias_action";s:50:"Visualizar Lista com Todas as Funções do Sistema";s:5:"ativo";s:1:"1";}i:2;O:8:"stdClass":5:{s:8:"id_grupo";s:1:"1";s:6:"pagina";s:18:"admin/pagina/criar";s:16:"alias_controller";s:19:"Páginas do Sistema";s:12:"alias_action";s:37:"Cadastrar Uma Nova Página no Sistema";s:5:"ativo";s:1:"1";}i:3;O:8:"stdClass":5:{s:8:"id_grupo";s:1:"1";s:6:"pagina";s:19:"admin/pagina/editar";s:16:"alias_controller";s:19:"Páginas do Sistema";s:12:"alias_action";s:34:"Alterar Informações das Páginas";s:5:"ativo";s:1:"1";}i:4;O:8:"stdClass":5:{s:8:"id_grupo";s:1:"1";s:6:"pagina";s:20:"admin/pagina/deletar";s:16:"alias_controller";s:19:"Páginas do Sistema";s:12:"alias_action";s:30:"Excluir as Páginas do Sistema";s:5:"ativo";s:1:"1";}i:5;O:8:"stdClass":5:{s:8:"id_grupo";s:1:"1";s:6:"pagina";s:19:"admin/usuario/index";s:16:"alias_controller";s:8:"Usuário";s:12:"alias_action";s:39:"Visualizar Lista com todos os Usuários";s:5:"ativo";s:1:"1";}i:6;O:8:"stdClass":5:{s:8:"id_grupo";s:1:"1";s:6:"pagina";s:19:"admin/usuario/ativo";s:16:"alias_controller";s:8:"Usuário";s:12:"alias_action";s:30:"Ativar e Inativar os Usuários";s:5:"ativo";s:1:"1";}i:7;O:8:"stdClass":5:{s:8:"id_grupo";s:1:"1";s:6:"pagina";s:19:"admin/usuario/criar";s:16:"alias_controller";s:8:"Usuário";s:12:"alias_action";s:26:"Cadastrar Um Novo Usuário";s:5:"ativo";s:1:"1";}i:8;O:8:"stdClass":5:{s:8:"id_grupo";s:1:"1";s:6:"pagina";s:21:"admin/usuario/detalhe";s:16:"alias_controller";s:8:"Usuário";s:12:"alias_action";s:48:"Visualizar Informações Completas dos Usuários";s:5:"ativo";s:1:"1";}i:9;O:8:"stdClass":5:{s:8:"id_grupo";s:1:"1";s:6:"pagina";s:20:"admin/usuario/editar";s:16:"alias_controller";s:8:"Usuário";s:12:"alias_action";s:35:"Alterar Informações dos Usuários";s:5:"ativo";s:1:"1";}i:10;O:8:"stdClass":5:{s:8:"id_grupo";s:1:"1";s:6:"pagina";s:21:"admin/usuario/deletar";s:16:"alias_controller";s:8:"Usuário";s:12:"alias_action";s:20:"Excluir os Usuários";s:5:"ativo";s:1:"1";}i:11;O:8:"stdClass":5:{s:8:"id_grupo";s:1:"1";s:6:"pagina";s:25:"admin/usuario/trocargrupo";s:16:"alias_controller";s:8:"Usuário";s:12:"alias_action";s:25:"Trocar Usuários de Grupo";s:5:"ativo";s:1:"1";}i:12;O:8:"stdClass":5:{s:8:"id_grupo";s:1:"1";s:6:"pagina";s:32:"admin/usuario/trocarsenhausuario";s:16:"alias_controller";s:8:"Usuário";s:12:"alias_action";s:33:"Anterar Senha de Outros Usuários";s:5:"ativo";s:1:"1";}i:13;O:8:"stdClass":5:{s:8:"id_grupo";s:1:"1";s:6:"pagina";s:17:"admin/grupo/index";s:16:"alias_controller";s:18:"Grupos de Usuário";s:12:"alias_action";s:47:"Visualizar Lista com Todos os Gupos de Usuário";s:5:"ativo";s:1:"1";}i:14;O:8:"stdClass":5:{s:8:"id_grupo";s:1:"1";s:6:"pagina";s:17:"admin/grupo/criar";s:16:"alias_controller";s:18:"Grupos de Usuário";s:12:"alias_action";s:35:"Cadastrar Um Novo Grupo de Usuário";s:5:"ativo";s:1:"1";}i:15;O:8:"stdClass":5:{s:8:"id_grupo";s:1:"1";s:6:"pagina";s:18:"admin/grupo/editar";s:16:"alias_controller";s:18:"Grupos de Usuário";s:12:"alias_action";s:44:"Alterar Informações dos Grupos de Usuário";s:5:"ativo";s:1:"1";}i:16;O:8:"stdClass":5:{s:8:"id_grupo";s:1:"1";s:6:"pagina";s:19:"admin/grupo/deletar";s:16:"alias_controller";s:18:"Grupos de Usuário";s:12:"alias_action";s:30:"Excluir os Grupos de Usuários";s:5:"ativo";s:1:"1";}i:17;O:8:"stdClass":5:{s:8:"id_grupo";s:1:"1";s:6:"pagina";s:20:"admin/grupo/permitir";s:16:"alias_controller";s:18:"Grupos de Usuário";s:12:"alias_action";s:51:"Liberar ou Bloquear Acessos dos Grupos de Usuários";s:5:"ativo";s:1:"1";}}s:7:"usuario";O:8:"stdClass":6:{s:2:"id";s:1:"1";s:8:"id_grupo";s:1:"1";s:4:"nome";s:12:"Paulo Viegas";s:5:"senha";s:40:"d033e22ae348aeb5660fc2140aec35850c4da997";s:5:"email";s:23:"pauloviegas93@gmail.com";s:5:"ativo";s:1:"1";}}'),
 	('00f10e6db5b67bd68170631335904757', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36', 1427997466, 'a:3:{s:9:"user_data";s:0:"";s:7:"usuario";O:8:"stdClass":11:{s:2:"id";s:1:"1";s:9:"id_perfil";s:1:"1";s:9:"id_titulo";s:1:"1";s:14:"id_instituicao";s:1:"1";s:4:"nome";s:40:"Paulo Sérgio Viegas Bernardino da Silva";s:5:"senha";s:40:"d033e22ae348aeb5660fc2140aec35850c4da997";s:5:"email";s:23:"pauloviegas93@gmail.com";s:4:"foto";s:57:"/assets/img/usuarios/6031705b1db6e4ace4e9529e7802832e.jpg";s:10:"foto_fundo";s:43:"/assets/img/usuarios/default_foto_fundo.png";s:8:"aprovado";s:1:"1";s:8:"excluido";s:1:"0";}s:10:"permissoes";a:10:{i:0;O:8:"stdClass":6:{s:2:"id";s:1:"9";s:9:"id_perfil";s:1:"1";s:4:"acao";s:17:"social/acao/index";s:16:"alias_controller";s:36:"Ações do Sistema (Funcionalidades)";s:12:"alias_action";s:30:"Visualizar Ações Cadastradas";s:9:"permissao";s:1:"1";}i:1;O:8:"stdClass":6:{s:2:"id";s:2:"10";s:9:"id_perfil";s:1:"1";s:4:"acao";s:16:"social/log/index";s:16:"alias_controller";s:15:"Logs do Sistema";s:12:"alias_action";s:15:"Visualizar Logs";s:9:"permissao";s:1:"1";}i:2;O:8:"stdClass":6:{s:2:"id";s:2:"11";s:9:"id_perfil";s:1:"1";s:4:"acao";s:17:"social/acao/criar";s:16:"alias_controller";s:36:"Ações do Sistema (Funcionalidades)";s:12:"alias_action";s:28:"Criar Nova Ação do Sistema";s:9:"permissao";s:1:"1";}i:3;O:8:"stdClass":6:{s:2:"id";s:2:"12";s:9:"id_perfil";s:1:"1";s:4:"acao";s:18:"social/acao/editar";s:16:"alias_controller";s:36:"Ações do Sistema (Funcionalidades)";s:12:"alias_action";s:24:"Editar Ação do Sistema";s:9:"permissao";s:1:"1";}i:4;O:8:"stdClass":6:{s:2:"id";s:2:"14";s:9:"id_perfil";s:1:"1";s:4:"acao";s:19:"social/acao/excluir";s:16:"alias_controller";s:36:"Ações do Sistema (Funcionalidades)";s:12:"alias_action";s:25:"Excluir Ação do Sistema";s:9:"permissao";s:1:"1";}i:5;O:8:"stdClass":5:{s:9:"id_perfil";s:1:"1";s:4:"acao";s:17:"social/home/index";s:16:"alias_controller";s:29:"Feed de Notícias do Usuário";s:12:"alias_action";s:32:"Visualizar seu Feed de Notícias";s:9:"permissao";s:1:"0";}i:6;O:8:"stdClass":5:{s:9:"id_perfil";s:1:"1";s:4:"acao";s:24:"social/serviceauth/logar";s:16:"alias_controller";s:26:"Serviço de Autenticação";s:12:"alias_action";s:16:"Logar no Sistema";s:9:"permissao";s:1:"0";}i:7;O:8:"stdClass":5:{s:9:"id_perfil";s:1:"1";s:4:"acao";s:34:"social/serviceauth/reativarusuario";s:16:"alias_controller";s:26:"Serviço de Autenticação";s:12:"alias_action";s:29:"Reativar um Usuário Excluido";s:9:"permissao";s:1:"0";}i:8;O:8:"stdClass":5:{s:9:"id_perfil";s:1:"1";s:4:"acao";s:25:"social/serviceauth/logout";s:16:"alias_controller";s:26:"Serviço de Autenticação";s:12:"alias_action";s:19:"Deslogar do Sistema";s:9:"permissao";s:1:"0";}i:9;O:8:"stdClass":5:{s:9:"id_perfil";s:1:"1";s:4:"acao";s:22:"social/usuario/inserir";s:16:"alias_controller";s:20:"Controle de Usuário";s:12:"alias_action";s:33:"Criar um Novo Usuário No Sistema";s:9:"permissao";s:1:"0";}}}'),
@@ -93,10 +92,9 @@ INSERT IGNORE INTO `sitelinc_ci_sessions` (`session_id`, `ip_address`, `user_age
 	('f6bbf29ec78b1b4485440f055d0acfaa', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.152 Safari/537.36', 1432815416, 'a:3:{s:9:"user_data";s:0:"";s:10:"permissoes";a:163:{i:0;O:8:"stdClass":4:{s:4:"acao";s:17:"social/home/index";s:16:"alias_controller";s:29:"Feed de Notícias do Usuário";s:12:"alias_action";s:32:"Visualizar seu Feed de Notícias";s:9:"permissao";s:1:"0";}i:1;O:8:"stdClass":4:{s:4:"acao";s:24:"social/serviceauth/logar";s:16:"alias_controller";s:26:"Serviço de Autenticação";s:12:"alias_action";s:16:"Logar no Sistema";s:9:"permissao";s:1:"0";}i:2;O:8:"stdClass":4:{s:4:"acao";s:34:"social/serviceauth/reativarusuario";s:16:"alias_controller";s:26:"Serviço de Autenticação";s:12:"alias_action";s:29:"Reativar um Usuário Excluido";s:9:"permissao";s:1:"0";}i:3;O:8:"stdClass":4:{s:4:"acao";s:25:"social/serviceauth/logout";s:16:"alias_controller";s:26:"Serviço de Autenticação";s:12:"alias_action";s:19:"Deslogar do Sistema";s:9:"permissao";s:1:"0";}i:4;O:8:"stdClass":4:{s:4:"acao";s:24:"social/laboratorio/index";s:16:"alias_controller";s:13:"Laboratórios";s:12:"alias_action";s:24:"Visualizar Laboratórios";s:9:"permissao";s:1:"0";}i:5;O:8:"stdClass":4:{s:4:"acao";s:20:"social/projeto/index";s:16:"alias_controller";s:8:"Projetos";s:12:"alias_action";s:37:"Visualizar Projetos dos Laboratórios";s:9:"permissao";s:1:"0";}i:6;O:8:"stdClass":4:{s:4:"acao";s:24:"social/projeto/descricao";s:16:"alias_controller";s:8:"Projetos";s:12:"alias_action";s:35:"Vizualizar Descrição dos Projetos";s:9:"permissao";s:1:"0";}i:7;O:8:"stdClass":4:{s:4:"acao";s:28:"social/laboratorio/descricao";s:16:"alias_controller";s:13:"Laboratórios";s:12:"alias_action";s:40:"Visualizar Descrição dos Laboratórios";s:9:"permissao";s:1:"0";}i:8;O:8:"stdClass":4:{s:4:"acao";s:26:"social/laboratorio/inserir";s:16:"alias_controller";s:13:"Laboratórios";s:12:"alias_action";s:21:"Inserir Laboratórios";s:9:"permissao";s:1:"0";}i:9;O:8:"stdClass":4:{s:4:"acao";s:30:"social/usuario/vincularUsuario";s:16:"alias_controller";s:8:"Usuário";s:12:"alias_action";s:20:"Vincular um Usuário";s:9:"permissao";s:1:"0";}i:10;O:8:"stdClass":4:{s:4:"acao";s:33:"social/usuario/desvincularUsuario";s:16:"alias_controller";s:8:"Usuário";s:12:"alias_action";s:21:"Desvincular Usuários";s:9:"permissao";s:1:"0";}i:11;O:8:"stdClass":4:{s:4:"acao";s:50:"social/laboratorio/verificaVinculadosDoLaboratorio";s:16:"alias_controller";s:13:"Laboratórios";s:12:"alias_action";s:54:"Ajax Verifica se Existe Algo Vinculado ao Laboratório";s:9:"permissao";s:1:"0";}i:12;O:8:"stdClass":4:{s:4:"acao";s:26:"social/laboratorio/alterar";s:16:"alias_controller";s:13:"Laboratórios";s:12:"alias_action";s:39:"Altera as Informações do Laboratório";s:9:"permissao";s:1:"0";}i:13;O:8:"stdClass":4:{s:4:"acao";s:30:"social/laboratorio/excluirfoto";s:16:"alias_controller";s:13:"Laboratórios";s:12:"alias_action";s:28:"Excluir Logo do Laboratório";s:9:"permissao";s:1:"0";}i:14;O:8:"stdClass":4:{s:4:"acao";s:22:"social/projeto/inserir";s:16:"alias_controller";s:8:"Projetos";s:12:"alias_action";s:16:"Inserir Projetos";s:9:"permissao";s:1:"0";}i:15;O:8:"stdClass":4:{s:4:"acao";s:25:"social/anexo/excluirAnexo";s:16:"alias_controller";s:6:"Anexos";s:12:"alias_action";s:16:"Excluir um Anexo";s:9:"permissao";s:1:"0";}i:16;O:8:"stdClass":4:{s:4:"acao";s:25:"social/anexo/inserirAnexo";s:16:"alias_controller";s:6:"Anexos";s:12:"alias_action";s:16:"Inserir um Anexo";s:9:"permissao";s:1:"0";}i:17;O:8:"stdClass":4:{s:4:"acao";s:26:"social/projeto/excluirfoto";s:16:"alias_controller";s:8:"Projetos";s:12:"alias_action";s:23:"Excluir Foto do Projeto";s:9:"permissao";s:1:"0";}i:18;O:8:"stdClass":4:{s:4:"acao";s:22:"social/projeto/alterar";s:16:"alias_controller";s:8:"Projetos";s:12:"alias_action";s:35:"Alterar as Informações do Projeto";s:9:"permissao";s:1:"0";}i:19;O:8:"stdClass":4:{s:4:"acao";s:42:"social/projeto/verificaVinculadosDoProjeto";s:16:"alias_controller";s:8:"Projetos";s:12:"alias_action";s:49:"Ajax Verifica se Existe Algo Vinculado ao Projeto";s:9:"permissao";s:1:"0";}i:20;O:8:"stdClass":4:{s:4:"acao";s:21:"social/usuario/perfil";s:16:"alias_controller";s:8:"Usuário";s:12:"alias_action";s:26:"Alterar Suas Informações";s:9:"permissao";s:1:"0";}i:21;O:8:"stdClass":4:{s:4:"acao";s:28:"social/usuario/alterarPerfil";s:16:"alias_controller";s:8:"Usuário";s:12:"alias_action";s:40:"Função Para Alterar Suas Informações";s:9:"permissao";s:1:"0";}i:22;O:8:"stdClass":4:{s:4:"acao";s:21:"social/titulo/inserir";s:16:"alias_controller";s:7:"Título";s:12:"alias_action";s:38:"função de Criar Títulos de Usuário";s:9:"permissao";s:1:"0";}i:23;O:8:"stdClass":4:{s:4:"acao";s:21:"social/titulo/alterar";s:16:"alias_controller";s:7:"Título";s:12:"alias_action";s:39:"Função de Editar Títulos de Usuário";s:9:"permissao";s:1:"0";}i:24;O:8:"stdClass":4:{s:4:"acao";s:21:"social/perfil/inserir";s:16:"alias_controller";s:6:"Perfil";s:12:"alias_action";s:30:"Função Para inserir Usuário";s:9:"permissao";s:1:"0";}i:25;O:8:"stdClass":4:{s:4:"acao";s:21:"social/perfil/alterar";s:16:"alias_controller";s:6:"Perfil";s:12:"alias_action";s:30:"Função Para Alterar Usuário";s:9:"permissao";s:1:"0";}i:26;O:8:"stdClass":4:{s:4:"acao";s:35:"social/permissao/atualizarPermissao";s:16:"alias_controller";s:22:"Permissões do Sistema";s:12:"alias_action";s:45:"Função Para Conceder ou Retirar Permissões";s:9:"permissao";s:1:"0";}i:27;O:8:"stdClass":4:{s:4:"acao";s:22:"social/usuario/inserir";s:16:"alias_controller";s:8:"Usuário";s:12:"alias_action";s:33:"Função Para Inserir um Usuário";s:9:"permissao";s:1:"0";}i:28;O:8:"stdClass":4:{s:4:"acao";s:32:"social/instituicaoEnsino/inserir";s:16:"alias_controller";s:23:"Instituição de Ensino";s:12:"alias_action";s:46:"Função Para Inserir Instituições de Ensino";s:9:"permissao";s:1:"0";}i:29;O:8:"stdClass":4:{s:4:"acao";s:32:"social/instituicaoEnsino/alterar";s:16:"alias_controller";s:23:"Instituição de Ensino";s:12:"alias_action";s:46:"Função Para Alterar Instituições de Ensino";s:9:"permissao";s:1:"0";}i:30;O:8:"stdClass":4:{s:4:"acao";s:36:"social/instituicaoEnsino/excluirfoto";s:16:"alias_controller";s:23:"Instituição de Ensino";s:12:"alias_action";s:41:"Excluir Logo das Instituições de Ensino";s:9:"permissao";s:1:"0";}i:31;O:8:"stdClass":4:{s:4:"acao";s:38:"social/instituicaoFinanciadora/inserir";s:16:"alias_controller";s:26:"Instituição Financiadora";s:12:"alias_action";s:50:"Função Para Inserir Instituições Financiadoras";s:9:"permissao";s:1:"0";}i:32;O:8:"stdClass":4:{s:4:"acao";s:38:"social/instituicaoFinanciadora/alterar";s:16:"alias_controller";s:26:"Instituição Financiadora";s:12:"alias_action";s:50:"Função Para Alterar Instituições Financiadoras";s:9:"permissao";s:1:"0";}i:33;O:8:"stdClass":4:{s:4:"acao";s:42:"social/instituicaoFinanciadora/excluirfoto";s:16:"alias_controller";s:26:"Instituição Financiadora";s:12:"alias_action";s:45:"Excluir Logo das Instituições Financiadoras";s:9:"permissao";s:1:"0";}i:34;O:8:"stdClass":4:{s:4:"acao";s:41:"social/usuario/verificaVinculoCoordOuResp";s:16:"alias_controller";s:8:"Usuário";s:12:"alias_action";s:69:"Ajax Verifica se o Usuário é Coordenador ou Responsável do Projeto";s:9:"permissao";s:1:"0";}i:35;O:8:"stdClass":5:{s:4:"acao";s:34:"social/laboratorio/visualizaranexo";s:16:"alias_controller";s:13:"Laboratórios";s:12:"alias_action";s:32:"Visualizar Anexo do Laboratório";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"7";}i:36;O:8:"stdClass":5:{s:4:"acao";s:30:"social/projeto/visualizaranexo";s:16:"alias_controller";s:8:"Projetos";s:12:"alias_action";s:27:"Visualizar Anexo do Projeto";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"7";}i:37;O:8:"stdClass":5:{s:4:"acao";s:25:"social/laboratorio/editar";s:16:"alias_controller";s:13:"Laboratórios";s:12:"alias_action";s:36:"Editar Informações do Laboratório";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"7";}i:38;O:8:"stdClass":5:{s:4:"acao";s:34:"social/laboratorio/vincularUsuario";s:16:"alias_controller";s:13:"Laboratórios";s:12:"alias_action";s:34:"Vincular Usuários no Laboratório";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"7";}i:39;O:8:"stdClass":5:{s:4:"acao";s:16:"social/log/index";s:16:"alias_controller";s:15:"Logs do Sistema";s:12:"alias_action";s:15:"Visualizar Logs";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:40;O:8:"stdClass":5:{s:4:"acao";s:34:"social/laboratorio/visualizaranexo";s:16:"alias_controller";s:13:"Laboratórios";s:12:"alias_action";s:32:"Visualizar Anexo do Laboratório";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:41;O:8:"stdClass":5:{s:4:"acao";s:19:"social/tarefa/index";s:16:"alias_controller";s:7:"Tarefas";s:12:"alias_action";s:29:"Visualizar Terefas do Projeto";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:42;O:8:"stdClass":5:{s:4:"acao";s:21:"social/tarefa/aprovar";s:16:"alias_controller";s:7:"Tarefas";s:12:"alias_action";s:26:"Aprovar Tarefas do Projeto";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:43;O:8:"stdClass":5:{s:4:"acao";s:24:"social/laboratorio/criar";s:16:"alias_controller";s:13:"Laboratórios";s:12:"alias_action";s:41:"Adicionar um Laboratório a Instituição";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:44;O:8:"stdClass":5:{s:4:"acao";s:33:"social/laboratorio/adicionaranexo";s:16:"alias_controller";s:13:"Laboratórios";s:12:"alias_action";s:31:"Adicionar Anexo ao Laboratório";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:45;O:8:"stdClass":5:{s:4:"acao";s:25:"social/laboratorio/editar";s:16:"alias_controller";s:13:"Laboratórios";s:12:"alias_action";s:36:"Editar Informações do Laboratório";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:46;O:8:"stdClass":5:{s:4:"acao";s:26:"social/laboratorio/excluir";s:16:"alias_controller";s:13:"Laboratórios";s:12:"alias_action";s:21:"Excluir Laboratórios";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:47;O:8:"stdClass":5:{s:4:"acao";s:34:"social/laboratorio/vincularUsuario";s:16:"alias_controller";s:13:"Laboratórios";s:12:"alias_action";s:34:"Vincular Usuários no Laboratório";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:48;O:8:"stdClass":5:{s:4:"acao";s:31:"social/laboratorio/excluiranexo";s:16:"alias_controller";s:13:"Laboratórios";s:12:"alias_action";s:29:"Excluir Anexo do Laboratório";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:49;O:8:"stdClass":5:{s:4:"acao";s:37:"social/laboratorio/desvincularUsuario";s:16:"alias_controller";s:13:"Laboratórios";s:12:"alias_action";s:37:"Desvincular Usuários do Laboratório";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:50;O:8:"stdClass":5:{s:4:"acao";s:20:"social/projeto/criar";s:16:"alias_controller";s:8:"Projetos";s:12:"alias_action";s:36:"Adicionar um Projeto ao Laboratório";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:51;O:8:"stdClass":5:{s:4:"acao";s:21:"social/projeto/editar";s:16:"alias_controller";s:8:"Projetos";s:12:"alias_action";s:31:"Editar Informações do Projeto";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:52;O:8:"stdClass":5:{s:4:"acao";s:22:"social/projeto/excluir";s:16:"alias_controller";s:8:"Projetos";s:12:"alias_action";s:15:"Excluir Projeto";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:53;O:8:"stdClass":5:{s:4:"acao";s:30:"social/projeto/visualizaranexo";s:16:"alias_controller";s:8:"Projetos";s:12:"alias_action";s:27:"Visualizar Anexo do Projeto";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:54;O:8:"stdClass":5:{s:4:"acao";s:29:"social/projeto/adicionaranexo";s:16:"alias_controller";s:8:"Projetos";s:12:"alias_action";s:26:"Adicionar Anexo no Projeto";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:55;O:8:"stdClass":5:{s:4:"acao";s:27:"social/projeto/excluiranexo";s:16:"alias_controller";s:8:"Projetos";s:12:"alias_action";s:24:"Excluir Anexo do Projeto";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:56;O:8:"stdClass":5:{s:4:"acao";s:30:"social/projeto/vincularusuario";s:16:"alias_controller";s:8:"Projetos";s:12:"alias_action";s:28:"Vincular Usuário no Projeto";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:57;O:8:"stdClass":5:{s:4:"acao";s:33:"social/projeto/desvincularusuario";s:16:"alias_controller";s:8:"Projetos";s:12:"alias_action";s:31:"Desvincular Usuário do Projeto";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:58;O:8:"stdClass":5:{s:4:"acao";s:43:"social/projeto/vincularLinhaPesquisaProjeto";s:16:"alias_controller";s:8:"Projetos";s:12:"alias_action";s:39:"Vincular Linha de Pesquisa a um Projeto";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:59;O:8:"stdClass":5:{s:4:"acao";s:46:"social/projeto/desvincularLinhaPesquisaProjeto";s:16:"alias_controller";s:8:"Projetos";s:12:"alias_action";s:44:" Desvincular Linha de Pesquisa de um Projeto";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:60;O:8:"stdClass":5:{s:4:"acao";s:54:"social/laboratorio/desvincularLinhaPesquisaLaboratorio";s:16:"alias_controller";s:13:"Laboratórios";s:12:"alias_action";s:44:"Desvincular Linha de Pesquisa de um Projetro";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:61;O:8:"stdClass":5:{s:4:"acao";s:51:"social/laboratorio/vincularLinhaPesquisaLaboratorio";s:16:"alias_controller";s:13:"Laboratórios";s:12:"alias_action";s:44:"Vincular Linha de Pesquisa a um Laboratório";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:62;O:8:"stdClass":5:{s:4:"acao";s:20:"social/usuario/index";s:16:"alias_controller";s:8:"Usuário";s:12:"alias_action";s:19:"Visualizar Usuarios";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:63;O:8:"stdClass":5:{s:4:"acao";s:21:"social/usuario/editar";s:16:"alias_controller";s:8:"usuário";s:12:"alias_action";s:16:"Editar Usuários";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:64;O:8:"stdClass":5:{s:4:"acao";s:22:"social/usuario/alterar";s:16:"alias_controller";s:7:"Usuario";s:12:"alias_action";s:30:"Função para Alterar Usuário";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:65;O:8:"stdClass":5:{s:4:"acao";s:26:"social/usuario/excluirFoto";s:16:"alias_controller";s:8:"Usuário";s:12:"alias_action";s:12:"Excluir Foto";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:66;O:8:"stdClass":5:{s:4:"acao";s:41:"social/usuario/alterarSenhaOutrosUsuarios";s:16:"alias_controller";s:9:"Usuários";s:12:"alias_action";s:35:"Alterar a Senha de Outros Usuários";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:67;O:8:"stdClass":5:{s:4:"acao";s:43:"social/usuario/vincularLinhaPesquisaUsuario";s:16:"alias_controller";s:9:"Usuários";s:12:"alias_action";s:40:"Vincular Linha de Pesquisa a um Usuário";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:68;O:8:"stdClass":5:{s:4:"acao";s:46:"social/usuario/desvincularLinhaPesquisaUsuario";s:16:"alias_controller";s:9:"Usuários";s:12:"alias_action";s:43:"Desvincular Linha de Pesquisa a um Usuário";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:69;O:8:"stdClass":5:{s:4:"acao";s:30:"social/usuario/vincularUsuario";s:16:"alias_controller";s:8:"Usuário";s:12:"alias_action";s:20:"Vincular um Usuário";s:9:"permissao";s:1:"0";s:14:"id_instituicao";s:1:"1";}i:70;O:8:"stdClass":5:{s:4:"acao";s:23:"social/usuario/inativar";s:16:"alias_controller";s:8:"Usuário";s:12:"alias_action";s:17:"Inativar usuário";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:71;O:8:"stdClass":5:{s:4:"acao";s:21:"social/usuario/ativar";s:16:"alias_controller";s:8:"Usuário";s:12:"alias_action";s:15:"Ativar Usuário";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:72;O:8:"stdClass":5:{s:4:"acao";s:19:"social/titulo/index";s:16:"alias_controller";s:7:"Título";s:12:"alias_action";s:31:"visualizar Títulos de Usuário";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:73;O:8:"stdClass":5:{s:4:"acao";s:21:"social/titulo/inserir";s:16:"alias_controller";s:7:"Título";s:12:"alias_action";s:38:"função de Criar Títulos de Usuário";s:9:"permissao";s:1:"0";s:14:"id_instituicao";s:1:"1";}i:74;O:8:"stdClass":5:{s:4:"acao";s:20:"social/titulo/editar";s:16:"alias_controller";s:7:"Título";s:12:"alias_action";s:27:"Editar Títulos de Usuário";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:75;O:8:"stdClass":5:{s:4:"acao";s:19:"social/titulo/criar";s:16:"alias_controller";s:7:"Título";s:12:"alias_action";s:26:"Criar Títulos de Usuário";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:76;O:8:"stdClass":5:{s:4:"acao";s:21:"social/titulo/alterar";s:16:"alias_controller";s:7:"Título";s:12:"alias_action";s:39:"Função de Editar Títulos de Usuário";s:9:"permissao";s:1:"0";s:14:"id_instituicao";s:1:"1";}i:77;O:8:"stdClass":5:{s:4:"acao";s:21:"social/titulo/excluir";s:16:"alias_controller";s:7:"Título";s:12:"alias_action";s:28:"Excluir Títulos de Usuário";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:78;O:8:"stdClass":5:{s:4:"acao";s:19:"social/perfil/criar";s:16:"alias_controller";s:6:"Perfil";s:12:"alias_action";s:24:"Criar Perfis de Usuário";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:79;O:8:"stdClass":5:{s:4:"acao";s:19:"social/perfil/index";s:16:"alias_controller";s:6:"Perfil";s:12:"alias_action";s:29:"Visualizar Perfis de Usuário";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:80;O:8:"stdClass":5:{s:4:"acao";s:20:"social/perfil/editar";s:16:"alias_controller";s:6:"Perfil";s:12:"alias_action";s:25:"Editar Perfis de usuário";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:81;O:8:"stdClass":5:{s:4:"acao";s:21:"social/perfil/inserir";s:16:"alias_controller";s:6:"Perfil";s:12:"alias_action";s:30:"Função Para inserir Usuário";s:9:"permissao";s:1:"0";s:14:"id_instituicao";s:1:"1";}i:82;O:8:"stdClass":5:{s:4:"acao";s:21:"social/perfil/alterar";s:16:"alias_controller";s:6:"Perfil";s:12:"alias_action";s:30:"Função Para Alterar Usuário";s:9:"permissao";s:1:"0";s:14:"id_instituicao";s:1:"1";}i:83;O:8:"stdClass":5:{s:4:"acao";s:21:"social/perfil/excluir";s:16:"alias_controller";s:6:"Perfil";s:12:"alias_action";s:26:"Excluir Perfis de Usuário";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:84;O:8:"stdClass":5:{s:4:"acao";s:22:"social/permissao/index";s:16:"alias_controller";s:22:"Permissões do Sistema";s:12:"alias_action";s:29:"Conceder Permissões A Perfis";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:85;O:8:"stdClass":5:{s:4:"acao";s:35:"social/permissao/atualizarPermissao";s:16:"alias_controller";s:22:"Permissões do Sistema";s:12:"alias_action";s:45:"Função Para Conceder ou Retirar Permissões";s:9:"permissao";s:1:"0";s:14:"id_instituicao";s:1:"1";}i:86;O:8:"stdClass":5:{s:4:"acao";s:20:"social/sistema/index";s:16:"alias_controller";s:26:"Administradores do Sistema";s:12:"alias_action";s:43:"Visualizar Grupo Administradores do Sistema";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:87;O:8:"stdClass":5:{s:4:"acao";s:30:"social/sistema/vincularUsuario";s:16:"alias_controller";s:26:"Administradores do Sistema";s:12:"alias_action";s:56:"Vincular Usuários Para Serem Administradores do Sistema";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:88;O:8:"stdClass":5:{s:4:"acao";s:33:"social/sistema/desvincularUsuario";s:16:"alias_controller";s:26:"Administradores do Sistema";s:12:"alias_action";s:59:"Desvincular Usuários Para Serem Administradores do Sistema";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:89;O:8:"stdClass":5:{s:4:"acao";s:30:"social/instituicaoEnsino/index";s:16:"alias_controller";s:23:"Instituição de Ensino";s:12:"alias_action";s:35:"Visualizar Instituições de Ensino";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:90;O:8:"stdClass":5:{s:4:"acao";s:30:"social/instituicaoEnsino/criar";s:16:"alias_controller";s:23:"Instituição de Ensino";s:12:"alias_action";s:32:"Inserir Insticuições de Ensino";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:91;O:8:"stdClass":5:{s:4:"acao";s:31:"social/instituicaoEnsino/editar";s:16:"alias_controller";s:23:"Instituição de Ensino";s:12:"alias_action";s:31:"Editar Instituições de Ensino";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:92;O:8:"stdClass":5:{s:4:"acao";s:32:"social/instituicaoEnsino/excluir";s:16:"alias_controller";s:23:"Instituição de Ensino";s:12:"alias_action";s:32:"Excluir Instituições de Ensino";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:93;O:8:"stdClass":5:{s:4:"acao";s:36:"social/instituicaoFinanciadora/index";s:16:"alias_controller";s:26:"Instituição Financiadora";s:12:"alias_action";s:39:"Visualizar instituições Financiadoras";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:94;O:8:"stdClass":5:{s:4:"acao";s:36:"social/instituicaoFinanciadora/criar";s:16:"alias_controller";s:26:"Instituição Financiadora";s:12:"alias_action";s:36:"Inserir Instituições Financiadoras";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:95;O:8:"stdClass":5:{s:4:"acao";s:37:"social/instituicaoFinanciadora/editar";s:16:"alias_controller";s:26:"Instituição Financiadora";s:12:"alias_action";s:35:"Editar Instituições Financiadoras";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:96;O:8:"stdClass":5:{s:4:"acao";s:38:"social/instituicaoFinanciadora/excluir";s:16:"alias_controller";s:26:"Instituição Financiadora";s:12:"alias_action";s:36:"Excluir Instituições Financiadoras";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:97;O:8:"stdClass":5:{s:4:"acao";s:38:"social/instituicaoFinanciadora/inserir";s:16:"alias_controller";s:26:"Instituição Financiadora";s:12:"alias_action";s:50:"Função Para Inserir Instituições Financiadoras";s:9:"permissao";s:1:"0";s:14:"id_instituicao";s:1:"1";}i:98;O:8:"stdClass":5:{s:4:"acao";s:38:"social/instituicaoFinanciadora/alterar";s:16:"alias_controller";s:26:"Instituição Financiadora";s:12:"alias_action";s:50:"Função Para Alterar Instituições Financiadoras";s:9:"permissao";s:1:"0";s:14:"id_instituicao";s:1:"1";}i:99;O:8:"stdClass":5:{s:4:"acao";s:42:"social/instituicaoFinanciadora/excluirfoto";s:16:"alias_controller";s:26:"Instituição Financiadora";s:12:"alias_action";s:45:"Excluir Logo das Instituições Financiadoras";s:9:"permissao";s:1:"0";s:14:"id_instituicao";s:1:"1";}i:100;O:8:"stdClass":5:{s:4:"acao";s:41:"social/usuario/visualizarUsuariosExcluido";s:16:"alias_controller";s:8:"Usuário";s:12:"alias_action";s:30:"Visualizar Usuários Excluidos";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"1";}i:101;O:8:"stdClass":5:{s:4:"acao";s:16:"social/log/index";s:16:"alias_controller";s:15:"Logs do Sistema";s:12:"alias_action";s:15:"Visualizar Logs";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:102;O:8:"stdClass":5:{s:4:"acao";s:34:"social/laboratorio/visualizaranexo";s:16:"alias_controller";s:13:"Laboratórios";s:12:"alias_action";s:32:"Visualizar Anexo do Laboratório";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:103;O:8:"stdClass":5:{s:4:"acao";s:19:"social/tarefa/index";s:16:"alias_controller";s:7:"Tarefas";s:12:"alias_action";s:29:"Visualizar Terefas do Projeto";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:104;O:8:"stdClass":5:{s:4:"acao";s:21:"social/tarefa/aprovar";s:16:"alias_controller";s:7:"Tarefas";s:12:"alias_action";s:26:"Aprovar Tarefas do Projeto";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:105;O:8:"stdClass":5:{s:4:"acao";s:24:"social/laboratorio/criar";s:16:"alias_controller";s:13:"Laboratórios";s:12:"alias_action";s:41:"Adicionar um Laboratório a Instituição";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:106;O:8:"stdClass":5:{s:4:"acao";s:33:"social/laboratorio/adicionaranexo";s:16:"alias_controller";s:13:"Laboratórios";s:12:"alias_action";s:31:"Adicionar Anexo ao Laboratório";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:107;O:8:"stdClass":5:{s:4:"acao";s:25:"social/laboratorio/editar";s:16:"alias_controller";s:13:"Laboratórios";s:12:"alias_action";s:36:"Editar Informações do Laboratório";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:108;O:8:"stdClass":5:{s:4:"acao";s:26:"social/laboratorio/excluir";s:16:"alias_controller";s:13:"Laboratórios";s:12:"alias_action";s:21:"Excluir Laboratórios";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:109;O:8:"stdClass":5:{s:4:"acao";s:34:"social/laboratorio/vincularUsuario";s:16:"alias_controller";s:13:"Laboratórios";s:12:"alias_action";s:34:"Vincular Usuários no Laboratório";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:110;O:8:"stdClass":5:{s:4:"acao";s:31:"social/laboratorio/excluiranexo";s:16:"alias_controller";s:13:"Laboratórios";s:12:"alias_action";s:29:"Excluir Anexo do Laboratório";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:111;O:8:"stdClass":5:{s:4:"acao";s:37:"social/laboratorio/desvincularUsuario";s:16:"alias_controller";s:13:"Laboratórios";s:12:"alias_action";s:37:"Desvincular Usuários do Laboratório";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:112;O:8:"stdClass":5:{s:4:"acao";s:20:"social/projeto/criar";s:16:"alias_controller";s:8:"Projetos";s:12:"alias_action";s:36:"Adicionar um Projeto ao Laboratório";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:113;O:8:"stdClass":5:{s:4:"acao";s:21:"social/projeto/editar";s:16:"alias_controller";s:8:"Projetos";s:12:"alias_action";s:31:"Editar Informações do Projeto";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:114;O:8:"stdClass":5:{s:4:"acao";s:22:"social/projeto/excluir";s:16:"alias_controller";s:8:"Projetos";s:12:"alias_action";s:15:"Excluir Projeto";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:115;O:8:"stdClass":5:{s:4:"acao";s:30:"social/projeto/visualizaranexo";s:16:"alias_controller";s:8:"Projetos";s:12:"alias_action";s:27:"Visualizar Anexo do Projeto";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:116;O:8:"stdClass":5:{s:4:"acao";s:29:"social/projeto/adicionaranexo";s:16:"alias_controller";s:8:"Projetos";s:12:"alias_action";s:26:"Adicionar Anexo no Projeto";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:117;O:8:"stdClass":5:{s:4:"acao";s:27:"social/projeto/excluiranexo";s:16:"alias_controller";s:8:"Projetos";s:12:"alias_action";s:24:"Excluir Anexo do Projeto";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:118;O:8:"stdClass":5:{s:4:"acao";s:30:"social/projeto/vincularusuario";s:16:"alias_controller";s:8:"Projetos";s:12:"alias_action";s:28:"Vincular Usuário no Projeto";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:119;O:8:"stdClass":5:{s:4:"acao";s:33:"social/projeto/desvincularusuario";s:16:"alias_controller";s:8:"Projetos";s:12:"alias_action";s:31:"Desvincular Usuário do Projeto";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:120;O:8:"stdClass":5:{s:4:"acao";s:43:"social/projeto/vincularLinhaPesquisaProjeto";s:16:"alias_controller";s:8:"Projetos";s:12:"alias_action";s:39:"Vincular Linha de Pesquisa a um Projeto";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:121;O:8:"stdClass":5:{s:4:"acao";s:46:"social/projeto/desvincularLinhaPesquisaProjeto";s:16:"alias_controller";s:8:"Projetos";s:12:"alias_action";s:44:" Desvincular Linha de Pesquisa de um Projeto";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:122;O:8:"stdClass":5:{s:4:"acao";s:54:"social/laboratorio/desvincularLinhaPesquisaLaboratorio";s:16:"alias_controller";s:13:"Laboratórios";s:12:"alias_action";s:44:"Desvincular Linha de Pesquisa de um Projetro";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:123;O:8:"stdClass":5:{s:4:"acao";s:51:"social/laboratorio/vincularLinhaPesquisaLaboratorio";s:16:"alias_controller";s:13:"Laboratórios";s:12:"alias_action";s:44:"Vincular Linha de Pesquisa a um Laboratório";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:124;O:8:"stdClass":5:{s:4:"acao";s:20:"social/usuario/index";s:16:"alias_controller";s:8:"Usuário";s:12:"alias_action";s:19:"Visualizar Usuarios";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:125;O:8:"stdClass":5:{s:4:"acao";s:21:"social/usuario/editar";s:16:"alias_controller";s:8:"usuário";s:12:"alias_action";s:16:"Editar Usuários";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:126;O:8:"stdClass":5:{s:4:"acao";s:22:"social/usuario/alterar";s:16:"alias_controller";s:7:"Usuario";s:12:"alias_action";s:30:"Função para Alterar Usuário";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:127;O:8:"stdClass":5:{s:4:"acao";s:26:"social/usuario/excluirFoto";s:16:"alias_controller";s:8:"Usuário";s:12:"alias_action";s:12:"Excluir Foto";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:128;O:8:"stdClass":5:{s:4:"acao";s:41:"social/usuario/alterarSenhaOutrosUsuarios";s:16:"alias_controller";s:9:"Usuários";s:12:"alias_action";s:35:"Alterar a Senha de Outros Usuários";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:129;O:8:"stdClass":5:{s:4:"acao";s:43:"social/usuario/vincularLinhaPesquisaUsuario";s:16:"alias_controller";s:9:"Usuários";s:12:"alias_action";s:40:"Vincular Linha de Pesquisa a um Usuário";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:130;O:8:"stdClass":5:{s:4:"acao";s:46:"social/usuario/desvincularLinhaPesquisaUsuario";s:16:"alias_controller";s:9:"Usuários";s:12:"alias_action";s:43:"Desvincular Linha de Pesquisa a um Usuário";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:131;O:8:"stdClass":5:{s:4:"acao";s:30:"social/usuario/vincularUsuario";s:16:"alias_controller";s:8:"Usuário";s:12:"alias_action";s:20:"Vincular um Usuário";s:9:"permissao";s:1:"0";s:14:"id_instituicao";s:1:"5";}i:132;O:8:"stdClass":5:{s:4:"acao";s:23:"social/usuario/inativar";s:16:"alias_controller";s:8:"Usuário";s:12:"alias_action";s:17:"Inativar usuário";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:133;O:8:"stdClass":5:{s:4:"acao";s:21:"social/usuario/ativar";s:16:"alias_controller";s:8:"Usuário";s:12:"alias_action";s:15:"Ativar Usuário";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:134;O:8:"stdClass":5:{s:4:"acao";s:19:"social/titulo/index";s:16:"alias_controller";s:7:"Título";s:12:"alias_action";s:31:"visualizar Títulos de Usuário";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:135;O:8:"stdClass":5:{s:4:"acao";s:21:"social/titulo/inserir";s:16:"alias_controller";s:7:"Título";s:12:"alias_action";s:38:"função de Criar Títulos de Usuário";s:9:"permissao";s:1:"0";s:14:"id_instituicao";s:1:"5";}i:136;O:8:"stdClass":5:{s:4:"acao";s:20:"social/titulo/editar";s:16:"alias_controller";s:7:"Título";s:12:"alias_action";s:27:"Editar Títulos de Usuário";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:137;O:8:"stdClass":5:{s:4:"acao";s:19:"social/titulo/criar";s:16:"alias_controller";s:7:"Título";s:12:"alias_action";s:26:"Criar Títulos de Usuário";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:138;O:8:"stdClass":5:{s:4:"acao";s:21:"social/titulo/alterar";s:16:"alias_controller";s:7:"Título";s:12:"alias_action";s:39:"Função de Editar Títulos de Usuário";s:9:"permissao";s:1:"0";s:14:"id_instituicao";s:1:"5";}i:139;O:8:"stdClass":5:{s:4:"acao";s:21:"social/titulo/excluir";s:16:"alias_controller";s:7:"Título";s:12:"alias_action";s:28:"Excluir Títulos de Usuário";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:140;O:8:"stdClass":5:{s:4:"acao";s:19:"social/perfil/criar";s:16:"alias_controller";s:6:"Perfil";s:12:"alias_action";s:24:"Criar Perfis de Usuário";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:141;O:8:"stdClass":5:{s:4:"acao";s:19:"social/perfil/index";s:16:"alias_controller";s:6:"Perfil";s:12:"alias_action";s:29:"Visualizar Perfis de Usuário";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:142;O:8:"stdClass":5:{s:4:"acao";s:20:"social/perfil/editar";s:16:"alias_controller";s:6:"Perfil";s:12:"alias_action";s:25:"Editar Perfis de usuário";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:143;O:8:"stdClass":5:{s:4:"acao";s:21:"social/perfil/inserir";s:16:"alias_controller";s:6:"Perfil";s:12:"alias_action";s:30:"Função Para inserir Usuário";s:9:"permissao";s:1:"0";s:14:"id_instituicao";s:1:"5";}i:144;O:8:"stdClass":5:{s:4:"acao";s:21:"social/perfil/alterar";s:16:"alias_controller";s:6:"Perfil";s:12:"alias_action";s:30:"Função Para Alterar Usuário";s:9:"permissao";s:1:"0";s:14:"id_instituicao";s:1:"5";}i:145;O:8:"stdClass":5:{s:4:"acao";s:21:"social/perfil/excluir";s:16:"alias_controller";s:6:"Perfil";s:12:"alias_action";s:26:"Excluir Perfis de Usuário";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:146;O:8:"stdClass":5:{s:4:"acao";s:22:"social/permissao/index";s:16:"alias_controller";s:22:"Permissões do Sistema";s:12:"alias_action";s:29:"Conceder Permissões A Perfis";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:147;O:8:"stdClass":5:{s:4:"acao";s:35:"social/permissao/atualizarPermissao";s:16:"alias_controller";s:22:"Permissões do Sistema";s:12:"alias_action";s:45:"Função Para Conceder ou Retirar Permissões";s:9:"permissao";s:1:"0";s:14:"id_instituicao";s:1:"5";}i:148;O:8:"stdClass":5:{s:4:"acao";s:20:"social/sistema/index";s:16:"alias_controller";s:26:"Administradores do Sistema";s:12:"alias_action";s:43:"Visualizar Grupo Administradores do Sistema";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:149;O:8:"stdClass":5:{s:4:"acao";s:30:"social/sistema/vincularUsuario";s:16:"alias_controller";s:26:"Administradores do Sistema";s:12:"alias_action";s:56:"Vincular Usuários Para Serem Administradores do Sistema";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:150;O:8:"stdClass":5:{s:4:"acao";s:33:"social/sistema/desvincularUsuario";s:16:"alias_controller";s:26:"Administradores do Sistema";s:12:"alias_action";s:59:"Desvincular Usuários Para Serem Administradores do Sistema";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:151;O:8:"stdClass":5:{s:4:"acao";s:30:"social/instituicaoEnsino/index";s:16:"alias_controller";s:23:"Instituição de Ensino";s:12:"alias_action";s:35:"Visualizar Instituições de Ensino";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:152;O:8:"stdClass":5:{s:4:"acao";s:30:"social/instituicaoEnsino/criar";s:16:"alias_controller";s:23:"Instituição de Ensino";s:12:"alias_action";s:32:"Inserir Insticuições de Ensino";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:153;O:8:"stdClass":5:{s:4:"acao";s:31:"social/instituicaoEnsino/editar";s:16:"alias_controller";s:23:"Instituição de Ensino";s:12:"alias_action";s:31:"Editar Instituições de Ensino";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:154;O:8:"stdClass":5:{s:4:"acao";s:32:"social/instituicaoEnsino/excluir";s:16:"alias_controller";s:23:"Instituição de Ensino";s:12:"alias_action";s:32:"Excluir Instituições de Ensino";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:155;O:8:"stdClass":5:{s:4:"acao";s:36:"social/instituicaoFinanciadora/index";s:16:"alias_controller";s:26:"Instituição Financiadora";s:12:"alias_action";s:39:"Visualizar instituições Financiadoras";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:156;O:8:"stdClass":5:{s:4:"acao";s:36:"social/instituicaoFinanciadora/criar";s:16:"alias_controller";s:26:"Instituição Financiadora";s:12:"alias_action";s:36:"Inserir Instituições Financiadoras";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:157;O:8:"stdClass":5:{s:4:"acao";s:37:"social/instituicaoFinanciadora/editar";s:16:"alias_controller";s:26:"Instituição Financiadora";s:12:"alias_action";s:35:"Editar Instituições Financiadoras";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:158;O:8:"stdClass":5:{s:4:"acao";s:38:"social/instituicaoFinanciadora/excluir";s:16:"alias_controller";s:26:"Instituição Financiadora";s:12:"alias_action";s:36:"Excluir Instituições Financiadoras";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}i:159;O:8:"stdClass":5:{s:4:"acao";s:38:"social/instituicaoFinanciadora/inserir";s:16:"alias_controller";s:26:"Instituição Financiadora";s:12:"alias_action";s:50:"Função Para Inserir Instituições Financiadoras";s:9:"permissao";s:1:"0";s:14:"id_instituicao";s:1:"5";}i:160;O:8:"stdClass":5:{s:4:"acao";s:38:"social/instituicaoFinanciadora/alterar";s:16:"alias_controller";s:26:"Instituição Financiadora";s:12:"alias_action";s:50:"Função Para Alterar Instituições Financiadoras";s:9:"permissao";s:1:"0";s:14:"id_instituicao";s:1:"5";}i:161;O:8:"stdClass":5:{s:4:"acao";s:42:"social/instituicaoFinanciadora/excluirfoto";s:16:"alias_controller";s:26:"Instituição Financiadora";s:12:"alias_action";s:45:"Excluir Logo das Instituições Financiadoras";s:9:"permissao";s:1:"0";s:14:"id_instituicao";s:1:"5";}i:162;O:8:"stdClass":5:{s:4:"acao";s:41:"social/usuario/visualizarUsuariosExcluido";s:16:"alias_controller";s:8:"Usuário";s:12:"alias_action";s:30:"Visualizar Usuários Excluidos";s:9:"permissao";s:1:"1";s:14:"id_instituicao";s:1:"5";}}s:7:"usuario";O:8:"stdClass":11:{s:2:"id";s:1:"1";s:9:"id_titulo";s:1:"1";s:14:"id_instituicao";s:1:"4";s:6:"lattes";s:69:"http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K8595928E0";s:4:"nome";s:40:"Paulo Sérgio Viegas Bernardino da Silva";s:5:"senha";s:40:"d033e22ae348aeb5660fc2140aec35850c4da997";s:5:"email";s:23:"pauloviegas93@gmail.com";s:4:"foto";s:57:"/assets/img/usuarios/df3853b3bff84fb5051d5101102e8e07.jpg";s:10:"foto_fundo";s:43:"/assets/img/usuarios/default_foto_fundo.png";s:8:"aprovado";s:1:"1";s:8:"excluido";s:1:"0";}}'),
 	('fd100341a8e7c6711d466e29f5655488', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36', 1428959804, 'a:3:{s:9:"user_data";s:0:"";s:10:"permissoes";a:11:{i:0;O:8:"stdClass":6:{s:2:"id";s:1:"9";s:9:"id_perfil";s:1:"1";s:4:"acao";s:17:"social/acao/index";s:16:"alias_controller";s:36:"Ações do Sistema (Funcionalidades)";s:12:"alias_action";s:30:"Visualizar Ações Cadastradas";s:9:"permissao";s:1:"1";}i:1;O:8:"stdClass":6:{s:2:"id";s:2:"10";s:9:"id_perfil";s:1:"1";s:4:"acao";s:16:"social/log/index";s:16:"alias_controller";s:15:"Logs do Sistema";s:12:"alias_action";s:15:"Visualizar Logs";s:9:"permissao";s:1:"1";}i:2;O:8:"stdClass":6:{s:2:"id";s:2:"11";s:9:"id_perfil";s:1:"1";s:4:"acao";s:17:"social/acao/criar";s:16:"alias_controller";s:36:"Ações do Sistema (Funcionalidades)";s:12:"alias_action";s:28:"Criar Nova Ação do Sistema";s:9:"permissao";s:1:"1";}i:3;O:8:"stdClass":6:{s:2:"id";s:2:"12";s:9:"id_perfil";s:1:"1";s:4:"acao";s:18:"social/acao/editar";s:16:"alias_controller";s:36:"Ações do Sistema (Funcionalidades)";s:12:"alias_action";s:24:"Editar Ação do Sistema";s:9:"permissao";s:1:"1";}i:4;O:8:"stdClass":6:{s:2:"id";s:2:"14";s:9:"id_perfil";s:1:"1";s:4:"acao";s:19:"social/acao/excluir";s:16:"alias_controller";s:36:"Ações do Sistema (Funcionalidades)";s:12:"alias_action";s:25:"Excluir Ação do Sistema";s:9:"permissao";s:1:"1";}i:5;O:8:"stdClass":6:{s:2:"id";s:2:"16";s:9:"id_perfil";s:1:"1";s:4:"acao";s:24:"social/laboratorio/index";s:16:"alias_controller";s:13:"Laboratórios";s:12:"alias_action";s:24:"Visualizar Laboratórios";s:9:"permissao";s:1:"1";}i:6;O:8:"stdClass":5:{s:9:"id_perfil";s:1:"1";s:4:"acao";s:17:"social/home/index";s:16:"alias_controller";s:29:"Feed de Notícias do Usuário";s:12:"alias_action";s:32:"Visualizar seu Feed de Notícias";s:9:"permissao";s:1:"0";}i:7;O:8:"stdClass":5:{s:9:"id_perfil";s:1:"1";s:4:"acao";s:24:"social/serviceauth/logar";s:16:"alias_controller";s:26:"Serviço de Autenticação";s:12:"alias_action";s:16:"Logar no Sistema";s:9:"permissao";s:1:"0";}i:8;O:8:"stdClass":5:{s:9:"id_perfil";s:1:"1";s:4:"acao";s:34:"social/serviceauth/reativarusuario";s:16:"alias_controller";s:26:"Serviço de Autenticação";s:12:"alias_action";s:29:"Reativar um Usuário Excluido";s:9:"permissao";s:1:"0";}i:9;O:8:"stdClass":5:{s:9:"id_perfil";s:1:"1";s:4:"acao";s:25:"social/serviceauth/logout";s:16:"alias_controller";s:26:"Serviço de Autenticação";s:12:"alias_action";s:19:"Deslogar do Sistema";s:9:"permissao";s:1:"0";}i:10;O:8:"stdClass":5:{s:9:"id_perfil";s:1:"1";s:4:"acao";s:22:"social/usuario/inserir";s:16:"alias_controller";s:20:"Controle de Usuário";s:12:"alias_action";s:33:"Criar um Novo Usuário No Sistema";s:9:"permissao";s:1:"0";}}s:7:"usuario";O:8:"stdClass":11:{s:2:"id";s:1:"1";s:9:"id_perfil";s:1:"1";s:9:"id_titulo";s:1:"1";s:14:"id_instituicao";s:1:"1";s:4:"nome";s:40:"Paulo Sérgio Viegas Bernardino da Silva";s:5:"senha";s:40:"d033e22ae348aeb5660fc2140aec35850c4da997";s:5:"email";s:23:"pauloviegas93@gmail.com";s:4:"foto";s:57:"/assets/img/usuarios/47e3563905743e3ed0c86aeb86121884.jpg";s:10:"foto_fundo";s:43:"/assets/img/usuarios/default_foto_fundo.png";s:8:"aprovado";s:1:"1";s:8:"excluido";s:1:"0";}}'),
 	('fe0536b4f38e7c2a7b0c572c9b4be0ba', '127.0.0.1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.57 Safari/537.36', 1378930907, 'a:2:{s:10:"permissoes";a:13:{i:0;O:8:"stdClass":5:{s:8:"id_grupo";s:1:"1";s:6:"pagina";s:16:"admin/home/index";s:16:"alias_controller";s:4:"Home";s:12:"alias_action";s:17:"Página Principal";s:5:"ativo";s:1:"0";}i:1;O:8:"stdClass":5:{s:8:"id_grupo";s:1:"1";s:6:"pagina";s:19:"admin/usuario/index";s:16:"alias_controller";s:8:"Usuário";s:12:"alias_action";s:39:"Visualizar Lista com todos os Usuários";s:5:"ativo";s:1:"1";}i:2;O:8:"stdClass":5:{s:8:"id_grupo";s:1:"1";s:6:"pagina";s:19:"admin/usuario/criar";s:16:"alias_controller";s:8:"Usuário";s:12:"alias_action";s:26:"Cadastrar Um Novo Usuário";s:5:"ativo";s:1:"1";}i:3;O:8:"stdClass":5:{s:8:"id_grupo";s:1:"1";s:6:"pagina";s:20:"admin/usuario/editar";s:16:"alias_controller";s:8:"Usuário";s:12:"alias_action";s:35:"Alterar Informações dos Usuários";s:5:"ativo";s:1:"1";}i:4;O:8:"stdClass":5:{s:8:"id_grupo";s:1:"1";s:6:"pagina";s:21:"admin/usuario/deletar";s:16:"alias_controller";s:8:"Usuário";s:12:"alias_action";s:20:"Excluir os Usuários";s:5:"ativo";s:1:"1";}i:5;O:8:"stdClass":5:{s:8:"id_grupo";s:1:"1";s:6:"pagina";s:25:"admin/usuario/trocargrupo";s:16:"alias_controller";s:8:"Usuário";s:12:"alias_action";s:25:"Trocar Usuários de Grupo";s:5:"ativo";s:1:"1";}i:6;O:8:"stdClass":5:{s:8:"id_grupo";s:1:"1";s:6:"pagina";s:17:"admin/grupo/index";s:16:"alias_controller";s:18:"Grupos de Usuário";s:12:"alias_action";s:47:"Visualizar Lista com Todos os Gupos de Usuário";s:5:"ativo";s:1:"1";}i:7;O:8:"stdClass":5:{s:8:"id_grupo";s:1:"1";s:6:"pagina";s:17:"admin/grupo/criar";s:16:"alias_controller";s:18:"Grupos de Usuário";s:12:"alias_action";s:35:"Cadastrar Um Novo Grupo de Usuário";s:5:"ativo";s:1:"1";}i:8;O:8:"stdClass":5:{s:8:"id_grupo";s:1:"1";s:6:"pagina";s:18:"admin/grupo/editar";s:16:"alias_controller";s:18:"Grupos de Usuário";s:12:"alias_action";s:44:"Alterar Informações dos Grupos de Usuário";s:5:"ativo";s:1:"1";}i:9;O:8:"stdClass":5:{s:8:"id_grupo";s:1:"1";s:6:"pagina";s:19:"admin/grupo/deletar";s:16:"alias_controller";s:18:"Grupos de Usuário";s:12:"alias_action";s:30:"Excluir os Grupos de Usuários";s:5:"ativo";s:1:"1";}i:10;O:8:"stdClass":5:{s:8:"id_grupo";s:1:"1";s:6:"pagina";s:20:"admin/grupo/permitir";s:16:"alias_controller";s:18:"Grupos de Usuário";s:12:"alias_action";s:51:"Liberar ou Bloquear Acessos dos Grupos de Usuários";s:5:"ativo";s:1:"1";}i:11;O:8:"stdClass":5:{s:8:"id_grupo";s:1:"1";s:6:"pagina";s:21:"admin/usuario/detalhe";s:16:"alias_controller";s:8:"Usuário";s:12:"alias_action";s:48:"Visualizar Informações Completas dos Usuários";s:5:"ativo";s:1:"1";}i:12;O:8:"stdClass":5:{s:8:"id_grupo";s:1:"1";s:6:"pagina";s:19:"admin/usuario/ativo";s:16:"alias_controller";s:8:"Usuário";s:12:"alias_action";s:30:"Ativar e Inativar os Usuários";s:5:"ativo";s:1:"1";}}s:7:"usuario";O:8:"stdClass":6:{s:2:"id";s:1:"1";s:8:"id_grupo";s:1:"1";s:4:"nome";s:7:"PadaWeb";s:5:"senha";s:40:"8cb2237d0679ca88db6464eac60da96345513964";s:5:"email";s:19:"contato@padaweb.net";s:5:"ativo";s:1:"1";}}');
-/*!40000 ALTER TABLE `sitelinc_ci_sessions` ENABLE KEYS */;
 
 
--- Copiando estrutura para tabela linc2.sitelinc_usu_acao
+
 CREATE TABLE IF NOT EXISTS `sitelinc_usu_acao` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `modulo` varchar(100) NOT NULL DEFAULT 'social',
@@ -109,8 +107,7 @@ CREATE TABLE IF NOT EXISTS `sitelinc_usu_acao` (
   UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=125 DEFAULT CHARSET=utf8;
 
--- Copiando dados para a tabela linc2.sitelinc_usu_acao: ~73 rows (aproximadamente)
-/*!40000 ALTER TABLE `sitelinc_usu_acao` DISABLE KEYS */;
+
 INSERT IGNORE INTO `sitelinc_usu_acao` (`id`, `modulo`, `controller`, `action`, `alias_controller`, `alias_action`, `permissao`) VALUES
   (1, 'social', 'home', 'index', 'Feed de Notícias do Usuário', 'Visualizar seu Feed de Notícias', 0),
   (7, 'social', 'serviceauth', 'logar', 'Serviço de Autenticação', 'Logar no Sistema', 0),
@@ -202,10 +199,9 @@ INSERT IGNORE INTO `sitelinc_usu_acao` (`id`, `modulo`, `controller`, `action`, 
   (122, 'social', 'usuario', 'visualizarUsuariosExcluido', 'Usuário', 'Visualizar Usuários Excluidos', 1),
   (123, 'social', 'usuario', 'ativarInativarVinculo', 'Usuário', 'Ativar ou Inativar um Vinculo de Usuário Com um Grupo', 1),
   (124, 'social', 'usuario', 'inserir', 'Usuário', 'Cadastro Externo de Usuários', 0);
-/*!40000 ALTER TABLE `sitelinc_usu_acao` ENABLE KEYS */;
 
 
--- Copiando estrutura para tabela linc2.sitelinc_gru_tipo
+
 CREATE TABLE IF NOT EXISTS `sitelinc_gru_tipo` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `tipo` varchar(200) NOT NULL,
@@ -214,18 +210,16 @@ CREATE TABLE IF NOT EXISTS `sitelinc_gru_tipo` (
   UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
--- Copiando dados para a tabela linc2.sitelinc_gru_tipo: ~6 rows (aproximadamente)
-/*!40000 ALTER TABLE `sitelinc_gru_tipo` DISABLE KEYS */;
+
 INSERT IGNORE INTO `sitelinc_gru_tipo` (`id`, `tipo`, `excluido`) VALUES
   (1, 'Instituição Ensino', 0),
   (2, 'Projeto', 0),
   (3, 'Laboratório', 0),
   (4, 'Instituição Financiadora', 0),
   (5, 'Sistema', 0);
-/*!40000 ALTER TABLE `sitelinc_gru_tipo` ENABLE KEYS */;
 
 
--- Copiando estrutura para tabela linc2.sitelinc_gru_tipo_vinculo
+
 CREATE TABLE IF NOT EXISTS `sitelinc_gru_tipo_vinculo` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `tipo` varchar(200) NOT NULL,
@@ -234,16 +228,16 @@ CREATE TABLE IF NOT EXISTS `sitelinc_gru_tipo_vinculo` (
   UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Copiando dados para a tabela linc2.sitelinc_gru_tipo_vinculo: ~4 rows (aproximadamente)
-/*!40000 ALTER TABLE `sitelinc_gru_tipo_vinculo` DISABLE KEYS */;
+
+
 INSERT IGNORE INTO `sitelinc_gru_tipo_vinculo` (`id`, `tipo`, `excluido`) VALUES
   (1, 'Projeto', 0),
   (2, 'Instituição Financeira', 0),
   (3, 'Laboratório', 0);
-/*!40000 ALTER TABLE `sitelinc_gru_tipo_vinculo` ENABLE KEYS */;
 
 
--- Copiando estrutura para tabela linc2.sitelinc_pesq_linha
+
+
 CREATE TABLE IF NOT EXISTS `sitelinc_pesq_linha` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `linha` varchar(100) NOT NULL,
@@ -252,8 +246,8 @@ CREATE TABLE IF NOT EXISTS `sitelinc_pesq_linha` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- Copiando dados para a tabela linc2.sitelinc_pesq_linha: ~6 rows (aproximadamente)
-/*!40000 ALTER TABLE `sitelinc_pesq_linha` DISABLE KEYS */;
+
+
 INSERT IGNORE INTO `sitelinc_pesq_linha` (`id`, `linha`, `descricao`, `icone`) VALUES
   (1, 'Inteligência Computacional', '', 'icon-puzzle-piece'),
   (2, 'Computação Afetiva', '', 'icon-heart'),
@@ -262,10 +256,9 @@ INSERT IGNORE INTO `sitelinc_pesq_linha` (`id`, `linha`, `descricao`, `icone`) V
   (5, 'Realidade Virtual', '', 'icon-laptop'),
   (6, 'Eletromagnetismo Aplicado', '', 'icon-magnet'),
   (7, 'Processamento de Sinais', '', 'icon-rss');
-/*!40000 ALTER TABLE `sitelinc_pesq_linha` ENABLE KEYS */;
 
 
--- Copiando estrutura para tabela linc2.sitelinc_usu_formacao
+
 CREATE TABLE IF NOT EXISTS `sitelinc_usu_formacao` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `formacao` varchar(50) NOT NULL,
@@ -274,8 +267,8 @@ CREATE TABLE IF NOT EXISTS `sitelinc_usu_formacao` (
   UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- Copiando dados para a tabela linc2.sitelinc_usu_formacao: ~6 rows (aproximadamente)
-/*!40000 ALTER TABLE `sitelinc_usu_formacao` DISABLE KEYS */;
+
+
 INSERT IGNORE INTO `sitelinc_usu_formacao` (`id`, `formacao`, `excluido`) VALUES
   (1, 'Graduando(a)', 0),
   (2, 'Graduado(a)', 0),
@@ -284,10 +277,9 @@ INSERT IGNORE INTO `sitelinc_usu_formacao` (`id`, `formacao`, `excluido`) VALUES
   (5, 'Doutorando(a)', 0),
   (6, 'Doutor/Pesquisador', 0),
   (7, 'Pós-Doutor(a)', 0);
-/*!40000 ALTER TABLE `sitelinc_usu_formacao` ENABLE KEYS */;
 
 
--- Copiando estrutura para tabela linc2.sitelinc_usu_perfil
+
 CREATE TABLE IF NOT EXISTS `sitelinc_usu_perfil` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `perfil` varchar(100) NOT NULL,
@@ -296,8 +288,7 @@ CREATE TABLE IF NOT EXISTS `sitelinc_usu_perfil` (
   UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
--- Copiando dados para a tabela linc2.sitelinc_usu_perfil: ~10 rows (aproximadamente)
-/*!40000 ALTER TABLE `sitelinc_usu_perfil` DISABLE KEYS */;
+
 INSERT IGNORE INTO `sitelinc_usu_perfil` (`id`, `perfil`, `excluido`) VALUES
   (1, 'Profile', 0),
   (2, 'Desenvolvedor', 0),
@@ -309,10 +300,8 @@ INSERT IGNORE INTO `sitelinc_usu_perfil` (`id`, `perfil`, `excluido`) VALUES
   (11, 'Doutorado', 0),
   (12, 'Pós Doutorado', 0),
   (19, 'Administrativo', 0);
-/*!40000 ALTER TABLE `sitelinc_usu_perfil` ENABLE KEYS */;
 
 
--- Copiando estrutura para tabela linc2.sitelinc_usu_tipo_vinculo
 CREATE TABLE IF NOT EXISTS `sitelinc_usu_tipo_vinculo` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `tipo` varchar(200) NOT NULL,
@@ -320,16 +309,13 @@ CREATE TABLE IF NOT EXISTS `sitelinc_usu_tipo_vinculo` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
--- Copiando dados para a tabela linc2.sitelinc_usu_tipo_vinculo: ~3 rows (aproximadamente)
-/*!40000 ALTER TABLE `sitelinc_usu_tipo_vinculo` DISABLE KEYS */;
+
 INSERT IGNORE INTO `sitelinc_usu_tipo_vinculo` (`id`, `tipo`, `excluido`) VALUES
   (7, 'Outros', 0),
   (8, 'Coordenador de Projeto', 0),
   (9, 'Responsável de Projeto', 0);
-/*!40000 ALTER TABLE `sitelinc_usu_tipo_vinculo` ENABLE KEYS */;
 
 
--- Copiando estrutura para tabela linc2.sitelinc_gru_grupo
 CREATE TABLE IF NOT EXISTS `sitelinc_gru_grupo` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `id_tipo` int(10) unsigned NOT NULL,
@@ -353,8 +339,7 @@ CREATE TABLE IF NOT EXISTS `sitelinc_gru_grupo` (
   CONSTRAINT `id_grupo_tipo` FOREIGN KEY (`id_tipo`) REFERENCES `sitelinc_gru_tipo` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
 
--- Copiando dados para a tabela linc2.sitelinc_gru_grupo: ~14 rows (aproximadamente)
-/*!40000 ALTER TABLE `sitelinc_gru_grupo` DISABLE KEYS */;
+
 INSERT IGNORE INTO `sitelinc_gru_grupo` (`id`, `id_tipo`, `nome`, `sigla`, `logo`, `resumo`, `url`, `facebook`, `googleplus`, `instagram`, `twitter`, `likedin`, `email`, `telefone`, `publico`, `excluido`) VALUES
   (1, 5, 'Administrativo', 'Adm', 'assets/img/grupo/laboratorio.png', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0),
   (2, 5, 'Padrão', 'Padão', 'assets/img/grupo/sistema.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0),
@@ -370,10 +355,8 @@ INSERT IGNORE INTO `sitelinc_gru_grupo` (`id`, `id_tipo`, `nome`, `sigla`, `logo
   (31, 3, 'O Laboratório de Eletromagnetismo Aplicado', 'LEA', 'assets/img/grupo/433a5071af2f8ae23165c97bec1ef066.jpg', 'O Laboratório de Eletromagnetismo Aplicado (LEA) é um Laboratório associado à Faculdade de Engenharia da Computação e Telecomunicações (FCT) e à Faculdade de Engenharia Elétrica (FEE) do Instituto de Tecnologia (ITEC) da Universidade Federal do Pará (UFPA) e ao Instituto Nacional de Ciência e Tecnologia de Comunicações sem Fio (INCT-CSF).\r\n\r\nO LEA tem por objetivo exercer atividades de ensino e pesquisa em graduação e pós-graduação, desenvolver projetos e prestar serviços nas áreas relacionadas com aplicações em telecomunicações, e conta com a cooperação de vários parceiros nacionais e internacionais.', 'http://www.lea.ufpa.br/', '', '', '', '', '', 'lea@ufpa.br', '(91) 3201-7740', 1, 0),
   (33, 3, 'Laboratório de Processamento de Sinais', 'LAPS', 'assets/img/grupo/f9f76244d85a8df0203452eb3b43b19c.jpg', 'O grupo concentra-se prioritariamente em ações visando desenvolver e disponibilizar recursos para a construção de sistemas de reconhecimento automático de voz para o Português Brasileiro. Vários recursos já foram desenvolvidos: dicionários fonéticos, modelos de linguagem, modelos acústicos, novos corpora de voz e texto, entre outros.', 'https://www.laps.ufpa.br/', '', '', '', '', '', 'laps@ufpa.br', '(91) 3201-7000', 1, 0),
   (35, 1, 'Instituto de Estudos Superiores da Amazônia', 'IESAM', 'assets/img/grupo/22dfa19f97dfb9e893483181a01796f3.jpg', '', '', '', '', '', '', '', '', '', 1, 0);
-/*!40000 ALTER TABLE `sitelinc_gru_grupo` ENABLE KEYS */;
 
 
--- Copiando estrutura para tabela linc2.sitelinc_gru_vinculo
 CREATE TABLE IF NOT EXISTS `sitelinc_gru_vinculo` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `id_grupo_vinculado` int(10) unsigned NOT NULL,
@@ -709,415 +692,3 @@ INSERT IGNORE INTO `sitelinc_gen_anexo` (`id`, `id_tarefa`, `id_post`, `id_grupo
   (14, NULL, NULL, 7, 'assets/img/anexo/f0cb8b17a2ba2fab77311e97839fef64.png', 'Teste de PNG'),
   (15, NULL, NULL, 7, 'assets/img/anexo/4dce72593ee7b22ecc3772e068953afe.jpg', 'Teste de JPG');
 /*!40000 ALTER TABLE `sitelinc_gen_anexo` ENABLE KEYS */;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
--- Copiando estrutura para view linc2.sitelinc_view_grupo_tipo
--- Criando tabela temporária para evitar erros de dependência de VIEW
-CREATE TABLE `sitelinc_view_grupo_tipo` (
-	`id` INT(10) UNSIGNED NOT NULL,
-	`id_tipo` INT(10) UNSIGNED NOT NULL,
-	`tipo` VARCHAR(200) NOT NULL COLLATE 'utf8_general_ci',
-	`nome` VARCHAR(100) NOT NULL COLLATE 'utf8_general_ci',
-	`sigla` VARCHAR(50) NOT NULL COLLATE 'utf8_general_ci',
-	`logo` TEXT NOT NULL COLLATE 'utf8_general_ci',
-	`resumo` TEXT NULL COLLATE 'utf8_general_ci',
-	`url` VARCHAR(200) NULL COLLATE 'utf8_general_ci',
-	`facebook` VARCHAR(200) NULL COLLATE 'utf8_general_ci',
-	`googleplus` VARCHAR(200) NULL COLLATE 'utf8_general_ci',
-	`instagram` VARCHAR(200) NULL COLLATE 'utf8_general_ci',
-	`twitter` VARCHAR(200) NULL COLLATE 'utf8_general_ci',
-	`likedin` VARCHAR(200) NULL COLLATE 'utf8_general_ci',
-	`email` VARCHAR(200) NULL COLLATE 'utf8_general_ci',
-	`telefone` VARCHAR(200) NULL COLLATE 'utf8_general_ci',
-	`publico` TINYINT(1) NULL,
-	`excluido` TINYINT(3) UNSIGNED NULL
-) ENGINE=MyISAM;
-
-
--- Copiando estrutura para view linc2.sitelinc_view_linha_grupo_vinculo
--- Criando tabela temporária para evitar erros de dependência de VIEW
-CREATE TABLE `sitelinc_view_linha_grupo_vinculo` (
-	`id` INT(11) UNSIGNED NOT NULL,
-	`id_grupo` INT(10) UNSIGNED NOT NULL,
-	`nome_grupo` VARCHAR(100) NOT NULL COLLATE 'utf8_general_ci',
-	`id_tipo_grupo` INT(10) UNSIGNED NOT NULL,
-	`sigla_grupo` VARCHAR(50) NOT NULL COLLATE 'utf8_general_ci',
-	`id_linha` INT(11) UNSIGNED NOT NULL,
-	`linha` VARCHAR(100) NOT NULL COLLATE 'utf8_general_ci',
-	`descricao` TEXT NOT NULL COLLATE 'utf8_general_ci',
-	`icone` VARCHAR(100) NOT NULL COLLATE 'utf8_general_ci'
-) ENGINE=MyISAM;
-
-
--- Copiando estrutura para view linc2.sitelinc_view_linha_usuario_vinculo
--- Criando tabela temporária para evitar erros de dependência de VIEW
-CREATE TABLE `sitelinc_view_linha_usuario_vinculo` (
-	`id` INT(11) UNSIGNED NOT NULL,
-	`id_usuario` INT(11) UNSIGNED NOT NULL,
-	`id_linha` INT(11) UNSIGNED NOT NULL,
-	`linha` VARCHAR(100) NOT NULL COLLATE 'utf8_general_ci',
-	`descricao` TEXT NOT NULL COLLATE 'utf8_general_ci',
-	`icone` VARCHAR(100) NOT NULL COLLATE 'utf8_general_ci'
-) ENGINE=MyISAM;
-
-
--- Copiando estrutura para view linc2.sitelinc_view_log_usuario_acao
--- Criando tabela temporária para evitar erros de dependência de VIEW
-CREATE TABLE `sitelinc_view_log_usuario_acao` (
-	`id` INT(10) UNSIGNED NOT NULL,
-	`descricao` TEXT NOT NULL COLLATE 'utf8_general_ci',
-	`data` DATETIME NOT NULL,
-	`nome` VARCHAR(100) NOT NULL COLLATE 'utf8_general_ci',
-	`email` VARCHAR(200) NOT NULL COLLATE 'utf8_general_ci',
-	`foto` VARCHAR(200) NULL COLLATE 'utf8_general_ci',
-	`id_acao` INT(10) UNSIGNED NOT NULL,
-	`modulo` VARCHAR(100) NOT NULL COLLATE 'utf8_general_ci',
-	`controller` VARCHAR(100) NOT NULL COLLATE 'utf8_general_ci',
-	`action` VARCHAR(100) NOT NULL COLLATE 'utf8_general_ci',
-	`alias_controller` VARCHAR(100) NOT NULL COLLATE 'utf8_general_ci',
-	`alias_action` VARCHAR(100) NOT NULL COLLATE 'utf8_general_ci'
-) ENGINE=MyISAM;
-
-
--- Copiando estrutura para view linc2.sitelinc_view_perfil_acao
--- Criando tabela temporária para evitar erros de dependência de VIEW
-CREATE TABLE `sitelinc_view_perfil_acao` (
-	`id_acao` INT(10) UNSIGNED NOT NULL,
-	`acao` VARCHAR(302) NOT NULL COLLATE 'utf8_general_ci',
-	`controller` VARCHAR(100) NOT NULL COLLATE 'utf8_general_ci',
-	`action` VARCHAR(100) NOT NULL COLLATE 'utf8_general_ci',
-	`permissao` TINYINT(3) UNSIGNED NULL,
-	`id_usuario` INT(10) UNSIGNED NOT NULL,
-	`nome_usuario` VARCHAR(100) NOT NULL COLLATE 'utf8_general_ci',
-	`email_usuario` VARCHAR(200) NOT NULL COLLATE 'utf8_general_ci',
-	`id_instituicao` INT(10) UNSIGNED NOT NULL,
-	`nome_instituicao` VARCHAR(100) NOT NULL COLLATE 'utf8_general_ci',
-	`sigla_instituicao` VARCHAR(50) NOT NULL COLLATE 'utf8_general_ci',
-	`id_perfil` INT(10) UNSIGNED NOT NULL,
-	`nome_perfil` VARCHAR(100) NOT NULL COLLATE 'utf8_general_ci'
-) ENGINE=MyISAM;
-
-
--- Copiando estrutura para view linc2.sitelinc_view_projeto
--- Criando tabela temporária para evitar erros de dependência de VIEW
-CREATE TABLE `sitelinc_view_projeto` (
-	`id` INT(10) UNSIGNED NOT NULL,
-	`nome` VARCHAR(100) NOT NULL COLLATE 'utf8_general_ci',
-	`sigla` VARCHAR(50) NOT NULL COLLATE 'utf8_general_ci',
-	`logo` TEXT NOT NULL COLLATE 'utf8_general_ci',
-	`resumo` TEXT NULL COLLATE 'utf8_general_ci',
-	`url` VARCHAR(200) NULL COLLATE 'utf8_general_ci',
-	`facebook` VARCHAR(200) NULL COLLATE 'utf8_general_ci',
-	`googleplus` VARCHAR(200) NULL COLLATE 'utf8_general_ci',
-	`instagram` VARCHAR(200) NULL COLLATE 'utf8_general_ci',
-	`twitter` VARCHAR(200) NULL COLLATE 'utf8_general_ci',
-	`likedin` VARCHAR(200) NULL COLLATE 'utf8_general_ci',
-	`email` VARCHAR(200) NULL COLLATE 'utf8_general_ci',
-	`telefone` VARCHAR(200) NULL COLLATE 'utf8_general_ci',
-	`publico` TINYINT(1) NULL,
-	`excluido` TINYINT(3) UNSIGNED NULL,
-	`id_projeto` INT(10) UNSIGNED NOT NULL,
-	`processo` TEXT NOT NULL COLLATE 'utf8_general_ci',
-	`edital` VARCHAR(200) NOT NULL COLLATE 'utf8_general_ci',
-	`inicio` DATE NOT NULL,
-	`termino` DATE NOT NULL,
-	`fim` TINYINT(1) UNSIGNED NULL,
-	`id_responsavel` INT(10) UNSIGNED NOT NULL,
-	`nome_responsavel` VARCHAR(100) NOT NULL COLLATE 'utf8_general_ci',
-	`id_coordenador` INT(10) UNSIGNED NOT NULL,
-	`nome_coordenador` VARCHAR(100) NOT NULL COLLATE 'utf8_general_ci',
-	`id_financiador` INT(10) UNSIGNED NOT NULL,
-	`nome_financiador` VARCHAR(100) NOT NULL COLLATE 'utf8_general_ci',
-	`sigla_financiador` VARCHAR(50) NOT NULL COLLATE 'utf8_general_ci',
-	`id_laboratorio` INT(10) UNSIGNED NOT NULL,
-	`nome_laboratorio` VARCHAR(100) NOT NULL COLLATE 'utf8_general_ci',
-	`sigla_laboratorio` VARCHAR(50) NOT NULL COLLATE 'utf8_general_ci'
-) ENGINE=MyISAM;
-
-
--- Copiando estrutura para view linc2.sitelinc_view_usuario
--- Criando tabela temporária para evitar erros de dependência de VIEW
-CREATE TABLE `sitelinc_view_usuario` (
-	`id` INT(10) UNSIGNED NOT NULL,
-	`id_formacao` INT(10) UNSIGNED NOT NULL,
-	`formacao` VARCHAR(50) NOT NULL COLLATE 'utf8_general_ci',
-	`id_instituicao` INT(10) UNSIGNED NOT NULL,
-	`nome_instituicao` VARCHAR(100) NOT NULL COLLATE 'utf8_general_ci',
-	`sigla_instituicao` VARCHAR(50) NOT NULL COLLATE 'utf8_general_ci',
-	`nome` VARCHAR(100) NOT NULL COLLATE 'utf8_general_ci',
-	`email` VARCHAR(200) NOT NULL COLLATE 'utf8_general_ci',
-	`lattes` VARCHAR(100) NULL COLLATE 'utf8_general_ci',
-	`foto` VARCHAR(200) NULL COLLATE 'utf8_general_ci',
-	`aprovado` TINYINT(3) UNSIGNED NULL,
-	`excluido` TINYINT(3) UNSIGNED NULL
-) ENGINE=MyISAM;
-
-
--- Copiando estrutura para view linc2.sitelinc_view_usuario_grupo_vinculo
--- Criando tabela temporária para evitar erros de dependência de VIEW
-CREATE TABLE `sitelinc_view_usuario_grupo_vinculo` (
-	`id` INT(10) UNSIGNED NOT NULL,
-	`ativo` TINYINT(1) NULL,
-	`id_usuario` INT(10) UNSIGNED NOT NULL,
-	`nome_usuario` VARCHAR(100) NOT NULL COLLATE 'utf8_general_ci',
-	`email_usuario` VARCHAR(200) NOT NULL COLLATE 'utf8_general_ci',
-	`foto_usuario` VARCHAR(200) NULL COLLATE 'utf8_general_ci',
-	`id_formacao_usuario` INT(10) UNSIGNED NOT NULL,
-	`formacao_usuario` VARCHAR(50) NOT NULL COLLATE 'utf8_general_ci',
-	`lattes_usuario` VARCHAR(100) NULL COLLATE 'utf8_general_ci',
-	`aprovado` TINYINT(3) UNSIGNED NULL,
-	`excluido` TINYINT(3) UNSIGNED NULL,
-	`id_grupo` INT(10) UNSIGNED NOT NULL,
-	`id_tipo_grupo` INT(10) UNSIGNED NOT NULL,
-	`tipo_grupo` VARCHAR(200) NOT NULL COLLATE 'utf8_general_ci',
-	`nome_grupo` VARCHAR(100) NOT NULL COLLATE 'utf8_general_ci',
-	`sigla_grupo` VARCHAR(50) NOT NULL COLLATE 'utf8_general_ci',
-	`logo_grupo` TEXT NOT NULL COLLATE 'utf8_general_ci',
-	`resumo_grupo` TEXT NULL COLLATE 'utf8_general_ci',
-	`url_grupo` VARCHAR(200) NULL COLLATE 'utf8_general_ci',
-	`facebook` VARCHAR(200) NULL COLLATE 'utf8_general_ci',
-	`googleplus` VARCHAR(200) NULL COLLATE 'utf8_general_ci',
-	`instagram` VARCHAR(200) NULL COLLATE 'utf8_general_ci',
-	`twitter` VARCHAR(200) NULL COLLATE 'utf8_general_ci',
-	`likedin` VARCHAR(200) NULL COLLATE 'utf8_general_ci',
-	`email` VARCHAR(200) NULL COLLATE 'utf8_general_ci',
-	`telefone` VARCHAR(200) NULL COLLATE 'utf8_general_ci',
-	`publico_grupo` TINYINT(1) NULL,
-	`id_tipo_vinculo` INT(10) UNSIGNED NOT NULL,
-	`tipo_vinculo` VARCHAR(100) NOT NULL COLLATE 'utf8_general_ci'
-) ENGINE=MyISAM;
-
-
--- Copiando estrutura para view linc2.sitelinc_view_grupo_tipo
--- Removendo tabela temporária e criando a estrutura VIEW final
-DROP TABLE IF EXISTS `sitelinc_view_grupo_tipo`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` VIEW `sitelinc_view_grupo_tipo` AS SELECT
-   grupo.id AS id,
-   tipo.id AS id_tipo,
-   tipo.tipo AS tipo,
-   grupo.nome AS nome,
-   grupo.sigla AS sigla,
-   grupo.logo AS logo,
-   grupo.resumo AS resumo,
-   grupo.url AS url,
-   grupo.facebook AS facebook,
-   grupo.googleplus AS googleplus,
-   grupo.instagram AS instagram,
-   grupo.twitter AS twitter,
-   grupo.likedin AS likedin,
-   grupo.email AS email,
-   grupo.telefone AS telefone,
-   grupo.publico AS publico,
-   grupo.excluido AS excluido
-FROM
-  sitelinc_gru_grupo grupo
-    INNER JOIN sitelinc_gru_tipo tipo on (grupo.id_tipo = tipo.id) ;
-
-
--- Copiando estrutura para view linc2.sitelinc_view_linha_grupo_vinculo
--- Removendo tabela temporária e criando a estrutura VIEW final
-DROP TABLE IF EXISTS `sitelinc_view_linha_grupo_vinculo`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` VIEW `sitelinc_view_linha_grupo_vinculo` AS SELECT
-	vinculo.id,
-	grupo.id AS id_grupo,
-	grupo.nome AS nome_grupo,
-	grupo.id_tipo AS id_tipo_grupo,
-	grupo.sigla AS sigla_grupo,
-	linha.id AS id_linha,
-	linha.linha AS linha,
-	linha.descricao AS descricao,
-	linha.icone AS icone
-FROM sitelinc_pesq_linha_grupo_vinculo vinculo
-	INNER JOIN sitelinc_pesq_linha linha ON (vinculo.id_linha = linha.id)
-	INNER JOIN sitelinc_gru_grupo grupo ON vinculo.id_grupo = grupo.id ;
-
-
--- Copiando estrutura para view linc2.sitelinc_view_linha_usuario_vinculo
--- Removendo tabela temporária e criando a estrutura VIEW final
-DROP TABLE IF EXISTS `sitelinc_view_linha_usuario_vinculo`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` VIEW `sitelinc_view_linha_usuario_vinculo` AS SELECT
-	vinculo.id AS id,
-	vinculo.id_usuario AS id_usuario,
-	linha.id AS id_linha,
-	linha.linha AS linha,
-	linha.descricao AS descricao,
-	linha.icone AS icone
-FROM sitelinc_pesq_linha_usuario_vinculo vinculo
-	INNER JOIN sitelinc_pesq_linha linha ON (vinculo.id_linha = linha.id) ;
-
-
--- Copiando estrutura para view linc2.sitelinc_view_log_usuario_acao
--- Removendo tabela temporária e criando a estrutura VIEW final
-DROP TABLE IF EXISTS `sitelinc_view_log_usuario_acao`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` VIEW `sitelinc_view_log_usuario_acao` AS SELECT
-	`log`.id AS id,
-	`log`.descricao AS descricao,
-	`log`.`data` AS `data`,
-	usuario.nome AS nome,
-	usuario.email AS email,
-	usuario.foto AS foto,
-	acao.id AS id_acao,
-	acao.modulo AS modulo,
-	acao.controller AS controller,
-	acao.`action` AS `action`,
-	acao.alias_controller AS alias_controller,
-	acao.alias_action AS alias_action
-FROM sitelinc_log_log `log`
-	INNER JOIN sitelinc_usu_usuario usuario ON `log`.id_usuario = usuario.id
-	INNER JOIN sitelinc_usu_acao acao ON `log`.id_acao = acao.id ;
-
-
--- Copiando estrutura para view linc2.sitelinc_view_perfil_acao
--- Removendo tabela temporária e criando a estrutura VIEW final
-DROP TABLE IF EXISTS `sitelinc_view_perfil_acao`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` VIEW `sitelinc_view_perfil_acao` AS SELECT
-	acao.id AS id_acao,
-	CONCAT_WS('/', acao.modulo, acao.controller, acao.`action`) AS acao,
-	acao.alias_controller AS controller,
-	acao.alias_action AS `action`,
-	acao.permissao AS permissao,
-	usuario.id AS id_usuario,
-	usuario.nome AS nome_usuario,
-	usuario.email AS email_usuario,
-	instituicao.id AS id_instituicao,
-	instituicao.nome AS nome_instituicao,
-	instituicao.sigla AS sigla_instituicao,
-	perfil.id AS id_perfil,
-	perfil.perfil AS nome_perfil
-FROM
-	sitelinc_usu_vinculo AS vinculo
-	INNER JOIN sitelinc_usu_usuario AS usuario ON vinculo.id_usuario = usuario.id
-	INNER JOIN sitelinc_gru_grupo AS instituicao ON vinculo.id_instituicao = instituicao.id
-	INNER JOIN sitelinc_usu_perfil AS perfil ON vinculo.id_perfil = perfil.id
-	INNER JOIN sitelinc_usu_permissao AS permissao ON perfil.id = permissao.id_perfil
-	INNER JOIN sitelinc_usu_acao AS acao ON permissao.id_acao = acao.id ;
-
-
--- Copiando estrutura para view linc2.sitelinc_view_projeto
--- Removendo tabela temporária e criando a estrutura VIEW final
-DROP TABLE IF EXISTS `sitelinc_view_projeto`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` VIEW `sitelinc_view_projeto` AS SELECT
-	grupo.id AS id,
-	grupo.nome AS nome,
-	grupo.sigla AS sigla,
-	grupo.logo AS logo,
-	grupo.resumo AS resumo,
-	grupo.url AS url,
-	grupo.facebook AS facebook,
-	grupo.googleplus AS googleplus,
-	grupo.instagram AS instagram,
-	grupo.twitter AS twitter,
-	grupo.likedin AS likedin,
-	grupo.email AS email,
-	grupo.telefone AS telefone,
-	grupo.publico AS publico,
-	grupo.excluido AS excluido,
-	projeto.id AS id_projeto,
-	projeto.processo AS processo,
-	projeto.edital AS edital,
-	projeto.inicio AS inicio,
-	projeto.termino AS termino,
-	projeto.fim AS fim,
-	usuario_rep.id AS id_responsavel,
-	usuario_rep.nome AS nome_responsavel,
-	usuario_coord.id AS id_coordenador,
-	usuario_coord.nome AS nome_coordenador,
-	grupo_financ.id AS id_financiador,
-	grupo_financ.nome AS nome_financiador,
-	grupo_financ.sigla AS sigla_financiador,
-	grupo_lab.id AS id_laboratorio,
-	grupo_lab.nome AS nome_laboratorio,
-	grupo_lab.sigla AS sigla_laboratorio
-FROM
-	sitelinc_pro_projeto projeto
-		INNER JOIN sitelinc_gru_grupo grupo ON projeto.id_projeto = grupo.id
-		INNER JOIN sitelinc_usu_usuario usuario_rep ON projeto.id_responsavel = usuario_rep.id 
-		INNER JOIN sitelinc_usu_usuario usuario_coord ON projeto.id_coordenador = usuario_coord.id
-		INNER JOIN sitelinc_gru_grupo grupo_financ ON projeto.id_financiador = grupo_financ.id 
-		INNER JOIN sitelinc_gru_vinculo vinculo ON (grupo.id = vinculo.id_grupo_vinculado AND vinculo.id_tipo = 1) 
-		INNER JOIN sitelinc_gru_grupo grupo_lab ON vinculo.id_grupo = grupo_lab.id ;
-
-
--- Copiando estrutura para view linc2.sitelinc_view_usuario
--- Removendo tabela temporária e criando a estrutura VIEW final
-DROP TABLE IF EXISTS `sitelinc_view_usuario`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` VIEW `sitelinc_view_usuario` AS SELECT
-	usuario.id AS id,
-	formacao.id AS id_formacao,
-	formacao.formacao AS formacao,
-	grupo.id AS id_instituicao,
-	grupo.nome AS nome_instituicao,
-	grupo.sigla AS sigla_instituicao,
-	usuario.nome AS nome,
-	usuario.email AS email,
-	usuario.lattes AS lattes,
-	usuario.foto AS foto,
-	usuario.aprovado AS aprovado,
-	usuario.excluido AS excluido
-FROM sitelinc_usu_usuario usuario
-	INNER JOIN sitelinc_usu_formacao formacao ON usuario.id_formacao = formacao.id
-	INNER JOIN sitelinc_gru_grupo grupo ON usuario.id_instituicao = grupo.id ;
-
-
--- Copiando estrutura para view linc2.sitelinc_view_usuario_grupo_vinculo
--- Removendo tabela temporária e criando a estrutura VIEW final
-DROP TABLE IF EXISTS `sitelinc_view_usuario_grupo_vinculo`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` VIEW `sitelinc_view_usuario_grupo_vinculo` AS SELECT
-	vinculo.id AS id,
-	vinculo.ativo AS ativo,
-	usuario.id AS id_usuario,
-	usuario.nome AS nome_usuario,
-	usuario.email AS email_usuario,
-	usuario.foto AS foto_usuario,
-	formacao.id AS id_formacao_usuario,
-	formacao.formacao AS formacao_usuario,
-	usuario.lattes AS lattes_usuario,
-	usuario.aprovado AS aprovado,
-	usuario.excluido AS excluido,
-	
-	grupo.id AS id_grupo,
-	tipo_grupo.id AS id_tipo_grupo,
-	tipo_grupo.tipo AS tipo_grupo,
-	grupo.nome AS nome_grupo,
-	grupo.sigla AS sigla_grupo,
-	grupo.logo AS logo_grupo,
-	grupo.resumo AS resumo_grupo,
-	grupo.url AS url_grupo,
-	grupo.facebook AS facebook,
-	grupo.googleplus AS googleplus,
-	grupo.instagram AS instagram,
-	grupo.twitter AS twitter,
-	grupo.likedin AS likedin,
-	grupo.email AS email,
-	grupo.telefone AS telefone,
-	grupo.publico AS publico_grupo,
-	
-	perfil.id AS id_tipo_vinculo,
-	perfil.perfil AS tipo_vinculo 
-FROM
-	sitelinc_usu_vinculo vinculo
-		INNER JOIN sitelinc_usu_usuario usuario on (vinculo.id_usuario = usuario.id)
-		INNER JOIN sitelinc_gru_grupo grupo on (vinculo.id_instituicao = grupo.id)
-		INNER JOIN sitelinc_gru_tipo tipo_grupo on (grupo.id_tipo = tipo_grupo.id)
-		INNER JOIN sitelinc_usu_perfil perfil on (vinculo.id_perfil = perfil.id) 
-		INNER JOIN sitelinc_usu_formacao formacao ON usuario.id_formacao = formacao.id ;
-/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
-/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

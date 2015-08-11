@@ -17,8 +17,10 @@ class serviceauth extends MY_Controller
         $this->load->model('grupoModel');
         $this->load->model('viewGrupoTipoModel');
         $this->load->model('usuarioModel');
+        $this->load->model('usuarioVinculoModel');
         $this->load->model('pesquisaLinhaModel');
         $this->load->model('viewPerfilAcaoModel');
+        $this->load->model('authModel');
     }
 
     /**
@@ -42,6 +44,70 @@ class serviceauth extends MY_Controller
 
         //Redirecionamento
         $this->load->view('social/service_auth/index', $this->data);
+    }
+
+    public function inserir()
+    {
+        $usuario = $this->_request;
+        $this->form_validation->set_rules('nome', 'Nome do Usuário', 'required');
+        $this->form_validation->set_rules('id_formacao', 'Formação', 'required|is_natural_no_zero');
+        $this->form_validation->set_rules('id_instituicao', 'Instituição', 'required|is_natural_no_zero');
+        $this->form_validation->set_message('is_natural_no_zero', 'Você tem que selecionar um Título e uma Instituição.');
+        $this->form_validation->set_rules('email', 'E-mail', 'required|valid_email|is_unique[sitelinc_usu_usuario.email]');
+        $this->form_validation->set_rules('senha', 'Senha', 'required|min_length[4]|max_length[10]|matches[repetirSenha]');
+        $this->form_validation->set_rules('repetirSenha', 'Repetir Nova Senha', 'required|min_length[4]|max_length[10]');
+        if ($this->form_validation->run())
+        {
+            $usuario['senha'] = sha1($usuario['senha']);
+            if (!empty($_FILES['foto']['name']))
+            {
+                $config['upload_path'] = './assets/img/usuarios';
+                $config['allowed_types'] = 'gif|jpg|png';
+                $config['max_size'] = '10000';
+                $config['max_width'] = '20000';
+                $config['max_height'] = '20000';
+                $config['encrypt_name'] = TRUE;
+                $this->load->library('upload', $config);
+                if ($this->upload->do_upload('foto'))
+                {
+                    $data = $this->upload->data();
+                    $usuario['foto'] = '/assets/img/usuarios/' . $data['file_name'];
+                }
+            }
+            else
+            {
+                $usuario['foto'] = '/assets/img/usuarios/default_user.jpg';
+            }
+            if ($this->usuarioModel->inserir($usuario))
+            {
+                $usuarioBanco = $this->usuarioModel->recuperaPorParametro(NULL, Array('email' => $usuario['email']));
+                $this->usuarioVinculoModel->inserir(Array(
+                    'id_usuario' => $usuarioBanco[0]->id,
+                    'id_instituicao' => '1',
+                    'id_perfil' => '1',
+                    'ativo' => '1'
+                ));
+                if ($this->authModel->logar($usuario['email'], $usuario['repetirSenha']))
+                {
+                    $this->session->set_flashdata('sucesso', 'Seu usuário'
+                            . ' foi inserido e você foi logado com sucesso!!!');
+                    redirect('/social/home/index');
+                }
+            }
+            else
+            {
+                $this->session->set_flashdata(
+                        'erro', 'Ops... Ocorreu um erro e o usuário não foi'
+                        . 'inserido com sucesso! Tente novamente.');
+                redirect('social/serviceauth/index');
+            }
+        }
+        else
+        {
+            $this->session->set_flashdata(
+                    'erro', validation_errors());
+            redirect('social/serviceauth/index');
+        }
     }
 
     /**

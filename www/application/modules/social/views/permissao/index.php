@@ -59,7 +59,7 @@
                                 <div class="row-fluid">
                                     <div class="checkbox check-primary checkbox-circle">
                                         <input id="checkbox<?= $permissao->id ?>" type="checkbox" value="1" <?= ($permissao->perfilPermissao) ? 'checked' : '' ?>>
-                                        <label id="<?= $permissao->id ?>" class="permissao" for="checkbox<?= $permissao->id ?>"><?= $permissao->alias_action ?></label>
+                                        <label id="<?= $permissao->id ?>" class="permissao" for="checkbox<?= $permissao->id ?>"><?= $permissao->id . ' - ' . $permissao->alias_action ?></label>
                                     </div>
                                 </div>
                             </div>
