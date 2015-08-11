@@ -151,7 +151,7 @@ class usuario extends SocialController
                 $alterado['id'] = $novoUsuario['id'];
                 if ($this->usuarioModel->alterar((object) $alterado))
                 {
-                    
+
                     $this->session->set_flashdata(
                             'sucesso', 'O usuário' . $novoUsuario['nome'] . ' foi'
                             . ' alterado com sucesso!');
@@ -441,7 +441,7 @@ class usuario extends SocialController
         $vinculo = $this->_request;
         $alteracao = new stdClass();
         $alteracao->id = $vinculo['idVinculo'];
-        if($vinculo['ativo'])
+        if ($vinculo['ativo'])
         {
             $alteracao->ativo = 0;
             $vinculo['ativo'] = 'inativado';
@@ -454,7 +454,7 @@ class usuario extends SocialController
         if ($this->usuarioVinculoModel->alterar($alteracao))
         {
             $this->session->set_flashdata(
-                    'sucesso', 'O vinculo do usuário: "' . $vinculo['nomeUsuario'] 
+                    'sucesso', 'O vinculo do usuário: "' . $vinculo['nomeUsuario']
                     . '" com o ' . $vinculo['controller'] . ': "'
                     . $vinculo['nomeGrupo'] . '" foi ' . $vinculo['ativo']
                     . ' com sucesso!');
@@ -498,6 +498,57 @@ class usuario extends SocialController
                 break;
         }
         return print json_encode($resposta);
+    }
+
+    public function convidarUsuario()
+    {
+        $usuario = $this->_request;
+        $usuarioLogado = $this->session->userdata('usuario');
+        $this->form_validation->set_rules('nome', 'Nome', 'required');
+        $this->form_validation->set_rules('email', 'E-mail', 'required|valid_email|is_unique[sitelinc_usu_usuario.email]');
+        if ($this->form_validation->run())
+        {
+            if ($this->usuarioModel->inserir($usuario))
+            {
+                $usuarioBanco = $this->usuarioModel->recuperaPorParametro(NULL, Array('nome' => $usuario['nome'], 'email' => $usuario['email']));
+                $config['mailtype'] = 'html';
+                $config['charset'] = 'utf-8';
+                $this->email->initialize($config);
+                $this->email->from('linc@ufpa.br', 'Social LINC');
+                $this->email->to($usuario['email']);
+                $this->email->subject($usuarioLogado->nome . ' convidou você para - Social Linc');
+                $this->email->message('
+                    
+                    <h2>LINC - Laboratório de Inteligência Computacional e Pesquisa Operacional</h2>
+                    
+                    <p>Se você faz parte do LINC ou de um dos laboratórios parceiros e gostaria de saber novidades sobre nossos projetos, faça seu cadastro agora e comece a acompanhar as nossas atividades. O objetivo do Social LINC é proporcionar um ambiente amigável para compartilhamento das atividades científicas do Laboratório</p>
+                    
+                    <p>' . ucfirst($usuario['nome']) . ' junte-se ao ' . $usuarioLogado->nome . ' no Social Linc.</p>
+                    <small>Complete seu cadastro no link: http://www.linc.ufpa.br/social/serviceauth/index/' . base64_encode($usuario['email']) . '</small>');
+                $this->email->send();
+                $sucesso = Array(
+                    'sucesso' => 1,
+                    'id_usuario' => $usuarioBanco[0]->id,
+                    'nome_usuario' => $usuarioBanco[0]->nome,
+                    'msg' => '<div class="alert alert-success"><button class="close" data-dismiss="alert"></button>Usuário convidado com sucesso!</div>'
+                );
+            }
+            else
+            {
+                $sucesso = Array(
+                    'sucesso' => 0,
+                    'msg' => '<div class="alert alert-error"><button class="close" data-dismiss="alert"></button>Ops... Ocorreu um erro inesperado, por favor, tente novamente.</div>'
+                );
+            }
+        }
+        else
+        {
+            $sucesso = Array(
+                'sucesso' => 0,
+                'msg' => '<div class="alert alert-error"><button class="close" data-dismiss="alert"></button>' . validation_errors() . '</div>'
+            );
+        }
+        return print json_encode($sucesso);
     }
 
 }
