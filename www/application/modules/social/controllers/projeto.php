@@ -44,12 +44,6 @@ class projeto extends SocialController
 
     public function criar()
     {
-        //Avisos
-        $this->data['sucesso'] = ($this->session->flashdata('sucesso')) ? $this->session->flashdata('sucesso') : FALSE;
-        $this->data['noticia'] = ($this->session->flashdata('noticia')) ? $this->session->flashdata('noticia') : FALSE;
-        $this->data['validacao'] = (validation_errors()) ? validation_errors() : FALSE;
-        $this->data['erro'] = ($this->session->flashdata('erro')) ? $this->session->flashdata('erro') : FALSE;
-        
         //Recuperação de Dados
         $idLab = $this->uri->segment(4);
         $this->data['laboratorio'] = $this->grupoModel->recuperaPorParametro($idLab);
@@ -58,6 +52,12 @@ class projeto extends SocialController
         $this->data['financiadoras'] = $this->grupoModel->recuperaPorParametro(NULL, Array('id_tipo' => 4, 'excluido' => 0));
         $this->data['idLab'] = $idLab;
         $this->data['linhasPesquisa'] = $this->pesquisaLinhaModel->recuperaTodos();
+
+        //Avisos
+        $this->data['sucesso'] = ($this->session->flashdata('sucesso')) ? $this->session->flashdata('sucesso') : FALSE;
+        $this->data['noticia'] = ($this->session->flashdata('noticia')) ? $this->session->flashdata('noticia') : FALSE;
+        $this->data['validacao'] = (validation_errors()) ? validation_errors() : FALSE;
+        $this->data['erro'] = ($this->session->flashdata('erro')) ? $this->session->flashdata('erro') : FALSE;
 
         //Redirecionamento
         $this->load->view('social/projeto/criar', $this->data);

@@ -196,11 +196,7 @@
                         <div class="row">
                             <div class="col-md-10">
                                 <button id="login-form" type="button" class="btn btn-success btn-cons">Login</button>
-                                <?php if (!$this->uri->segment(4)) : ?>
-                                    <button id="cadastrar" type="button" data-toggle="modal" data-target="#modalCadastrarUsuario" class="btn btn-info btn-cons">Cadastre-se</button>
-                                <?php else : ?>
-                                    <button id="completarCadastro" type="button" data-toggle="modal" data-target="#modalCompletarCadastro" class="btn btn-info btn-cons">Completar Cadastro</button>
-                                <?php endif; ?>
+                                <button id="cadastrar" type="button" data-toggle="modal" data-target="#modalCadastrarUsuario" class="btn btn-info btn-cons">Cadastre-se</button>
                                 <!--<fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>-->
                             </div>
                         </div>
@@ -212,265 +208,132 @@
         </div>
         <!-- FIM DO CONTAINER -->
 
-        <?php if (!$this->uri->segment(4)) : ?>
-            <div class="modal fade" id="modalCadastrarUsuario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title">Cadastre-se Já!</h4>
+        <div class="modal fade" id="modalCadastrarUsuario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Cadastre-se Já!</h4>
+                    </div>
+                    <div id="modalCadastrarUsuarioContent" class="modal-body">
+                        <div class="row">
                         </div>
-                        <div id="modalCadastrarUsuarioContent" class="modal-body">
+                        <form id="formCadastrarUsuario" method="post">
                             <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label class="form-label">Nome do Usuário: *</label>
+                                    <div class="controls">
+                                        <div class="input-with-icon right">                                       
+                                            <i class=""></i>
+                                            <input id="nome" class="form-control" type="text" name="nome">                                 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-label">E-mail: *</label>
+                                    <div class="controls">
+                                        <div class="input-with-icon right">                                       
+                                            <i class=""></i>
+                                            <input id="email" class="form-control" type="text" name="email">                                 
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <form id="formCadastrarUsuario" method="post" enctype="multipart/form-data">
-                                <div class="row">
-                                    <div class="form-group col-md-6">
-                                        <label class="form-label">Nome Completo: *</label>
-                                        <div class="controls">
-                                            <div class="input-with-icon right">                                       
-                                                <i class=""></i>
-                                                <input id="nome" class="form-control" type="text" name="nome">                                 
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label class="form-label">E-mail: *</label>
-                                        <div class="controls">
-                                            <div class="input-with-icon right">                                       
-                                                <i class=""></i>
-                                                <input id="email" class="form-control" type="text" name="email">                                 
-                                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label class="form-label">Formação Acadêmica: *</label>
+                                    <div class="controls">
+                                        <div class="input-with-icon right">
+                                            <select id="formacao" name="id_formacao" style="width:100%">
+                                                <?php if (count($formacoes) > 0) : ?>
+                                                    <option value="">Selecione</option>
+                                                    <?php foreach ($formacoes as $formacao) : ?>
+                                                        <option value="<?= $formacao->id ?>"><?= $formacao->formacao ?></option>
+                                                    <?php endforeach; ?>
+                                                <?php else : ?>
+                                                    <option value="0">Não Existe Nenhuma Formação Disponível</option>
+                                                <?php endif; ?>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="form-group col-md-6">
-                                        <label class="form-label">Formação Acadêmica: *</label>
-                                        <div class="controls">
-                                            <div class="input-with-icon right">
-                                                <select id="formacao" name="id_formacao" style="width:100%">
-                                                    <?php if (count($formacoes) > 0) : ?>
-                                                        <option value="">Selecione</option>
-                                                        <?php foreach ($formacoes as $formacao) : ?>
-                                                            <option value="<?= $formacao->id ?>"><?= $formacao->formacao ?></option>
-                                                        <?php endforeach; ?>
-                                                    <?php else : ?>
-                                                        <option value="0">Não Existe Nenhuma Formação Disponível</option>
-                                                    <?php endif; ?>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label class="form-label">Instituição: *</label>
-                                        <div class="controls">
-                                            <div class="input-with-icon right">
-                                                <select id="instituicao" name="id_instituicao" style="width:100%">
-                                                    <?php if (count($instituicoes) > 0) : ?>
-                                                        <option value="">Selecione</option>
-                                                        <?php foreach ($instituicoes as $instituicao) : ?>
-                                                            <option value="<?= $instituicao->id ?>"><?= $instituicao->nome ?></option>
-                                                        <?php endforeach; ?>
-                                                    <?php else : ?>
-                                                        <option value="0">Não Existe Nenhuma Instituição Disponível</option>
-                                                    <?php endif; ?>
-                                                </select>
-                                            </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-label">Instituição: *</label>
+                                    <div class="controls">
+                                        <div class="input-with-icon right">
+                                            <select id="instituicao" name="id_instituicao" style="width:100%">
+                                                <?php if (count($instituicoes) > 0) : ?>
+                                                    <option value="">Selecione</option>
+                                                    <?php foreach ($instituicoes as $instituicao) : ?>
+                                                        <option value="<?= $instituicao->id ?>"><?= $instituicao->nome ?></option>
+                                                    <?php endforeach; ?>
+                                                <?php else : ?>
+                                                    <option value="0">Não Existe Nenhuma Instituição Disponível</option>
+                                                <?php endif; ?>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="form-group col-md-6">
-                                        <label class="form-label">Senha: *</label>
-                                        <div class="controls">
-                                            <div class="input-with-icon right">                                       
-                                                <i class=""></i>
-                                                <input id="senha" class="form-control" type="password" name="senha">                                 
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label class="form-label">Repertir Senha: *</label>
-                                        <div class="controls">
-                                            <div class="input-with-icon right">                                       
-                                                <i class=""></i>
-                                                <input id="repetirSenha" class="form-control" type="password" name="repetirSenha">                                 
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group col-md-12">
-                                        <label class="form-label">Selecione uma foto: <small style="font-size: 10px;">Tamanho Ideal - 180 x 100</small></label>
-                                        <div class="controls">
-                                            <div class="input-with-icon right">
-                                                <div class="form-control" >
-                                                    <input id="imagem" class="col-md-12" type="file" name="foto" id="foto" style="opacity: 0; position: relative;" />
-                                                    <label id="nomeimagem" class="form-label" style="font-size: 15px; position: absolute; margin-top: -35px;"></label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group col-md-12">
-                                        <label class="form-label">Currículo Lattes:</label>
-                                        <div class="controls">
-                                            <div class="input-with-icon right">                                       
-                                                <i class=""></i>
-                                                <input class="form-control" type="text" name="lattes" placeholder="http://...">                                 
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <input type="hidden" name="foto_fundo" value="/assets/img/usuarios/default_foto_fundo.png">    
-                                <input type="hidden" name="aprovado" value="1">    
-                                <input type="hidden" name="excluido" value="0">    
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <div class="form-group col-md-12">
-                                <label class="form-label">Campos Obrigatórios *</label>
                             </div>
-                            <button id="btnSalvarUsuario" type="button" class="btn btn-success" hidden>Salvar</button>
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label class="form-label">Senha: *</label>
+                                    <div class="controls">
+                                        <div class="input-with-icon right">                                       
+                                            <i class=""></i>
+                                            <input id="senha" class="form-control" type="password" name="senha">                                 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-label">Repertir Senha: *</label>
+                                    <div class="controls">
+                                        <div class="input-with-icon right">                                       
+                                            <i class=""></i>
+                                            <input id="repetirSenha" class="form-control" type="password" name="repetirSenha">                                 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label class="form-label">Selecione uma foto: <small style="font-size: 10px;">Tamanho Ideal - 180 x 100</small></label>
+                                    <div class="controls">
+                                        <div class="input-with-icon right">
+                                            <div class="form-control" >
+                                                <input id="imagem" class="col-md-12" type="file" name="foto" id="foto" style="opacity: 0; position: relative;" />
+                                                <label id="nomeimagem" class="form-label" style="font-size: 15px; position: absolute; margin-top: -35px;"></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label class="form-label">Currículo Lattes:</label>
+                                    <div class="controls">
+                                        <div class="input-with-icon right">                                       
+                                            <i class=""></i>
+                                            <input class="form-control" type="text" name="lattes" placeholder="http://...">                                 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="hidden" name="foto_fundo" value="/assets/img/usuarios/default_foto_fundo.png">    
+                            <input type="hidden" name="aprovado" value="1">    
+                            <input type="hidden" name="excluido" value="0">    
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="form-group col-md-12">
+                            <label class="form-label">Campos Obrigatórios *</label>
                         </div>
+                        <button id="btnSalvarUsuario" type="button" class="btn btn-success" hidden>Salvar</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
                     </div>
                 </div>
             </div>
-        <?php else : ?>
-            <div class="modal fade" id="modalCompletarCadastro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title">Cadastre-se Já!</h4>
-                        </div>
-                        <div id="modalCadastrarUsuarioContent" class="modal-body">
-                            <div class="row">
-                            </div>
-                            <form id="formSalvarUsuarioConvidado" method="post" action="<?= base_url('social/serviceauth/inserirUsuario/' . $base64Usuario) ?>" enctype="multipart/form-data">
-                                <div class="row">
-                                    <div class="form-group col-md-6">
-                                        <label class="form-label">Nome Completo: *</label>
-                                        <div class="controls">
-                                            <div class="input-with-icon right">                                       
-                                                <i class=""></i>
-                                                <input id="nome" class="form-control" type="text" name="nome" value="<?= $usuario[0]->nome ?>">                                 
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label class="form-label">E-mail: *</label>
-                                        <div class="controls">
-                                            <div class="input-with-icon right">                                       
-                                                <i class=""></i>
-                                                <input id="email" class="form-control" type="text" name="email" disabled="true" value="<?= $usuario[0]->email ?>">                                 
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group col-md-6">
-                                        <label class="form-label">Formação Acadêmica: *</label>
-                                        <div class="controls">
-                                            <div class="input-with-icon right">
-                                                <select id="formacao" name="id_formacao" style="width:100%">
-                                                    <?php if (count($formacoes) > 0) : ?>
-                                                        <option value="">Selecione</option>
-                                                        <?php foreach ($formacoes as $formacao) : ?>
-                                                            <option value="<?= $formacao->id ?>"><?= $formacao->formacao ?></option>
-                                                        <?php endforeach; ?>
-                                                    <?php else : ?>
-                                                        <option value="0">Não Existe Nenhuma Formação Disponível</option>
-                                                    <?php endif; ?>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label class="form-label">Instituição: *</label>
-                                        <div class="controls">
-                                            <div class="input-with-icon right">
-                                                <select id="instituicao" name="id_instituicao" style="width:100%">
-                                                    <?php if (count($instituicoes) > 0) : ?>
-                                                        <option value="">Selecione</option>
-                                                        <?php foreach ($instituicoes as $instituicao) : ?>
-                                                            <option value="<?= $instituicao->id ?>"><?= $instituicao->nome ?></option>
-                                                        <?php endforeach; ?>
-                                                    <?php else : ?>
-                                                        <option value="0">Não Existe Nenhuma Instituição Disponível</option>
-                                                    <?php endif; ?>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group col-md-6">
-                                        <label class="form-label">Senha: *</label>
-                                        <div class="controls">
-                                            <div class="input-with-icon right">                                       
-                                                <i class=""></i>
-                                                <input id="senha" class="form-control" type="password" name="senha">                                 
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label class="form-label">Repertir Senha: *</label>
-                                        <div class="controls">
-                                            <div class="input-with-icon right">                                       
-                                                <i class=""></i>
-                                                <input id="repetirSenha" class="form-control" type="password" name="repetirSenha">                                 
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group col-md-12">
-                                        <label class="form-label">Selecione uma foto: <small style="font-size: 10px;">Tamanho Ideal - 180 x 100</small></label>
-                                        <div class="controls">
-                                            <div class="input-with-icon right">
-                                                <div class="form-control" >
-                                                    <input id="imagem" class="col-md-12" type="file" name="foto" id="foto" style="opacity: 0; position: relative;" />
-                                                    <label id="nomeimagem" class="form-label" style="font-size: 15px; position: absolute; margin-top: -35px;"></label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group col-md-12">
-                                        <label class="form-label">Currículo Lattes:</label>
-                                        <div class="controls">
-                                            <div class="input-with-icon right">                                       
-                                                <i class=""></i>
-                                                <input class="form-control" type="text" name="lattes" placeholder="http://...">                                 
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <input type="hidden" name="foto_fundo" value="/assets/img/usuarios/default_foto_fundo.png">    
-                                <input type="hidden" name="email" value="<?= $usuario[0]->email ?>">    
-                                <input type="hidden" name="aprovado" value="1">    
-                                <input type="hidden" name="excluido" value="0">    
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <div class="form-group col-md-12">
-                                <label class="form-label">Campos Obrigatórios *</label>
-                            </div>
-                            <button id="btnSalvarUsuarioConvidado" type="button" class="btn btn-success" hidden>Salvar</button>
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        <?php endif; ?>
-
-
-
+        </div>
 
         <!-- INICIO DOS FRAMEWORKS DE JAVASCRIPT -->
         <script src="<?= $url_base . 'assets/plugins/jquery-1.8.3.min.js' ?>" type="text/javascript"></script>
@@ -479,12 +342,6 @@
         <script src="<?= $url_base . 'assets/plugins/jquery-validation-1.13.1/dist/jquery.validate.min.js' ?>" type="text/javascript"></script>
         <script src="<?= $url_base . 'assets/plugins/jquery-validation-1.13.1/dist/localization/messages_pt_BR.min.js' ?>" type="text/javascript"></script>
         <!-- FIM DOS FRAMEWORKS DE JAVASCRIPT -->
-
-        <?php if ($this->uri->segment(4)) : ?>
-            <script>
-                $('#modalCompletarCadastro').modal('show');
-            </script>
-        <?php endif; ?>
 
         <script>
             $("#formlogin").validate({
@@ -517,9 +374,6 @@
             $("#btnSalvarUsuario").click(function () {
                 $("#formCadastrarUsuario").attr('action', '<?= base_url('social/serviceauth/inserir') ?>');
                 $("#formCadastrarUsuario").submit();
-            });
-            $("#btnSalvarUsuarioConvidado").click(function () {
-                $("#formSalvarUsuarioConvidado").submit();
             });
             //Trata o nome da imagem para inserir no campo de envio da mesma
             $("#imagem").change(function () {

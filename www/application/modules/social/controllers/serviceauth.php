@@ -31,19 +31,16 @@ class serviceauth extends MY_Controller
      */
     public function index()
     {
+        //Recupração de dados
+        $this->session->set_userdata('PaginasNaoPrecisaPermissao', $this->viewPerfilAcaoModel->gerarPaginasSemPermissao());
+        $this->data['formacoes'] = $this->formacaoModel->recuperaPorParametro(NULL, Array('excluido' => 0));
+        $this->data['instituicoes'] = $this->viewGrupoTipoModel->recuperaPorParametro(NULL, Array('id_tipo' => 1, 'excluido' => 0), Array('nome' => 'asc'));
+
         //Avisos
         $this->data['sucesso'] = ($this->session->flashdata('sucesso')) ? $this->session->flashdata('sucesso') : FALSE;
         $this->data['noticia'] = ($this->session->flashdata('noticia')) ? $this->session->flashdata('noticia') : FALSE;
         $this->data['validacao'] = (validation_errors()) ? validation_errors() : FALSE;
         $this->data['erro'] = ($this->session->flashdata('erro')) ? $this->session->flashdata('erro') : FALSE;
-
-        //Recupração de dados
-        $base64Usuario = $this->uri->segment(4);
-        $this->session->set_userdata('PaginasNaoPrecisaPermissao', $this->viewPerfilAcaoModel->gerarPaginasSemPermissao());
-        $this->data['formacoes'] = $this->formacaoModel->recuperaPorParametro(NULL, Array('excluido' => 0));
-        $this->data['instituicoes'] = $this->viewGrupoTipoModel->recuperaPorParametro(NULL, Array('id_tipo' => 1, 'excluido' => 0), Array('nome' => 'asc'));
-        $this->data['base64Usuario'] = $base64Usuario;
-        $this->data['usuario'] = $this->usuarioModel->recuperaPorParametro(NULL, Array('email' => base64_decode($base64Usuario)));
 
         //Redirecionamento
         $this->load->view('social/service_auth/index', $this->data);
@@ -110,82 +107,6 @@ class serviceauth extends MY_Controller
             $this->session->set_flashdata(
                     'erro', validation_errors());
             redirect('social/serviceauth/index');
-        }
-    }
-
-    public function inserirUsuario()
-    {
-        $usuario = $this->_request;
-        $base64Usuario = $this->uri->segment(4);
-        $usuarioBanco = $this->usuarioModel->recuperaPorParametro(NULL, Array('email' => base64_decode($base64Usuario)));
-        if (base64_decode($base64Usuario) == $usuarioBanco[0]->email)
-        {
-            $usuario['id'] = $usuarioBanco[0]->id;
-            $this->form_validation->set_rules('nome', 'Nome do Usuário', 'required');
-            $this->form_validation->set_rules('id_formacao', 'Formação', 'required|is_natural_no_zero');
-            $this->form_validation->set_rules('id_instituicao', 'Instituição', 'required|is_natural_no_zero');
-            $this->form_validation->set_message('is_natural_no_zero', 'Você tem que selecionar um Título e uma Instituição.');
-            $this->form_validation->set_rules('senha', 'Senha', 'required|min_length[4]|max_length[10]|matches[repetirSenha]');
-            $this->form_validation->set_rules('repetirSenha', 'Repetir Nova Senha', 'required|min_length[4]|max_length[10]');
-            if ($this->form_validation->run())
-            {
-                $usuario['senha'] = sha1($usuario['senha']);
-                if (!empty($_FILES['foto']['name']))
-                {
-                    $config['upload_path'] = './assets/img/usuarios';
-                    $config['allowed_types'] = 'gif|jpg|png';
-                    $config['max_size'] = '10000';
-                    $config['max_width'] = '20000';
-                    $config['max_height'] = '20000';
-                    $config['encrypt_name'] = TRUE;
-                    $this->load->library('upload', $config);
-                    if ($this->upload->do_upload('foto'))
-                    {
-                        $data = $this->upload->data();
-                        $usuario['foto'] = '/assets/img/usuarios/' . $data['file_name'];
-                    }
-                }
-                else
-                {
-                    $usuario['foto'] = '/assets/img/usuarios/default_user.jpg';
-                }
-                if ($this->usuarioModel->alterar((object) $usuario))
-                {
-                    $usuarioBanco = $this->usuarioModel->recuperaPorParametro(NULL, Array('email' => $usuario['email']));
-                    $this->usuarioVinculoModel->inserir(Array(
-                        'id_usuario' => $usuarioBanco[0]->id,
-                        'id_instituicao' => '1',
-                        'id_perfil' => '1',
-                        'ativo' => '1'
-                    ));
-                    if ($this->authModel->logar($usuario['email'], $usuario['repetirSenha']))
-                    {
-                        $this->session->set_flashdata('sucesso', 'Seu usuário'
-                                . ' foi inserido e você foi logado com sucesso!!!');
-                        redirect('/social/home/index');
-                    }
-                }
-                else
-                {
-                    $this->session->set_flashdata(
-                            'erro', 'Ops... Ocorreu um erro e o usuário não foi'
-                            . 'inserido com sucesso! Tente novamente.');
-                    redirect('social/serviceauth/index/' . $base64Usuario);
-                }
-            }
-            else
-            {
-                $this->session->set_flashdata(
-                        'erro', validation_errors());
-                redirect('social/serviceauth/index/' . $base64Usuario);
-            }
-        }
-        else
-        {
-            $this->session->set_flashdata(
-                    'erro', 'Você não pode alterar o email no cadastro,'
-                    . ' apenas após se cadastrar.');
-            redirect('social/serviceauth/index/' . $base64Usuario);
         }
     }
 

@@ -131,8 +131,8 @@
                         <div class="form-group col-md-4">
                             <label class="form-label">Coordenador do Projeto: *</label>
                             <div class="controls">
-                                <div class="input-with-icon right" style="margin-bottom: 10px;">
-                                    <select id="id_coordenador" name="id_coordenador" style="width:100%">
+                                <div class="input-with-icon right">
+                                    <select name="id_coordenador" style="width:100%">
                                         <?php if (count($usuarios) > 0) : ?>
                                             <option value="0">Selecione</option>
                                             <?php foreach ($usuarios as $usuario) : ?>
@@ -143,14 +143,13 @@
                                         <?php endif; ?>
                                     </select>
                                 </div>
-                                <a href="#" data-toggle="modal" data-target="#modalConvidarUsuario">Convidar Usuário</a>
                             </div>
                         </div>
                         <div class="form-group col-md-4">
                             <label class="form-label">Responsável do Projeto: *</label>
                             <div class="controls">
-                                <div class="input-with-icon right" style="margin-bottom: 10px;">
-                                    <select id="id_responsavel" name="id_responsavel" style="width:100%">
+                                <div class="input-with-icon right">
+                                    <select name="id_responsavel" style="width:100%">
                                         <?php if (count($usuarios) > 0) : ?>
                                             <option value="0">Selecione</option>
                                             <?php foreach ($usuarios as $usuario) : ?>
@@ -161,7 +160,6 @@
                                         <?php endif; ?>
                                     </select>
                                 </div>
-                                <a href="#">Convidar Usuário</a>
                             </div>
                         </div>
                         <div class="form-group col-md-4">
@@ -344,45 +342,6 @@
     </div>
 </div>
 
-<div class="modal fade" id="modalConvidarUsuario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Convidar Usuário Para o Projeto</h4>
-            </div>
-            <div class="modal-body">
-                <div id="mensagemRetorno"></div>
-                <form id="convidarUsuario" action="" method="post">
-                    <div class="row">
-                        <div class="form-group col-md-12">
-                            <label class="form-label">Nome:</label>
-                            <div class="controls">
-                                <div class="input-with-icon right">                                       
-                                    <i class=""></i>
-                                    <input id="nomeConvidarUsuario" class="form-control" type="text" name="nome" value="<?= (set_value('nome')) ? set_value('nome') : '' ?>">                                 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group col-md-12">
-                            <label class="form-label">E-mail:</label>
-                            <div class="controls">
-                                <div class="input-with-icon right">                                       
-                                    <i class=""></i>
-                                    <input id="emailConvidarUsuario" class="form-control" type="text" name="email" value="<?= (set_value('email')) ? set_value('email') : '' ?>">                                 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button id="btnconvidarUsuario" type="button" class="btn btn-success">Convidar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
 <?= $rodape ?>
 
 <script type="text/javascript">
@@ -440,34 +399,7 @@
     $(".selectLinhaPesquisa").change(function () {
         $('#modalLinhaPesquisa').modal('show');
     });
-    $("#btnconvidarUsuario").click(function () {
-        nome = $("#nomeConvidarUsuario").val();
-        email = $("#emailConvidarUsuario").val();
-        $.ajax({
-            url: '<?= base_url('social/usuario/convidarUsuario') ?>',
-            type: 'post',
-            data: {
-                'nome': nome,
-                'email': email,
-            },
-            dataRype: "json",
-            success: function (retorno) {
-                var msg = JSON.parse(retorno);
-                if (msg.sucesso)
-                {
-                    $("#id_coordenador").append('<option value="' + msg.id_usuario + '">' + msg.nome_usuario + '</option>');
-                    $("#id_responsavel").append('<option value="' + msg.id_usuario + '">' + msg.nome_usuario + '</option>');
-                    $("#nomeConvidarUsuario").val('');
-                    $("#emailConvidarUsuario").val('');
-                    $("#mensagemRetorno").append(msg.msg);
-                }
-                else
-                {
-                    $("#mensagemRetorno").append(msg.msg);
-                }
-            }
-        });
-    });
+
     $("#inserir").click(function () {
         $("#form").submit();
     });
