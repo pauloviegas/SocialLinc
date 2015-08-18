@@ -25,9 +25,6 @@ class usuario extends SocialController
 
     public function index()
     {
-        //Recuperação de Dados
-        $this->data['usuariosAtivos'] = $this->viewUsuarioModel->recuperaPorParametro(NULL, Array('excluido' => 0, 'aprovado' => 1), Array('nome' => 'asc'));
-        $this->data['usuariosInativos'] = $this->viewUsuarioModel->recuperaPorParametro(NULL, Array('excluido' => 1, 'aprovado' => 1), Array('nome' => 'asc'));
 
         //Permissões
         $this->data['permissaoEditarUsuario'] = $this->viewPerfilAcaoModel->verificaPermissao('social/usuario/editar');
@@ -40,19 +37,16 @@ class usuario extends SocialController
         $this->data['validacao'] = (validation_errors()) ? validation_errors() : FALSE;
         $this->data['erro'] = ($this->session->flashdata('erro')) ? $this->session->flashdata('erro') : FALSE;
 
+        //Recuperação de Dados
+        $this->data['usuariosAtivos'] = $this->viewUsuarioModel->recupera(Array('excluido' => 0, 'aprovado' => 1), Array('nome' => 'asc'));
+        $this->data['usuariosInativos'] = $this->viewUsuarioModel->recupera(Array('excluido' => 1, 'aprovado' => 1), Array('nome' => 'asc'));
+
         //Redirecionamento
         $this->load->view('social/usuario/index', $this->data);
     }
 
     public function editar()
     {
-        //Recuperação de Dados
-        $idUsuario = $this->uri->segment(4);
-        $this->data['usuario'] = $this->usuarioModel->recuperaPorParametro($idUsuario);
-        $this->data['formacoes'] = $this->formacaoModel->recuperaTodos();
-        $this->data['instituicoes'] = $this->grupoModel->recuperaPorParametro(NULL, Array('id_tipo' => 1));
-        $this->data['linhasPesquisaUsuario'] = $this->viewPesquisaLinhaUsuarioVinculoModel->recuperaPorParametro(NULL, Array('id_usuario' => $idUsuario));
-        $this->data['linhasPesquisa'] = $this->pesquisaLinhaModel->recuperaLinhasPesquisaQueNaoPertecemAoUsuario($idUsuario);
 
         //Permissões
         $this->data['permissaoAlterarSenhautrosUsuarios'] = $this->viewPerfilAcaoModel->verificaPermissao('social/usuario/alterarSenhaOutrosUsuarios');
@@ -66,25 +60,32 @@ class usuario extends SocialController
         $this->data['validacao'] = (validation_errors()) ? validation_errors() : FALSE;
         $this->data['erro'] = ($this->session->flashdata('erro')) ? $this->session->flashdata('erro') : FALSE;
 
+        //Recuperação de Dados
+        $idUsuario = $this->uri->segment(4);
+        $this->data['usuario'] = $this->usuarioModel->recupera(Array('id' => $idUsuario));
+        $this->data['formacoes'] = $this->formacaoModel->recupera();
+        $this->data['instituicoes'] = $this->grupoModel->recupera(Array('id_tipo' => 1));
+        $this->data['linhasPesquisaUsuario'] = $this->viewPesquisaLinhaUsuarioVinculoModel->recupera(Array('id_usuario' => $idUsuario));
+        $this->data['linhasPesquisa'] = $this->pesquisaLinhaModel->recuperaLinhasPesquisaQueNaoPertecemAoUsuario($idUsuario);
+
         //Redirecionamento
         $this->load->view('social/usuario/editar', $this->data);
     }
 
     public function perfil()
     {
-        //Recuperação de Dados
-        $idUsuario = $this->session->userdata('usuario');
-        $this->data['usuario'] = $idUsuario;
-        $this->data['instituicoes'] = $this->grupoModel->recuperaPorParametro(NULL, Array('id_tipo' => 1));
-        $this->data['linhasPesquisaUsuario'] = $this->viewPesquisaLinhaUsuarioVinculoModel->recuperaPorParametro(NULL, Array('id_usuario' => $idUsuario->id));
-        $this->data['linhasPesquisa'] = $this->pesquisaLinhaModel->recuperaLinhasPesquisaQueNaoPertecemAoUsuario($idUsuario->id);
-
-        //Permissões
         //Avisos
         $this->data['sucesso'] = ($this->session->flashdata('sucesso')) ? $this->session->flashdata('sucesso') : FALSE;
         $this->data['noticia'] = ($this->session->flashdata('noticia')) ? $this->session->flashdata('noticia') : FALSE;
         $this->data['validacao'] = (validation_errors()) ? validation_errors() : FALSE;
         $this->data['erro'] = ($this->session->flashdata('erro')) ? $this->session->flashdata('erro') : FALSE;
+        
+        //Recuperação de Dados
+        $idUsuario = $this->session->userdata('usuario');
+        $this->data['usuario'] = $idUsuario;
+        $this->data['instituicoes'] = $this->grupoModel->recupera(Array('id_tipo' => 1));
+        $this->data['linhasPesquisaUsuario'] = $this->viewPesquisaLinhaUsuarioVinculoModel->recupera(Array('id_usuario' => $idUsuario->id));
+        $this->data['linhasPesquisa'] = $this->pesquisaLinhaModel->recuperaLinhasPesquisaQueNaoPertecemAoUsuario($idUsuario->id);
 
         //Redirecionamento
         $this->load->view('social/usuario/perfil', $this->data);
@@ -93,7 +94,7 @@ class usuario extends SocialController
     public function alterar()
     {
         $novoUsuario = $this->_request;
-        $usuarioAntigo = $this->usuarioModel->recuperaPorParametro($novoUsuario['id']);
+        $usuarioAntigo = $this->usuarioModel->recupera(Array('id' => $novoUsuario['id']));
         $this->form_validation->set_rules('nome', 'Nome do Usuário', 'required');
         $this->form_validation->set_rules('id_formacao', 'Formação', 'required|is_natural_no_zero');
         $this->form_validation->set_rules('id_instituicao', 'Instituição', 'required|is_natural_no_zero');
@@ -128,11 +129,11 @@ class usuario extends SocialController
                         unlink($fotoParaexcluir[1] . '/' . $fotoParaexcluir[2] . '/' . $fotoParaexcluir[3] . '/' . $fotoParaexcluir[4]);
                     }
                     $data = $this->upload->data();
-                    $foto = '/assets/img/usuarios/' . $data['file_name'];
+                    $foto = 'assets/img/usuarios/' . $data['file_name'];
                 }
                 else
                 {
-                    $foto = '/assets/img/usuarios/default_user.jpg';
+                    $foto = 'assets/img/usuarios/default_user.jpg';
                 }
                 $alterado['foto'] = $foto;
             }
@@ -177,7 +178,7 @@ class usuario extends SocialController
     public function alterarPerfil()
     {
         $novoUsuario = $this->_request;
-        $usuarioAntigo = $this->usuarioModel->recuperaPorParametro($novoUsuario['id']);
+        $usuarioAntigo = $this->usuarioModel->recupera(Array('id' => $novoUsuario['id']));
         $this->form_validation->set_rules('nome', 'Nome do Usuário', 'required');
         $this->form_validation->set_rules('id_instituicao', 'Instituição', 'required|is_natural_no_zero');
         $this->form_validation->set_message('is_natural_no_zero', 'Você tem que selecionar uma Instituição para você');
@@ -209,17 +210,17 @@ class usuario extends SocialController
                 $this->load->library('upload', $config);
                 if ($this->upload->do_upload('foto'))
                 {
-                    if ($usuarioAntigo[0]->foto != '/assets/img/usuarios/default_user.jpg')
+                    if ($usuarioAntigo[0]->foto != 'assets/img/usuarios/default_user.jpg')
                     {
                         $fotoParaexcluir = explode('/', $usuarioAntigo[0]->foto);
                         unlink($fotoParaexcluir[1] . '/' . $fotoParaexcluir[2] . '/' . $fotoParaexcluir[3] . '/' . $fotoParaexcluir[4]);
                     }
                     $data = $this->upload->data();
-                    $foto = '/assets/img/usuarios/' . $data['file_name'];
+                    $foto = 'assets/img/usuarios/' . $data['file_name'];
                 }
                 else
                 {
-                    $foto = '/assets/img/usuarios/default_user.jpg';
+                    $foto = 'assets/img/usuarios/default_user.jpg';
                 }
                 $alterado['foto'] = $foto;
             }
@@ -246,7 +247,7 @@ class usuario extends SocialController
                 $alterado['id'] = $novoUsuario['id'];
                 if ($this->usuarioModel->alterar((object) $alterado))
                 {
-                    $usuario = $this->usuarioModel->recuperaPorParametro($novoUsuario['id']);
+                    $usuario = $this->usuarioModel->recupera(Array('id' => $novoUsuario['id']));
                     $this->session->set_userdata('usuario', $usuario[0]);
                     $this->session->set_flashdata(
                             'sucesso', 'O usuário' . $novoUsuario['nome'] . ' foi'
@@ -354,7 +355,7 @@ class usuario extends SocialController
     {
         $idVinculo = $this->uri->segment(4);
         $controller = $this->_request;
-        $usuarioVinculado = $this->usuarioVinculoModel->recuperaPorParametro($idVinculo);
+        $usuarioVinculado = $this->usuarioVinculoModel->recupera(Array('id' => $idVinculo));
         if ($this->usuarioVinculoModel->deletar($idVinculo))
         {
             $this->session->set_flashdata(
@@ -373,7 +374,7 @@ class usuario extends SocialController
     public function excluirfoto()
     {
         $idUsuario = $this->_request;
-        $usuario = $this->usuarioModel->recuperaPorParametro($idUsuario['idUsuario']);
+        $usuario = $this->usuarioModel->recupera(Array('id' => $idUsuario['idUsuario']));
         $fotoUsuario = explode('/', $usuario[0]->foto);
         $usuario[0]->foto = '/assets/img/usuarios/default_user.jpg';
         if ($this->usuarioModel->alterar($usuario[0]))
@@ -474,7 +475,7 @@ class usuario extends SocialController
     public function verificaVinculoCoordOuResp()
     {
         $dados = $this->_request;
-        $usuario = $this->usuarioVinculoModel->recuperaPorParametro($dados['idVinculo']);
+        $usuario = $this->usuarioVinculoModel->recupera(Array('id' => $dados['idVinculo']));
         switch ($usuario[0]->id_perfil)
         {
             case 8:
@@ -510,7 +511,7 @@ class usuario extends SocialController
         {
             if ($this->usuarioModel->inserir($usuario))
             {
-                $usuarioBanco = $this->usuarioModel->recuperaPorParametro(NULL, Array('nome' => $usuario['nome'], 'email' => $usuario['email']));
+                $usuarioBanco = $this->usuarioModel->recupera(Array('nome' => $usuario['nome'], 'email' => $usuario['email']));
                 $config['mailtype'] = 'html';
                 $config['charset'] = 'utf-8';
                 $this->email->initialize($config);

@@ -15,7 +15,7 @@ class grupoModel extends abstractModel
 
     public function recuperaLaboratoriosComQuantProj()
     {
-        $laboratorios = $this->recuperaPorParametro(NULL, Array(
+        $laboratorios = $this->recupera(Array(
             'id_tipo' => 3,
             'excluido' => 0
         ));

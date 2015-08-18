@@ -22,8 +22,8 @@ class acaoModel extends abstractModel
 
     public function recuperaPermissaoDivididaPorController($idPerfil, $modulo = 'social')
     {
-        $listaPermissoes = $this->recuperaPorParametro(NULL, Array('permissao' => 1, 'modulo' => $modulo));
-        $permissoesPerfil = $this->permissaoModel->recuperaPorParametro(NULL, Array('id_perfil' => $idPerfil));
+        $listaPermissoes = $this->recupera(Array('permissao' => 1, 'modulo' => $modulo), Array('controller' => 'asc'));
+        $permissoesPerfil = $this->permissaoModel->recupera(Array('id_perfil' => $idPerfil));
         $permissoes = Array();
         foreach ($listaPermissoes as $permissao)
         {

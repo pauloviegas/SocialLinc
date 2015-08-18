@@ -44,6 +44,12 @@
 <script src="<?= $url_base . 'assets/js/demo.js' ?>" type="text/javascript"></script> 
 <!-- FIM DOS CORES DE TEMPLATE DO JAVASCRIPT --> 
 
+<script>
+    $(".descricaoMenu").hover(function () {
+        $(this).tooltip('show');
+    });
+</script>
+
 </body>
 <!-- FIM DO BODY --> 
 </html>

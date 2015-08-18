@@ -20,9 +20,6 @@ class laboratorio extends SocialController
 
     public function index()
     {
-        //Recuperação de Dados
-        $this->data['laboratorios'] = $this->grupoModel->recuperaLaboratoriosComQuantProj();
-
         //Permissões
         $this->data['criarLaboratorio'] = $this->viewPerfilAcaoModel->verificaPermissao('social/laboratorio/criar');
 
@@ -31,6 +28,9 @@ class laboratorio extends SocialController
         $this->data['noticia'] = ($this->session->flashdata('noticia')) ? $this->session->flashdata('noticia') : FALSE;
         $this->data['validacao'] = (validation_errors()) ? validation_errors() : FALSE;
         $this->data['erro'] = ($this->session->flashdata('erro')) ? $this->session->flashdata('erro') : FALSE;
+        
+        //Recuperação de Dados
+        $this->data['laboratorios'] = $this->grupoModel->recuperaLaboratoriosComQuantProj();
 
         //Redirecionamento
         $this->load->view('social/laboratorio/index', $this->data);
@@ -38,14 +38,14 @@ class laboratorio extends SocialController
 
     public function criar()
     {
-        //Recuperação de Dados
-        $this->data['linhasPesquisa'] = $this->pesquisaLinhaModel->recuperaTodos();
-
         //Avisos
         $this->data['sucesso'] = ($this->session->flashdata('sucesso')) ? $this->session->flashdata('sucesso') : FALSE;
         $this->data['noticia'] = ($this->session->flashdata('noticia')) ? $this->session->flashdata('noticia') : FALSE;
         $this->data['validacao'] = (validation_errors()) ? validation_errors() : FALSE;
         $this->data['erro'] = ($this->session->flashdata('erro')) ? $this->session->flashdata('erro') : FALSE;
+        
+        //Recuperação de Dados
+        $this->data['linhasPesquisa'] = $this->pesquisaLinhaModel->recupera(NULL, Array('linha' => 'asc'));
 
         //Redirecionamento
         $this->load->view('social/laboratorio/criar', $this->data);
@@ -53,20 +53,6 @@ class laboratorio extends SocialController
 
     public function descricao()
     {
-        //Recuperação de Dados
-        $idLab = $this->uri->segment(4);
-        $this->data['laboratorio'] = $this->grupoModel->recuperaPorParametro($idLab);
-        $this->data['usuariosLab'] = $this->viewUsuarioGrupoVinculoModel->recuperaPorParametro(NULL, Array('id_tipo_grupo' => 3, 'id_grupo' => $idLab), Array('ativo' => 'desc', 'nome_usuario' => 'asc'));
-        $this->data['usuarios'] = $this->usuarioModel->recuperaUsuariosQueNaoPertecemAoLab($idLab);
-        $this->data['perfis'] = $this->perfilModel->recuperaPorParametro(NULL, Array('excluido' => 0));
-        $this->data['anexos'] = $this->anexoModel->recuperaPorParametro(NULL, Array('id_grupo' => $idLab));
-        $this->data['idLab'] = $idLab;
-        $this->data['linhasPesquisaLaboratorio'] = $this->viewPesquisaLinhaGrupoVinculoModel->recuperaPorParametro(NULL, Array('id_grupo' => $idLab));
-        $this->data['linhasPesquisa'] = $this->pesquisaLinhaModel->recuperaLinhasPesquisaQueNaoPertecemAoGrupo($idLab);
-        $this->data['linhasPesquisa'] = $this->pesquisaLinhaModel->recuperaLinhasPesquisaQueNaoPertecemAoGrupo($idLab);
-        $this->data['alumni'] = 0;
-
-
         //Permissões
         $this->data['permissaoEditar'] = $this->viewPerfilAcaoModel->verificaPermissao('social/laboratorio/editar');
         $this->data['permissaoExcluir'] = $this->viewPerfilAcaoModel->verificaPermissao('social/laboratorio/excluir');
@@ -84,6 +70,18 @@ class laboratorio extends SocialController
         $this->data['noticia'] = ($this->session->flashdata('noticia')) ? $this->session->flashdata('noticia') : FALSE;
         $this->data['validacao'] = (validation_errors()) ? validation_errors() : FALSE;
         $this->data['erro'] = ($this->session->flashdata('erro')) ? $this->session->flashdata('erro') : FALSE;
+        
+        //Recuperação de Dados
+        $idLab = $this->uri->segment(4);
+        $this->data['laboratorio'] = $this->grupoModel->recupera(Array('id' => $idLab));
+        $this->data['usuariosLab'] = $this->viewUsuarioGrupoVinculoModel->recupera(Array('id_tipo_grupo' => 3, 'id_grupo' => $idLab), Array('ativo' => 'desc', 'nome_usuario' => 'asc'));
+        $this->data['usuarios'] = $this->usuarioModel->recuperaUsuariosQueNaoPertecemAoLab($idLab);
+        $this->data['perfis'] = $this->perfilModel->recupera(Array('excluido' => 0), Array('perfil' => 'asc'));
+        $this->data['anexos'] = $this->anexoModel->recupera(Array('id_grupo' => $idLab));
+        $this->data['idLab'] = $idLab;
+        $this->data['linhasPesquisaLaboratorio'] = $this->viewPesquisaLinhaGrupoVinculoModel->recupera(Array('id_grupo' => $idLab));
+        $this->data['linhasPesquisa'] = $this->pesquisaLinhaModel->recuperaLinhasPesquisaQueNaoPertecemAoGrupo($idLab);
+        $this->data['alumni'] = 0;
 
         //Redirecionamento
         $this->load->view('social/laboratorio/descricao', $this->data);
@@ -91,15 +89,15 @@ class laboratorio extends SocialController
 
     public function editar()
     {
-        //Recuperação de Dados
-        $idLab = $this->uri->segment(4);
-        $this->data['laboratorio'] = $this->grupoModel->recuperaPorParametro($idLab);
-
         //Avisos
         $this->data['sucesso'] = ($this->session->flashdata('sucesso')) ? $this->session->flashdata('sucesso') : FALSE;
         $this->data['noticia'] = ($this->session->flashdata('noticia')) ? $this->session->flashdata('noticia') : FALSE;
         $this->data['validacao'] = (validation_errors()) ? validation_errors() : FALSE;
         $this->data['erro'] = ($this->session->flashdata('erro')) ? $this->session->flashdata('erro') : FALSE;
+        
+        //Recuperação de Dados
+        $idLab = $this->uri->segment(4);
+        $this->data['laboratorio'] = $this->grupoModel->recupera(Array('id' => $idLab));
 
         //Redirecionamento
         $this->load->view('social/laboratorio/editar', $this->data);
@@ -188,7 +186,7 @@ class laboratorio extends SocialController
         $this->form_validation->set_rules('resumo', 'Descrição do Laboratório', 'required');
         if ($this->form_validation->run())
         {
-            $laboratorio = $this->grupoModel->recuperaPorParametro($novoLaboratorio->id);
+            $laboratorio = $this->grupoModel->recupera(Array('id' => $novoLaboratorio->id));
             if (!empty($_FILES['logo']['name']))
             {
                 $config['upload_path'] = './assets/img/grupo';
@@ -204,7 +202,7 @@ class laboratorio extends SocialController
                     if (unlink($logo[1] . '/' . $logo[2] . '/' . $logo[3] . '/' . $logo[4]))
                     {
                         $data = $this->upload->data();
-                        $novoLaboratorio->logo = '/assets/img/grupo/' . $data['file_name'];
+                        $novoLaboratorio->logo = 'assets/img/grupo/' . $data['file_name'];
                     }
                     else
                     {
@@ -239,7 +237,7 @@ class laboratorio extends SocialController
     public function excluir()
     {
         $idLab = $this->uri->segment(4);
-        $laboratorio = $this->grupoModel->recuperaPorParametro($idLab);
+        $laboratorio = $this->grupoModel->recupera(Array('id' => $idLab));
         $laboratorio[0]->excluido = 1;
         if ($this->grupoModel->alterar($laboratorio[0]))
         {
@@ -308,9 +306,9 @@ class laboratorio extends SocialController
     public function excluirfoto()
     {
         $idLab = $this->_request;
-        $laboratorio = $this->grupoModel->recuperaPorParametro($idLab['idLab']);
+        $laboratorio = $this->grupoModel->recupera(Array('id' => $idLab['idLab']));
         $logoLab = explode('/', $laboratorio[0]->logo);
-        $laboratorio[0]->logo = '/assets/img/grupo/laboratorio.png';
+        $laboratorio[0]->logo = 'assets/img/grupo/laboratorio.png';
         if ($this->grupoModel->alterar($laboratorio[0]))
         {
             if (unlink($logoLab[1] . '/' . $logoLab[2] . '/' . $logoLab[3] . '/' . $logoLab[4]))
@@ -332,11 +330,11 @@ class laboratorio extends SocialController
     public function verificaVinculadosDoLaboratorio()
     {
         $idLab = $this->_request;
-        $lab = $this->grupoModel->recuperaPorParametro($idLab['idLab']);
-        $projetos = $this->viewProjetoModel->recuperaPorParametro(NULL, Array('id_laboratorio' => $idLab['idLab']));
-        $usuarios = $this->viewUsuarioGrupoVinculoModel->recuperaPorParametro(NULL, Array('id_grupo' => $idLab['idLab']));
-        $anexos = $this->anexoModel->recuperaPorParametro(NULL, Array('id_grupo' => $idLab['idLab']));
-        $posts = $this->postModel->recuperaPorParametro(NULL, Array('id_grupo' => $idLab['idLab']));
+        $lab = $this->grupoModel->recupera(Array('id' => $idLab['idLab']));
+        $projetos = $this->viewProjetoModel->recupera(Array('id_laboratorio' => $idLab['idLab']));
+        $usuarios = $this->viewUsuarioGrupoVinculoModel->recupera(Array('id_grupo' => $idLab['idLab']));
+        $anexos = $this->anexoModel->recupera(Array('id_grupo' => $idLab['idLab']));
+        $posts = $this->postModel->recupera(Array('id_grupo' => $idLab['idLab']));
         if ($projetos || $usuarios || $anexos || $posts)
         {
             $msg = 'O Laboratório ' . $lab[0]->nome . ' possui';

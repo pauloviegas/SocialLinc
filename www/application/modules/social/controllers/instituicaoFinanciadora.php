@@ -19,9 +19,6 @@ class instituicaoFinanciadora extends SocialController
 
     public function index()
     {
-        //Recuperação de Dados
-        $this->data['instituicoes'] = $this->grupoModel->recuperaPorParametro(NULL, Array('id_tipo' => 4, 'excluido' => 0), Array('nome' => 'asc'));
-
         //Permissões
         $this->data['permissaoCriar'] = $this->viewPerfilAcaoModel->verificaPermissao('social/instituicaoFinanciadora/criar');
         $this->data['permissaoEditar'] = $this->viewPerfilAcaoModel->verificaPermissao('social/instituicaoFinanciadora/editar');
@@ -32,6 +29,9 @@ class instituicaoFinanciadora extends SocialController
         $this->data['noticia'] = ($this->session->flashdata('noticia')) ? $this->session->flashdata('noticia') : FALSE;
         $this->data['validacao'] = (validation_errors()) ? validation_errors() : FALSE;
         $this->data['erro'] = ($this->session->flashdata('erro')) ? $this->session->flashdata('erro') : FALSE;
+        
+        //Recuperação de Dados
+        $this->data['instituicoes'] = $this->grupoModel->recupera(Array('id_tipo' => 4, 'excluido' => 0), Array('nome' => 'asc'));
 
         //Redirecionamento
         $this->load->view('instituicaoFinanciadora/index', $this->data);
@@ -51,15 +51,15 @@ class instituicaoFinanciadora extends SocialController
 
     public function editar()
     {
-        //Recuperação de Dados
-        $idInstituicao = $this->uri->segment(4);
-        $this->data['instituicao'] = $this->grupoModel->recuperaPorParametro($idInstituicao);
-
         //Avisos
         $this->data['sucesso'] = ($this->session->flashdata('sucesso')) ? $this->session->flashdata('sucesso') : FALSE;
         $this->data['noticia'] = ($this->session->flashdata('noticia')) ? $this->session->flashdata('noticia') : FALSE;
         $this->data['validacao'] = (validation_errors()) ? validation_errors() : FALSE;
         $this->data['erro'] = ($this->session->flashdata('erro')) ? $this->session->flashdata('erro') : FALSE;
+        
+        //Recuperação de Dados
+        $idInstituicao = $this->uri->segment(4);
+        $this->data['instituicao'] = $this->grupoModel->recupera(Array('id'  => $idInstituicao));
 
         //Redirecionamento
         $this->load->view('instituicaoFinanciadora/editar', $this->data);
@@ -83,11 +83,11 @@ class instituicaoFinanciadora extends SocialController
             if ($this->upload->do_upload('logo'))
             {
                 $data = $this->upload->data();
-                $instituicao['logo'] = '/assets/img/grupo/' . $data['file_name'];
+                $instituicao['logo'] = 'assets/img/grupo/' . $data['file_name'];
             }
             else
             {
-                $instituicao['logo'] = '/assets/img/grupo/sem_imagem.jpg';
+                $instituicao['logo'] = 'assets/img/grupo/sem_imagem.jpg';
             }
             $instituicao['nome'] = ucwords(strtolower($instituicao['nome']));
             $instituicao['sigla'] = strtoupper($instituicao['sigla']);
@@ -117,7 +117,7 @@ class instituicaoFinanciadora extends SocialController
     public function alterar()
     {
         $instituicao = $this->_request;
-        $antigaInstituicao = $this->grupoModel->recuperaPorParametro($instituicao['id']);
+        $antigaInstituicao = $this->grupoModel->recupera(Array('id' => $instituicao['id']));
         $this->form_validation->set_rules('nome', 'Nome da Instituição Financiadora', 'required');
         $this->form_validation->set_rules('sigla', 'Sigla da Instituição Financiadora', 'required');
         $this->form_validation->set_rules('email', 'E-mail', 'valid_email');
@@ -135,7 +135,7 @@ class instituicaoFinanciadora extends SocialController
                 if ($this->upload->do_upload('logo'))
                 {
                     $data = $this->upload->data();
-                    $instituicao['logo'] = '/assets/img/grupo/' . $data['file_name'];
+                    $instituicao['logo'] = 'assets/img/grupo/' . $data['file_name'];
                     if ($antigaInstituicao[0]->logo != '/assets/img/grupo/sem_imagem.jpg')
                     {
                         $foto = explode('/', $antigaInstituicao[0]->foto);
@@ -171,7 +171,7 @@ class instituicaoFinanciadora extends SocialController
     public function excluir()
     {
         $instituicao = $this->_request;
-        $novaInstituicao = $this->grupoModel->recuperaPorParametro($instituicao['idInstituicao']);
+        $novaInstituicao = $this->grupoModel->recupera(Array('id' => $instituicao['idInstituicao']));
         $novaInstituicao[0]->excluido = 1;
         if ($this->grupoModel->alterar($novaInstituicao[0]))
         {
@@ -194,9 +194,9 @@ class instituicaoFinanciadora extends SocialController
     public function excluirfoto()
     {
         $idInstituicao = $this->_request;
-        $instituicao = $this->grupoModel->recuperaPorParametro($idInstituicao['idInstituicao']);
+        $instituicao = $this->grupoModel->recupera(Array('id' => $idInstituicao['idInstituicao']));
         $logoInstituicao = explode('/', $instituicao[0]->logo);
-        $instituicao[0]->logo = '/assets/img/grupo/sem_imagem.jpg';
+        $instituicao[0]->logo = 'assets/img/grupo/sem_imagem.jpg';
         if ($this->grupoModel->alterar($instituicao[0]))
         {
             if (unlink($logoInstituicao[1] . '/' . $logoInstituicao[2] . '/' . $logoInstituicao[3] . '/' . $logoInstituicao[4]))

@@ -3,7 +3,7 @@
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <!-- INICIO DA HEAD -->
     <head>
-        <title>Social Linc</title>
+        <title><?= $nomeProjeto ?></title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta content="" name="description" />
@@ -168,7 +168,7 @@
                 <!-- INICIO DA COLUNA DA ESQUERDA -->
                 <div class="col-md-6">
                     <br>
-                    <form id="formlogin" class="login-form" method="post">
+                    <form id="formlogin" class="login-form" method="post" action="<?= base_url('social/serviceauth/logar') ?>">
                         <div class="row">
                             <div class="form-group col-md-10">
                                 <label class="form-label">E-mail</label>
@@ -223,7 +223,7 @@
                         <div id="modalCadastrarUsuarioContent" class="modal-body">
                             <div class="row">
                             </div>
-                            <form id="formCadastrarUsuario" method="post" enctype="multipart/form-data">
+                            <form id="formCadastrarUsuario" method="post" enctype="multipart/form-data" action="<?= base_url('social/serviceauth/inserir') ?>">
                                 <div class="row">
                                     <div class="form-group col-md-6">
                                         <label class="form-label">Nome Completo: *</label>
@@ -324,7 +324,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <input type="hidden" name="foto_fundo" value="/assets/img/usuarios/default_foto_fundo.png">    
+                                <input type="hidden" name="foto_fundo" value="assets/img/usuarios/default_foto_fundo.png">    
                                 <input type="hidden" name="aprovado" value="1">    
                                 <input type="hidden" name="excluido" value="0">    
                             </form>
@@ -511,11 +511,9 @@
             });
             //Submete o formulário de login
             $("#login-form").click(function () {
-                $(".login-form").attr('action', '<?= base_url('social/serviceauth/logar') ?>');
                 $(".login-form").submit();
             });
             $("#btnSalvarUsuario").click(function () {
-                $("#formCadastrarUsuario").attr('action', '<?= base_url('social/serviceauth/inserir') ?>');
                 $("#formCadastrarUsuario").submit();
             });
             $("#btnSalvarUsuarioConvidado").click(function () {

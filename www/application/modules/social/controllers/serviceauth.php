@@ -39,10 +39,10 @@ class serviceauth extends MY_Controller
         //Recupração de dados
         $base64Usuario = $this->uri->segment(4);
         $this->session->set_userdata('PaginasNaoPrecisaPermissao', $this->viewPerfilAcaoModel->gerarPaginasSemPermissao());
-        $this->data['formacoes'] = $this->formacaoModel->recuperaPorParametro(NULL, Array('excluido' => 0));
-        $this->data['instituicoes'] = $this->viewGrupoTipoModel->recuperaPorParametro(NULL, Array('id_tipo' => 1, 'excluido' => 0), Array('nome' => 'asc'));
+        $this->data['formacoes'] = $this->formacaoModel->recupera(Array('excluido' => 0), Array('formacao' => 'asc'));
+        $this->data['instituicoes'] = $this->viewGrupoTipoModel->recupera(Array('id_tipo' => 1, 'excluido' => 0), Array('nome' => 'asc'));
         $this->data['base64Usuario'] = $base64Usuario;
-        $this->data['usuario'] = $this->usuarioModel->recuperaPorParametro(NULL, Array('email' => base64_decode($base64Usuario)));
+        $this->data['usuario'] = $this->usuarioModel->recupera(Array('email' => base64_decode($base64Usuario)));
 
         //Redirecionamento
         $this->load->view('social/service_auth/index', $this->data);
@@ -82,7 +82,7 @@ class serviceauth extends MY_Controller
             }
             if ($this->usuarioModel->inserir($usuario))
             {
-                $usuarioBanco = $this->usuarioModel->recuperaPorParametro(NULL, Array('email' => $usuario['email']));
+                $usuarioBanco = $this->usuarioModel->recupera(Array('email' => $usuario['email']));
                 $this->usuarioVinculoModel->inserir(Array(
                     'id_usuario' => $usuarioBanco[0]->id,
                     'id_instituicao' => '1',
@@ -116,7 +116,7 @@ class serviceauth extends MY_Controller
     {
         $usuario = $this->_request;
         $base64Usuario = $this->uri->segment(4);
-        $usuarioBanco = $this->usuarioModel->recuperaPorParametro(NULL, Array('email' => base64_decode($base64Usuario)));
+        $usuarioBanco = $this->usuarioModel->recupera(Array('email' => base64_decode($base64Usuario)));
         if (base64_decode($base64Usuario) == $usuarioBanco[0]->email)
         {
             $usuario['id'] = $usuarioBanco[0]->id;
@@ -150,7 +150,7 @@ class serviceauth extends MY_Controller
                 }
                 if ($this->usuarioModel->alterar((object) $usuario))
                 {
-                    $usuarioBanco = $this->usuarioModel->recuperaPorParametro(NULL, Array('email' => $usuario['email']));
+                    $usuarioBanco = $this->usuarioModel->recupera(Array('email' => $usuario['email']));
                     $this->usuarioVinculoModel->inserir(Array(
                         'id_usuario' => $usuarioBanco[0]->id,
                         'id_instituicao' => '1',
@@ -217,7 +217,7 @@ class serviceauth extends MY_Controller
     public function reativarUsuario()
     {
         $email = str_replace('%40', '@', $this->uri->segment(4));
-        $usuario = $this->usuarioModel->recuperaPorParametro(NULL, Array('email' => $email));
+        $usuario = $this->usuarioModel->recupera(Array('email' => $email));
         $novasenha = dechex(rand(1000000000000, 1099511627775));
         $usuario[0]->senha = sha1($novasenha);
         if ($this->usuarioModel->alterar($usuario[0]))

@@ -18,9 +18,6 @@ class perfil extends SocialController
 
     public function index()
     {
-        //Recuperação de Dados
-        $this->data['perfis'] = $this->perfilModel->recuperaPorParametro(NULL, Array('excluido' => 0), Array('perfil' => 'asc'));
-
         //Permissões
         $this->data['permissaoCriar'] = $this->viewPerfilAcaoModel->verificaPermissao('social/perfil/criar');
         $this->data['permissaoPermissao'] = $this->viewPerfilAcaoModel->verificaPermissao('social/permissao/index');
@@ -32,6 +29,9 @@ class perfil extends SocialController
         $this->data['noticia'] = ($this->session->flashdata('noticia')) ? $this->session->flashdata('noticia') : FALSE;
         $this->data['validacao'] = (validation_errors()) ? validation_errors() : FALSE;
         $this->data['erro'] = ($this->session->flashdata('erro')) ? $this->session->flashdata('erro') : FALSE;
+        
+        //Recuperação de Dados
+        $this->data['perfis'] = $this->perfilModel->recupera(Array('excluido' => 0), Array('perfil' => 'asc'));
 
         //Redirecionamento
         $this->load->view('perfil/index', $this->data);
@@ -52,15 +52,15 @@ class perfil extends SocialController
 
     public function editar()
     {
-        //Recuperação de Dados
-        $idPerfil = $this->uri->segment(4);
-        $this->data['perfil'] = $this->perfilModel->recuperaPorParametro($idPerfil);
-
         //Avisos
         $this->data['sucesso'] = ($this->session->flashdata('sucesso')) ? $this->session->flashdata('sucesso') : FALSE;
         $this->data['noticia'] = ($this->session->flashdata('noticia')) ? $this->session->flashdata('noticia') : FALSE;
         $this->data['validacao'] = (validation_errors()) ? validation_errors() : FALSE;
         $this->data['erro'] = ($this->session->flashdata('erro')) ? $this->session->flashdata('erro') : FALSE;
+        
+        //Recuperação de Dados
+        $idPerfil = $this->uri->segment(4);
+        $this->data['perfil'] = $this->perfilModel->recupera(Array('id' => $idPerfil));
 
         //Redirecionamento
         $this->load->view('perfil/editar', $this->data);

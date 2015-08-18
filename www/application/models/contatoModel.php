@@ -34,45 +34,6 @@ class contatoModel extends abstractModel
         {
             return FALSE;
         }
-//        require_once(base_url('/PHPMailer-master/class.phpmailer.php'));
-//        $To = $mensagem['email'];
-//        $Subject = 'Contato Site';
-//        $Message = $mensagem['message'] . '<br><br>' . $mensagem['email'];
-//        
-//        $Host = 'smtp.ufpa.br';
-//        $Username = 'linc@ufpa.br';
-//        $Password = 'adamo150';
-//        $Port = "465";
-//
-//        $mail = new PHPMailer();
-//        $body = $Message;
-//        $mail->IsSMTP(); // telling the class to use SMTP
-//        $mail->Host = $Host; // SMTP server
-//        $mail->SMTPDebug = 0; // enables SMTP debug information (for testing)
-//// 1 = errors and messages
-//// 2 = messages only
-//        $mail->SMTPAuth = true; // enable SMTP authentication
-//        $mail->Port = $Port; // set the SMTP port for the service server
-//        $mail->Username = $Username; // account username
-//        $mail->Password = $Password; // account password
-//
-//        $mail->SetFrom($Username, 'LINC');
-//        $mail->Subject = $Subject;
-//        $mail->MsgHTML($body);
-//        $mail->AddAddress($To, "");
-//
-//        if (!$mail->Send())
-//        {
-//            var_dump('não enviou');
-//            $mensagemRetorno = 'Erro ao enviar e-mail: ' . print($mail->ErrorInfo);
-//        }
-//        else
-//        {
-//            var_dump('enviou');
-//            $mensagemRetorno = 'E-mail enviado com sucesso!';
-//        }
-//        var_dump($mensagem);
-//        die();
     }
 
 }

@@ -112,8 +112,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="form-group col-md-4">
+                    <div class="row" style="margin-bottom: 30px;">
+                        <div class="form-group col-md-6">
                             <label class="form-label">Coordenador do Projeto: *</label>
                             <div class="controls">
                                 <div class="input-with-icon right">
@@ -130,7 +130,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-6">
                             <label class="form-label">Responsável do Projeto: *</label>
                             <div class="controls">
                                 <div class="input-with-icon right">
@@ -147,26 +147,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group col-md-4">
-                            <label class="form-label">Instituição Financiadora: *</label>
-                            <div class="controls">
-                                <div class="input-with-icon right">
-                                    <select name="id_financiador" style="width:100%">
-                                        <?php if (count($financiadoras) > 0) : ?>
-                                            <option value="0">Selecione</option>
-                                            <?php foreach ($financiadoras as $financiadora) : ?>
-                                                <option value="<?= $financiadora->id ?>" <?= ($projeto[0]->id_financiador == $financiadora->id) ? 'selected' : '' ?>><?= $financiadora->nome ?></option>
-                                            <?php endforeach; ?>
-                                        <?php else : ?>
-                                            <option value="0">Não Existe Nenhuma Instituição Financeira Disponível</option>
-                                        <?php endif; ?>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                    <div class="row">
-                        <div class="form-group col-md-12">
+                    <hr>
+                    <div class="row" style="margin-top: 50px;">
+                        <div class="form-group col-md-6">
                             <label class="form-label">
                                 Selecione a logo do Projeto:
                                 <small style="font-size: 10px;">
@@ -185,6 +169,23 @@
                                             <img src="<?= $url_base . $projeto[0]->logo ?>" width="100">
                                         </div>
                                     <?php endif; ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="form-label">Instituição Financiadora:</label>
+                            <div class="controls">
+                                <div class="input-with-icon right">
+                                    <select name="id_financiador" style="width:100%">
+                                        <?php if (count($financiadoras) > 0) : ?>
+                                            <option value="0">Selecione</option>
+                                            <?php foreach ($financiadoras as $financiadora) : ?>
+                                                <option value="<?= $financiadora->id ?>" <?= ($projeto[0]->id_financiador == $financiadora->id) ? 'selected' : '' ?>><?= $financiadora->nome ?></option>
+                                            <?php endforeach; ?>
+                                        <?php else : ?>
+                                            <option value="0">Não Existe Nenhuma Instituição Financeira Disponível</option>
+                                        <?php endif; ?>
+                                    </select>
                                 </div>
                             </div>
                         </div>

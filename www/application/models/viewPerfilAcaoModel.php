@@ -23,7 +23,7 @@ class viewPerfilAcaoModel extends abstractModel
 
     public function gerarPaginasSemPermissao()
     {
-        $Permissoes = $this->acaoModel->recuperaPorParametro(NULL, Array('permissao' => 0));
+        $Permissoes = $this->acaoModel->recupera(Array('permissao' => 0));
         foreach ($Permissoes as $Permissao)
         {
             $novoObjeto = new stdClass();
@@ -44,7 +44,7 @@ class viewPerfilAcaoModel extends abstractModel
      */
     public function gerarPaginasComPermissao($idUser)
     {
-        $permissoesUsuario = $this->recuperaPorParametro(NULL, Array('id_usuario' => $idUser));
+        $permissoesUsuario = $this->recupera(Array('id_usuario' => $idUser));
         foreach ($permissoesUsuario as $permissaoUsuario)
         {
             $novoObjeto = new stdClass();
@@ -89,39 +89,6 @@ class viewPerfilAcaoModel extends abstractModel
             }
         }
         return FALSE;
-
-
-
-//        $url = $this->recuperaUrl();
-//        $idGrupo = ($grupo != NULL) ? $grupo : $this->uri->segment(4);
-//        $novaAcao = ($acao != NULL) ? $acao : $this->recuperaUrl();
-//        $permissoes = $this->session->userdata('permissoes');
-//        //$permitido = 0;
-//        if ($url != 'social/usuario/inserir')
-//        {
-//            foreach ($permissoes as $permissao)
-//            {
-//                if ($permissao->acao == $novaAcao)
-//                {
-//                    if ($permissao->permissao == 0)
-//                    {
-//                        return TRUE;
-//                    }
-//                    else
-//                    {
-//                        if ($permissao->id_instituicao == $idGrupo || $permissao->id_instituicao == 1)
-//                        {
-//                            return TRUE;
-//                        }
-//                    }
-//                }
-//            }
-//            return FALSE;
-//        }
-//        else
-//        {
-//            return TRUE;
-//        }
     }
 
 }

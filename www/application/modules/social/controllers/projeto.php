@@ -24,11 +24,6 @@ class projeto extends SocialController
 
     public function index()
     {
-        //Recuperação de Dados
-        $idLab = $this->uri->segment(4);
-        $this->data['laboratorio'] = $this->grupoModel->recuperaPorParametro($idLab);
-        $this->data['projetos'] = $this->viewProjetoModel->recuperaProjetosPorLaboratorio($idLab);
-
         //Permissões
         $this->data['criarProjeto'] = $this->viewPerfilAcaoModel->verificaPermissao('social/projeto/criar');
 
@@ -37,6 +32,11 @@ class projeto extends SocialController
         $this->data['noticia'] = ($this->session->flashdata('noticia')) ? $this->session->flashdata('noticia') : FALSE;
         $this->data['validacao'] = (validation_errors()) ? validation_errors() : FALSE;
         $this->data['erro'] = ($this->session->flashdata('erro')) ? $this->session->flashdata('erro') : FALSE;
+        
+        //Recuperação de Dados
+        $idLab = $this->uri->segment(4);
+        $this->data['laboratorio'] = $this->grupoModel->recupera(Array('id' => $idLab));
+        $this->data['projetos'] = $this->viewProjetoModel->recuperaProjetosPorLaboratorio($idLab);
 
         //Redirecionamento
         $this->load->view('social/projeto/index', $this->data);
@@ -49,15 +49,15 @@ class projeto extends SocialController
         $this->data['noticia'] = ($this->session->flashdata('noticia')) ? $this->session->flashdata('noticia') : FALSE;
         $this->data['validacao'] = (validation_errors()) ? validation_errors() : FALSE;
         $this->data['erro'] = ($this->session->flashdata('erro')) ? $this->session->flashdata('erro') : FALSE;
-        
+
         //Recuperação de Dados
         $idLab = $this->uri->segment(4);
-        $this->data['laboratorio'] = $this->grupoModel->recuperaPorParametro($idLab);
+        $this->data['laboratorio'] = $this->grupoModel->recupera(Array('id' => $idLab));
         $this->data['projetos'] = $this->viewProjetoModel->recuperaProjetosPorLaboratorio($idLab);
-        $this->data['usuarios'] = $this->usuarioModel->recuperaPorParametro(NULL, Array('excluido' => 0));
-        $this->data['financiadoras'] = $this->grupoModel->recuperaPorParametro(NULL, Array('id_tipo' => 4, 'excluido' => 0));
+        $this->data['usuarios'] = $this->usuarioModel->recupera(Array('excluido' => 0), Array('nome' => 'asc'));
+        $this->data['financiadoras'] = $this->grupoModel->recupera(Array('id_tipo' => 4, 'excluido' => 0), Array('nome' => 'asc'));
         $this->data['idLab'] = $idLab;
-        $this->data['linhasPesquisa'] = $this->pesquisaLinhaModel->recuperaTodos();
+        $this->data['linhasPesquisa'] = $this->pesquisaLinhaModel->recupera(NULL, Array('linha' => 'asc'));
 
         //Redirecionamento
         $this->load->view('social/projeto/criar', $this->data);
@@ -65,17 +65,6 @@ class projeto extends SocialController
 
     public function descricao()
     {
-        //Recuperação de Dados
-        $idProj = $this->uri->segment(4);
-        $this->data['projeto'] = $this->viewProjetoModel->recuperaPorParametro($idProj);
-        $this->data['anexos'] = $this->anexoModel->recuperaPorParametro(NULL, Array('id_grupo' => $idProj));
-        $this->data['usuariosProj'] = $this->viewUsuarioGrupoVinculoModel->recuperaPorParametro(NULL, Array('id_tipo_grupo' => 2, 'id_grupo' => $idProj), Array('ativo' => 'desc', 'nome_usuario' => 'asc'));
-        $this->data['usuarios'] = $this->usuarioModel->recuperaUsuariosQueNaoPertecemAoProj($idProj);
-        $this->data['perfis'] = $this->perfilModel->recuperaPorParametro(NULL, Array('excluido' => 0));
-        $this->data['linhasPesquisaProjeto'] = $this->viewPesquisaLinhaGrupoVinculoModel->recuperaPorParametro(NULL, Array('id_grupo' => $idProj));
-        $this->data['linhasPesquisa'] = $this->pesquisaLinhaModel->recuperaLinhasPesquisaQueNaoPertecemAoGrupo($idProj);
-        $this->data['alumni'] = 0;
-
         //Permissões
         $this->data['permissaoEditar'] = $this->viewPerfilAcaoModel->verificaPermissao('social/projeto/editar');
         $this->data['permissaoExcluir'] = $this->viewPerfilAcaoModel->verificaPermissao('social/projeto/excluir');
@@ -93,6 +82,17 @@ class projeto extends SocialController
         $this->data['noticia'] = ($this->session->flashdata('noticia')) ? $this->session->flashdata('noticia') : FALSE;
         $this->data['validacao'] = (validation_errors()) ? validation_errors() : FALSE;
         $this->data['erro'] = ($this->session->flashdata('erro')) ? $this->session->flashdata('erro') : FALSE;
+        
+        //Recuperação de Dados
+        $idProj = $this->uri->segment(4);
+        $this->data['projeto'] = $this->viewProjetoModel->recupera(Array('id' => $idProj));
+        $this->data['anexos'] = $this->anexoModel->recupera(Array('id_grupo' => $idProj));
+        $this->data['usuariosProj'] = $this->viewUsuarioGrupoVinculoModel->recupera(Array('id_tipo_grupo' => 2, 'id_grupo' => $idProj), Array('ativo' => 'desc', 'nome_usuario' => 'asc'));
+        $this->data['usuarios'] = $this->usuarioModel->recuperaUsuariosQueNaoPertecemAoProj($idProj);
+        $this->data['perfis'] = $this->perfilModel->recupera(Array('excluido' => 0), Array('perfil' => 'asc'));
+        $this->data['linhasPesquisaProjeto'] = $this->viewPesquisaLinhaGrupoVinculoModel->recupera(Array('id_grupo' => $idProj));
+        $this->data['linhasPesquisa'] = $this->pesquisaLinhaModel->recuperaLinhasPesquisaQueNaoPertecemAoGrupo($idProj);
+        $this->data['alumni'] = 0;
 
         //Redirecionamento
         $this->load->view('social/projeto/descricao', $this->data);
@@ -100,17 +100,17 @@ class projeto extends SocialController
 
     public function editar()
     {
-        //Recuperação de Dados
-        $idProj = $this->uri->segment(4);
-        $this->data['projeto'] = $this->viewProjetoModel->recuperaPorParametro($idProj);
-        $this->data['usuarios'] = $this->usuarioModel->recuperaTodos();
-        $this->data['financiadoras'] = $this->grupoModel->recuperaPorParametro(NULL, Array('id_tipo' => 4, 'excluido' => 0));
-
         //Avisos
         $this->data['sucesso'] = ($this->session->flashdata('sucesso')) ? $this->session->flashdata('sucesso') : FALSE;
         $this->data['noticia'] = ($this->session->flashdata('noticia')) ? $this->session->flashdata('noticia') : FALSE;
         $this->data['validacao'] = (validation_errors()) ? validation_errors() : FALSE;
         $this->data['erro'] = ($this->session->flashdata('erro')) ? $this->session->flashdata('erro') : FALSE;
+        
+        //Recuperação de Dados
+        $idProj = $this->uri->segment(4);
+        $this->data['projeto'] = $this->viewProjetoModel->recupera(Array('id' => $idProj));
+        $this->data['usuarios'] = $this->usuarioModel->recupera(NULL, Array('nome' => 'asc'));
+        $this->data['financiadoras'] = $this->grupoModel->recupera(Array('id_tipo' => 4, 'excluido' => 0), Array('nome' => 'asc'));
 
         //Redirecionamento
         $this->load->view('social/projeto/editar', $this->data);
@@ -128,10 +128,9 @@ class projeto extends SocialController
         $this->form_validation->set_rules('resumo', 'Descrição do Projeto', 'required');
         $this->form_validation->set_rules('id_coordenador', 'Coordenador do Projeto', 'required|is_natural_no_zero');
         $this->form_validation->set_rules('id_responsavel', 'Responsável do Projeto', 'required|is_natural_no_zero');
-        $this->form_validation->set_rules('id_financiador', 'Instituição Financiadora', 'required|is_natural_no_zero');
         $this->form_validation->set_message('is_natural_no_zero', 'Você tem que'
-                . ' selecionar um Coordenador, um Responsável, uma instituição'
-                . ' financiadora e uma linha de pesquisa para o projeto.');
+                . ' selecionar um Coordenador, um Responsável e uma linha de'
+                . ' pesquisa para o projeto.');
         if ($this->form_validation->run())
         {
             $config['upload_path'] = '/assets/img/grupo';
@@ -144,11 +143,11 @@ class projeto extends SocialController
             if ($this->upload->do_upload('logo'))
             {
                 $data = $this->upload->data();
-                $logo = '/assets/img/grupo/' . $data['file_name'];
+                $logo = 'assets/img/grupo/' . $data['file_name'];
             }
             else
             {
-                $logo = '/assets/img/grupo/projeto.jpg';
+                $logo = 'assets/img/grupo/projeto.jpg';
             }
             $dados['id_tipo'] = 2;
             $dados['logo'] = $logo;
@@ -163,9 +162,10 @@ class projeto extends SocialController
                 $dados['inicio'] = $inicio[2] . '-' . $inicio[1] . '-' . $inicio[0];
                 $dados['termino'] = $termino[2] . '-' . $termino[1] . '-' . $termino[0];
                 $dados['fim'] = 0;
+                $dados['id_financiador'] = ($dados['id_financiador']) ? $dados['id_financiador'] : NULL;
                 if ($this->projetoModel->inserir($dados))
                 {
-                    if ($this->projetoModel->inserirVinculosDeProjeto($idProjeto, $dados['id_coordenador'], $dados['id_responsavel'], $dados['id_financiador'], $idLab))
+                    if ($this->projetoModel->inserirVinculosDeProjeto($idProjeto, $dados['id_coordenador'], $dados['id_responsavel'], $idLab, $dados['id_financiador']))
                     {
                         $linhaDePesquisa = Array(
                             'id_linha' => $dados['id_linha'],
@@ -202,10 +202,9 @@ class projeto extends SocialController
                                 'noticia', 'O Projeto ' . $dados['nome'] . ' Foi'
                                 . ' inserido com sucesso, Porém ao vincular o'
                                 . ' Coordenador do Projeto, Responsável do'
-                                . ' Projeto e a Instituição Financeira do'
                                 . ' Projeto ocorreu um erro, vá na descrição do'
                                 . ' projeto inserido e vincule-os manualemnte.'
-                                . ' <a href="/social/projeto/descricao/' 
+                                . ' <a href="/social/projeto/descricao/'
                                 . $idProjeto . '">Clique aqui para ir para a'
                                 . ' descrição do projeto.</a>');
                         redirect('social/projeto/index/' . $idLab);
@@ -242,15 +241,16 @@ class projeto extends SocialController
     {
         $idProj = $this->uri->segment(4);
         $novosDados = $this->_request;
-        $dados = $this->viewProjetoModel->recuperaPorParametro($idProj);
+        $dados = $this->viewProjetoModel->recupera(Array('id' => $idProj));
         $this->form_validation->set_rules('nome', 'Nome do Projeto', 'required');
         $this->form_validation->set_rules('sigla', 'Sigla do Projeto', 'required');
         $this->form_validation->set_rules('inicio', 'Data de Inicio', 'required');
         $this->form_validation->set_rules('termino', 'Previsão de Termino', 'required');
         $this->form_validation->set_rules('id_coordenador', 'Coordenador do Projeto', 'required|is_natural_no_zero');
         $this->form_validation->set_rules('id_responsavel', 'Responsável do Projeto', 'required|is_natural_no_zero');
-        $this->form_validation->set_rules('id_financiador', 'Instituição Financiera', 'required|is_natural_no_zero');
-        $this->form_validation->set_message('is_natural_no_zero', 'Você tem que selecionar um Coordenador, Responsável e uma instituição financeira para o projeto');
+        $this->form_validation->set_message('is_natural_no_zero', 'Você tem que'
+                . ' selecionar um Coordenador e Responsável e uma instituição'
+                . ' financeira para o projeto.');
         if ($this->form_validation->run())
         {
             if ($_FILES['logo']['name'] != '')
@@ -265,7 +265,7 @@ class projeto extends SocialController
                 if ($this->upload->do_upload('logo'))
                 {
                     $data = $this->upload->data();
-                    $logo = '/assets/img/grupo/' . $data['file_name'];
+                    $logo = 'assets/img/grupo/' . $data['file_name'];
                 }
                 else
                 {
@@ -296,12 +296,9 @@ class projeto extends SocialController
             {
                 $this->usuarioVinculoModel->desvinculaVinculaUsuariosProjeto($idProj, 9, $dados[0]->id_responsavel, $novosDados['id_responsavel']);
             }
-            if ($novosDados['id_financiador'] != $dados[0]->id_financiador)
-            {
-                $this->grupoVinculoModel->desvinculaVinculaFinanciadorProjeto($idProj, 9, $dados[0]->id_financiador, $novosDados['id_financiador']);
-            }
+            $novosDados['id_financiador'] = ($novosDados['id_financiador']) ? $novosDados['id_financiador'] : NULL;
             $ateraGrupo = $this->grupoModel->alterar((object) $novosDados, Array('id' => $idProj));
-            $alteraProjeto = $this->projetoModel->alterar((object) $novosDados, Array('id' => $dados[0]->id_projeto));
+            $alteraProjeto = $this->projetoModel->alterar((object) $novosDados, Array('id_projeto' => $novosDados['id_projeto']));
             if ($ateraGrupo || $alteraProjeto)
             {
                 $this->session->set_flashdata('sucesso', 'O Projeto '
@@ -374,7 +371,7 @@ class projeto extends SocialController
     public function excluir()
     {
         $idProj = $this->uri->segment(4);
-        $projeto = $this->viewProjetoModel->recuperaPorParametro($idProj);
+        $projeto = $this->viewProjetoModel->recupera(Array('id' => $idProj));
         $projeto[0]->excluido = 1;
         if ($this->grupoModel->alterar($projeto[0]))
         {
@@ -396,9 +393,9 @@ class projeto extends SocialController
     public function excluirfoto()
     {
         $idProj = $this->_request;
-        $laboratorio = $this->grupoModel->recuperaPorParametro($idProj['idProj']);
+        $laboratorio = $this->grupoModel->recupera(Array('id' => $idProj['idProj']));
         $logoLab = explode('/', $laboratorio[0]->logo);
-        $laboratorio[0]->logo = '/assets/img/grupo/projeto.jpg';
+        $laboratorio[0]->logo = 'assets/img/grupo/projeto.jpg';
         if ($this->grupoModel->alterar($laboratorio[0]))
         {
             if (unlink($logoLab[1] . '/' . $logoLab[2] . '/' . $logoLab[3] . '/' . $logoLab[4]))
@@ -420,11 +417,11 @@ class projeto extends SocialController
     public function verificaVinculadosDoProjeto()
     {
         $idProj = $this->_request;
-        $proj = $this->grupoModel->recuperaPorParametro($idProj['idProj']);
-        $tarefas = $this->tarefaModel->recuperaPorParametro(NULL, Array('id_projeto' => $idProj['idProj']));
-        $usuarios = $this->viewUsuarioGrupoVinculoModel->recuperaPorParametro(NULL, Array('id_grupo' => $idProj['idProj']));
-        $anexos = $this->anexoModel->recuperaPorParametro(NULL, Array('id_grupo' => $idProj['idProj']));
-        $posts = $this->postModel->recuperaPorParametro(NULL, Array('id_grupo' => $idProj['idProj']));
+        $proj = $this->grupoModel->recupera(Array('id' => $idProj['idProj']));
+        $tarefas = $this->tarefaModel->recupera(Array('id_projeto' => $idProj['idProj']));
+        $usuarios = $this->viewUsuarioGrupoVinculoModel->recupera(Array('id_grupo' => $idProj['idProj']));
+        $anexos = $this->anexoModel->recupera(Array('id_grupo' => $idProj['idProj']));
+        $posts = $this->postModel->recupera(Array('id_grupo' => $idProj['idProj']));
         if ($tarefas || $usuarios || $anexos || $posts)
         {
             $msg = 'O Projeto ' . $proj[0]->nome . ' possui';

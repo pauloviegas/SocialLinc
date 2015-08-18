@@ -13,7 +13,7 @@ class viewProjetoModel extends abstractModel
     
     public function recuperaProjetosPorLaboratorio($idLab)
     {
-        $projetos = $this->recuperaPorParametro(NULL, Array(
+        $projetos = $this->recupera(Array(
             'id_laboratorio' => $idLab,
             'excluido' => 0
         ));

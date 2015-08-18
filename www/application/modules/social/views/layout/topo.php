@@ -4,7 +4,7 @@
 <head>
     <!-- INICIO DAS CONFIGURAÇÕES -->
     <meta charset="utf-8" />
-    <title>Webarch - Responsive Admin Dashboard</title>
+    <title><?= $nomeProjeto ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta content="" name="description" />
     <meta content="" name="author" />

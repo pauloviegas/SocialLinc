@@ -20,11 +20,6 @@ class sistema extends SocialController
 
     public function index()
     {
-        //Recuperação de Dados
-        $this->data['usuariosVinculados'] = $this->viewUsuarioGrupoVinculoModel->recuperaPorParametro(NULL, Array('id_grupo' => 1), Array('nome_usuario' => 'asc'));
-        $this->data['usuarios'] = $this->usuarioModel->recuperaUsuariosQueNaoPertecemAoLab(1, 5);
-        $this->data['perfis'] = $this->perfilModel->recuperaTodos("perfil", "asc");
-
         //Permissões
         $this->data['permissaoVincularUsuario'] = $this->viewPerfilAcaoModel->verificaPermissao('social/sistema/vincularUsuario');
         $this->data['permissaoDesvincularUsuario'] = $this->viewPerfilAcaoModel->verificaPermissao('social/sistema/vincularUsuario');
@@ -34,6 +29,11 @@ class sistema extends SocialController
         $this->data['noticia'] = ($this->session->flashdata('noticia')) ? $this->session->flashdata('noticia') : FALSE;
         $this->data['validacao'] = (validation_errors()) ? validation_errors() : FALSE;
         $this->data['erro'] = ($this->session->flashdata('erro')) ? $this->session->flashdata('erro') : FALSE;
+        
+        //Recuperação de Dados
+        $this->data['usuariosVinculados'] = $this->viewUsuarioGrupoVinculoModel->recupera(Array('id_grupo' => 1), Array('nome_usuario' => 'asc'));
+        $this->data['usuarios'] = $this->usuarioModel->recuperaUsuariosQueNaoPertecemAoLab(1, 5);
+        $this->data['perfis'] = $this->perfilModel->recupera(NULL, Array('perfil' => 'asc'));
 
         //Redirecionamento
         $this->load->view('sistema/index', $this->data);

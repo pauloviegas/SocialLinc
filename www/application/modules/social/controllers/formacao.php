@@ -18,9 +18,6 @@ class formacao extends SocialController
 
     public function index()
     {
-        //Recuperação de Dados
-        $this->data['formacoes'] = $this->formacaoModel->recuperaPorParametro(NULL, Array('excluido' => 0), Array('formacao' => 'asc'));
-
         //Permissões
         $this->data['permissaoCriar'] = $this->viewPerfilAcaoModel->verificaPermissao('social/formacao/criar');
         $this->data['permissaoEditarFormacao'] = $this->viewPerfilAcaoModel->verificaPermissao('social/formacao/editar');
@@ -31,6 +28,9 @@ class formacao extends SocialController
         $this->data['noticia'] = ($this->session->flashdata('noticia')) ? $this->session->flashdata('noticia') : FALSE;
         $this->data['validacao'] = (validation_errors()) ? validation_errors() : FALSE;
         $this->data['erro'] = ($this->session->flashdata('erro')) ? $this->session->flashdata('erro') : FALSE;
+        
+        //Recuperação de Dados
+        $this->data['formacoes'] = $this->formacaoModel->recupera(Array('excluido' => 0), Array('formacao' => 'asc'));
 
         //Redirecionamento
         $this->load->view('formacao/index', $this->data);
@@ -51,15 +51,15 @@ class formacao extends SocialController
 
     public function editar()
     {
-        //Recuperação de Dados
-        $idFormacao = $this->uri->segment(4);
-        $this->data['formacao'] = $this->formacaoModel->recuperaPorParametro($idFormacao);
-
         //Avisos
         $this->data['sucesso'] = ($this->session->flashdata('sucesso')) ? $this->session->flashdata('sucesso') : FALSE;
         $this->data['noticia'] = ($this->session->flashdata('noticia')) ? $this->session->flashdata('noticia') : FALSE;
         $this->data['validacao'] = (validation_errors()) ? validation_errors() : FALSE;
         $this->data['erro'] = ($this->session->flashdata('erro')) ? $this->session->flashdata('erro') : FALSE;
+        
+        //Recuperação de Dados
+        $idFormacao = $this->uri->segment(4);
+        $this->data['formacao'] = $this->formacaoModel->recupera(Array('id' => $idFormacao));
 
         //Redirecionamento
         $this->load->view('formacao/editar', $this->data);

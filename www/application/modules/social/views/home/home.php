@@ -35,10 +35,10 @@
 <?php endif; ?>
 
 <div style="width: 100%; text-align: center;">
-    <h1>Seja Bem-vindo ao <b>Social LINC</b></h1>
+    <h1>Seja Bem vindo ao <b>Social LINC</b></h1>
     <p style="margin-top: 20px;">
-        Em breve você poderá comenrar em todos os laboratórios e projetos, além
-        de realizar post's pessoais e sobre suas publicações cintíficas, aguarde
+        Em breve você poderá comentar em todos os laboratórios e projetos, além
+        de realizar post's pessoais e sobre a sua <b>Produção Cintifica</b>. Aguarde
         e desfrute de mais funções do social LINC.
     </p>
 </div>

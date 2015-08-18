@@ -29,7 +29,7 @@ class anexo extends SocialController
                 if ($this->upload->do_upload('anexo'))
                 {
                     $data = $this->upload->data();
-                    $anexo['localizacao'] = '/assets/img/anexo/' . $data['file_name'];
+                    $anexo['localizacao'] = 'assets/img/anexo/' . $data['file_name'];
                     if ($this->anexoModel->inserir($anexo))
                     {
                         $this->session->set_flashdata(
@@ -71,7 +71,7 @@ class anexo extends SocialController
     {
         $idAnexo = $this->uri->segment(4);
         $controller = $this->_request;
-        $anexo = $this->anexoModel->recuperaPorParametro($idAnexo);
+        $anexo = $this->anexoModel->recupera(Array('id' => $idAnexo));
         $imagem = explode('/', $anexo[0]->localizacao);
         if ($this->anexoModel->deletar($idAnexo))
         {

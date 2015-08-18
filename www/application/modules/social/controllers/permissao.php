@@ -19,11 +19,6 @@ class permissao extends SocialController
 
     public function index()
     {
-        //Recuperação de Dados
-        $idPerfil = $this->uri->segment(4);
-        $this->data['controllers'] = $this->acaoModel->recuperaPermissaoDivididaPorController($idPerfil);
-        $this->data['idPerfil'] = $idPerfil;
-
         //Permissões
 
         //Avisos
@@ -31,6 +26,11 @@ class permissao extends SocialController
         $this->data['noticia'] = ($this->session->flashdata('noticia')) ? $this->session->flashdata('noticia') : FALSE;
         $this->data['validacao'] = (validation_errors()) ? validation_errors() : FALSE;
         $this->data['erro'] = ($this->session->flashdata('erro')) ? $this->session->flashdata('erro') : FALSE;
+        
+        //Recuperação de Dados
+        $idPerfil = $this->uri->segment(4);
+        $this->data['controllers'] = $this->acaoModel->recuperaPermissaoDivididaPorController($idPerfil);
+        $this->data['idPerfil'] = $idPerfil;
 
         //Redirecionamento
         $this->load->view('permissao/index', $this->data);
@@ -40,7 +40,7 @@ class permissao extends SocialController
     {
         $resposta = 0;
         $permissao = $this->_request;
-        $permissaoParaAtualizar = $this->permissaoModel->recuperaPorParametro(NULL, Array(
+        $permissaoParaAtualizar = $this->permissaoModel->recupera(Array(
             'id_acao' => $permissao['idAcao'],
             'id_perfil' => $permissao['idPerfil']));
         if(count($permissaoParaAtualizar) > 0)

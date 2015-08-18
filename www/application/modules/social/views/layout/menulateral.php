@@ -35,14 +35,14 @@ $visualisarInstituicaoFinanciadora = $this->viewPerfilAcaoModel->verificaPermiss
         <!-- FIM DO TOPO DE SAUDAÇÃO -->
         <!-- INICIO DO MENU LATERAL -->
         <ul>
-            <li class="start active ">
+            <li class="start active descricaoMenu" data-toggle="tooltip" data-placement="right" title="Feed de Notícias">
                 <a href="<?= base_url('social/home/index') ?>">
                     <i class="icon-comments-alt"></i>
                     <span class="title">Feed de Notícias</span>
                     <span class="arrow"></span>
                 </a>
             </li>
-            <li class="start active ">
+            <li class="start active descricaoMenu" data-toggle="tooltip" data-placement="right" title="Laboratórios">
                 <a href="<?= base_url('social/laboratorio/index') ?>">
                     <i class="icon-beaker"></i>
                     <span class="title">Laboratórios</span>
@@ -50,7 +50,7 @@ $visualisarInstituicaoFinanciadora = $this->viewPerfilAcaoModel->verificaPermiss
                 </a>
             </li>
             <?php if ($visualisarUsuario || $visualisarFormacao || $visualisarPerfil || $visualisarAdmSistema) : ?>
-                <li class="">
+                <li class="descricaoMenu" data-toggle="tooltip" data-placement="right" title="Gerência de Usuários">
                     <a href="javascript:;">
                         <i class="icon-group"></i>
                         <span class="title">Gerência de Usuários</span>
@@ -73,7 +73,7 @@ $visualisarInstituicaoFinanciadora = $this->viewPerfilAcaoModel->verificaPermiss
                 </li>
             <?php endif; ?>
             <?php if ($visualisarLogs || $visualisarInstituicaoEnsino || $visualisarInstituicaoFinanciadora) : ?>
-                <li class="">
+                <li class="descricaoMenu" data-toggle="tooltip" data-placement="right" title="Ferramentas">
                     <a href="javascript:;">
                         <i class="icon-wrench"></i>
                         <span class="title">Ferramentas</span>

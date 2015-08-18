@@ -14,28 +14,11 @@ class usuarioModel extends abstractModel
         $this->load->model('viewUsuarioGrupoVinculoModel');
     }
 
-    public function inserir(Array $dados)
-    {
-        $colunasBanco = $this->descreverTabela();
-        foreach ($dados as $coluna => $valor)
-        {
-            if (!in_array($coluna, $colunasBanco))
-            {
-                unset($dados[$coluna]);
-            }
-        }
-        if ($this->db->insert($this->_table, $dados))
-        {
-            return 1;
-        }
-        return 0;
-    }
-
     public function recuperaUsuariosQueNaoPertecemAoLab($idLab, $tipoGrupo = NULL)
     {
         $tipoGrupo = ($tipoGrupo) ? $tipoGrupo : 3;
-        $usuarios = $this->recuperaPorParametro(NULL, Array('excluido' => 0));
-        $usuariosLab = $this->viewUsuarioGrupoVinculoModel->recuperaPorParametro(NULL, Array('id_tipo_grupo' => $tipoGrupo, 'id_grupo' => $idLab));
+        $usuarios = $this->recupera(Array('excluido' => 0), Array('nome' => 'asc'));
+        $usuariosLab = $this->viewUsuarioGrupoVinculoModel->recupera(Array('id_tipo_grupo' => $tipoGrupo, 'id_grupo' => $idLab));
         $outrosUsuarios = Array();
         foreach ($usuarios as $usuario)
         {
@@ -58,8 +41,8 @@ class usuarioModel extends abstractModel
 
     public function recuperaUsuariosQueNaoPertecemAoProj($idProj)
     {
-        $usuarios = $this->recuperaPorParametro(NULL, Array('excluido' => 0));
-        $usuariosLab = $this->viewUsuarioGrupoVinculoModel->recuperaPorParametro(NULL, Array('id_tipo_grupo' => 2, 'id_grupo' => $idProj));
+        $usuarios = $this->recupera(Array('excluido' => 0), Array('nome' => 'asc'));
+        $usuariosLab = $this->viewUsuarioGrupoVinculoModel->recupera(Array('id_tipo_grupo' => 2, 'id_grupo' => $idProj));
         $outrosUsuarios = Array();
         foreach ($usuarios as $usuario)
         {

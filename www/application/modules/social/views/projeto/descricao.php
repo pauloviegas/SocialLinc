@@ -149,7 +149,7 @@
                         <label class="form-label"><b>Instituição Financiadora:</b></label>
                         <div class="controls">
                             <div class="input-with-icon right">
-                                <?= $projeto[0]->nome_financiador ?>
+                                <?= ($projeto[0]->nome_financiador) ? $projeto[0]->nome_financiador : '-' ?>
                             </div>
                         </div>
                     </div>

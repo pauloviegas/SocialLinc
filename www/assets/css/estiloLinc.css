@@ -146,3 +146,6 @@ textarea {
     margin-left: 40px;
     margin-top: 5px;
 }
+.descricaoMenu + .tooltip {
+    width: 200px;
+}

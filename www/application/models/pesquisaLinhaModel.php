@@ -24,8 +24,8 @@ class pesquisaLinhaModel extends abstractModel
 
     public function recuperaLinhasPesquisaQueNaoPertecemAoGrupo($idGrupo)
     {
-        $linhasPesquisaGrupo = $this->pesquisaLinhaGrupoVinculoModel->recuperaPorParametro(NULL, Array('id_grupo' => $idGrupo));
-        $linhasPesquisa = $this->recuperaTodos();
+        $linhasPesquisaGrupo = $this->pesquisaLinhaGrupoVinculoModel->recupera(Array('id_grupo' => $idGrupo));
+        $linhasPesquisa = $this->recupera(NULL, Array('linha' => 'asc'));
         $linhas = Array();
         foreach ($linhasPesquisa as $linhaPesquisa)
         {
@@ -47,8 +47,8 @@ class pesquisaLinhaModel extends abstractModel
 
     public function recuperaLinhasPesquisaQueNaoPertecemAoUsuario($idUsuario)
     {
-        $linhasPesquisaUsuario = $this->pesquisaLinhaUsuarioVinculoModel->recuperaPorParametro(NULL, Array('id_usuario' => $idUsuario));
-        $linhasPesquisa = $this->recuperaTodos();
+        $linhasPesquisaUsuario = $this->pesquisaLinhaUsuarioVinculoModel->recupera(Array('id_usuario' => $idUsuario));
+        $linhasPesquisa = $this->recupera();
         $linhas = Array();
         foreach ($linhasPesquisa as $linhaPesquisa)
         {

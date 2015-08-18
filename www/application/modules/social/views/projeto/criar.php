@@ -127,8 +127,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="form-group col-md-4">
+                    <div class="row" style="margin-bottom: 30px;">
+                        <div class="form-group col-md-6">
                             <label class="form-label">Coordenador do Projeto: *</label>
                             <div class="controls">
                                 <div class="input-with-icon right" style="margin-bottom: 10px;">
@@ -146,7 +146,7 @@
                                 <a href="#" data-toggle="modal" data-target="#modalConvidarUsuario">Convidar Usuário</a>
                             </div>
                         </div>
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-6">
                             <label class="form-label">Responsável do Projeto: *</label>
                             <div class="controls">
                                 <div class="input-with-icon right" style="margin-bottom: 10px;">
@@ -164,26 +164,10 @@
                                 <a href="#">Convidar Usuário</a>
                             </div>
                         </div>
-                        <div class="form-group col-md-4">
-                            <label class="form-label">Instituição Financiadora: *</label>
-                            <div class="controls">
-                                <div class="input-with-icon right">
-                                    <select name="id_financiador" style="width:100%">
-                                        <?php if (count($financiadoras) > 0) : ?>
-                                            <option value="0">Selecione</option>
-                                            <?php foreach ($financiadoras as $financiadora) : ?>
-                                                <option value="<?= $financiadora->id ?>"><?= $financiadora->nome ?></option>
-                                            <?php endforeach; ?>
-                                        <?php else : ?>
-                                            <option value="0">Não Existe Nenhuma Instituição Financeira Disponível</option>
-                                        <?php endif; ?>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>  
-                    <div class="row">
-                        <div class="form-group col-md-12">
+                    </div>
+                    <hr>
+                    <div class="row" style="margin-top: 50px;">
+                        <div class="form-group col-md-6">
                             <label class="form-label">
                                 Selecione a logo do Projeto:
                                 <small style="font-size: 10px;">
@@ -197,6 +181,23 @@
                                         <input id="imagem" class="col-md-12 inputImagem" type="file" name="logo" />
                                         <label id="nomeimagem" class="form-label labelImagem"></label>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="form-label">Instituição Financiadora:</label>
+                            <div class="controls">
+                                <div class="input-with-icon right">
+                                    <select name="id_financiador" style="width:100%">
+                                        <?php if (count($financiadoras) > 0) : ?>
+                                            <option value="0">Selecione</option>
+                                            <?php foreach ($financiadoras as $financiadora) : ?>
+                                                <option value="<?= $financiadora->id ?>"><?= $financiadora->nome ?></option>
+                                            <?php endforeach; ?>
+                                        <?php else : ?>
+                                            <option value="0">Não Existe Nenhuma Instituição Financeira Disponível</option>
+                                        <?php endif; ?>
+                                    </select>
                                 </div>
                             </div>
                         </div>

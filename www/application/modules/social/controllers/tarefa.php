@@ -11,9 +11,6 @@ class tarefa extends SocialController
     
     public function index()
     {
-        //Recuperação de Dados
-        $this->data['vstatus'] = $this->tarefaModel->recuperaTarefasOrganizadas();
-        
         //Permissões
         $this->data['aprovarTarefa'] = $this->viewPerfilAcaoModel->verificaPermissao('social/tarefa/aprovar');
         
@@ -22,6 +19,8 @@ class tarefa extends SocialController
         $this->data['noticia'] = ($this->session->flashdata('noticia')) ? $this->session->flashdata('noticia') : FALSE;
         $this->data['validacao'] = (validation_errors()) ? validation_errors() : FALSE;
         $this->data['erro'] = ($this->session->flashdata('erro')) ? $this->session->flashdata('erro') : FALSE;
+        
+        //Recuperação de Dados
         
         //Redirecionamento
         $this->load->view('social/tarefa/index', $this->data);

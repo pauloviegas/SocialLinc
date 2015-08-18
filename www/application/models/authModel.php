@@ -33,7 +33,7 @@ class AuthModel extends abstractModel
      */
     public function logar($email, $senha)
     {
-        $usuario = $this->usuarioModel->recuperaPorParametro(NULL, Array('senha' => sha1($senha), 'email' => $email));
+        $usuario = $this->usuarioModel->recupera(Array('senha' => sha1($senha), 'email' => $email));
         if (!$usuario)
         {
             $this->authModel->logout();
