@@ -1,19 +1,17 @@
 <?php
-
+/**
+ * @package Usuario
+ * @subpackage Models
+ */
 class acaoModel extends abstractModel
 {
 
     /**
-     * @var String $_table Nome da tabela no banco na qual este Model atua.
+     * @var String $_table variável abstrata que será sobrescrita nas classes
+     *  filhas, representando a tabela na qual a model vai atuar.
      */
     protected $_table = 'sitelinc_usu_acao';
 
-    /**
-     * Carrega todos os métodos contidos na classe pai.
-     * @param NULL
-     * @author Paulo Viegas <pauloviegas93@gmail.com>
-     * @return NULL
-     */
     public function __construct()
     {
         

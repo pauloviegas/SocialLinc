@@ -145,7 +145,7 @@ class instituicaoFinanciadora extends SocialController
             }
             $instituicao['nome'] = ucwords(strtolower($instituicao['nome']));
             $instituicao['sigla'] = strtoupper($instituicao['sigla']);
-            if ($this->grupoModel->alterar((object) $instituicao))
+            if ($this->grupoModel->alterar($instituicao))
             {
                 $this->session->set_flashdata(
                         'sucesso', 'A Instituicao Financiadora '

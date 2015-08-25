@@ -357,7 +357,7 @@
                                     <img src="<?= $url_base . 'assets/img/usuarios/default_user.jpg' ?>">
                                 </div>
                                 <div class="caption nomeAddVinculo">
-                                    <h3><i class="icon-plus"></i>&nbsp;&nbsp;Novo Usuário</h3>
+                                    <h3><i class="icon-plus"></i>&nbsp;&nbsp;Novo Membro</h3>
                                 </div>
                             </div>
                         </div>

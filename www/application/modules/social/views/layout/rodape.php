@@ -45,8 +45,11 @@
 <!-- FIM DOS CORES DE TEMPLATE DO JAVASCRIPT --> 
 
 <script>
-    $(".descricaoMenu").hover(function () {
+    $(".descricaoMenu").mouseenter(function () {
         $(this).tooltip('show');
+    });
+    $(".descricaoMenu").mouseleave(function () {
+        $(this).tooltip('hide');
     });
 </script>
 

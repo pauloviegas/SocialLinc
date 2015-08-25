@@ -89,7 +89,7 @@ class projeto extends SocialController
         $this->data['anexos'] = $this->anexoModel->recupera(Array('id_grupo' => $idProj));
         $this->data['usuariosProj'] = $this->viewUsuarioGrupoVinculoModel->recupera(Array('id_tipo_grupo' => 2, 'id_grupo' => $idProj), Array('ativo' => 'desc', 'nome_usuario' => 'asc'));
         $this->data['usuarios'] = $this->usuarioModel->recuperaUsuariosQueNaoPertecemAoProj($idProj);
-        $this->data['perfis'] = $this->perfilModel->recupera(Array('excluido' => 0), Array('perfil' => 'asc'));
+        $this->data['perfis'] = $this->perfilModel->recupera(Array('excluido' => 0, 'vinculo_manual' => 1), Array('perfil' => 'asc'));
         $this->data['linhasPesquisaProjeto'] = $this->viewPesquisaLinhaGrupoVinculoModel->recupera(Array('id_grupo' => $idProj));
         $this->data['linhasPesquisa'] = $this->pesquisaLinhaModel->recuperaLinhasPesquisaQueNaoPertecemAoGrupo($idProj);
         $this->data['alumni'] = 0;
@@ -297,8 +297,8 @@ class projeto extends SocialController
                 $this->usuarioVinculoModel->desvinculaVinculaUsuariosProjeto($idProj, 9, $dados[0]->id_responsavel, $novosDados['id_responsavel']);
             }
             $novosDados['id_financiador'] = ($novosDados['id_financiador']) ? $novosDados['id_financiador'] : NULL;
-            $ateraGrupo = $this->grupoModel->alterar((object) $novosDados, Array('id' => $idProj));
-            $alteraProjeto = $this->projetoModel->alterar((object) $novosDados, Array('id_projeto' => $novosDados['id_projeto']));
+            $ateraGrupo = $this->grupoModel->alterar($novosDados, Array('id' => $idProj));
+            $alteraProjeto = $this->projetoModel->alterar($novosDados, Array('id_projeto' => $novosDados['id_projeto']));
             if ($ateraGrupo || $alteraProjeto)
             {
                 $this->session->set_flashdata('sucesso', 'O Projeto '

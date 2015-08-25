@@ -3,9 +3,6 @@
 class usuarioModel extends abstractModel
 {
 
-    /**
-     * @var String $_table Nome da tabela no banco na qual este Model atua.
-     */
     protected $_table = 'sitelinc_usu_usuario';
 
     public function __construct()

@@ -3,17 +3,8 @@
 class viewPerfilAcaoModel extends abstractModel
 {
 
-    /**
-     * @var String $_table Nome da tabela no banco na qual este Model atua.
-     */
     protected $_table = 'sitelinc_view_perfil_acao';
 
-    /**
-     * Carrega todos os métodos contidos na classe pai.
-     * @param NULL
-     * @author Paulo Viegas <pauloviegas93@gmail.com>
-     * @return NULL
-     */
     public function __construct()
     {
 
@@ -36,12 +27,6 @@ class viewPerfilAcaoModel extends abstractModel
         return $perm;
     }
 
-    /**
-     * Gera todas as ações que o perfil de usuário tem acesso.
-     * @param $id_perfil Correspode ao id do perfil desse usuário.
-     * @author Paulo Viegas <pauloviegas93@gmail.com>
-     * @return Array Todas as permissões que o perfil do usuário tem e mais as ações que não precisam de permissão.
-     */
     public function gerarPaginasComPermissao($idUser)
     {
         $permissoesUsuario = $this->recupera(Array('id_usuario' => $idUser));
@@ -58,12 +43,6 @@ class viewPerfilAcaoModel extends abstractModel
         return $permissoes;
     }
 
-    /**
-     * Verifica se o usuário tem permissão para realizar uma ação passada por parâmetro ou (caso esta seja NULL) a que se encontra disposta na URL. 
-     * @param String $acao Corresponde a um endereço de ação ou de página.
-     * @author Paulo Viegas <pauloviegas93@gmail.com>
-     * @return Boolean Valor lógico, TRUE se o usuário tiver permissão para realizar tal ação e FALSE se o usuário não tiver permissão para realizar tal ação.
-     */
     public function verificaPermissao($acao = NULL, $grupo = NULL)
     {
         $PaginasNaoPrecisaPermissao = $this->session->userdata('PaginasNaoPrecisaPermissao');

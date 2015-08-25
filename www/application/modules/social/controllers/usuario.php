@@ -150,7 +150,7 @@ class usuario extends SocialController
             if (!(empty($alterado) && empty($_FILES['foto']['name'])))
             {
                 $alterado['id'] = $novoUsuario['id'];
-                if ($this->usuarioModel->alterar((object) $alterado))
+                if ($this->usuarioModel->alterar($alterado))
                 {
 
                     $this->session->set_flashdata(
@@ -245,7 +245,7 @@ class usuario extends SocialController
             if (!(empty($alterado) && empty($_FILES['foto']['name'])))
             {
                 $alterado['id'] = $novoUsuario['id'];
-                if ($this->usuarioModel->alterar((object) $alterado))
+                if ($this->usuarioModel->alterar($alterado))
                 {
                     $usuario = $this->usuarioModel->recupera(Array('id' => $novoUsuario['id']));
                     $this->session->set_userdata('usuario', $usuario[0]);

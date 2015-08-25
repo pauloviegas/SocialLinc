@@ -76,7 +76,7 @@ class laboratorio extends SocialController
         $this->data['laboratorio'] = $this->grupoModel->recupera(Array('id' => $idLab));
         $this->data['usuariosLab'] = $this->viewUsuarioGrupoVinculoModel->recupera(Array('id_tipo_grupo' => 3, 'id_grupo' => $idLab), Array('ativo' => 'desc', 'nome_usuario' => 'asc'));
         $this->data['usuarios'] = $this->usuarioModel->recuperaUsuariosQueNaoPertecemAoLab($idLab);
-        $this->data['perfis'] = $this->perfilModel->recupera(Array('excluido' => 0), Array('perfil' => 'asc'));
+        $this->data['perfis'] = $this->perfilModel->recupera(Array('excluido' => 0, 'vinculo_manual' => 1), Array('perfil' => 'asc'));
         $this->data['anexos'] = $this->anexoModel->recupera(Array('id_grupo' => $idLab));
         $this->data['idLab'] = $idLab;
         $this->data['linhasPesquisaLaboratorio'] = $this->viewPesquisaLinhaGrupoVinculoModel->recupera(Array('id_grupo' => $idLab));
@@ -178,7 +178,7 @@ class laboratorio extends SocialController
 
     public function alterar()
     {
-        $novoLaboratorio = (object) $this->_request;
+        $novoLaboratorio = $this->_request;
         $this->form_validation->set_rules('nome', 'Nome do Laboratório', 'required');
         $this->form_validation->set_rules('sigla', 'Sigla do Laboratório', 'required');
         $this->form_validation->set_rules('email', 'E-mail', 'required|valid_email');

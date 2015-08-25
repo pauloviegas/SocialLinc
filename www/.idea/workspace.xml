@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fe3148de-959e-4576-8c49-ff92b5d2852a" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/media/background.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/media/empty.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/Abtract/Models/AuthModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/Social LINC.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/Abtract/Models/_abstractmodel.php.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/Usuario/Models/_acaomodel.php.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/_anexomodel.php.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/_authmodel.php.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/_contatomodel.php.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/_formacaomodel.php.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/_grupomodel.php.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/_grupotipomodel.php.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/_grupotipovinculomodel.php.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/_grupovinculomodel.php.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/_logmodel.php.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/_perfilmodel.php.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/_permissaomodel.php.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/_pesquisalinhagrupovinculomodel.php.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/_pesquisalinhamodel.php.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/_pesquisalinhausuariovinculomodel.php.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/_postmodel.php.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/_projetomodel.php.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/_tarefamodel.php.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/_usuariomodel.php.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/_usuariotipovinculomodel.php.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/_usuariovinculomodel.php.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/_viewgrupotipomodel.php.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/_viewlogusuarioacaomodel.php.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/_viewperfilacaomodel.php.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/_viewpesquisalinhagrupovinculomodel.php.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/_viewpesquisalinhausuariovinculomodel.php.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/_viewprojetomodel.php.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/_viewusuariogrupovinculomodel.php.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/_viewusuariomodel.php.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/Abtract/Models/abstractModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/Usuario/Models/acaoModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/Abtract/Models/anexoModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/classtrees_.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/classtrees_Abtract.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/classtrees_Usuario.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/Abtract/Models/contatoModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/elementindex.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/elementindex_.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/elementindex_Abtract.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/elementindex_Usuario.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/errors.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/Abtract/Models/formacaoModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/Abtract/Models/grupoModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/Abtract/Models/grupoTipoModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/Abtract/Models/grupoTipoVinculoModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/Abtract/Models/grupoVinculoModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/li_.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/li_Abtract.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/li_Usuario.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/Abtract/Models/logModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/paulobviegas.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/Abtract/Models/perfilModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/Abtract/Models/permissaoModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/Abtract/Models/pesquisaLinhaGrupoVinculoModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/Abtract/Models/pesquisaLinhaModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/Abtract/Models/pesquisaLinhaUsuarioVinculoModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/php.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/Abtract/Models/postModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/Abtract/Models/projetoModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/media/style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/Abtract/Models/tarefaModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/Abtract/Models/usuarioModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/Abtract/Models/usuarioTipoVinculoModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/Abtract/Models/usuarioVinculoModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vagrant.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/Abtract/Models/viewGrupoTipoModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/Abtract/Models/viewLogUsuarioAcaoModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/Abtract/Models/viewPerfilAcaoModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/Abtract/Models/viewPesquisaLinhaGrupoVinculoModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/Abtract/Models/viewPesquisaLinhaUsuarioVinculoModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/Abtract/Models/viewProjetoModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/Abtract/Models/viewUsuarioGrupoVinculoModel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Documentação/Abtract/Models/viewUsuarioModel.html" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\application\models\._index.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\classtrees_default.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\AbstractModel.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\AuthModel.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\_models---abstractModel.php.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\_models---acaoModel.php.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\_models---anexoModel.php.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\_models---authModel.php.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\_models---grupoModel.php.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\_models---grupoTipoModel.php.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\_models---grupoTipoVinculoModel.php.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\_models---grupoVinculoModel.php.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\_models---logModel.php.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\_models---perfilModel.php.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\_models---permissaoModel.php.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\_models---postModel.php.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\_models---projetoModel.php.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\_models---tarefaModel.php.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\_models---tituloModel.php.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\_models---usuarioModel.php.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\_models---usuarioVinculoModel.php.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\_models---usuarrioTipoVinculoModel.php.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\_models---viewGrupoTipoModel.php.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\_models---viewPerfilAcaoModel.php.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\_modules---social---controllers---home.php.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\_modules---social---controllers---serviceauth.php.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\_modules---social---controllers---usuario.php.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\acaoModel.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\anexoModel.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\grupoModel.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\grupoTipoModel.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\grupoTipoVinculoModel.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\grupoVinculoModel.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\home.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\logModel.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\perfilModel.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\permissaoModel.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\postModel.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\projetoModel.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\serviceauth.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\tarefaModel.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\tituloModel.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\usuario.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\usuarioModel.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\usuarioVinculoModel.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\usuarrioTipoVinculoModel.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\viewGrupoTipoModel.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\default\viewPerfilAcaoModel.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\elementindex.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\elementindex_default.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\errors.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\index.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\li_default.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\media\background.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\media\empty.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\HTMLSmartyConverter\media\style.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\SocialLinc\www\doc\Documentação\PDFdefaultConverter\documentation.pdf" afterPath="" />
+      <change type="MOVED" beforePath="C:\wamp\www\SocialLinc\www\application\models\abstractModel.php" afterPath="$PROJECT_DIR$/application/models/abstractmodel.php" />
+      <change type="MOVED" beforePath="C:\wamp\www\SocialLinc\www\application\models\acaoModel.php" afterPath="$PROJECT_DIR$/application/models/acaomodel.php" />
+      <change type="MOVED" beforePath="C:\wamp\www\SocialLinc\www\application\models\authModel.php" afterPath="$PROJECT_DIR$/application/models/authmodel.php" />
+      <change type="MOVED" beforePath="C:\wamp\www\SocialLinc\www\application\models\contatoModel.php" afterPath="$PROJECT_DIR$/application/models/contatomodel.php" />
+      <change type="MOVED" beforePath="C:\wamp\www\SocialLinc\www\application\models\logModel.php" afterPath="$PROJECT_DIR$/application/models/logmodel.php" />
+      <change type="MOVED" beforePath="C:\wamp\www\SocialLinc\www\application\models\pesquisaLinhaGrupoVinculoModel.php" afterPath="$PROJECT_DIR$/application/models/pesquisalinhagrupovinculomodel.php" />
+      <change type="MOVED" beforePath="C:\wamp\www\SocialLinc\www\application\models\pesquisaLinhaModel.php" afterPath="$PROJECT_DIR$/application/models/pesquisalinhamodel.php" />
+      <change type="MOVED" beforePath="C:\wamp\www\SocialLinc\www\application\models\pesquisaLinhaUsuarioVinculoModel.php" afterPath="$PROJECT_DIR$/application/models/pesquisalinhausuariovinculomodel.php" />
+      <change type="MOVED" beforePath="C:\wamp\www\SocialLinc\www\application\models\usuarioModel.php" afterPath="$PROJECT_DIR$/application/models/usuariomodel.php" />
+      <change type="MOVED" beforePath="C:\wamp\www\SocialLinc\www\application\models\viewLogUsuarioAcaoModel.php" afterPath="$PROJECT_DIR$/application/models/viewlogusuarioacaomodel.php" />
+      <change type="MOVED" beforePath="C:\wamp\www\SocialLinc\www\application\models\viewPerfilAcaoModel.php" afterPath="$PROJECT_DIR$/application/models/viewperfilacaomodel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/modules/social/views/laboratorio/descricao.php" afterPath="$PROJECT_DIR$/application/modules/social/views/laboratorio/descricao.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/modules/social/views/projeto/descricao.php" afterPath="$PROJECT_DIR$/application/modules/social/views/projeto/descricao.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/modules/social/controllers/formacao.php" afterPath="$PROJECT_DIR$/application/modules/social/controllers/formacao.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/modules/social/views/home/home.php" afterPath="$PROJECT_DIR$/application/modules/social/views/home/home.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/modules/social/views/service_auth/index.php" afterPath="$PROJECT_DIR$/application/modules/social/views/service_auth/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/modules/social/controllers/instituicaoEnsino.php" afterPath="$PROJECT_DIR$/application/modules/social/controllers/instituicaoEnsino.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/modules/social/controllers/instituicaoFinanciadora.php" afterPath="$PROJECT_DIR$/application/modules/social/controllers/instituicaoFinanciadora.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/modules/social/controllers/laboratorio.php" afterPath="$PROJECT_DIR$/application/modules/social/controllers/laboratorio.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/modules/social/views/layout/menulateral.php" afterPath="$PROJECT_DIR$/application/modules/social/views/layout/menulateral.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/modules/social/controllers/perfil.php" afterPath="$PROJECT_DIR$/application/modules/social/controllers/perfil.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/modules/site/controllers/pesquisa.php" afterPath="$PROJECT_DIR$/application/modules/site/controllers/pesquisa.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/modules/social/controllers/projeto.php" afterPath="$PROJECT_DIR$/application/modules/social/controllers/projeto.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/modules/social/views/layout/rodape.php" afterPath="$PROJECT_DIR$/application/modules/social/views/layout/rodape.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/modules/social/controllers/serviceauth.php" afterPath="$PROJECT_DIR$/application/modules/social/controllers/serviceauth.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/modules/social/controllers/usuario.php" afterPath="$PROJECT_DIR$/application/modules/social/controllers/usuario.php" />
+    </list>
+    <ignored path="www.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DatabaseView">
+    <option name="FLATTEN" value="false" />
+    <option name="GROUP_BY_TYPE" value="true" />
+    <option name="SORT_CHILDREN" value="false" />
+    <option name="SHOW_TABLE_CONSTRAINTS" value="true" />
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="Social LINC" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="linc2" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="www" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="abstractmodel.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/models/abstractmodel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.62702703">
+              <caret line="75" column="79" selection-start-line="75" selection-start-column="79" selection-end-line="75" selection-end-column="79" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/application/modules/social/views/service_auth/index.php" />
+        <option value="$PROJECT_DIR$/application/models/abstractmodel.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="NamedScopeManager">
+    <order />
+  </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>CSS</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Social LINC" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Social LINC" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Less" />
+    <property name="settings.editor.splitter.proportion" value="0.33289647" />
+    <property name="recentsLimit" value="5" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="FullScreen" value="false" />
+    <property name="dynamic.classpath" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ChromiumRemoteDebugType" factoryName="Chromium Remote" host="linc.dev">
+      <method />
+    </configuration>
+    <configuration default="true" type="FirefoxRemoteDebugType" factoryName="Firefox Remote">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <pass-parent-envs>true</pass-parent-envs>
+      <envs />
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fe3148de-959e-4576-8c49-ff92b5d2852a" name="Default" comment="" />
+      <created>1440445498937</created>
+      <option name="number" value="Default" />
+      <updated>1440445498937</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12859304" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19742814" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36535433" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="www" />
+        <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="www" />
+        <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+      </PATH_ELEMENT>
+    </PATH>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/application/models/abstractmodel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="78" column="67" selection-start-line="78" selection-start-column="67" selection-end-line="78" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/modules/social/views/service_auth/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/abstractmodel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="78" column="67" selection-start-line="78" selection-start-column="67" selection-end-line="78" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/modules/social/views/service_auth/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/abstractmodel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="78" column="67" selection-start-line="78" selection-start-column="67" selection-end-line="78" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/modules/social/views/service_auth/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/abstractmodel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/d4a4eeaa-f936-4d26-bad4-97a7024297ed/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/modules/social/views/service_auth/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43126178">
+          <caret line="175" column="0" selection-start-line="175" selection-start-column="0" selection-end-line="175" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/abstractmodel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.62702703">
+          <caret line="75" column="79" selection-start-line="75" selection-start-column="79" selection-end-line="75" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

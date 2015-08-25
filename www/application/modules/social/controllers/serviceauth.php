@@ -148,7 +148,7 @@ class serviceauth extends MY_Controller
                 {
                     $usuario['foto'] = '/assets/img/usuarios/default_user.jpg';
                 }
-                if ($this->usuarioModel->alterar((object) $usuario))
+                if ($this->usuarioModel->alterar($usuario))
                 {
                     $usuarioBanco = $this->usuarioModel->recupera(Array('email' => $usuario['email']));
                     $this->usuarioVinculoModel->inserir(Array(

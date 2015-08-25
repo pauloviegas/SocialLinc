@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="Social LINC" uuid="d4a4eeaa-f936-4d26-bad4-97a7024297ed">
+    <database-info product="MySQL" version="5.6.17" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="linc2"/>
+    <table name="sitelinc_ci_sessions" schema="" catalog="linc2" type="TABLE">
+      <column name="session_id" sqlType="VARCHAR" precision="40" scale="0" nullable="false" jdbcType="12" def="JzAn"/>
+      <column name="ip_address" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12" def="JzAn"/>
+      <column name="user_agent" sqlType="VARCHAR" precision="120" scale="0" nullable="false" jdbcType="12"/>
+      <column name="last_activity" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="user_data" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="session_id"/>
+      <index name="last_activity_idx" unique="false" columns="last_activity"/>
+    </table>
+    <table name="sitelinc_gen_anexo" schema="" catalog="linc2" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="id_tarefa" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="id_post" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="id_grupo" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="localizacao" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <column name="nome" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="id_anexo_grupo" columns="id_grupo" ref-table="sitelinc_gru_grupo" ref-schema="" ref-catalog="linc2" ref-columns="id" update-rule="0" delete-rule="3" deferrability="2"/>
+      <foreign-key name="id_anexo_post" columns="id_post" ref-table="sitelinc_gen_post" ref-schema="" ref-catalog="linc2" ref-columns="id" update-rule="0" delete-rule="3" deferrability="2"/>
+      <foreign-key name="id_anexo_tarefa" columns="id_tarefa" ref-table="sitelinc_pro_tarefa" ref-schema="" ref-catalog="linc2" ref-columns="id" update-rule="0" delete-rule="3" deferrability="2"/>
+      <index name="id_UNIQUE" unique="true" columns="id"/>
+      <index name="id_anexo_grupo_idx" unique="false" columns="id_grupo"/>
+      <index name="id_anexo_post_idx" unique="false" columns="id_post"/>
+      <index name="id_anexo_tarefa_idx" unique="false" columns="id_tarefa"/>
+    </table>
+    <table name="sitelinc_gen_post" schema="" catalog="linc2" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="id_usuario" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="id_grupo" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="id_tarefa" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="comentario" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="data" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="excluido" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="id_resposta" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="id_post_grupo" columns="id_grupo" ref-table="sitelinc_gru_grupo" ref-schema="" ref-catalog="linc2" ref-columns="id" update-rule="0" delete-rule="3" deferrability="2"/>
+      <foreign-key name="id_post_post" columns="id_resposta" ref-table="sitelinc_gen_post" ref-schema="" ref-catalog="linc2" ref-columns="id" update-rule="0" delete-rule="3" deferrability="2"/>
+      <foreign-key name="id_post_tarefa" columns="id_tarefa" ref-table="sitelinc_pro_tarefa" ref-schema="" ref-catalog="linc2" ref-columns="id" update-rule="0" delete-rule="3" deferrability="2"/>
+      <foreign-key name="id_post_usuario" columns="id_usuario" ref-table="sitelinc_usu_usuario" ref-schema="" ref-catalog="linc2" ref-columns="id" update-rule="0" delete-rule="3" deferrability="2"/>
+      <exported-key name="id_anexo_post" table="sitelinc_gen_anexo" schema="" catalog="linc2" columns="id_post"/>
+      <exported-key name="id_post_post" table="sitelinc_gen_post" schema="" catalog="linc2" columns="id_resposta"/>
+      <index name="id_UNIQUE" unique="true" columns="id"/>
+      <index name="id_post_grupo_idx" unique="false" columns="id_grupo"/>
+      <index name="id_post_post" unique="false" columns="id_resposta"/>
+      <index name="id_post_tarefa_idx" unique="false" columns="id_tarefa"/>
+      <index name="id_post_usuario_idx" unique="false" columns="id_usuario"/>
+    </table>
+    <table name="sitelinc_gru_grupo" schema="" catalog="linc2" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="id_tipo" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="nome" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="sigla" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="logo" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="resumo" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="url" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="facebook" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="googleplus" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="instagram" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="twitter" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="likedin" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="telefone" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="publico" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="excluido" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="id_grupo_tipo" columns="id_tipo" ref-table="sitelinc_gru_tipo" ref-schema="" ref-catalog="linc2" ref-columns="id" update-rule="0" delete-rule="3" deferrability="2"/>
+      <exported-key name="id_anexo_grupo" table="sitelinc_gen_anexo" schema="" catalog="linc2" columns="id_grupo"/>
+      <exported-key name="id_post_grupo" table="sitelinc_gen_post" schema="" catalog="linc2" columns="id_grupo"/>
+      <exported-key name="id_vinculo_grupo" table="sitelinc_gru_vinculo" schema="" catalog="linc2" columns="id_grupo"/>
+      <exported-key name="id_vinculo_grupo_vinculado" table="sitelinc_gru_vinculo" schema="" catalog="linc2" columns="id_grupo_vinculado"/>
+      <exported-key name="FK_linha_grupo_vinculo_grupo" table="sitelinc_pesq_linha_grupo_vinculo" schema="" catalog="linc2" columns="id_grupo"/>
+      <exported-key name="id_projeto_financiador" table="sitelinc_pro_projeto" schema="" catalog="linc2" columns="id_financiador"/>
+      <exported-key name="id_projeto_grupo" table="sitelinc_pro_projeto" schema="" catalog="linc2" columns="id_projeto"/>
+      <exported-key name="id_tarefa_grupo" table="sitelinc_pro_tarefa" schema="" catalog="linc2" columns="id_projeto"/>
+      <exported-key name="id_usuario_instituicao" table="sitelinc_usu_usuario" schema="" catalog="linc2" columns="id_instituicao"/>
+      <exported-key name="id_vinculo_instituicao" table="sitelinc_usu_vinculo" schema="" catalog="linc2" columns="id_instituicao"/>
+      <index name="id_instituicao_UNIQUE" unique="true" columns="id"/>
+      <index name="id_grupo_tipo_idx" unique="false" columns="id_tipo"/>
+    </table>
+    <table name="sitelinc_gru_tipo" schema="" catalog="linc2" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="tipo" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <column name="excluido" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="id_grupo_tipo" table="sitelinc_gru_grupo" schema="" catalog="linc2" columns="id_tipo"/>
+      <index name="id_UNIQUE" unique="true" columns="id"/>
+    </table>
+    <table name="sitelinc_gru_tipo_vinculo" schema="" catalog="linc2" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="tipo" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <column name="excluido" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="id_vincculo_tipo_vinculo" table="sitelinc_gru_vinculo" schema="" catalog="linc2" columns="id_tipo"/>
+      <index name="id_UNIQUE" unique="true" columns="id"/>
+    </table>
+    <table name="sitelinc_gru_vinculo" schema="" catalog="linc2" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="id_grupo_vinculado" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="id_grupo" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="id_tipo" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id,id_grupo,id_grupo_vinculado,id_tipo"/>
+      <foreign-key name="id_vincculo_tipo_vinculo" columns="id_tipo" ref-table="sitelinc_gru_tipo_vinculo" ref-schema="" ref-catalog="linc2" ref-columns="id" update-rule="0" delete-rule="3" deferrability="2"/>
+      <foreign-key name="id_vinculo_grupo" columns="id_grupo" ref-table="sitelinc_gru_grupo" ref-schema="" ref-catalog="linc2" ref-columns="id" update-rule="0" delete-rule="3" deferrability="2"/>
+      <foreign-key name="id_vinculo_grupo_vinculado" columns="id_grupo_vinculado" ref-table="sitelinc_gru_grupo" ref-schema="" ref-catalog="linc2" ref-columns="id" update-rule="0" delete-rule="3" deferrability="2"/>
+      <index name="id_UNIQUE" unique="true" columns="id"/>
+      <index name="id_vincculo_tipo_vinculo" unique="false" columns="id_tipo"/>
+      <index name="id_vinculo_grupo_idx" unique="false" columns="id_grupo"/>
+      <index name="id_vinculo_grupo_vinculado_idx" unique="false" columns="id_grupo_vinculado"/>
+    </table>
+    <table name="sitelinc_log_log" schema="" catalog="linc2" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="id_usuario" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="id_acao" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="descricao" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="data" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="id_log_acao" columns="id_acao" ref-table="sitelinc_usu_acao" ref-schema="" ref-catalog="linc2" ref-columns="id" update-rule="0" delete-rule="3" deferrability="2"/>
+      <foreign-key name="id_log_usuario" columns="id_usuario" ref-table="sitelinc_usu_usuario" ref-schema="" ref-catalog="linc2" ref-columns="id" update-rule="0" delete-rule="3" deferrability="2"/>
+      <index name="id_UNIQUE" unique="true" columns="id"/>
+      <index name="id_log_acao" unique="false" columns="id_acao"/>
+      <index name="id_log_usuario" unique="false" columns="id_usuario"/>
+    </table>
+    <table name="sitelinc_pesq_linha" schema="" catalog="linc2" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="linha" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="descricao" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="icone" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_linha_grupo_vinculo_linha" table="sitelinc_pesq_linha_grupo_vinculo" schema="" catalog="linc2" columns="id_linha"/>
+      <exported-key name="FK_linha_usuario_vinculo_linha" table="sitelinc_pesq_linha_usuario_vinculo" schema="" catalog="linc2" columns="id_linha"/>
+    </table>
+    <table name="sitelinc_pesq_linha_grupo_vinculo" schema="" catalog="linc2" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="id_linha" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="id_grupo" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_linha_grupo_vinculo_grupo" columns="id_grupo" ref-table="sitelinc_gru_grupo" ref-schema="" ref-catalog="linc2" ref-columns="id" update-rule="0" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_linha_grupo_vinculo_linha" columns="id_linha" ref-table="sitelinc_pesq_linha" ref-schema="" ref-catalog="linc2" ref-columns="id" update-rule="0" delete-rule="3" deferrability="2"/>
+      <index name="FK_linha_grupo_vinculo_grupo" unique="false" columns="id_grupo"/>
+      <index name="FK_linha_grupo_vinculo_linha" unique="false" columns="id_linha"/>
+    </table>
+    <table name="sitelinc_pesq_linha_usuario_vinculo" schema="" catalog="linc2" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="id_linha" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="id_usuario" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_linha_usuario_vinculo_linha" columns="id_linha" ref-table="sitelinc_pesq_linha" ref-schema="" ref-catalog="linc2" ref-columns="id" update-rule="0" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_linha_usuario_vinculo_usuario" columns="id_usuario" ref-table="sitelinc_usu_usuario" ref-schema="" ref-catalog="linc2" ref-columns="id" update-rule="0" delete-rule="3" deferrability="2"/>
+      <index name="FK_linha_usuario_vinculo_linha" unique="false" columns="id_linha"/>
+      <index name="FK_linha_usuario_vinculo_usuario" unique="false" columns="id_usuario"/>
+    </table>
+    <table name="sitelinc_pro_projeto" schema="" catalog="linc2" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="id_projeto" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="id_responsavel" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="id_coordenador" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="id_financiador" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="processo" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="edital" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <column name="inicio" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <column name="termino" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <column name="excluido" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="fim" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="id_projeto_financiador" columns="id_financiador" ref-table="sitelinc_gru_grupo" ref-schema="" ref-catalog="linc2" ref-columns="id" update-rule="0" delete-rule="3" deferrability="2"/>
+      <foreign-key name="id_projeto_grupo" columns="id_projeto" ref-table="sitelinc_gru_grupo" ref-schema="" ref-catalog="linc2" ref-columns="id" update-rule="0" delete-rule="0" deferrability="2"/>
+      <foreign-key name="id_projeto_usuario_coordenador" columns="id_coordenador" ref-table="sitelinc_usu_usuario" ref-schema="" ref-catalog="linc2" ref-columns="id" update-rule="0" delete-rule="3" deferrability="2"/>
+      <foreign-key name="id_projeto_usuario_responsavel" columns="id_responsavel" ref-table="sitelinc_usu_usuario" ref-schema="" ref-catalog="linc2" ref-columns="id" update-rule="0" delete-rule="3" deferrability="2"/>
+      <index name="id_UNIQUE" unique="true" columns="id"/>
+      <index name="id_projeto_financiador_idx" unique="false" columns="id_financiador"/>
+      <index name="id_projeto_grupo_idx1" unique="false" columns="id_projeto"/>
+      <index name="id_projeto_usuario_idx" unique="false" columns="id_responsavel"/>
+      <index name="id_projeto_usuario_idx1" unique="false" columns="id_coordenador"/>
+    </table>
+    <table name="sitelinc_pro_tarefa" schema="" catalog="linc2" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="id_usuario" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="id_projeto" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="titulo" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="descricao" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="prioridade" sqlType="ENUM" precision="6" scale="0" nullable="false" jdbcType="1"/>
+      <column name="deadline" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="data_inicio" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="status" sqlType="ENUM" precision="13" scale="0" nullable="true" jdbcType="1"/>
+      <column name="id_tarefa" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="id_tarefa_grupo" columns="id_projeto" ref-table="sitelinc_gru_grupo" ref-schema="" ref-catalog="linc2" ref-columns="id" update-rule="0" delete-rule="3" deferrability="2"/>
+      <foreign-key name="id_tarefa_tarefa" columns="id_tarefa" ref-table="sitelinc_pro_tarefa" ref-schema="" ref-catalog="linc2" ref-columns="id" update-rule="0" delete-rule="3" deferrability="2"/>
+      <foreign-key name="id_tarefa_usuario" columns="id_usuario" ref-table="sitelinc_usu_usuario" ref-schema="" ref-catalog="linc2" ref-columns="id" update-rule="0" delete-rule="3" deferrability="2"/>
+      <exported-key name="id_anexo_tarefa" table="sitelinc_gen_anexo" schema="" catalog="linc2" columns="id_tarefa"/>
+      <exported-key name="id_post_tarefa" table="sitelinc_gen_post" schema="" catalog="linc2" columns="id_tarefa"/>
+      <exported-key name="id_tarefa_tarefa" table="sitelinc_pro_tarefa" schema="" catalog="linc2" columns="id_tarefa"/>
+      <index name="id_UNIQUE" unique="true" columns="id"/>
+      <index name="id_tarefa_grupo_idx" unique="false" columns="id_projeto"/>
+      <index name="id_tarefa_tarefa_idx" unique="false" columns="id_tarefa"/>
+      <index name="id_tarefa_usuario_idx" unique="false" columns="id_usuario"/>
+    </table>
+    <table name="sitelinc_usu_acao" schema="" catalog="linc2" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="modulo" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12" def="J3NvY2lhbCc="/>
+      <column name="controller" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12" def="J2luc3RpdHVpY2FvRmluYW5jaWFkb3JhJw=="/>
+      <column name="action" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="alias_controller" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12" def="J0luc3RpdHVpw6fDo28gRmluYW5jaWFkb3JhJw=="/>
+      <column name="alias_action" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="permissao" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="true" jdbcType="-6" def="MQ=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="id_log_acao" table="sitelinc_log_log" schema="" catalog="linc2" columns="id_acao"/>
+      <exported-key name="id_permissao_acao" table="sitelinc_usu_permissao" schema="" catalog="linc2" columns="id_acao"/>
+      <index name="id_UNIQUE" unique="true" columns="id"/>
+    </table>
+    <table name="sitelinc_usu_formacao" schema="" catalog="linc2" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="formacao" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="excluido" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="id_usuario_formacao" table="sitelinc_usu_usuario" schema="" catalog="linc2" columns="id_formacao"/>
+      <index name="id_UNIQUE" unique="true" columns="id"/>
+    </table>
+    <table name="sitelinc_usu_perfil" schema="" catalog="linc2" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="perfil" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="excluido" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="vinculo_manual" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MQ=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="id_permissao_perfil" table="sitelinc_usu_permissao" schema="" catalog="linc2" columns="id_perfil"/>
+      <exported-key name="id_vinculo_perfil" table="sitelinc_usu_vinculo" schema="" catalog="linc2" columns="id_perfil"/>
+      <index name="id_UNIQUE" unique="true" columns="id"/>
+    </table>
+    <table name="sitelinc_usu_permissao" schema="" catalog="linc2" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="id_perfil" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MQ=="/>
+      <column name="id_acao" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id,id_perfil,id_acao"/>
+      <foreign-key name="id_permissao_acao" columns="id_acao" ref-table="sitelinc_usu_acao" ref-schema="" ref-catalog="linc2" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <foreign-key name="id_permissao_perfil" columns="id_perfil" ref-table="sitelinc_usu_perfil" ref-schema="" ref-catalog="linc2" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <index name="id_permissao_acao" unique="false" columns="id_acao"/>
+      <index name="id_permissao_perfil" unique="false" columns="id_perfil"/>
+    </table>
+    <table name="sitelinc_usu_tipo_vinculo" schema="" catalog="linc2" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="tipo" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <column name="excluido" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="sitelinc_usu_usuario" schema="" catalog="linc2" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="id_formacao" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="id_instituicao" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="lattes" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="nome" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="senha" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <column name="foto" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12" def="J2Fzc2V0cy9pbWcvdXN1YXJpb3MvZGVmYXVsdF91c2VyLmpwZyc="/>
+      <column name="foto_fundo" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12" def="J2Fzc2V0cy9pbWcvdXN1YXJpb3MvZGVmYXVsdF9mb3RvX2Z1bmRvLnBuZyc="/>
+      <column name="aprovado" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="true" jdbcType="-6" def="MQ=="/>
+      <column name="excluido" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="id_usuario_formacao" columns="id_formacao" ref-table="sitelinc_usu_formacao" ref-schema="" ref-catalog="linc2" ref-columns="id" update-rule="0" delete-rule="3" deferrability="2"/>
+      <foreign-key name="id_usuario_instituicao" columns="id_instituicao" ref-table="sitelinc_gru_grupo" ref-schema="" ref-catalog="linc2" ref-columns="id" update-rule="0" delete-rule="3" deferrability="2"/>
+      <exported-key name="id_post_usuario" table="sitelinc_gen_post" schema="" catalog="linc2" columns="id_usuario"/>
+      <exported-key name="id_log_usuario" table="sitelinc_log_log" schema="" catalog="linc2" columns="id_usuario"/>
+      <exported-key name="FK_linha_usuario_vinculo_usuario" table="sitelinc_pesq_linha_usuario_vinculo" schema="" catalog="linc2" columns="id_usuario"/>
+      <exported-key name="id_projeto_usuario_coordenador" table="sitelinc_pro_projeto" schema="" catalog="linc2" columns="id_coordenador"/>
+      <exported-key name="id_projeto_usuario_responsavel" table="sitelinc_pro_projeto" schema="" catalog="linc2" columns="id_responsavel"/>
+      <exported-key name="id_tarefa_usuario" table="sitelinc_pro_tarefa" schema="" catalog="linc2" columns="id_usuario"/>
+      <exported-key name="id_vinculo_usuario" table="sitelinc_usu_vinculo" schema="" catalog="linc2" columns="id_usuario"/>
+      <index name="id_UNIQUE" unique="true" columns="id"/>
+      <index name="id_usuario_formacao" unique="false" columns="id_formacao"/>
+      <index name="id_usuario_instituicao" unique="false" columns="id_instituicao"/>
+    </table>
+    <table name="sitelinc_usu_vinculo" schema="" catalog="linc2" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="id_usuario" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="id_instituicao" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="id_perfil" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="ativo" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MQ=="/>
+      <primary-key name="PRIMARY" columns="id,id_usuario,id_instituicao,id_perfil"/>
+      <foreign-key name="id_vinculo_instituicao" columns="id_instituicao" ref-table="sitelinc_gru_grupo" ref-schema="" ref-catalog="linc2" ref-columns="id" update-rule="0" delete-rule="3" deferrability="2"/>
+      <foreign-key name="id_vinculo_perfil" columns="id_perfil" ref-table="sitelinc_usu_perfil" ref-schema="" ref-catalog="linc2" ref-columns="id" update-rule="0" delete-rule="3" deferrability="2"/>
+      <foreign-key name="id_vinculo_usuario" columns="id_usuario" ref-table="sitelinc_usu_usuario" ref-schema="" ref-catalog="linc2" ref-columns="id" update-rule="0" delete-rule="3" deferrability="2"/>
+      <index name="id_UNIQUE" unique="true" columns="id"/>
+      <index name="id_vinculo_instituicao_idx" unique="false" columns="id_instituicao"/>
+      <index name="id_vinculo_perfil" unique="false" columns="id_perfil"/>
+      <index name="id_vinculo_usuario_idx" unique="false" columns="id_usuario"/>
+    </table>
+    <table name="sitelinc_view_grupo_tipo" schema="" catalog="linc2" type="VIEW">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="id_tipo" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="tipo" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <column name="nome" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="sigla" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="logo" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="resumo" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="url" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="facebook" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="googleplus" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="instagram" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="twitter" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="likedin" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="telefone" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="publico" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="excluido" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+    </table>
+    <table name="sitelinc_view_linha_grupo_vinculo" schema="" catalog="linc2" type="VIEW">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="id_grupo" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="nome_grupo" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="id_tipo_grupo" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="sigla_grupo" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="id_linha" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="linha" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="descricao" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="icone" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+    </table>
+    <table name="sitelinc_view_linha_usuario_vinculo" schema="" catalog="linc2" type="VIEW">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="id_usuario" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="id_linha" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="linha" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="descricao" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="icone" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+    </table>
+    <table name="sitelinc_view_log_usuario_acao" schema="" catalog="linc2" type="VIEW">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="descricao" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="data" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="nome" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <column name="foto" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12" def="J2Fzc2V0cy9pbWcvdXN1YXJpb3MvZGVmYXVsdF91c2VyLmpwZyc="/>
+      <column name="id_acao" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="modulo" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12" def="J3NvY2lhbCc="/>
+      <column name="controller" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12" def="J2luc3RpdHVpY2FvRmluYW5jaWFkb3JhJw=="/>
+      <column name="action" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="alias_controller" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12" def="J0luc3RpdHVpw6fDo28gRmluYW5jaWFkb3JhJw=="/>
+      <column name="alias_action" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+    </table>
+    <table name="sitelinc_view_perfil_acao" schema="" catalog="linc2" type="VIEW">
+      <column name="id_acao" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="acao" sqlType="VARCHAR" precision="302" scale="0" nullable="true" jdbcType="12"/>
+      <column name="controller" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12" def="J0luc3RpdHVpw6fDo28gRmluYW5jaWFkb3JhJw=="/>
+      <column name="action" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="permissao" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="true" jdbcType="-6" def="MQ=="/>
+      <column name="id_usuario" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="nome_usuario" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="email_usuario" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <column name="id_instituicao" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="nome_instituicao" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="sigla_instituicao" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="id_perfil" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="nome_perfil" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+    </table>
+    <table name="sitelinc_view_projeto" schema="" catalog="linc2" type="VIEW">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="nome" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="sigla" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="logo" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="resumo" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="url" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="facebook" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="googleplus" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="instagram" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="twitter" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="likedin" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="telefone" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="publico" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="excluido" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="id_projeto" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="processo" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="edital" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <column name="inicio" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <column name="termino" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <column name="fim" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="id_responsavel" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="nome_responsavel" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="id_coordenador" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="nome_coordenador" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="id_financiador" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4" def="MA=="/>
+      <column name="nome_financiador" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="sigla_financiador" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="id_laboratorio" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="nome_laboratorio" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="sigla_laboratorio" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+    </table>
+    <table name="sitelinc_view_usuario" schema="" catalog="linc2" type="VIEW">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="id_formacao" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="formacao" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="id_instituicao" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="nome_instituicao" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="sigla_instituicao" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="nome" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <column name="lattes" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="foto" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12" def="J2Fzc2V0cy9pbWcvdXN1YXJpb3MvZGVmYXVsdF91c2VyLmpwZyc="/>
+      <column name="aprovado" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="true" jdbcType="-6" def="MQ=="/>
+      <column name="excluido" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+    </table>
+    <table name="sitelinc_view_usuario_grupo_vinculo" schema="" catalog="linc2" type="VIEW">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="ativo" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MQ=="/>
+      <column name="id_usuario" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="nome_usuario" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="email_usuario" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <column name="foto_usuario" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12" def="J2Fzc2V0cy9pbWcvdXN1YXJpb3MvZGVmYXVsdF91c2VyLmpwZyc="/>
+      <column name="id_formacao_usuario" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="formacao_usuario" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="lattes_usuario" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="aprovado" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="true" jdbcType="-6" def="MQ=="/>
+      <column name="excluido" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="id_grupo" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="id_tipo_grupo" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="tipo_grupo" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <column name="nome_grupo" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="sigla_grupo" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="logo_grupo" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="resumo_grupo" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="url_grupo" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="facebook" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="googleplus" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="instagram" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="twitter" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="likedin" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="telefone" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="publico_grupo" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="id_tipo_vinculo" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="tipo_vinculo" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+    </table>
+  </data-source>
+</component>

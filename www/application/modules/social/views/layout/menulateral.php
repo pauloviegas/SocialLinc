@@ -35,26 +35,26 @@ $visualisarInstituicaoFinanciadora = $this->viewPerfilAcaoModel->verificaPermiss
         <!-- FIM DO TOPO DE SAUDAÇÃO -->
         <!-- INICIO DO MENU LATERAL -->
         <ul>
-            <li class="start active descricaoMenu" data-toggle="tooltip" data-placement="right" title="Feed de Notícias">
-                <a href="<?= base_url('social/home/index') ?>">
+            <li class="start active">
+                <a class="descricaoMenu" href="<?= base_url('social/home/index') ?>" data-toggle="tooltip" data-placement="right" title="Feed de Notícias">
                     <i class="icon-comments-alt"></i>
                     <span class="title">Feed de Notícias</span>
                     <span class="arrow"></span>
                 </a>
             </li>
-            <li class="start active descricaoMenu" data-toggle="tooltip" data-placement="right" title="Laboratórios">
-                <a href="<?= base_url('social/laboratorio/index') ?>">
+            <li class="start active">
+                <a class="descricaoMenu" href="<?= base_url('social/laboratorio/index') ?>" data-toggle="tooltip" data-placement="right" title="Laboratórios">
                     <i class="icon-beaker"></i>
                     <span class="title">Laboratórios</span>
                     <span class="arrow"></span>
                 </a>
             </li>
             <?php if ($visualisarUsuario || $visualisarFormacao || $visualisarPerfil || $visualisarAdmSistema) : ?>
-                <li class="descricaoMenu" data-toggle="tooltip" data-placement="right" title="Gerência de Usuários">
+                <li class="descricaoMenu" toggle="tooltip" data-placement="right" title="Gerência de Usuários">
                     <a href="javascript:;">
-                        <i class="icon-group"></i>
+                        <i class="icon-user"></i>
                         <span class="title">Gerência de Usuários</span>
-                        <span class="arrow"></span>
+                        <span cladata-ss="arrow"></span>
                     </a>
                     <ul class="sub-menu">
                         <?php if ($visualisarUsuario) : ?>
@@ -72,7 +72,25 @@ $visualisarInstituicaoFinanciadora = $this->viewPerfilAcaoModel->verificaPermiss
                     </ul>
                 </li>
             <?php endif; ?>
-            <?php if ($visualisarLogs || $visualisarInstituicaoEnsino || $visualisarInstituicaoFinanciadora) : ?>
+            <?php if ($visualisarInstituicaoEnsino || $visualisarInstituicaoFinanciadora) : ?>
+                <li class="descricaoMenu" data-toggle="tooltip" data-placement="right" title="Cadastro Complementares">
+                    <a href="javascript:;">
+                        <i class="icon-group"></i>
+                        <span class="title">Cadastro Complementares</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <?php if ($visualisarInstituicaoEnsino) : ?>
+                            <li><a href="<?= base_url('social/instituicaoEnsino/index') ?>"><i class="icon-book"></i>Instituições de Ensino</a></li>
+                        <?php endif; ?>
+                        <?php if ($visualisarInstituicaoFinanciadora) : ?>
+                            <li><a href="<?= base_url('social/instituicaoFinanciadora/index') ?>"><i class="icon-dollar"></i>Instituições Financiadoras</a></li>
+                        <?php endif; ?>
+                        <!--<li><a href="#"><i class="icon-folder-open-alt"></i>Tipos de Grupo</a></li>-->
+                    </ul>
+                </li>
+            <?php endif; ?>
+            <?php if ($visualisarLogs) : ?>
                 <li class="descricaoMenu" data-toggle="tooltip" data-placement="right" title="Ferramentas">
                     <a href="javascript:;">
                         <i class="icon-wrench"></i>
@@ -83,13 +101,6 @@ $visualisarInstituicaoFinanciadora = $this->viewPerfilAcaoModel->verificaPermiss
                         <?php if ($visualisarLogs) : ?>
                             <li><a href="<?= base_url('social/log/index') ?>"><i class="icon-legal"></i>Log</a></li>
                         <?php endif; ?>
-                        <?php if ($visualisarInstituicaoEnsino) : ?>
-                            <li><a href="<?= base_url('social/instituicaoEnsino/index') ?>"><i class="icon-book"></i>Instituições de Ensino</a></li>
-                        <?php endif; ?>
-                        <?php if ($visualisarInstituicaoFinanciadora) : ?>
-                            <li><a href="<?= base_url('social/instituicaoFinanciadora/index') ?>"><i class="icon-dollar"></i>Instituições Financiadoras</a></li>
-                        <?php endif; ?>
-                        <!--<li><a href="#"><i class="icon-folder-open-alt"></i>Tipos de Grupo</a></li>-->
                     </ul>
                 </li>
             <?php endif; ?>

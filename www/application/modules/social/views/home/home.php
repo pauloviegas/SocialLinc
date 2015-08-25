@@ -37,9 +37,15 @@
 <div style="width: 100%; text-align: center;">
     <h1>Seja Bem vindo ao <b>Social LINC</b></h1>
     <p style="margin-top: 20px;">
-        Em breve você poderá comentar em todos os laboratórios e projetos, além
-        de realizar post's pessoais e sobre a sua <b>Produção Cintifica</b>. Aguarde
-        e desfrute de mais funções do social LINC.
+        Em breve, nesta página, iremos disponibilizar as últimas atualizações 
+        dos laboratórios e projetos que você faz parte.
+    </p>
+    <p>
+        Além disso, você poderá realizar posts de projetos ou atividades sobre 
+        a sua Pesquisa/Produção Científica.
+    </p>
+    <p>
+        Aguarde e esperamos as suas sugestões e contribuições.
     </p>
 </div>
 

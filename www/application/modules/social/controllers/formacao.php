@@ -103,7 +103,7 @@ class formacao extends SocialController
         {
             if ($formacao['formacao'] != $formacao['formacaoAntiga'])
             {
-                if ($this->formacaoModel->alterar((object) $formacao))
+                if ($this->formacaoModel->alterar($formacao))
                 {
                     $this->session->set_flashdata(
                             'sucesso', 'A formação acadêmica ' . $formacao['formacao']

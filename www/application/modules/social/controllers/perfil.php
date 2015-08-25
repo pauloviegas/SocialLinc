@@ -104,7 +104,7 @@ class perfil extends SocialController
         {
             if ($perfil['perfil'] != $perfil['perfilAntigo'])
             {
-                if ($this->perfilModel->alterar((object) $perfil))
+                if ($this->perfilModel->alterar($perfil))
                 {
                     $this->session->set_flashdata(
                             'sucesso', 'O perfil ' . $perfil['perfil'] . ' foi alterado'
