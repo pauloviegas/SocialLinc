@@ -18,7 +18,6 @@ class abstractModel extends CI_Model {
 		parent::__construct();
 	}
 
-
 	/**
 	 * Recupera todas as colunas contidas na tabela (definida pela variável
 	 *  $_table).
