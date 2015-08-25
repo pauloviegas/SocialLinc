@@ -18,6 +18,7 @@ class abstractModel extends CI_Model {
 		parent::__construct();
 	}
 
+
 	/**
 	 * Recupera todas as colunas contidas na tabela (definida pela variável
 	 *  $_table).
@@ -69,7 +70,8 @@ class abstractModel extends CI_Model {
 	 * @return Int Se for alterado com sucesso retorna a quantida de linhas
 	 * afetadas pela query, caso contrário retorna 0.
 	 * @author    Paulo Viegas <pauloviegas93@gmail.com>
-	 * @copyright 2015 LINC - Laboratório de Inteligência Computacional e Pesquisa Operacional (UFPA - Universidade Federal do Pará).
+	 * @copyright 2015 LINC - Laboratório de Inteligência Computacional e Pesquisa Operacional (UFPA - Universidade
+	 *            Federal do Pará).
 	 * @access    public
 	 *
 	 * @param Array $dados              Contendo as novas informações validadas e tratadas,
